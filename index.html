@@ -13,7 +13,20 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&family=IBM+Plex+Mono:wght@600&display=swap">
-<style>*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}
+.sharebtn{margin-inline-start:auto;display:flex;align-items:center;gap:6px;font:inherit;font-weight:700;font-size:.9rem;color:var(--g3);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;cursor:pointer}
+.sharebtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sharebtn:focus-visible,.sp-actions button:focus-visible,.sp-actions a:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.sharepanel{margin-top:12px;background:var(--surface);border:1.5px solid var(--g3);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.sharepanel p{margin:0;font-size:.92rem;color:var(--muted)}
+.sharepanel input{font:inherit;font-size:16px;direction:ltr;text-align:left;width:100%;box-sizing:border-box;padding:9px 10px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+.sp-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
+.sp-actions button,.sp-actions a{font:inherit;font-weight:800;font-size:.92rem;text-align:center;text-decoration:none;border:0;border-radius:12px;padding:11px 8px;cursor:pointer}
+.sp-copy{background:var(--g3);color:#fff}
+.sp-wa{background:#25d366;color:#0b2e17}
+.sp-native{background:var(--bg);color:var(--fg);border:1.5px solid var(--line)!important}
+.sp-msg{font-size:.85rem;color:var(--up);font-weight:700;min-height:1.2em}
+</style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
 :root{
@@ -279,7 +292,17 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
 
 
 <div class="wrap">
-  <div class="brand"><span class="avatar logo" aria-hidden="true"></span><h1 dir="ltr">Bahir Guide</h1></div>
+  <div class="brand"><span class="avatar logo" aria-hidden="true"></span><h1 dir="ltr">Bahir Guide</h1><button type="button" class="sharebtn" id="shareBtn" aria-expanded="false" aria-controls="sharePanel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>اشتراک</button></div>
+  <div class="sharepanel" id="sharePanel" hidden>
+    <p>این لینک را برای خانواده یا دوستانت بفرست. بدون حساب Claude باز می‌شود.</p>
+    <input id="shareUrl" type="text" readonly value="https://bahadorsa.github.io/Bahir-guide/" aria-label="لینک اپ">
+    <div class="sp-actions">
+      <button type="button" class="sp-copy" id="spCopy">کپی لینک</button>
+      <a class="sp-wa" id="spWa" href="https://wa.me/?text=%D8%A7%D9%BE%20%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D8%AA%D8%B1%DB%8C%D8%AF%3A%20https%3A%2F%2Fbahadorsa.github.io%2FBahir-guide%2F" target="_blank" rel="noopener">WhatsApp</a>
+      <button type="button" class="sp-native" id="spNative">بیشتر…</button>
+    </div>
+    <div class="sp-msg" id="spMsg" aria-live="polite"></div>
+  </div>
   <p class="sub">۴۰ اصطلاح مهم و شناخت کندل‌ها، دسته‌بندی‌شده و تصویری</p>
 
   
@@ -868,6 +891,19 @@ pats("more",[
       charts[id+d]=resample((j.prices||[]).map(p=>p[1]),120);draw();}catch(e){}
     await new Promise(res=>setTimeout(res,1500));}}
   await load();loadCharts();setInterval(()=>{if(!document.hidden)load()},300000);
+})();
+
+/* share */
+(()=>{const b=document.getElementById("shareBtn"),p=document.getElementById("sharePanel"),inp=document.getElementById("shareUrl"),msg=document.getElementById("spMsg"),URL="https://bahadorsa.github.io/Bahir-guide/";
+  b.addEventListener("click",()=>{p.hidden=!p.hidden;b.setAttribute("aria-expanded",String(!p.hidden));msg.textContent=""});
+  const sel=()=>{inp.focus();inp.select();inp.setSelectionRange(0,inp.value.length)};
+  document.getElementById("spCopy").addEventListener("click",()=>{
+    const ok=()=>msg.textContent="لینک کپی شد ✓";
+    try{navigator.clipboard.writeText(URL).then(ok,()=>{sel();msg.textContent="لینک انتخاب شد؛ «Kopieren» را بزن."})}catch(e){sel();msg.textContent="لینک انتخاب شد؛ «Kopieren» را بزن."}
+  });
+  const nat=document.getElementById("spNative");
+  if(!navigator.share)nat.hidden=true;
+  nat.addEventListener("click",async()=>{try{await navigator.share({title:"Bahir Guide",text:"اپ آموزش ترید کریپتو",url:URL})}catch(e){if(e&&e.name!=="AbortError"){sel();msg.textContent="اشتراک‌گذاری اینجا ممکن نیست؛ لینک را کپی کن."}}});
 })();
 </script>
 
