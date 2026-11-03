@@ -127,6 +127,84 @@
 .tipcard .ti svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .tipcard b{display:block;font-size:.78rem;color:var(--muted);margin-bottom:2px}
 .tipcard p{margin:0;font-size:.95rem;font-weight:700;line-height:1.6}
+
+.cc-hero{position:relative;overflow:hidden;border-radius:22px;padding:18px;color:#eef3fb;background:radial-gradient(120% 90% at 0% 0%,#2a2f6b 0%,rgba(42,47,107,0) 60%),linear-gradient(160deg,#0d1726 0%,#17233d 100%);box-shadow:0 10px 30px rgba(13,23,38,.25);display:flex;flex-direction:column;gap:14px}
+.cc-h{display:flex;gap:12px;align-items:flex-start}
+.cc-ico{flex:none;width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#6b9cff,#a888ff);color:#fff;box-shadow:0 6px 16px rgba(107,156,255,.35)}
+.cc-ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.cc-h h2{margin:0;font-size:1.25rem;font-weight:900;color:#fff}
+.cc-h p{margin:2px 0 0;font-size:.86rem;color:#a9bad0;line-height:1.6}
+.cc-pick{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.cc-pick::-webkit-scrollbar{display:none}
+.cc-chip{flex:none;font-family:var(--mono);font-weight:600;font-size:.85rem;color:#cfdbec;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 12px;cursor:pointer}
+.cc-chip[aria-pressed="true"]{background:#fff;color:#0d1726;border-color:#fff}
+.cc-dir{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:rgba(255,255,255,.07);border-radius:12px;padding:4px}
+.cc-dbtn{font:inherit;font-size:.86rem;font-weight:800;color:#a9bad0;background:none;border:0;border-radius:9px;padding:8px;cursor:pointer}
+.cc-dbtn[aria-pressed="true"][data-d="long"]{background:#2fcf8c;color:#06281a}
+.cc-dbtn[aria-pressed="true"][data-d="short"]{background:#ff6158;color:#2c0806}
+.cc-chip:focus-visible,.cc-dbtn:focus-visible,.cc-calc:focus-visible,.cc-deep:focus-visible{outline:3px solid #6b9cff;outline-offset:2px}
+.cc-out{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.cc-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cc-card h4{margin:0;font-size:.95rem;font-weight:800}
+.cc-wait{align-items:center;justify-content:center;min-height:120px;color:var(--muted);text-align:center}
+.cc-sum{border-width:1.5px}
+.cc-sum.up,.cc-sum.up2{border-color:var(--up)} .cc-sum.dn,.cc-sum.dn2{border-color:var(--down)}
+.cc-row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.cc-sym{font-family:var(--mono);font-weight:600;font-size:1.1rem;display:block}
+.cc-nm{font-size:.82rem;color:var(--muted)}
+.cc-px{display:flex;flex-direction:column;align-items:flex-end;direction:ltr}
+.cc-px b{font-family:"Sora",var(--font);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.cc-px small{font-weight:800;font-size:.82rem} .cc-px small.up,.cc-grid b.up,.cc-plan b.up{color:var(--up)} .cc-px small.down,.cc-grid b.down,.cc-plan b.down{color:var(--down)}
+.cc-state{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.cc-state span{font-size:.82rem;color:var(--muted);font-weight:700}
+.cc-state b{font-size:1.15rem;font-weight:900}
+.cc-sum.up .cc-state b,.cc-sum.up2 .cc-state b{color:var(--up)} .cc-sum.dn .cc-state b,.cc-sum.dn2 .cc-state b{color:var(--down)}
+.cc-meter{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;direction:ltr}
+.cc-meter i{height:8px;border-radius:99px;background:var(--line)}
+.cc-meter i:nth-child(1).on,.cc-meter i:nth-child(2).on{background:var(--down)} .cc-meter i:nth-child(3).on{background:var(--muted)} .cc-meter i:nth-child(4).on,.cc-meter i:nth-child(5).on{background:var(--up)}
+.cc-note{margin:0;font-size:.78rem;color:var(--muted);line-height:1.6}
+.cc-svg{width:100%;height:auto;display:block;font-family:var(--font);font-variant-numeric:tabular-nums}
+.cc-leg{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.75rem;color:var(--muted)}
+.cc-leg span{display:inline-flex;align-items:center;gap:5px}
+.cc-leg i{width:14px;height:3px;border-radius:2px}
+.cc-leg i.d{background:repeating-linear-gradient(90deg,var(--c) 0 4px,transparent 4px 7px)}
+.cc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cc-grid>div{background:var(--bg);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.cc-grid>div.w2{grid-column:1/-1}
+.cc-grid span{font-size:.75rem;color:var(--muted);font-weight:700}
+.cc-grid b{font-size:1.2rem;font-weight:900;font-variant-numeric:tabular-nums;text-align:start}
+.cc-grid small{font-size:.75rem;color:var(--muted)}
+.cc-gauge,.cc-rng{direction:ltr;position:relative;height:8px;border-radius:99px;margin:4px 0}
+.cc-gauge{background:linear-gradient(90deg,var(--up) 0 30%,var(--line) 30% 70%,var(--down) 70%)}
+.cc-rng{background:linear-gradient(90deg,var(--down),var(--line),var(--up))}
+.cc-gauge i,.cc-rng i{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:var(--fg);border:2px solid var(--surface);transform:translate(-50%,-50%)}
+.cc-rl{display:flex;justify-content:space-between}
+.cc-lv{display:flex;flex-direction:column;gap:6px}
+.cc-lv>div{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:9px 12px;border-radius:12px;background:var(--bg)}
+.cc-lv span{font-size:.82rem;font-weight:700;color:var(--muted)}
+.cc-lv b{direction:ltr;font-variant-numeric:tabular-nums;font-weight:800}
+.cc-lv small{direction:ltr;font-size:.78rem;font-weight:800;color:var(--muted)}
+.cc-lv .r{border-inline-start:4px solid var(--down)} .cc-lv .s{border-inline-start:4px solid var(--up)}
+.cc-lv .now{background:color-mix(in srgb,var(--g3) 12%,var(--bg));border-inline-start:4px solid var(--g3)} .cc-lv .now span{color:var(--g3)}
+.cc-chkh{display:flex;align-items:center;gap:12px}
+.cc-ring{width:48px;height:48px;flex:none}
+.cc-score{font-size:1.1rem;font-weight:900}
+.cc-chk{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.cc-chk li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:.9rem;line-height:1.55}
+.cc-chk i{font-style:normal;font-size:.72rem;font-weight:800;border-radius:999px;padding:2px 9px;white-space:nowrap;margin-top:2px}
+.cc-chk i.met{background:var(--up-soft);color:var(--up)} .cc-chk i.not{background:var(--down-soft);color:var(--down)} .cc-chk i.unk{background:var(--line);color:var(--fg)}
+.cc-verdict{margin:0;font-weight:800;font-size:.92rem;padding:10px 12px;border-radius:12px;background:var(--bg)}
+.cc-plan{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cc-plan>div{background:var(--bg);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:2px}
+.cc-plan span{font-size:.75rem;color:var(--muted);font-weight:700}
+.cc-plan b{direction:ltr;text-align:start;font-weight:900;font-variant-numeric:tabular-nums}
+.cc-plan small{direction:ltr;text-align:start;font-size:.75rem;font-weight:800;color:var(--muted)}
+.cc-plan .st{border-inline-start:4px solid var(--down)} .cc-plan .tg{border-inline-start:4px solid var(--up)}
+.cc-calc,.cc-deep{font:inherit;font-weight:800;font-size:.92rem;border:0;border-radius:12px;padding:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.cc-calc{background:var(--g3);color:#fff}
+.cc-deep{background:linear-gradient(120deg,#6b9cff,#a888ff);color:#fff;box-shadow:0 6px 16px rgba(107,156,255,.3)}
+.cc-deep svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.cc-disc{margin:2px 4px 0;font-size:.75rem;color:var(--muted);text-align:center}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -436,6 +514,13 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
     </div>
   </section>
 
+  <section class="part" id="coach">
+    <div class="cc-hero"><div class="cc-h"><span class="cc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><div><h2>Analysis assistant</h2><p>Pick a coin. I'll work out trend, levels, risk and your checklist from live data.</p></div></div>
+      <div class="cc-pick" id="ccPick" role="group"></div><div class="cc-dir" id="ccDir" role="group"></div></div>
+    <div id="ccOut" class="cc-out"></div>
+    
+  </section>
+
   <section class="part" id="terms">
     <h2><span class="n">1</span>Trading terms</h2>
     <p class="lead">Each color is a group. Learn the red group first; without it no trade is safe.</p>
@@ -680,7 +765,7 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
   <a href="#candles" data-v="candles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v18M17 3v18"/><rect x="4.5" y="7" width="5" height="9" rx="1"/><rect x="14.5" y="5" width="5" height="7" rx="1"/></svg>Candles</a>
   <a href="#analysis" data-v="analysis"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M4 16l5-6 4 3 7-8"/></svg>Analysis</a>
   <a href="#guide" data-v="guide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M9 8h6"/></svg>Guide</a>
-  <a href="#practice" data-v="practice"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="13" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v11"/></svg>Practice</a>
+  <a href="#coach" data-v="coach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg>Assistant</a>
 </nav>
 
 <script>
@@ -805,7 +890,7 @@ pats("reversals",[
 /* storage helpers */
 const st={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 /* router */
-const VIEWS=["terms","candles","analysis","guide","practice","assistant"];
+const VIEWS=["terms","candles","analysis","guide","practice","assistant","coach"];
 function show(v){if(!VIEWS.includes(v))v="terms";
   VIEWS.forEach(x=>document.getElementById(x).hidden=x!==v);
   document.querySelectorAll(".bnav a").forEach(a=>{const on=a.dataset.v===v;a.classList.toggle("on",on);on?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
@@ -1145,6 +1230,134 @@ window.__liveSource={
     $("hBar").style.width=(all.length?upN/all.length*100:0)+"%";
     $("hTime").textContent=fa(new Date().toLocaleTimeString(EN?"en-GB":"fa-IR",{hour:"2-digit",minute:"2-digit"}));
   });
+})();
+/* analysis assistant (coach) */
+(()=>{
+  const EN=document.documentElement.lang==="en",$=id=>document.getElementById(id),LOC=EN?"en-GB":"fa-IR";
+  const F=s=>EN?String(s):fa(String(s));
+  const T=EN?{
+    pickHint:"Pick a coin",long:"Thinking long",short:"Thinking short",loading:"Analysing live data…",err:"Couldn't load data for this coin right now. Try again in a minute.",
+    state:"Trend condition",states:["Strong downtrend","Downtrend","Neutral","Uptrend","Strong uptrend"],stateNote:"This describes the current state, not a buy or sell signal.",
+    chart:"90-day chart",price:"Price",sma20:"~15-day avg",sma50:"~37-day avg",sup:"Support",res:"Resistance",
+    metrics:"Key numbers",rsi:"RSI 14",rsiZ:["Oversold","Normal","Overbought"],ch7:"7-day change",ch30:"30-day change",vol:"Daily volatility",volZ:["Low","Medium","High"],range:"Position in 90-day range",distS:"To support",distR:"To resistance",
+    levels:"Key levels",hi90:"90-day high",lo90:"90-day low",none:"None above price in 90 days",
+    check:"Your checklist on this coin",met:"Met",not:"Not met",unk:"Check yourself",
+    c1:"Trade is with the trend",c2L:"Price is near support (within 3%)",c2S:"Price is near resistance (within 3%)",c3L:"RSI is not overbought",c3S:"RSI is not oversold",c4:"Risk/reward of at least 1:2 is possible",c5:"Volatility is manageable",c6:"A confirming candle has closed and no major news is due",
+    verdict:n=>n>=5?"Most conditions are met. If you trade, follow your plan and stop.":n>=3?"Only some conditions are met. Patience is usually better here.":"Conditions are not in place. Waiting is the safer choice.",
+    plan:"Example plan",entry:"Entry (now)",stop:"Stop loss",target:"Target",rr:"Risk/reward",toCalc:"Size it in the calculator",planNote:"Stop is placed just beyond the nearest level; the target is the next level. Adjust to your own analysis.",
+    scen:"Scenarios",bull:"Bullish scenario",bear:"Bearish scenario",
+    bullT:(r,t)=>r?`If a daily candle closes above ${r}, the next area to watch is ${t}.`:`Price is at a 90-day high. A pullback that holds above the old high would confirm strength.`,
+    bearT:(s,t)=>`If a daily candle closes below ${s}, a move toward ${t} becomes more likely.`,
+    deep:"Deep analysis with Claude",disc:"Educational only, not financial advice. Data: CoinGecko, approximate."}
+  :{pickHint:"یک ارز انتخاب کن",long:"به لانگ فکر می‌کنم",short:"به شورت فکر می‌کنم",loading:"در حال تحلیل داده زنده…",err:"داده این ارز الان در دسترس نیست. یک دقیقه بعد دوباره امتحان کن.",
+    state:"وضعیت روند",states:["نزولی قوی","نزولی","خنثی","صعودی","صعودی قوی"],stateNote:"این وضعیت فعلی را نشان می‌دهد، نه سیگنال خرید یا فروش.",
+    chart:"نمودار ۹۰ روزه",price:"قیمت",sma20:"میانگین ~۱۵ روزه",sma50:"میانگین ~۳۷ روزه",sup:"حمایت",res:"مقاومت",
+    metrics:"اعداد کلیدی",rsi:"RSI ۱۴",rsiZ:["اشباع فروش","معمولی","اشباع خرید"],ch7:"تغییر ۷ روزه",ch30:"تغییر ۳۰ روزه",vol:"نوسان روزانه",volZ:["کم","متوسط","زیاد"],range:"جایگاه در بازهٔ ۹۰ روزه",distS:"فاصله تا حمایت",distR:"فاصله تا مقاومت",
+    levels:"سطوح مهم",hi90:"بالاترین ۹۰ روزه",lo90:"پایین‌ترین ۹۰ روزه",none:"در ۹۰ روز اخیر بالاتر از قیمت نیست",
+    check:"چک‌لیست تو روی این ارز",met:"برقرار",not:"برقرار نیست",unk:"خودت بررسی کن",
+    c1:"معامله هم‌جهت با روند است",c2L:"قیمت نزدیک حمایت است (کمتر از ۳٪)",c2S:"قیمت نزدیک مقاومت است (کمتر از ۳٪)",c3L:"RSI در اشباع خرید نیست",c3S:"RSI در اشباع فروش نیست",c4:"نسبت ریسک به بازده حداقل ۱ به ۲ ممکن است",c5:"نوسان قابل کنترل است",c6:"کندل تأیید بسته شده و خبر مهمی در راه نیست",
+    verdict:n=>n>=5?"بیشتر شرایط برقرار است. اگر وارد شدی، طبق برنامه و با حد ضرر.":n>=3?"فقط بخشی از شرایط برقرار است. معمولاً صبر بهتر است.":"شرایط فراهم نیست. صبر کردن انتخاب امن‌تری است.",
+    plan:"نمونهٔ برنامه",entry:"ورود (الان)",stop:"حد ضرر",target:"هدف",rr:"ریسک به بازده",toCalc:"محاسبهٔ حجم در ماشین‌حساب",planNote:"حد ضرر کمی آن طرف نزدیک‌ترین سطح است و هدف، سطح بعدی. با تحلیل خودت تنظیمش کن.",
+    scen:"سناریوها",bull:"سناریوی صعودی",bear:"سناریوی نزولی",
+    bullT:(r,t)=>r?`اگر کندل روزانه بالای ${r} بسته شود، ناحیهٔ بعدی برای توجه ${t} است.`:`قیمت در سقف ۹۰ روزه است. اگر پولبک بالای سقف قبلی بماند، قدرت تأیید می‌شود.`,
+    bearT:(s,t)=>`اگر کندل روزانه زیر ${s} بسته شود، حرکت به سمت ${t} محتمل‌تر می‌شود.`,
+    deep:"تحلیل عمیق‌تر با Claude",disc:"فقط آموزشی، توصیهٔ مالی نیست. داده: CoinGecko، تقریبی."};
+  const COINS=[["bitcoin","BTC","بیت‌کوین","Bitcoin"],["ethereum","ETH","اتریوم","Ethereum"],["binancecoin","BNB","بی‌ان‌بی","BNB"],["ripple","XRP","ریپل","XRP"],["solana","SOL","سولانا","Solana"],["tron","TRX","ترون","TRON"],["dogecoin","DOGE","دوج‌کوین","Dogecoin"],["cardano","ADA","کاردانو","Cardano"],["hyperliquid","HYPE","هایپرلیکوئید","Hyperliquid"],["chainlink","LINK","چین‌لینک","Chainlink"],["stellar","XLM","استلار","Stellar"],["bitcoin-cash","BCH","بیت‌کوین کش","Bitcoin Cash"],["litecoin","LTC","لایت‌کوین","Litecoin"],["monero","XMR","مونرو","Monero"],["zcash","ZEC","زی‌کش","Zcash"]];
+  const usd=v=>v==null||!isFinite(v)?"–":"$"+(v>=1000?v.toLocaleString("en-US",{maximumFractionDigits:0}):v>=1?v.toLocaleString("en-US",{maximumFractionDigits:2}):v.toLocaleString("en-US",{maximumSignificantDigits:4}));
+  const pct=(v,d=1)=>(v>=0?"+":"")+v.toFixed(d)+"%";
+  const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;
+  const resample=(arr,n)=>{if(arr.length<=n)return arr;const o=[];for(let k=0;k<n;k++)o.push(arr[Math.round(k*(arr.length-1)/(n-1))]);return o};
+  const roll=(a,n)=>a.map((_,i)=>i<n-1?null:mean(a.slice(i-n+1,i+1)));
+  const rsi=(a,n=14)=>{const x=a.slice(-(n+1));let g=0,l=0;for(let i=1;i<x.length;i++){const d=x[i]-x[i-1];if(d>0)g+=d;else l-=d}return l===0?100:100-100/(1+g/l)};
+  const SRC=window.__liveSource;if(!SRC||!$("ccPick"))return;
+  let sel="bitcoin",dir="long",cache={},seq=0;
+  try{sel=localStorage.getItem("bg-cc-coin")||sel;dir=localStorage.getItem("bg-cc-dir")||dir}catch(e){}
+  $("ccPick").innerHTML=COINS.map(([id,s])=>`<button type="button" class="cc-chip" data-id="${id}" aria-pressed="${id===sel}">${s}</button>`).join("");
+  const dirBtns=()=>{$("ccDir").innerHTML=`<button type="button" class="cc-dbtn" data-d="long" aria-pressed="${dir==="long"}">${T.long}</button><button type="button" class="cc-dbtn" data-d="short" aria-pressed="${dir==="short"}">${T.short}</button>`};dirBtns();
+  $("ccPick").addEventListener("click",e=>{const b=e.target.closest(".cc-chip");if(!b)return;sel=b.dataset.id;try{localStorage.setItem("bg-cc-coin",sel)}catch(e){}$("ccPick").querySelectorAll(".cc-chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.id===sel));run()});
+  $("ccDir").addEventListener("click",e=>{const b=e.target.closest(".cc-dbtn");if(!b)return;dir=b.dataset.d;try{localStorage.setItem("bg-cc-dir",dir)}catch(e){}dirBtns();run()});
+  async function getData(id){if(cache[id]&&Date.now()-cache[id].at<180000)return cache[id];
+    const m=await SRC.markets([id]);const c=m[id];if(!c)throw new Error("no coin");
+    const a=await SRC.chart(id,"90"),b=await SRC.chart(id,"30");
+    const d={c,s90:resample(a.p,120),t90:resample(a.t,120),s30:b.p,at:Date.now()};cache[id]=d;return d}
+  function analyse(d){const p=d.c.price,s90=d.s90,s30=d.s30;
+    const m20=roll(s90,20),m50=roll(s90,50),a20=m20.at(-1),a50=m50.at(-1);
+    const r=rsi(resample(s30,120).concat([p]));
+    const i7=Math.max(0,s30.length-Math.round(s30.length*7/30));const ch7=(p/s30[i7]-1)*100,ch30=(p/s30[0]-1)*100;
+    const rets=[];for(let i=1;i<s30.length;i++)rets.push(Math.log(s30[i]/s30[i-1]));const sd=Math.sqrt(mean(rets.map(x=>x*x))-mean(rets)**2);
+    const perDay=s30.length/30,vol=sd*Math.sqrt(perDay)*100;
+    const hi=Math.max(...s90),lo=Math.min(...s90),pos=(p-lo)/((hi-lo)||1)*100;
+    const k=Math.max(3,Math.round(s30.length/40)),lows=[],highs=[];
+    for(let i=k;i<s30.length-k;i++){const w=s30.slice(i-k,i+k+1);if(s30[i]===Math.min(...w))lows.push(s30[i]);if(s30[i]===Math.max(...w))highs.push(s30[i])}
+    let sup=Math.max(...lows.filter(x=>x<p*0.995),-Infinity);if(!isFinite(sup))sup=Math.min(...s30);if(sup>=p)sup=Math.min(...s90);
+    let res=Math.min(...highs.filter(x=>x>p*1.005),Infinity);if(!isFinite(res)){const h2=s90.filter(x=>x>p*1.005);res=h2.length?Math.max(...h2):null}
+    let score=0;score+=p>a50?1:-1;score+=a20>a50?1:-1;score+=ch7>0?1:-1;score+=r>55?1:r<45?-1:0;
+    const st=score>=3?4:score>=1?3:score<=-3?0:score<=-1?1:2;
+    return {p,a20,a50,m20,m50,r,ch7,ch30,vol,hi,lo,pos,sup,res,score,st}}
+  function chart(d,A){const W=340,H=190,PL=4,PR=62,PT=10,PB=22,s=d.s90,n=s.length;
+    const vals=s.concat([A.sup,A.res||A.hi]).filter(v=>v!=null);let mn=Math.min(...vals),mx=Math.max(...vals);const pad=(mx-mn)*.06;mn-=pad;mx+=pad;
+    const X=i=>PL+i/(n-1)*(W-PL-PR),Y=v=>PT+(1-(v-mn)/(mx-mn))*(H-PT-PB);
+    const line=(arr,c,w,dash)=>{const pts=arr.map((v,i)=>v==null?null:`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).filter(Boolean).join(" ");return `<polyline points="${pts}" fill="none" stroke="var(${c})" stroke-width="${w}" ${dash?'stroke-dasharray="4 3"':""} stroke-linejoin="round" stroke-linecap="round"/>`};
+    const hl=(v,c,lab)=>v==null?"":`<line x1="${PL}" x2="${W-PR}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="var(${c})" stroke-width="1.2" stroke-dasharray="2 3"/><rect x="${W-PR+3}" y="${(Y(v)-9).toFixed(1)}" width="${PR-5}" height="18" rx="5" fill="var(${c})" opacity=".16"/><text x="${W-PR+7}" y="${(Y(v)+4).toFixed(1)}" font-size="9.5" font-weight="700" fill="var(${c})">${usd(v)}</text>`;
+    const xl=[0,Math.floor((n-1)/2),n-1].map((i,k)=>`<text x="${X(i).toFixed(1)}" y="${H-6}" font-size="9.5" fill="var(--muted)" text-anchor="${k===0?"start":k===2?"end":"middle"}">${F(new Date(d.t90[i]).toLocaleDateString(LOC,{day:"numeric",month:"short"}))}</text>`).join("");
+    const up=s[n-1]>=s[0],col=up?"--up":"--down";
+    return `<svg class="cc-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${T.chart}" direction="ltr">
+      <defs><linearGradient id="ccg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(${col})" stop-opacity=".22"/><stop offset="1" stop-color="var(${col})" stop-opacity="0"/></linearGradient></defs>
+      ${hl(A.res,"--down")}${hl(A.sup,"--up")}
+      <polygon points="${X(0)},${H-PB} ${s.map((v,i)=>`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(" ")} ${X(n-1)},${H-PB}" fill="url(#ccg)"/>
+      ${line(A.m50,"--g4",1.6,1)}${line(A.m20,"--g2",1.6,1)}${line(s,col,2.2)}
+      <circle cx="${X(n-1).toFixed(1)}" cy="${Y(s[n-1]).toFixed(1)}" r="4" fill="var(${col})" stroke="var(--surface)" stroke-width="2"/>${xl}</svg>
+      <div class="cc-leg"><span><i style="background:var(${col})"></i>${T.price}</span><span><i class="d" style="--c:var(--g2)"></i>${T.sma20}</span><span><i class="d" style="--c:var(--g4)"></i>${T.sma50}</span><span><i class="d" style="--c:var(--up)"></i>${T.sup}</span><span><i class="d" style="--c:var(--down)"></i>${T.res}</span></div>`}
+  function render(id,d,A){const meta=COINS.find(c=>c[0]===id),sym=meta[1],name=EN?meta[3]:meta[2],c=d.c;
+    const stCls=["dn2","dn","mid","up","up2"][A.st];
+    const rz=A.r>=70?2:A.r<=30?0:1,vz=A.vol<2?0:A.vol<4?1:2;
+    const L=dir==="long";
+    const stop=L?A.sup*0.99:(A.res?A.res*1.01:A.p*1.05),target=L?(A.res||A.p+(A.p-stop)*2):A.sup,risk=Math.abs(A.p-stop),rew=Math.abs(target-A.p),rr=risk?rew/risk:0;
+    const chk=[[T.c1,L?A.score>0:A.score<0],[L?T.c2L:T.c2S,L?(A.p-A.sup)/A.p<0.03:(A.res?(A.res-A.p)/A.p<0.03:false)],[L?T.c3L:T.c3S,L?A.r<70:A.r>30],[T.c4,rr>=2],[T.c5,A.vol<5],[T.c6,null]];
+    const metN=chk.filter(x=>x[1]===true).length;
+    const ring=`<svg viewBox="0 0 36 36" class="cc-ring" aria-hidden="true"><circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--line)" stroke-width="3.5"/><circle cx="18" cy="18" r="15.5" fill="none" stroke="var(${metN>=5?"--up":metN>=3?"--hl":"--down"})" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="${(metN/6*97.4).toFixed(1)} 97.4" transform="rotate(-90 18 18)"/></svg>`;
+    const deep=typeof window.__bgAsk==="function"?`<button type="button" class="cc-deep" id="ccDeep"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/></svg>${T.deep}</button>`:"";
+    $("ccOut").innerHTML=`
+    <div class="cc-card cc-sum ${stCls}">
+      <div class="cc-row"><div><span class="cc-sym">${sym}</span><span class="cc-nm">${name}</span></div><div class="cc-px"><b>${usd(c.price)}</b><small class="${c.chg>=0?"up":"down"}">${pct(+c.chg,2)} · 24h</small></div></div>
+      <div class="cc-state"><span>${T.state}</span><b>${T.states[A.st]}</b></div>
+      <div class="cc-meter" aria-hidden="true">${[0,1,2,3,4].map(i=>`<i class="${i===A.st?"on":""}"></i>`).join("")}</div>
+      <p class="cc-note">${T.stateNote}</p>${deep}
+    </div>
+    <div class="cc-card"><h4>${T.chart}</h4>${chart(d,A)}</div>
+    <div class="cc-card"><h4>${T.metrics}</h4><div class="cc-grid">
+      <div><span>${T.rsi}</span><b>${F(Math.round(A.r))}</b><div class="cc-gauge"><i style="left:${Math.min(100,Math.max(0,A.r))}%"></i></div><small>${T.rsiZ[rz]}</small></div>
+      <div><span>${T.vol}</span><b dir="ltr">${A.vol.toFixed(1)}%</b><small>${T.volZ[vz]}</small></div>
+      <div><span>${T.ch7}</span><b dir="ltr" class="${A.ch7>=0?"up":"down"}">${pct(A.ch7)}</b></div>
+      <div><span>${T.ch30}</span><b dir="ltr" class="${A.ch30>=0?"up":"down"}">${pct(A.ch30)}</b></div>
+      <div class="w2"><span>${T.range}</span><div class="cc-rng"><i style="left:${Math.min(100,Math.max(0,A.pos)).toFixed(0)}%"></i></div><small dir="ltr" class="cc-rl"><span>${usd(A.lo)}</span><span>${usd(A.hi)}</span></small></div>
+    </div></div>
+    <div class="cc-card"><h4>${T.levels}</h4><div class="cc-lv">
+      <div class="r"><span>${T.res}</span><b>${A.res?usd(A.res):T.none}</b>${A.res?`<small dir="ltr">${pct((A.res/A.p-1)*100)}</small>`:""}</div>
+      <div class="now"><span>${T.price}</span><b>${usd(A.p)}</b></div>
+      <div class="s"><span>${T.sup}</span><b>${usd(A.sup)}</b><small dir="ltr">${pct((A.sup/A.p-1)*100)}</small></div>
+      <div class="x"><span>${T.hi90}</span><b>${usd(A.hi)}</b></div><div class="x"><span>${T.lo90}</span><b>${usd(A.lo)}</b></div>
+    </div></div>
+    <div class="cc-card"><div class="cc-chkh">${ring}<div><h4>${T.check}</h4><b class="cc-score">${F(metN)} / ${F(6)}</b></div></div>
+      <ul class="cc-chk">${chk.map(([t,v])=>`<li><i class="${v===true?"met":v===false?"not":"unk"}">${v===true?T.met:v===false?T.not:T.unk}</i><span>${t}</span></li>`).join("")}</ul>
+      <p class="cc-verdict">${T.verdict(metN)}</p></div>
+    <div class="cc-card"><h4>${T.plan} · ${L?"Long":"Short"}</h4><div class="cc-plan">
+      <div><span>${T.entry}</span><b>${usd(A.p)}</b></div><div class="st"><span>${T.stop}</span><b>${usd(stop)}</b><small dir="ltr">${pct((stop/A.p-1)*100)}</small></div>
+      <div class="tg"><span>${T.target}</span><b>${usd(target)}</b><small dir="ltr">${pct((target/A.p-1)*100)}</small></div><div><span>${T.rr}</span><b dir="ltr" class="${rr>=2?"up":"down"}">1 : ${rr.toFixed(1)}</b></div></div>
+      <p class="cc-note">${T.planNote}</p><button type="button" class="cc-calc" id="ccCalc">${T.toCalc}</button></div>
+    <div class="cc-card"><h4>${T.scen}</h4><div class="scn">
+      <div class="u"><b>${T.bull}</b>${T.bullT(A.res?usd(A.res):null,A.res?usd(Math.max(A.hi,A.res*1.05)):"")}</div>
+      <div class="d"><b>${T.bear}</b>${T.bearT(usd(A.sup),usd(Math.min(A.lo,A.sup*0.95)))}</div></div></div>
+    <p class="cc-disc">${T.disc}</p>`;
+    $("ccCalc").addEventListener("click",()=>{const set=(i,v)=>{const el=$(i);if(el){el.value=v;el.dispatchEvent(new Event("input",{bubbles:true}));el.dispatchEvent(new Event("change",{bubbles:true}))}};
+      set("cEn",+A.p.toPrecision(6));set("cSl",+stop.toPrecision(6));set("cSide",dir);location.hash="#guide";setTimeout(()=>{const c=$("cEn");if(c)c.scrollIntoView({block:"center"})},120)});
+    const dp=$("ccDeep");if(dp)dp.addEventListener("click",()=>{const msg=`تحلیل عمیق ${sym} (${name}) برای ${L?"لانگ":"شورت"} را بده. اعداد اپ: قیمت ${usd(A.p)}، تغییر ۷ روزه ${pct(A.ch7)}، ۳۰ روزه ${pct(A.ch30)}، RSI ${Math.round(A.r)}، نوسان روزانه ${A.vol.toFixed(1)}٪، حمایت ${usd(A.sup)}، مقاومت ${A.res?usd(A.res):"ندارد"}، وضعیت روند «${T.states[A.st]}». خودت داده زنده را هم بررسی کن، چک‌لیست را برای این جهت مرور کن و سناریوها را با سطوح دقیق بگو.`;window.__bgAsk(msg)});
+  }
+  async function run(){const my=++seq;$("ccOut").innerHTML=`<div class="cc-card cc-wait"><span class="thinking">${T.loading}</span></div>`;
+    try{const d=await getData(sel);if(my!==seq)return;render(sel,d,analyse(d))}catch(e){if(my!==seq)return;$("ccOut").innerHTML=`<div class="cc-card cc-wait">${T.err}</div>`}}
+  let started=false;const start=()=>{if(!started&&!$("coach").hidden){started=true;run()}};
+  addEventListener("hashchange",start);start();
+  new MutationObserver(start).observe($("coach"),{attributes:true,attributeFilter:["hidden"]});
 })();
 </script>
 
