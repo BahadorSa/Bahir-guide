@@ -1,6 +1,6 @@
 {
- "name": "B. Trade Guide",
- "short_name": "B. Trade Guide",
+ "name": "Trade Guide",
+ "short_name": "Trade Guide",
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
