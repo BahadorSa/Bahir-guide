@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Bahir Guide">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACoklEQVR4Xu3d3W3UQBhA0Q2iB8JbCkgTlEAHlEYHlEAT6QHRBS88LAuz8pWtsRef85yMop1P1z+xvE/PL68X+Jd3PhZGDAeGg045UA465UA56JQD5aBTDobe+2wO5cO3L9d/z8/PX3f885QD5xx0yoFy0Dkh/e3Hpz+ea/n4/a1/mP8bhxUcVuiUA+WgUw6GXK3s4+Y2+cjox+bcVleOHSycjDvWr7CE4Zhtq33dap07DAeuVuiUA+WgUw6Ug045UA66/W+fH+p5a67tPxyT3TzxNTL6sVM9IXauc46Fk3HH+hUeyImGY6t93Wqd4zvRcFAZDlzK0ikHykGnHCgHnXKgHHTKgXLQKQfKQaccKAedcqAcdMqBctDNe/p84fsk9n2XDdcmHVYWTsYd61egmjEcW+3rVuuw0Izh4EEZDlyt0CkHykGnHCgHnXKgHIex1Tvtt1rnDuXYwfp9Xb/CEvP+8ca10e4e6g1pyoFzDjrlQDnolAPloFMOlINOOVAOOuVAOeiUA+WgUw6Ug045UA465UA5Lpt96+d5vj30XOVYv6/rV3ggp3v6fLS7N18IeqohGDlXOUgMB8pBpxwoB51yoBx0yoFy0CkHQ6e7fX5wc17Zs5By4JyDTjlQDjrlQDnolAPloJtRjq1u7Gy1DgvNGI7LZYN9NRnzzbt9/hBv++bapHLwiAwHrlbolAPloFMOlINOOVAOOuVgaN7t84Pztpa/KQfOOeiUA+WgUw6Ug045UA465UA56JQD5aBTDpSDTjlQDjrlQDnolAPloFMOlIPu6fnltf8Wp+CwgsMKnXKgHHTKgXLQKQfKQaccKAedcqAcdMqBctApB8pBpxwoB51yoBx0yoFy0CkHykGnHCgHnXKgHHTKgXLQKQfKQfcLg9hNy/n5CMgAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAC70lEQVR4Xu3d3U0bQRhA0RClB+CNAmiCEuggpdEBJdAEPSC6iPISAZI3K9/RsOs959keS96rT7Jnf65u7u5/wLl+nvtG+EtAJAIiERCJgEgERCIgEgGRCIhEQCQCIvmV3s1E18+/P37a++PTxA8/yQQiERCJgEgERCIgEr/CTnp7+HSu5u3La/qmL5QJRCIgEgGRCIhEQCR+hW3Llw2vBadeOXmPzATakPX1LIc1ZJ2VBLQVY4/62NUWCIhEQCQCIhEQiYBIBEQiIBIBkQiIZEN7Yd9y3dOX0w4XnHrlwc9UPPQEWl/PclhD1tmp4wY09qiPXW1HjhsQQwiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyezrwtbfOWsj9wBk2dQJtL6eBdfPU+8ByFYCGlLPP2NX42xTJxCXR0AkAiIREImASAREIiASAW3F2KfsjF1tgYBIBLQhQ8bG++PTkHVWmr2ZyrKFY/8tNyH9LxOIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyXEDun15Td/cZ2NX25HjBsQQhw5oyNi4fXkdss5OHf26sIVj//Zw//GgHrmSBYeeQHQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnR98J2ZOatM9czgUgERCIgEgGRCIhEQCQCIhEQybyAxv4PNnY1zjYvIC7S1ICGjI3Jz8Ni2ey9sN09D4tlUycQl0dAJAIiERCJgEgERCIgEgGRCIhEQCQCIpm9F7Yjboq4hglEIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnVzd19WoBjM4FIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASARE8gdOVlbhc4f0YQAAAABJRU5ErkJggg==">
+<title>Bahir Guide</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&family=IBM+Plex+Mono:wght@600&display=swap">
+<style>*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}
+.sharebtn{margin-inline-start:auto;display:flex;align-items:center;gap:6px;font:inherit;font-weight:700;font-size:.9rem;color:var(--g3);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;cursor:pointer}
+.sharebtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sharebtn:focus-visible,.sp-actions button:focus-visible,.sp-actions a:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.sharepanel{margin-top:12px;background:var(--surface);border:1.5px solid var(--g3);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.sharepanel p{margin:0;font-size:.92rem;color:var(--muted)}
+.sharepanel input{font:inherit;font-size:16px;direction:ltr;text-align:left;width:100%;box-sizing:border-box;padding:9px 10px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg)}
+.sp-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
+.sp-actions button,.sp-actions a{font:inherit;font-weight:800;font-size:.92rem;text-align:center;text-decoration:none;border:0;border-radius:12px;padding:11px 8px;cursor:pointer}
+.sp-copy{background:var(--g3);color:#fff}
+.sp-wa{background:#25d366;color:#0b2e17}
+.sp-native{background:var(--bg);color:var(--fg);border:1.5px solid var(--line)!important}
+.sp-msg{font-size:.85rem;color:var(--up);font-weight:700;min-height:1.2em}
+
+.langbtn{display:flex;align-items:center;justify-content:center;min-width:44px;font:inherit;font-weight:800;font-size:.9rem;text-decoration:none;color:var(--fg);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:8px 10px}
+.langbtn:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+</style>
+<style>
+/* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --line:#dfe3ea; --fg:#18202c; --muted:#5d6878;
+  --up:#13a36b; --down:#e0413a; --up-soft:#e3f6ee; --down-soft:#fde9e8; --hl:#d39b12;
+  --g1:#e0413a; --g2:#c98a06; --g3:#2f6fe0; --g4:#7b4fd8; --g5:#0e9a95; --g6:#d4560f;
+  --font:"Vazirmatn",Tahoma,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --surface:#18202b; --line:#2a3442; --fg:#e8edf4; --muted:#9aa6b6;
+  --up:#2fcf8c; --down:#ff6158; --up-soft:#133227; --down-soft:#3a1c1c; --hl:#f0be44;
+  --g1:#ff6a62; --g2:#f0b334; --g3:#6b9cff; --g4:#a888ff; --g5:#3cc9c3; --g6:#ff8a4c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --surface:#18202b; --line:#2a3442; --fg:#e8edf4; --muted:#9aa6b6;
+  --up:#2fcf8c; --down:#ff6158; --up-soft:#133227; --down-soft:#3a1c1c; --hl:#f0be44;
+  --g1:#ff6a62; --g2:#f0b334; --g3:#6b9cff; --g4:#a888ff; --g5:#3cc9c3; --g6:#ff8a4c; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.7}
+.wrap{direction:ltr;max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-left:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+h1{font-size:1.9rem;font-weight:900;margin:0;line-height:1.3;text-wrap:balance}
+.sub{color:var(--muted);margin:4px 0 0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:8px;padding-block:12px;margin-top:12px}
+.tabs a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:10px 8px;border-radius:12px;border:1.5px solid var(--line);color:var(--fg);background:var(--surface)}
+.tabs a:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.tabs a.t1{border-color:var(--g3)} .tabs a.t2{border-color:var(--up)}
+section.part{scroll-margin-top:80px;margin-top:28px}
+.part>h2{font-size:1.45rem;font-weight:900;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+.part>h2 .n{font-family:var(--mono);font-size:.95rem;color:var(--surface);background:var(--fg);border-radius:8px;padding:2px 9px}
+.part>p.lead{color:var(--muted);margin:0 0 18px}
+/* term groups */
+.group{margin-top:22px}
+.ghead{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.dot{width:14px;height:14px;border-radius:4px;background:var(--c)}
+.ghead h3{margin:0;font-size:1.12rem;font-weight:800}
+.ghead .cnt{color:var(--muted);font-size:.85rem}
+.ghead .why{color:var(--muted);font-size:.88rem;flex-basis:100%;margin-top:-6px;padding-left:24px}
+.ghead{flex-wrap:wrap}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:12px 14px;min-width:0}
+.card .en{font-family:var(--mono);font-weight:600;direction:ltr;text-align:left;color:var(--c);font-size:1rem;letter-spacing:.02em}
+.card .fa{font-weight:800;font-size:1.05rem;margin-top:2px}
+.card .d{color:var(--muted);font-size:.9rem;margin-top:4px;line-height:1.6}
+/* candle part */
+.block{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:16px}
+.block h3{margin:0 0 4px;font-size:1.15rem;font-weight:800}
+.block>p{margin:0 0 12px;color:var(--muted);font-size:.92rem}
+.row-title{font-weight:800;margin:14px 0 8px;display:flex;align-items:center;gap:8px}
+.row-title .sw{width:12px;height:12px;border-radius:3px}
+.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media (max-width:520px){.strip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cell{border-radius:12px;padding:8px 6px 10px;text-align:center;background:var(--soft)}
+.cell svg{width:100%;max-width:70px;height:auto;display:block;margin:0 auto}
+.cell .lab{font-weight:700;font-size:.85rem;line-height:1.4;margin-top:4px}
+.meter{display:flex;gap:3px;justify-content:center;margin-top:6px;direction:ltr}
+.meter i{width:10px;height:6px;border-radius:2px;background:var(--line)}
+.meter i.on{background:var(--k)}
+.cell .lvl{font-size:.78rem;color:var(--muted)}
+.patterns{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.pat{border:1px solid var(--line);border-radius:14px;padding:12px;min-width:0;background:var(--bg)}
+.pat svg{width:100%;height:auto;max-height:150px;display:block}
+.pat .name{font-weight:800;font-size:1.02rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tag{font-size:.75rem;font-weight:700;padding:1px 8px;border-radius:999px}
+.tag.up{background:var(--up-soft);color:var(--up)} .tag.down{background:var(--down-soft);color:var(--down)} .tag.mid{background:var(--line);color:var(--fg)}
+.pat .d{color:var(--muted);font-size:.9rem;margin-top:4px}
+.anat{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.anat svg{width:240px;max-width:100%;height:auto}
+.anat ul{margin:0;padding-left:18px;font-size:.92rem;min-width:0;flex:1}
+.tip{display:flex;gap:12px;align-items:flex-start;border-radius:14px;padding:14px 16px;margin-top:16px;background:var(--surface);border:1.5px dashed var(--hl)}
+.tip b{color:var(--hl)}
+
+/* app shell */
+.wrap{padding-block:16px calc(84px + env(safe-area-inset-bottom,0px))}
+.bnav{position:fixed;inset:auto 0 0 0;z-index:20;display:flex;justify-content:center;gap:4px;direction:ltr;background:var(--surface);border-top:1px solid var(--line);padding-top:6px;padding-bottom:calc(6px + env(safe-area-inset-bottom,0px));padding-left:max(8px,env(safe-area-inset-left,0px));padding-left:max(8px,env(safe-area-inset-right,0px));box-shadow:0 -6px 20px rgba(0,0,0,.06)}
+.bnav a{flex:1;max-width:120px;min-width:0;letter-spacing:-.01em;display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:var(--muted);font-size:.8rem;font-weight:700;padding:6px 4px;border-radius:12px}
+.bnav a{font-size:.72rem}
+.bnav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bnav a.on{color:var(--g3);background:color-mix(in srgb,var(--g3) 12%,transparent)}
+.bnav a:focus-visible{outline:3px solid var(--g3)}
+section.part{margin-top:14px}
+.tools{position:sticky;top:env(safe-area-inset-top,0px);z-index:4;background:var(--bg);padding-block:8px;display:flex;flex-direction:column;gap:8px}
+.search{display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:0 12px}
+.search:focus-within{border-color:var(--g3)}
+.search svg{width:20px;height:20px;fill:none;stroke:var(--muted);stroke-width:2;flex:none}
+.search input{flex:1;min-width:0;border:0;background:transparent;color:var(--fg);font:inherit;font-size:16px;padding:11px 0;outline:none}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;font-size:.85rem;font-weight:700;border-radius:999px;padding:5px 12px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.chip i{width:9px;height:9px;border-radius:3px;background:var(--c,var(--fg))}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible,.btn:focus-visible,.flash:focus-visible,.reset:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.empty{text-align:center;color:var(--muted);padding:30px 0}
+mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;border-radius:3px}
+.prog{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-weight:700;font-size:.9rem}
+.bar{flex:1;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--up);border-radius:99px;transition:width .3s}
+.flash{margin-top:12px;width:100%;min-height:230px;border:1px solid var(--line);border-top:6px solid var(--c);border-radius:20px;background:var(--surface);color:var(--fg);font:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px;cursor:pointer;text-align:center}
+.fg-name{font-size:.8rem;font-weight:700;color:var(--c)}
+.fen{font-family:var(--mono);font-size:2rem;font-weight:600;direction:ltr;color:var(--c)}
+.fback{display:flex;flex-direction:column;gap:4px}
+.ffa{font-size:1.4rem;font-weight:900}
+.fd{color:var(--muted)}
+.fhint{color:var(--muted);font-size:.85rem}
+.answer{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.btn{font:inherit;font-weight:800;font-size:1rem;border-radius:14px;padding:13px;border:0;cursor:pointer}
+.btn.no{background:var(--down-soft);color:var(--down)} .btn.yes{background:var(--up-soft);color:var(--up)}
+.btn:disabled{opacity:.45;cursor:default}
+.reset{display:block;margin:16px auto 0;background:none;border:0;color:var(--muted);font:inherit;text-decoration:underline;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+
+.warn{border-radius:16px;padding:16px;background:var(--down-soft);border:1.5px solid var(--down);margin-top:4px}
+.warn h3{margin:0 0 6px;color:var(--down);font-size:1.15rem}
+.warn p{margin:6px 0;font-size:.93rem}
+.lev{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;margin:10px 0}
+.lev div{background:var(--surface);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:2px}
+.lev b{font-family:var(--mono);font-size:1.15rem;direction:ltr;text-align:left}
+.lev span{font-size:.8rem;color:var(--muted);line-height:1.4}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.calc label{display:flex;flex-direction:column;gap:4px;font-size:.85rem;font-weight:700;color:var(--muted);min-width:0}
+.calc input{font:inherit;font-size:16px;font-weight:700;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:9px 10px;direction:ltr;text-align:left;width:100%;box-sizing:border-box;font-variant-numeric:tabular-nums}
+.calc input:focus{outline:none;border-color:var(--g3)}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.res div{background:var(--up-soft);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column}
+.res div+div{background:var(--down-soft)}
+.res.r3{grid-template-columns:1fr 1fr}
+.res.r3 div:first-child{grid-column:1/-1}
+.res .mg{background:var(--bg)!important;border:1px solid var(--line)}
+.res small{font-size:.8rem;color:var(--muted);direction:ltr;text-align:left}
+.note.bad{color:var(--down)!important;font-weight:700}
+.calc select{font:inherit;font-size:16px;font-weight:700;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:9px 10px;width:100%}
+.res span{font-size:.82rem;font-weight:700;color:var(--muted)}
+.res b{font-size:1.5rem;font-weight:900;font-variant-numeric:tabular-nums}
+.note{font-size:.83rem;color:var(--muted);margin:8px 0 0!important}
+.sess{display:flex;flex-direction:column;gap:8px}
+.srow small{display:block;font-size:.72rem;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+.srow{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:center;font-size:.88rem}
+.srow .nm{font-weight:800;display:flex;align-items:center;gap:6px}
+.srow .on-dot{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.srow.open .on-dot{background:var(--up);box-shadow:0 0 0 3px var(--up-soft)}
+.track{position:relative;height:26px;background:var(--bg);border-radius:8px;direction:ltr;overflow:hidden}
+.track i{position:absolute;top:0;bottom:0;border-radius:6px;background:var(--c);opacity:.85}
+.track .now{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--fg)}
+.track .lbl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:var(--fg);font-variant-numeric:tabular-nums}
+.rules{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:.93rem}
+.src ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.src a{color:var(--g3)}
+
+.checks{display:flex;flex-direction:column;gap:6px}
+.checks label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:10px;background:var(--bg);cursor:pointer;font-size:.92rem}
+.checks input{width:20px;height:20px;accent-color:var(--up);flex:none;margin-top:3px}
+.checks label:has(input:checked){background:var(--up-soft)}
+.cstatus{margin-top:10px;border-radius:12px;padding:10px 12px;font-weight:800;text-align:center}
+.cstatus.wait{background:var(--down-soft);color:var(--down)} .cstatus.go{background:var(--up-soft);color:var(--up)}
+.otable{display:flex;flex-direction:column;gap:6px}
+.orow{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:8px 10px;border-radius:10px;background:var(--bg);font-size:.9rem}
+.orow b{font-family:var(--mono);direction:ltr;text-align:left;color:var(--g3);font-size:.85rem}
+.orow b small{display:block;font-family:var(--font);color:var(--fg);font-size:.85rem}
+@media (max-width:420px){.orow{grid-template-columns:1fr;gap:2px}}
+.wr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.wr div{background:var(--bg);border-radius:12px;padding:10px 6px;text-align:center;display:flex;flex-direction:column;gap:4px}
+.wr b{font-size:1.3rem;font-weight:900;font-variant-numeric:tabular-nums}
+.wr span{font-size:.8rem;color:var(--muted)}
+.wr .bar2{height:6px;border-radius:9px;background:var(--line);overflow:hidden;direction:ltr}
+.wr .bar2 i{display:block;height:100%;background:var(--g3)}
+.psy{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.psy div{background:var(--bg);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:3px;border-left:4px solid var(--g4)}
+.psy span{font-size:.88rem;color:var(--muted)}
+.scam{border-color:var(--down)}
+.scam h3{color:var(--down)}
+.pat .pts{font-size:.85rem;margin:4px 0 0;padding-left:16px;color:var(--muted)}
+
+.aibox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.drop{display:flex;align-items:center;justify-content:center;min-height:120px;border:2px dashed var(--line);border-radius:14px;cursor:pointer;text-align:center;padding:10px;background:var(--bg);position:relative;overflow:hidden}
+.drop:focus-within{border-color:var(--g3)}
+.drop input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.drop span{display:flex;flex-direction:column;gap:4px;color:var(--g3)}
+.drop small{color:var(--muted)}
+.drop img{max-height:260px;border-radius:10px}
+.q{display:flex;flex-direction:column;gap:4px;font-size:.85rem;font-weight:700;color:var(--muted)}
+.q textarea{font:inherit;font-size:16px;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:9px 10px;resize:vertical}
+.q textarea:focus,.calc input[type=text]:focus{outline:none;border-color:var(--g3)}
+.calc input[type=text]{text-align:left}
+.aibtns{display:flex;gap:10px}
+.aibtns .btn{flex:1}
+.aiwarn{margin-top:14px;font-size:.85rem;color:var(--muted);border-left:4px solid var(--hl);padding:6px 12px;background:var(--surface);border-radius:8px}
+#aiOut{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.ai-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.ai-card h4{margin:0 0 6px;font-size:1rem;font-weight:800;display:flex;align-items:center;gap:8px}
+.ai-card p{margin:0;font-size:.93rem}
+.ai-card ul{margin:0;padding-left:18px;font-size:.92rem}
+.ai-sum{border-width:2px;border-color:var(--g3)}
+.scn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:480px){.scn{grid-template-columns:1fr}}
+.scn div{border-radius:12px;padding:10px 12px;font-size:.92rem}
+.scn .u{background:var(--up-soft)} .scn .d{background:var(--down-soft)}
+.scn b{display:block;margin-bottom:4px}
+.scn .u b{color:var(--up)} .scn .d b{color:var(--down)}
+.cl{display:flex;flex-direction:column;gap:6px}
+.cl div{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:.9rem}
+.cl i{font-style:normal;font-size:.75rem;font-weight:800;border-radius:999px;padding:1px 8px;white-space:nowrap}
+.cl .met{background:var(--up-soft);color:var(--up)} .cl .not{background:var(--down-soft);color:var(--down)} .cl .unk{background:var(--line);color:var(--fg)}
+.cl small{display:block;color:var(--muted)}
+.thinking{display:flex;align-items:center;gap:10px;color:var(--muted)}
+.thinking::before{content:"";width:16px;height:16px;border-radius:50%;border:2.5px solid var(--line);border-top-color:var(--g3);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.thinking::before{animation:none}}
+
+.live{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.coin{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.coin .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.coin .sym{font-family:var(--mono);font-weight:600;font-size:1.05rem}
+.coin .sym small{font-family:var(--font);color:var(--muted);font-size:.8rem;margin-left:6px}
+.coin .px{font-weight:900;font-size:1.25rem;direction:ltr;font-variant-numeric:tabular-nums}
+.coin .chg{font-size:.85rem;font-weight:800;direction:ltr;display:inline-block}
+.coin .chg.up{color:var(--up)} .coin .chg.down{color:var(--down)}
+.coin svg{width:100%;height:46px;display:block}
+.chips2{display:flex;flex-wrap:wrap;gap:6px}
+.chips2 span{font-size:.78rem;font-weight:700;border-radius:999px;padding:2px 9px}
+.chips2 .up{background:var(--up-soft);color:var(--up)} .chips2 .down{background:var(--down-soft);color:var(--down)} .chips2 .mid{background:var(--line);color:var(--fg)} .chips2 .hl{background:color-mix(in srgb,var(--hl) 22%,transparent);color:var(--fg)}
+.howto{margin-top:10px;font-size:.88rem;color:var(--muted)}
+.howto summary{cursor:pointer;font-weight:700;color:var(--g3)}
+.howto ul{padding-left:18px}
+.alerts{display:flex;flex-direction:column;gap:6px}
+.alert{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;background:var(--bg);border-radius:10px;padding:8px 10px;font-size:.9rem}
+.alert i{width:10px;height:10px;border-radius:50%;margin-top:7px;background:var(--muted)}
+.alert.up i{background:var(--up)} .alert.down i{background:var(--down)} .alert.warn i{background:var(--hl)}
+.alert small{display:block;color:var(--muted);font-size:.78rem}
+
+[hidden]{display:none!important}
+.chat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.msgs{display:flex;flex-direction:column;gap:8px;max-height:60vh;overflow-y:auto;padding:2px}
+.msg{max-width:88%;border-radius:16px;padding:9px 12px;font-size:.93rem;line-height:1.75;min-width:0;overflow-wrap:anywhere}
+.msg.me{align-self:flex-start;background:var(--g3);color:#fff;border-bottom-right-radius:4px}
+.msg.bot{align-self:flex-end;background:var(--bg);border-bottom-left-radius:4px}
+.msg p{margin:0 0 6px} .msg p:last-child{margin:0}
+.msg ul{margin:4px 0;padding-left:18px}
+.msg h5{margin:6px 0 2px;font-size:.95rem}
+.sugg{display:flex;flex-wrap:wrap;gap:6px}
+.sugg .chip{font-weight:600}
+.composer{display:flex;gap:8px;align-items:flex-end}
+.composer textarea{flex:1;min-width:0;font:inherit;font-size:16px;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:9px 12px;resize:none;max-height:140px}
+.composer textarea:focus{outline:none;border-color:var(--g3)}
+.iconbtn,.send{flex:none;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:0;position:relative}
+.iconbtn{background:var(--bg);border:1.5px solid var(--line);color:var(--muted)}
+.iconbtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.iconbtn svg,.send svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.send{background:var(--g3);color:#fff}
+.send svg{transform:scaleX(-1);fill:currentColor;stroke:none}
+.send.stop{background:var(--down)} .send.stop svg{transform:none}
+.send:disabled{opacity:.4}
+.iconbtn:focus-within,.send:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.attach{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--muted)}
+.attach img{width:44px;height:44px;object-fit:cover;border-radius:8px}
+.attach button{margin-left:auto;background:var(--line);border:0;border-radius:50%;width:26px;height:26px;cursor:pointer;color:var(--fg);font-size:1rem}
+.chatfoot{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.chatfoot .reset{margin:0}
+
+.brand{display:flex;align-items:center;gap:12px}
+.avatar{width:52px;height:52px;border-radius:14px;flex:none;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAC70lEQVR4Xu3d3U0bQRhA0RClB+CNAmiCEuggpdEBJdAEPSC6iPISAZI3K9/RsOs959keS96rT7Jnf65u7u5/wLl+nvtG+EtAJAIiERCJgEgERCIgEgGRCIhEQCQCIvmV3s1E18+/P37a++PTxA8/yQQiERCJgEgERCIgEr/CTnp7+HSu5u3La/qmL5QJRCIgEgGRCIhEQCR+hW3Llw2vBadeOXmPzATakPX1LIc1ZJ2VBLQVY4/62NUWCIhEQCQCIhEQiYBIBEQiIBIBkQiIZEN7Yd9y3dOX0w4XnHrlwc9UPPQEWl/PclhD1tmp4wY09qiPXW1HjhsQQwiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyezrwtbfOWsj9wBk2dQJtL6eBdfPU+8ByFYCGlLPP2NX42xTJxCXR0AkAiIREImASAREIiASAW3F2KfsjF1tgYBIBLQhQ8bG++PTkHVWmr2ZyrKFY/8tNyH9LxOIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyXEDun15Td/cZ2NX25HjBsQQhw5oyNi4fXkdss5OHf26sIVj//Zw//GgHrmSBYeeQHQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnR98J2ZOatM9czgUgERCIgEgGRCIhEQCQCIhEQybyAxv4PNnY1zjYvIC7S1ICGjI3Jz8Ni2ey9sN09D4tlUycQl0dAJAIiERCJgEgERCIgEgGRCIhEQCQCIpm9F7Yjboq4hglEIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnVzd19WoBjM4FIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASARE8gdOVlbhc4f0YQAAAABJRU5ErkJggg==) center/cover}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <div class="brand"><span class="avatar logo" aria-hidden="true"></span><h1 dir="ltr">Bahir Guide</h1><a class="langbtn" href="index.html" lang="fa" onclick="try{localStorage.setItem('bg-lang','fa')}catch(e){}">فا</a><button type="button" class="sharebtn" id="shareBtn" aria-expanded="false" aria-controls="sharePanel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>Share</button></div>
+  <div class="sharepanel" id="sharePanel" hidden>
+    <p>Send this link to family or friends. It opens without a Claude account.</p>
+    <input id="shareUrl" type="text" readonly value="https://bahadorsa.github.io/Bahir-guide/en.html" aria-label="App link">
+    <div class="sp-actions">
+      <button type="button" class="sp-copy" id="spCopy">Copy link</button>
+      <a class="sp-wa" id="spWa" href="https://wa.me/?text=Crypto%20trading%20guide%20app%3A%20https%3A//bahadorsa.github.io/Bahir-guide/en.html" target="_blank" rel="noopener">WhatsApp</a>
+      <button type="button" class="sp-native" id="spNative">More…</button>
+    </div>
+    <div class="sp-msg" id="spMsg" aria-live="polite"></div>
+  </div>
+  <p class="sub">40 key terms and how to read candles, grouped and illustrated</p>
+
+  
+
+  <section class="part" id="assistant">
+    <h2><span class="n">●</span>Live market</h2>
+    <p class="lead">Prices and a few simple indicators from CoinGecko. They show the current state, not buy or sell signals.</p>
+    <div id="live" class="live"><div class="ai-card thinking" id="liveWait">Loading data…</div></div>
+    <p class="note" id="liveNote"></p>
+    <details class="howto"><summary>How are these indicators calculated?</summary>
+      <ul>
+        <li><b>Trend:</b> Current price compared with the average of the last 50 points of the 90-day chart (each point is about 18 hours, so roughly a 37-day average).</li>
+        <li><b>Averages:</b> If the 20-point average (about 15 days) is above the 50-point average it is a “golden cross”; if it is below, a “death cross”.</li>
+        <li><b>RSI 14:</b> On the 30-day chart with points about 6 hours apart. Above 70 is overbought, below 30 is oversold.</li>
+        <li>These are approximate and not identical to TradingView indicators.</li>
+      </ul>
+    </details>
+
+    <div class="block">
+      <h3>Price alerts</h3>
+      <p>This standalone version does not send notifications. For alerts on your phone, set an “Alert” on a price or indicator in your exchange app or TradingView.</p>
+    </div>
+  </section>
+
+  <section class="part" id="terms">
+    <h2><span class="n">1</span>Trading terms</h2>
+    <p class="lead">Each color is a group. Learn the red group first; without it no trade is safe.</p>
+    <div class="tools">
+      <label class="search" for="q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="q" type="search" placeholder="Search: e.g. SL or stop loss" autocomplete="off"></label>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div id="groups"></div>
+    <p class="empty" id="empty" hidden>Nothing found. Try another word.</p>
+  </section>
+
+  <section class="part" id="candles">
+    <h2><span class="n">2</span>Candles and candlestick patterns</h2>
+    <p class="lead"><span style="color:var(--up);font-weight:700">Green = buyers won</span> · <span style="color:var(--down);font-weight:700">Red = sellers won</span></p>
+
+    <div class="block">
+      <h3>Anatomy of a candle</h3>
+      <div class="anat">
+        <svg viewBox="0 0 240 170" role="img" aria-label="Parts of a candle">
+          <line x1="55" y1="10" x2="55" y2="160" stroke="var(--up)" stroke-width="3"/>
+          <rect x="38" y="50" width="34" height="70" rx="3" fill="var(--up)"/>
+          <g direction="ltr" text-anchor="start" fill="var(--fg)" font-family="Vazirmatn,Tahoma,sans-serif" font-size="12">
+            <line x1="62" y1="25" x2="110" y2="25" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="29">High · upper wick</text>
+            <line x1="75" y1="50" x2="110" y2="55" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="59">Close price</text>
+            <line x1="75" y1="85" x2="110" y2="88" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="92">Body</text>
+            <line x1="75" y1="120" x2="110" y2="118" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="122">Open price</text>
+            <line x1="62" y1="145" x2="110" y2="148" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="152">Low · lower wick</text>
+          </g>
+        </svg>
+        <ul>
+          <li><b>A big body</b> means one side clearly won.</li>
+          <li><b>A long wick</b> means price got there but was pushed back.</li>
+          <li><b>A small body</b> means indecision and balance between buyers and sellers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Single-candle strength</h3>
+      <p>From weak to strong: the bigger the body, the stronger the move.</p>
+      <div class="row-title"><span class="sw" style="background:var(--up)"></span>Bullish candles · buyer strength</div>
+      <div class="strip" id="bulls"></div>
+      <div class="row-title"><span class="sw" style="background:var(--down)"></span>Bearish candles · seller strength</div>
+      <div class="strip" id="bears"></div>
+    </div>
+
+    <div class="block">
+      <h3>Seller strength after a green candle</h3>
+      <p>Look at the size of the red candles that follow the green one.</p>
+      <div class="patterns" id="sellers"></div>
+    </div>
+
+    <div class="block">
+      <h3>Reversal patterns (possible change of direction)</h3>
+      <p>The candles inside the yellow circle are the signal.</p>
+      <div class="patterns" id="reversals"></div>
+    </div>
+
+    <div class="tip"><span style="font-size:1.4rem;line-height:1" aria-hidden="true">★</span>
+      <div><b>Golden tip:</b> No pattern is certain on its own. Look at it together with support and resistance and wait for the next confirming candle; always use a stop loss.</div>
+    </div>
+  </section>
+
+
+  <section class="part" id="analysis">
+    <h2><span class="n">3</span>Technical analysis</h2>
+    <p class="lead">Market structure, chart patterns and four popular tools, all illustrated.</p>
+
+    <div class="block">
+      <h3>Market structure: read the trend from highs and lows</h3>
+      <p>HH = higher high · HL = higher low · LH = lower high · LL = lower low</p>
+      <div class="patterns" id="structure"></div>
+    </div>
+
+    <div class="block">
+      <h3>Important chart patterns</h3>
+      <p>A pattern is confirmed only when price breaks the neckline or a side of the pattern and a candle closes outside it. Fake breakouts are common.</p>
+      <div class="patterns" id="chartpats"></div>
+    </div>
+
+    <div class="block">
+      <h3>Four popular tools</h3>
+      <p>No indicator is a signal on its own; read it together with market structure and levels.</p>
+      <div class="patterns" id="indis"></div>
+    </div>
+  </section>
+
+  <section class="part" id="guide">
+    <h2><span class="n">4</span>Practical guide</h2>
+    <p class="lead">For crypto: a position calculator with leverage, high-volume hours and key rules from reliable sources.</p>
+
+    <div class="warn">
+      <h3>Know this first</h3>
+      <p>In crypto futures with leverage, if price moves a little against you <b>you get liquidated</b> and lose that position’s margin. With 20x leverage, about <b>a 5% move</b> against you is enough.</p>
+      <div class="lev">
+        <div><b>2x</b><span>Liquidated at about a 50% move</span></div>
+        <div><b>5x</b><span>Liquidated at about a 20% move</span></div>
+        <div><b>10x</b><span>Liquidated at about a 10% move</span></div>
+        <div><b>20x</b><span>Liquidated at about a 5% move</span></div>
+        <div><b>50x</b><span>Liquidated at about a 2% move</span></div>
+      </div>
+      <p>Numbers are approximate and ignore fees and maintenance margin. In Europe the regulator (ESMA) allows retail clients at most <b>2x</b> leverage on crypto CFDs, and according to its review <b>74 to 89 percent</b> of retail CFD accounts lose money.</p>
+    </div>
+
+    <div class="block" id="checkBlock">
+      <h3>Checklist before every trade</h3>
+      <p>Don’t enter until everything is ticked.</p>
+      <div class="checks" id="checks"></div>
+      <div class="cstatus" id="cstatus"></div>
+      <button class="reset" id="creset" type="button">Clear ticks for the next trade</button>
+    </div>
+
+    <div class="block">
+      <h3>Crypto position calculator</h3>
+      <p>Size from the stop loss, not from leverage: size ($) = risk amount ÷ stop distance %</p>
+      <div class="calc">
+        <label for="cBal">Account balance (USDT)<input id="cBal" type="number" inputmode="decimal" value="1000" min="0"></label>
+        <label for="cRisk">Risk per trade (%)<input id="cRisk" type="number" inputmode="decimal" value="1" min="0" step="0.5"></label>
+        <label for="cEn">Entry price<input id="cEn" type="number" inputmode="decimal" value="100000" min="0"></label>
+        <label for="cSl">Stop-loss price<input id="cSl" type="number" inputmode="decimal" value="98000" min="0"></label>
+        <label for="cLev">Leverage (1 for spot)<input id="cLev" type="number" inputmode="decimal" value="5" min="1"></label>
+        <label for="cSide">Direction<select id="cSide"><option value="long">Long (buy)</option><option value="short">Short (sell)</option></select></label>
+      </div>
+      <div class="res r3">
+        <div><span>Position size</span><b id="rVal">–</b><small id="rQty"></small></div>
+        <div class="mg"><span>Margin needed</span><b id="rMg">–</b></div>
+        <div><span>Max loss</span><b id="rRisk">–</b></div>
+      </div>
+      <p class="note" id="rNote"></p>
+    </div>
+
+    <div class="block">
+      <h3>High-volume hours in your time</h3>
+      <p id="nowLine"></p>
+      <div class="sess" id="sess"></div>
+      <p class="note">Crypto is open 24/7, but volume is higher when traditional markets are open, especially when London and New York overlap. Weekends have lower volume and more sudden moves.</p>
+      <p class="note" id="fundLine"></p>
+    </div>
+
+    <div class="block">
+      <h3>5 more well-known candle patterns</h3>
+      <p>All of them need <b>the next confirming candle</b> and a support or resistance level.</p>
+      <div class="patterns" id="more"></div>
+    </div>
+
+    <div class="block">
+      <h3>Order types on an exchange</h3>
+      <div class="otable" id="orders"></div>
+    </div>
+
+    <div class="block">
+      <h3>What share of trades must you win?</h3>
+      <p>The better your risk/reward, the lower the win rate you need to break even. Formula: required win rate = 1 ÷ (1 + reward)</p>
+      <div class="wr" id="winrate"></div>
+    </div>
+
+    <div class="block">
+      <h3>Psychology: your main enemy is you</h3>
+      <div class="psy">
+        <div><b>FOMO (fear of missing out)</b><span>Price has jumped and you want in fast. It is usually the worst entry; wait for a pullback.</span></div>
+        <div><b>Revenge trading</b><span>After a loss you want to win it back fast and make your size bigger. After 2 losses in a row, stop for the day.</span></div>
+        <div><b>Overtrading</b><span>You trade every small move. Quality matters, not quantity.</span></div>
+        <div><b>Daily loss limit</b><span>Set a limit, e.g. 3 to 4 percent of the account per day. When you hit it, stop trading.</span></div>
+        <div><b>Moving the stop loss</b><span>Hope replaces the plan. Only move your stop toward profit, never further away.</span></div>
+      </div>
+    </div>
+
+    <div class="block scam">
+      <h3>Security and scams</h3>
+      <ul class="rules">
+        <li><b>Never give your recovery phrase (seed phrase) or private key to anyone.</b> No real exchange or support team will ever ask for it.</li>
+        <li><b>Guaranteed profit means scam.</b> Like “double your coins” or signal sellers who promise sure profits.</li>
+        <li><b>Pump and dump:</b> They push up the price of a small coin, sell themselves, and the price crashes.</li>
+        <li><b>Look-alike address:</b> Before sending, check the full wallet address; don’t copy it from your transaction history.</li>
+        <li><b>Don’t open unknown links or QR codes</b> and install exchange apps only from the official store.</li>
+        <li><b>Two-factor authentication (2FA)</b> should be on, with a different password for every site.</li>
+        <li>If someone offers to “recover lost money”, it is probably a second scam.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h3>Golden rules to start</h3>
+      <ol class="rules">
+        <li><b>Spot first, futures later.</b> You can’t get liquidated on spot. Practise for a few months with spot or a demo account.</li>
+        <li><b>Risk only 1 to 2 percent</b> of your balance per trade. After 10 losses in a row most of your account is still there.</li>
+        <li><b>Size from the stop loss</b> (calculator above), not from how much leverage allows.</li>
+        <li><b>Low leverage (3 to 5x at most)</b> and make sure the stop is well before the liquidation price.</li>
+        <li><b>Never enter without a stop loss</b> and don’t move it back after entry. Risk/reward at least 1 to 2.</li>
+        <li><b>Check the funding.</b> If you hold a position for days, the funding rate can become expensive.</li>
+        <li><b>Altcoins are riskier.</b> They have high volatility and low volume; start with Bitcoin and Ethereum.</li>
+        <li><b>Wait during major US news</b> (like CPI inflation and Federal Reserve rate decisions).</li>
+        <li><b>Check the exchange.</b> In Austria, look it up in the FMA Unternehmensdatenbank to see if it has a MiCA licence. Don’t keep money you aren’t trading on an exchange.</li>
+        <li><b>Keep a journal:</b> reason for entry, stop loss, take profit, result, and how you felt.</li>
+      </ol>
+    </div>
+
+    <div class="block src">
+      <h3>Sources</h3>
+      <ul>
+        <li><a href="https://www.esma.europa.eu/pl/node/84933" target="_blank" rel="noopener">ESMA — CFD restrictions and loss statistics</a></li>
+        <li><a href="https://www.kucoin.com/knowledge-base/Concepts/what-is-funding-rate-in-crypto" target="_blank" rel="noopener">KuCoin — funding rate</a></li>
+        <li><a href="https://thekingfisher.io/en/blogs/position-size-calculator" target="_blank" rel="noopener">Kingfisher — position size, leverage and liquidation</a></li>
+        <li><a href="https://www.fma.gv.at/en/where-should-i-store-my-crypto-assets-fma-advises-consumers-to-check-providers-authorisation/" target="_blank" rel="noopener">FMA — checking a crypto exchange licence</a></li>
+        <li><a href="https://www.binance.com/en/academy/articles/what-order-types-can-you-use-on-binance" target="_blank" rel="noopener">Binance Academy — order types</a></li>
+        <li><a href="https://www.investing.com/academy/analysis/relative-strength-index-definition" target="_blank" rel="noopener">Investing.com — RSI indicator</a></li>
+        <li><a href="https://www.investing.com/academy/analysis/how-to-use-fibonacci-retracements" target="_blank" rel="noopener">Investing.com — Fibonacci</a></li>
+        <li><a href="https://support.kraken.com/articles/chart-patterns" target="_blank" rel="noopener">Kraken — chart patterns</a></li>
+        <li><a href="https://www.esma.europa.eu/sites/default/files/2026-01/Factsheet_on_crypto_fraud_and_scams_CY_EN.pdf" target="_blank" rel="noopener">ESMA — crypto scams</a></li>
+        <li><a href="https://www.dukascopy.com/swiss/spanish/marketwatch/articles/forex-trading-sessions/" target="_blank" rel="noopener">Dukascopy — forex session hours</a></li>
+        <li><a href="https://www.axiory.com/trading-resources/basics/calculate-position-siza-forex/" target="_blank" rel="noopener">Axiory — position size formula (forex)</a></li>
+        <li><a href="https://www.trade-ideas.com/learning-center/candlestick-patterns/" target="_blank" rel="noopener">Trade Ideas — candle patterns</a></li>
+        <li><a href="https://www.fma.gv.at/en/fma-app/" target="_blank" rel="noopener">FMA Austria — checking a broker licence</a></li>
+      </ul>
+      <p class="note">This page is educational and not financial advice.</p>
+    </div>
+  </section>
+
+  <section class="part" id="practice">
+    <h2><span class="n">5</span>Flashcard practice</h2>
+    <p class="lead">Tap the card to see its meaning, then say whether you knew it. Cards you don’t know come back more often.</p>
+    <div class="prog"><div class="bar"><i id="pbar"></i></div><span id="ptext"></span></div>
+    <div class="chips" id="pchips"></div>
+    <button class="flash" id="flash" type="button" aria-live="polite">
+      <span class="fg-name" id="fgroup"></span>
+      <span class="fen" id="fen"></span>
+      <span class="fback" id="fback" hidden><span class="ffa" id="ffa"></span><span class="fd" id="fd"></span></span>
+      <span class="fhint" id="fhint">Tap to see the meaning</span>
+    </button>
+    <div class="answer">
+      <button class="btn no" id="bno" type="button">Didn’t know</button>
+      <button class="btn yes" id="byes" type="button">Knew it</button>
+    </div>
+    <button class="reset" id="reset" type="button">Start over</button>
+  </section>
+</div>
+
+<nav class="bnav" aria-label="Sections">
+  <a href="#assistant" data-v="assistant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg>Market</a>
+  <a href="#terms" data-v="terms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/></svg>Terms</a>
+  <a href="#candles" data-v="candles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v18M17 3v18"/><rect x="4.5" y="7" width="5" height="9" rx="1"/><rect x="14.5" y="5" width="5" height="7" rx="1"/></svg>Candles</a>
+  <a href="#analysis" data-v="analysis"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M4 16l5-6 4 3 7-8"/></svg>Analysis</a>
+  <a href="#guide" data-v="guide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M9 8h6"/></svg>Guide</a>
+  <a href="#practice" data-v="practice"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="13" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v11"/></svg>Practice</a>
+</nav>
+
+<script>
+const GROUPS=[
+ {c:"--g6",t:"Crypto only",why:"Terms you see every day on crypto exchanges",items:[
+  ["Spot","Spot","Buying and selling the coin itself; no leverage and no liquidation risk"],
+  ["Futures / Perpetual","Perpetual futures","A contract on the coin’s price with leverage and no expiry date"],
+  ["Long / Short","Long / Short","Long = profit when price rises · Short = profit when it falls"],
+  ["Liquidation","Liquidation","Forced closing of a position when margin runs out"],
+  ["Funding Rate","Funding rate","Periodic payment between longs and shorts, usually every 8 hours"],
+  ["Market / Limit","Market / limit order","Market = instantly at the current price · Limit = only at the price you set"],
+  ["Maker / Taker","Maker / taker fee","Limit orders usually pay a lower fee than market orders"],
+  ["Stablecoin","Stablecoin","A stable coin like USDT or USDC pegged to the dollar"],
+  ["Altcoin","Altcoin","Any coin other than Bitcoin; usually more volatile"],
+  ["Market Cap","Market cap","Price × number of coins in circulation"]]},
+ {c:"--g1",t:"Trade and risk management",why:"Every trade is planned with these",items:[
+  ["Entry","Entry point","The price at which you open the trade"],
+  ["SL","Stop loss","Where the trade closes to limit the loss"],
+  ["TP","Take profit","Where the trade closes with a profit"],
+  ["R/R","Risk/reward ratio","Possible loss versus possible gain, e.g. 1 to 2"],
+  ["Position Size","Position size","Size of each trade based on the allowed risk"],
+  ["Risk Management","Risk management","Rules to protect your capital from losses"],
+  ["Drawdown","Drawdown","Drop in account balance from its highest point"]]},
+ {c:"--g2",t:"Account, size and costs",why:"Tools and costs your broker charges",items:[
+  ["Lot","Trade size","A unit of size in forex; in crypto size is given in coins or dollars"],
+  ["Pip","Price unit","Forex only; in crypto distance is measured in dollars or percent"],
+  ["Leverage","Leverage","Trading a larger size than your real capital"],
+  ["Margin","Margin","Money locked to keep a trade open"],
+  ["Spread","Bid-ask spread","The hidden cost of every trade"],
+  ["Swap","Overnight interest","An overnight cost in forex; the crypto futures equivalent is the funding rate"]]},
+ {c:"--g3",t:"Trend and price movement",why:"Which way price is going and where it stops",items:[
+  ["Trend","Market trend","Overall price direction: up, down or sideways"],
+  ["S/R","Support and resistance","Levels where price often turns back"],
+  ["Breakout","Breakout","Price moving through a level or range"],
+  ["Pullback","Pullback","A temporary move back after a move"],
+  ["Retest","Retest","Price returning to a broken level to confirm it"],
+  ["Volatility","Volatility","How strong and fast price changes are"]]},
+ {c:"--g4",t:"Market structure and liquidity",why:"Smart Money Concepts (SMC)",items:[
+  ["BOS","Break of structure","Breaking a high or low in the current trend direction"],
+  ["CHOCH","Change of character","The first sign of a trend reversal"],
+  ["MSS","Market structure shift","A stronger confirmation of a trend change"],
+  ["FVG","Fair value gap","An area price moved through fast and unbalanced"],
+  ["Liquidity","Liquidity","Where orders and stop losses are clustered"],
+  ["BSL","Buy-side liquidity","Stop losses above the highs"],
+  ["SSL","Sell-side liquidity","Stop losses below the lows"]]},
+ {c:"--g5",t:"Time and market conditions",why:"When and on which timeframe to trade",items:[
+  ["HTF","Higher timeframe","To see the overall market direction"],
+  ["LTF","Lower timeframe","To find a precise entry"],
+  ["Session","Trading session","Crypto runs 24 hours, but volume is higher in the London and New York sessions"],
+  ["News Trading","News trading","Trading when important economic news is released"]]}
+];
+const fa=n=>String(n).replace(/\d/g,d=>"0123456789"[d]);
+document.getElementById("groups").innerHTML=GROUPS.map((g,gi)=>`
+ <div class="group" data-g="${gi}" style="--c:var(${g.c})">
+  <div class="ghead"><span class="dot"></span><h3>${g.t}</h3><span class="cnt">${fa(g.items.length)} terms</span><span class="why">${g.why}</span></div>
+  <div class="cards">${g.items.map(i=>`<div class="card" data-q="${(i[0]+" "+i[1]+" "+i[2]).toLowerCase()}"><div class="en">${i[0]}</div><div class="fa">${i[1]}</div><div class="d">${i[2]}</div></div>`).join("")}</div>
+ </div>`).join("");
+
+/* candle drawing: values 0..100, 100 = top */
+function chart(cs,{h=150,hl=null,arrow=null}={}){
+  const step=24,bw=14,pad=14,w=cs.length*step+pad*2+(arrow?26:0),top=10,ih=h-20;
+  const Y=v=>top+ih*(1-v/100);
+  let s=`<svg viewBox="0 0 ${w} ${h}" role="img">`;
+  if(hl){const x1=pad+hl[0]*step-4,x2=pad+(hl[1]+1)*step-6;
+    const lo=Math.min(...cs.slice(hl[0],hl[1]+1).map(c=>c.l)),hi=Math.max(...cs.slice(hl[0],hl[1]+1).map(c=>c.h));
+    s+=`<rect x="${x1}" y="${Y(hi)-7}" width="${x2-x1}" height="${Y(lo)-Y(hi)+14}" rx="12" fill="none" stroke="var(--hl)" stroke-width="2" stroke-dasharray="5 4"/>`;}
+  cs.forEach((c,i)=>{const up=c.c>=c.o,col=up?"var(--up)":"var(--down)",x=pad+i*step+bw/2;
+    s+=`<line x1="${x}" x2="${x}" y1="${Y(c.h)}" y2="${Y(c.l)}" stroke="${col}" stroke-width="2"/>`;
+    const y1=Y(Math.max(c.o,c.c)),y2=Y(Math.min(c.o,c.c));
+    s+=`<rect x="${x-bw/2}" y="${y1}" width="${bw}" height="${Math.max(2,y2-y1)}" rx="2" fill="${col}"/>`;});
+  if(arrow){const x=w-pad-6,up=arrow==="up",col=up?"var(--up)":"var(--down)";
+    s+=up?`<path d="M${x} ${h*0.55} L${x} ${h*0.25} M${x-7} ${h*0.33} L${x} ${h*0.25} L${x+7} ${h*0.33}" stroke="${col}" stroke-width="3" fill="none" stroke-linecap="round"/>`
+         :`<path d="M${x} ${h*0.35} L${x} ${h*0.65} M${x-7} ${h*0.57} L${x} ${h*0.65} L${x+7} ${h*0.57}" stroke="${col}" stroke-width="3" fill="none" stroke-linecap="round"/>`;}
+  return s+"</svg>";
+}
+const C=(o,h,l,c)=>({o,h,l,c});
+
+function strip(id,list,kind){
+  document.getElementById(id).innerHTML=list.map(x=>`<div class="cell" style="--soft:var(--${kind}-soft);--k:var(--${kind})">
+   ${chart([x.c],{h:120})}<div class="lab">${x.n}</div>
+   <div class="meter">${[1,2,3,4,5].map(k=>`<i class="${k<=x.s?"on":""}"></i>`).join("")}</div>
+   <div class="lvl">${x.l}</div></div>`).join("");
+}
+strip("bulls",[
+ {n:"Weak bullish",l:"Weak · long upper wick",s:1,c:C(12,90,8,24)},
+ {n:"Normal bullish",l:"Medium",s:2,c:C(44,85,15,58)},
+ {n:"Bullish",l:"High",s:3,c:C(25,90,10,75)},
+ {n:"Very strong bullish",l:"Very high · buyers pushed back",s:4,c:C(78,92,8,90)},
+ {n:"Strong bullish",l:"Very high · no wicks",s:5,c:C(8,92,8,92)}],"up");
+strip("bears",[
+ {n:"Weak bearish",l:"Weak · long lower wick",s:1,c:C(88,92,10,76)},
+ {n:"Normal bearish",l:"Medium",s:2,c:C(56,85,15,42)},
+ {n:"Bearish",l:"High",s:3,c:C(75,90,10,25)},
+ {n:"Very strong bearish",l:"Very high · sellers pushed back",s:4,c:C(22,92,8,10)},
+ {n:"Strong bearish",l:"Very high · no wicks",s:5,c:C(92,92,8,8)}],"down");
+
+function pats(id,list){
+  document.getElementById(id).innerHTML=list.map(p=>`<div class="pat">${chart(p.cs,p.o)}
+   <div class="name">${p.n}<span class="tag ${p.k}">${p.t}</span></div><div class="d">${p.d}</div></div>`).join("");
+}
+pats("sellers",[
+ {n:"Weak pattern",k:"up",t:"Bounce up likely",d:"Two small red candles after a green one; sellers are weak.",
+  cs:[C(20,85,15,80),C(72,80,52,60),C(58,64,38,46)],o:{arrow:"up"}},
+ {n:"Strong pattern",k:"down",t:"Further drop likely",d:"A small red candle, then a big red one; sellers are gaining strength.",
+  cs:[C(30,85,20,80),C(80,90,62,70),C(80,82,18,30)],o:{arrow:"down"}},
+ {n:"Very strong pattern",k:"down",t:"Drop continues with force",d:"A very big red candle that swallows the whole green one; sellers are fully in control.",
+  cs:[C(45,90,40,85),C(85,94,74,78),C(85,86,2,10)],o:{arrow:"down"}}
+]);
+pats("reversals",[
+ {n:"Bullish engulfing",k:"up",t:"Turn up",d:"After a downtrend, a big green candle covers the whole previous red one.",
+  cs:[C(90,95,70,75),C(76,80,55,60),C(60,64,35,40),C(42,46,24,30),C(26,60,18,56)],o:{hl:[3,4],arrow:"up"}},
+ {n:"Bearish engulfing",k:"down",t:"Turn down",d:"After an uptrend, a big red candle covers the whole previous green one.",
+  cs:[C(10,30,5,25),C(24,45,20,40),C(40,62,36,58),C(58,74,54,70),C(74,80,36,40)],o:{hl:[3,4],arrow:"down"}},
+ {n:"Long lower wick at a low",k:"up",t:"Sellers rejected",d:"After a drop, a candle with a small body and a long lower wick; a possible start of a rise.",
+  cs:[C(95,98,75,78),C(78,80,58,62),C(62,66,48,50),C(50,52,8,44),C(44,60,40,56),C(56,72,52,70)],o:{hl:[3,3],arrow:"up"}},
+ {n:"Long upper wick at a high",k:"down",t:"Buyers rejected",d:"After a strong rise, a small red candle with a long upper wick; a possible reversal.",
+  cs:[C(8,28,4,25),C(25,45,22,42),C(42,62,38,58),C(58,96,52,52),C(54,58,38,40),C(40,44,24,26)],o:{hl:[3,3],arrow:"down"}},
+ {n:"Indecision at the end of a trend",k:"mid",t:"Possible trend change",d:"Several candles with long wicks and small bodies; the market is undecided.",
+  cs:[C(95,98,78,80),C(80,82,62,64),C(64,66,46,48),C(48,58,30,42),C(36,64,22,40),C(42,62,30,48),C(48,72,44,68)],o:{hl:[3,5],arrow:"up"}}
+]);
+
+/* storage helpers */
+const st={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+/* router */
+const VIEWS=["terms","candles","analysis","guide","practice","assistant"];
+function show(v){if(!VIEWS.includes(v))v="terms";
+  VIEWS.forEach(x=>document.getElementById(x).hidden=x!==v);
+  document.querySelectorAll(".bnav a").forEach(a=>{const on=a.dataset.v===v;a.classList.toggle("on",on);on?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
+  window.scrollTo(0,0);st.set("tg-view",v);}
+addEventListener("hashchange",()=>show(location.hash.slice(1)));
+show(location.hash.slice(1)||st.get("tg-view","terms"));
+/* search + filter */
+let gsel=-1;
+const chipHTML=(sel)=>`<button class="chip" type="button" data-g="-1" aria-pressed="${sel===-1}">All</button>`+GROUPS.map((g,i)=>`<button class="chip" type="button" data-g="${i}" style="--c:var(${g.c})" aria-pressed="${sel===i}"><i></i>${g.t}</button>`).join("");
+const chips=document.getElementById("chips"),q=document.getElementById("q");
+function filter(){chips.innerHTML=chipHTML(gsel);
+  const t=q.value.trim().toLowerCase();let any=false;
+  document.querySelectorAll("#groups .group").forEach(g=>{let n=0;const gi=+g.dataset.g;
+    g.querySelectorAll(".card").forEach(c=>{const ok=(gsel===-1||gsel===gi)&&(!t||c.dataset.q.includes(t));c.hidden=!ok;if(ok)n++;});
+    g.hidden=!n;if(n)any=true;});
+  document.getElementById("empty").hidden=any;}
+chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;gsel=+b.dataset.g;filter();});
+q.addEventListener("input",filter);filter();
+/* flashcards */
+const ALL=GROUPS.flatMap((g,gi)=>g.items.map(i=>({en:i[0],fa:i[1],d:i[2],gi})));
+let known=new Set(st.get("tg-known",[])),pg=-1,cur=null,flipped=false,last=null;
+const pchips=document.getElementById("pchips"),flash=document.getElementById("flash"),bno=document.getElementById("bno"),byes=document.getElementById("byes");
+function deck(){return ALL.filter(c=>pg===-1||c.gi===pg)}
+function progress(){const d=deck(),k=d.filter(c=>known.has(c.en)).length;
+  document.getElementById("pbar").style.width=(d.length?k/d.length*100:0)+"%";
+  document.getElementById("ptext").textContent=fa(k)+" of "+fa(d.length)+" known";}
+function next(){const d=deck();let pool=d.filter(c=>!known.has(c.en)&&c!==last);
+  if(!pool.length)pool=d.filter(c=>c!==last);if(!pool.length)pool=d;
+  // unknown cards weighted: 80% from unknown if any
+  const unk=d.filter(c=>!known.has(c.en)&&c!==last);
+  const src=unk.length&&Math.random()<.8?unk:pool;
+  cur=src[Math.floor(Math.random()*src.length)];last=cur;flipped=false;render();}
+function render(){const g=GROUPS[cur.gi];flash.style.setProperty("--c","var("+g.c+")");
+  document.getElementById("fgroup").textContent=g.t;document.getElementById("fen").textContent=cur.en;
+  document.getElementById("ffa").textContent=cur.fa;document.getElementById("fd").textContent=cur.d;
+  document.getElementById("fback").hidden=!flipped;document.getElementById("fhint").hidden=flipped;
+  bno.disabled=byes.disabled=!flipped;progress();}
+flash.addEventListener("click",()=>{flipped=!flipped;render();});
+bno.addEventListener("click",()=>{known.delete(cur.en);st.set("tg-known",[...known]);next();});
+byes.addEventListener("click",()=>{known.add(cur.en);st.set("tg-known",[...known]);next();});
+document.getElementById("reset").addEventListener("click",()=>{known=new Set();st.set("tg-known",[]);next();});
+pchips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;pg=+b.dataset.g;pchips.innerHTML=chipHTML(pg);next();});
+pchips.innerHTML=chipHTML(pg);next();
+/* line drawings: coords 0..100, y down */
+function pl(o){const W=300,H=160,X=x=>10+x*2.8,Y=y=>10+y*1.4;let s=`<svg viewBox="0 0 ${W} ${H}" role="img" direction="ltr" font-family="Vazirmatn,DejaVu Sans,sans-serif">`;
+  (o.zones||[]).forEach(z=>s+=`<rect x="${X(z.x1??0)}" y="${Y(z.y1)}" width="${X(z.x2??100)-X(z.x1??0)}" height="${Y(z.y2)-Y(z.y1)}" fill="var(${z.c})" opacity=".18"/>`);
+  (o.segs||[]).forEach(g=>{s+=`<line x1="${X(g.a[0])}" y1="${Y(g.a[1])}" x2="${X(g.b[0])}" y2="${Y(g.b[1])}" stroke="var(${g.c||"--muted"})" stroke-width="${g.w||1.5}" ${g.dash?'stroke-dasharray="5 4"':""}/>`;
+    if(g.t)s+=`<text x="${X(g.tx??g.b[0])}" y="${Y(g.ty??g.b[1])-4}" font-size="10" font-weight="700" fill="var(${g.c||"--muted"})" text-anchor="${g.ta||"end"}">${g.t}</text>`;});
+  (o.lines||[]).forEach(l=>s+=`<polyline points="${l.p.map(([x,y])=>X(x)+","+Y(y)).join(" ")}" fill="none" stroke="var(${l.c||"--fg"})" stroke-width="${l.w||2.5}" stroke-linejoin="round" stroke-linecap="round"/>`);
+  (o.labels||[]).forEach(t=>s+=`<text x="${X(t.x)}" y="${Y(t.y)}" font-size="${t.s||11}" font-weight="700" fill="var(${t.c||"--fg"})" text-anchor="middle">${t.t}</text>`);
+  return s+"</svg>";}
+function cards(id,list){document.getElementById(id).innerHTML=list.map(p=>`<div class="pat">${pl(p.d)}
+  <div class="name">${p.n}<span class="tag ${p.k}">${p.t}</span></div><div class="d">${p.x}</div>${p.pts?`<ul class="pts">${p.pts.map(x=>`<li>${x}</li>`).join("")}</ul>`:""}</div>`).join("");}
+cards("structure",[
+ {n:"Uptrend",k:"up",t:"HH + HL",x:"Each high is above the previous one and each low too. In this trend, look for buys at the lows.",
+  d:{lines:[{p:[[3,88],[22,50],[34,66],[55,32],[67,48],[90,10]],c:"--up"}],labels:[{x:22,y:44,t:"HH"},{x:34,y:76,t:"HL"},{x:55,y:26,t:"HH"},{x:67,y:58,t:"HL"},{x:90,y:5,t:"HH"}]}},
+ {n:"Downtrend",k:"down",t:"LH + LL",x:"Each high is lower and each low is lower than the previous one. In this trend, look for sells at the highs.",
+  d:{lines:[{p:[[3,10],[22,48],[34,32],[55,66],[67,50],[90,88]],c:"--down"}],labels:[{x:22,y:58,t:"LL"},{x:34,y:26,t:"LH"},{x:55,y:76,t:"LL"},{x:67,y:44,t:"LH"},{x:90,y:97,t:"LL"}]}},
+ {n:"BOS (break of structure)",k:"up",t:"Trend continues",x:"Price breaks the previous high in the trend direction; the trend is still healthy.",
+  d:{segs:[{a:[22,40],b:[100,40],c:"--g3",dash:1,t:"BOS",tx:96,ty:40}],lines:[{p:[[3,85],[22,40],[38,70],[60,25],[72,45],[92,12]],c:"--up"}]}},
+ {n:"CHOCH (change of character)",k:"down",t:"First sign of reversal",x:"In an uptrend, price breaks the last higher low (HL) downward. MSS is the same shift when confirmed by a strong move.",
+  d:{segs:[{a:[44,62],b:[100,62],c:"--g4",dash:1,t:"CHOCH",tx:98,ty:62}],lines:[{p:[[3,88],[22,45],[44,62],[62,20],[90,90]],c:"--fg"}],labels:[{x:62,y:14,t:"HH"},{x:44,y:72,t:"HL"}]}}
+]);
+cards("chartpats",[
+ {n:"Head and shoulders",k:"down",t:"Bearish reversal",x:"Three peaks with the middle one highest. Confirmed when the neckline breaks. Target: head-to-neckline distance, measured down from the break. The inverse version at a low is bullish.",
+  d:{segs:[{a:[0,64],b:[100,64],c:"--down",dash:1,t:"Neckline",tx:100,ty:64}],lines:[{p:[[2,90],[15,48],[26,64],[42,18],[57,64],[69,46],[80,64],[96,95]]}],labels:[{x:15,y:40,t:"Shoulder"},{x:42,y:10,t:"Head"},{x:69,y:38,t:"Shoulder"}]}},
+ {n:"Double top",k:"down",t:"Bearish reversal",x:"Two peaks at the same resistance after an uptrend. Confirmed when the middle low (neckline) breaks.",
+  d:{segs:[{a:[0,22],b:[100,22],c:"--muted",dash:1},{a:[0,58],b:[100,58],c:"--down",dash:1,t:"Neckline",tx:100,ty:58}],lines:[{p:[[2,88],[25,22],[45,58],[66,22],[82,58],[96,92]]}]}},
+ {n:"Double bottom",k:"up",t:"Bullish reversal",x:"Two lows at the same support after a downtrend. Confirmed when the middle high breaks upward.",
+  d:{segs:[{a:[0,80],b:[100,80],c:"--muted",dash:1},{a:[0,42],b:[100,42],c:"--up",dash:1,t:"Neckline",tx:100,ty:42}],lines:[{p:[[2,12],[25,80],[45,42],[66,80],[82,42],[96,8]]}]}},
+ {n:"Ascending triangle",k:"up",t:"Usually bullish",x:"Flat top and rising lows. A breakout above resistance with high volume is the entry. Target: triangle height from the breakout.",
+  d:{segs:[{a:[10,28],b:[86,28],c:"--down",dash:1},{a:[22,78],b:[86,32],c:"--up",dash:1}],lines:[{p:[[2,90],[12,28],[24,76],[40,28],[52,60],[66,28],[76,44],[86,28],[98,4]]}]}},
+ {n:"Descending triangle",k:"down",t:"Usually bearish",x:"Flat bottom and falling highs. A break below support with high volume is the confirmation.",
+  d:{segs:[{a:[10,72],b:[86,72],c:"--up",dash:1},{a:[22,22],b:[86,68],c:"--down",dash:1}],lines:[{p:[[2,10],[12,72],[24,24],[40,72],[52,40],[66,72],[76,56],[86,72],[98,96]]}]}},
+ {n:"Bull flag",k:"up",t:"Trend continues",x:"A sharp move (the pole), then a short pullback in a channel. A breakout of the channel upward means the move continues. Target: pole length from the breakout.",
+  d:{segs:[{a:[30,18],b:[78,38],c:"--muted",dash:1},{a:[34,38],b:[80,58],c:"--muted",dash:1}],lines:[{p:[[2,95],[30,18],[38,40],[48,24],[58,46],[68,32],[78,54],[98,4]]}],labels:[{x:14,y:50,t:"Pole",c:"--muted"}]}}
+]);
+cards("indis",[
+ {n:"RSI (relative strength)",k:"mid",t:"Default setting: 14",x:"A number from 0 to 100 showing how fast price is moving.",
+  pts:["Above 70: overbought; pullback likely","Below 30: oversold; bounce likely","Divergence: price makes a higher high but RSI a lower high — the trend is weakening","In a strong trend RSI can stay above 70 for a long time; on its own it is not a sell signal"],
+  d:{zones:[{y1:5,y2:30,c:"--down"},{y1:70,y2:95,c:"--up"}],segs:[{a:[0,30],b:[100,30],c:"--down",dash:1,t:"70",tx:99,ty:30},{a:[0,70],b:[100,70],c:"--up",dash:1,t:"30",tx:99,ty:70}],lines:[{p:[[2,55],[12,35],[20,18],[28,28],[38,50],[48,62],[56,80],[64,76],[74,58],[84,40],[94,45]],c:"--g4"}]}},
+ {n:"Moving average (MA / EMA)",k:"mid",t:"50 and 200",x:"Average price of recent candles; shows the trend smoothly.",
+  pts:["Price above the daily MA 200: the market is bullish overall","Golden cross: MA 50 crosses MA 200 from below (bullish)","Death cross: MA 50 crosses MA 200 from above (bearish)","MA lags; its signal arrives late"],
+  d:{lines:[{p:[[2,40],[20,52],[38,60],[52,58],[66,48],[82,36],[98,26]],c:"--g2",w:2.5},{p:[[2,20],[20,50],[34,72],[46,70],[56,56],[70,32],[84,18],[98,12]],c:"--g3",w:2.5}],labels:[{x:52,y:48,t:"Golden cross",c:"--up"},{x:12,y:33,t:"MA 50",c:"--g3",s:10},{x:12,y:58,t:"MA 200",c:"--g2",s:10}]}},
+ {n:"Fibonacci retracement",k:"up",t:"Golden zone 50 to 61.8",x:"In an uptrend, draw from the low of the move (0%) to the high (100%). The levels are likely places for a pullback to end.",
+  pts:["Levels: 23.6, 38.2, 50, 61.8 and 78.6 percent","The most important level is 61.8","Doesn’t work in a sideways range","Wait for a confirming candle; put the stop behind the next level"],
+  d:{zones:[{y1:44,y2:54,c:"--hl"}],segs:[{a:[0,10],b:[100,10],c:"--muted",t:"100%",tx:1,ty:11.0,ta:"start"},{a:[0,24.4],b:[100,24.4],c:"--muted",dash:1,t:"23.6",tx:1,ty:25.0,ta:"start"},{a:[0,32.9],b:[100,32.9],c:"--muted",dash:1,t:"38.2",tx:1,ty:34.0,ta:"start"},{a:[0,44],b:[100,44],c:"--hl",dash:1,t:"50",tx:1,ty:45.0,ta:"start"},{a:[0,54.1],b:[100,54.1],c:"--hl",dash:1,t:"61.8",tx:1,ty:55.0,ta:"start"},{a:[0,90],b:[100,90],c:"--muted",t:"0%",tx:1,ty:91.0,ta:"start"}],lines:[{p:[[18,90],[44,10],[58,30],[67,53],[78,30],[92,4]],c:"--up"}]}},
+ {n:"Trading volume",k:"mid",t:"Confirms moves",x:"Number of trades in each candle. Moves with high volume are more reliable.",
+  pts:["Breakout with high volume: more reliable","Breakout with low volume: likely a fake breakout","Price rising but volume falling: the trend is tired"],
+  d:{segs:[{a:[0,40],b:[100,40],c:"--down",dash:1,t:"Resistance",tx:30,ty:40}],lines:[{p:[[2,70],[14,55],[24,45],[34,58],[46,44],[58,52],[68,42],[78,25],[92,12]],c:"--fg"}],zones:[{x1:4,x2:10,y1:88,y2:96,c:"--muted"},{x1:16,x2:22,y1:86,y2:96,c:"--muted"},{x1:28,x2:34,y1:90,y2:96,c:"--muted"},{x1:40,x2:46,y1:88,y2:96,c:"--muted"},{x1:52,x2:58,y1:90,y2:96,c:"--muted"},{x1:64,x2:70,y1:84,y2:96,c:"--muted"},{x1:76,x2:82,y1:68,y2:96,c:"--g3"},{x1:88,x2:94,y1:72,y2:96,c:"--g3"}]}}
+]);
+/* checklist */
+const CHECKS=["I identified the higher-timeframe trend (4h or daily) and trade in its direction","Price is at an important level (support, resistance or Fibonacci)","I saw a confirming candle or pattern and the candle has closed","I set the stop loss and it is well before the liquidation price","I sized with the calculator and risk is at most 2%","Take profit is at least 2x the stop distance (R/R 1:2)","No major economic news in the next few hours","I’m not entering out of FOMO or to win back a loss"];
+let ck=st.get("tg-checks",[]);
+function renderChecks(){document.getElementById("checks").innerHTML=CHECKS.map((c,i)=>`<label for="ck${i}"><input id="ck${i}" type="checkbox" ${ck.includes(i)?"checked":""}><span>${c}</span></label>`).join("");statusChecks();}
+function statusChecks(){const left=CHECKS.length-ck.length,el=document.getElementById("cstatus");
+  el.className="cstatus "+(left?"wait":"go");el.textContent=left?`Don’t enter yet · ${fa(left)} items left`:"All items ticked; enter with your plan";}
+document.getElementById("checks").addEventListener("change",e=>{const i=+e.target.id.slice(2);ck=e.target.checked?[...new Set([...ck,i])]:ck.filter(x=>x!==i);st.set("tg-checks",ck);statusChecks();});
+document.getElementById("creset").addEventListener("click",()=>{ck=[];st.set("tg-checks",ck);renderChecks();});
+renderChecks();
+/* orders */
+document.getElementById("orders").innerHTML=[
+ ["Market","Market order","Executes instantly at the best available price; the final price may differ slightly."],
+ ["Limit","Limit order","Executes only at your price or better; if price doesn’t get there, it doesn’t execute."],
+ ["Stop-Limit","Stop-limit","When price hits the stop, a limit order is placed. In fast moves it may not fill."],
+ ["Stop-Market","Stop-market","When price hits the stop, it executes at market price; more reliable for a stop loss."],
+ ["OCO","One cancels the other","You set take profit and stop loss together; when one executes, the other is cancelled automatically."],
+ ["Trailing Stop","Trailing stop","Follows price as it rises and locks in profit; sells when price drops back by the set amount."],
+ ["Post-Only","Maker only","A limit order that won’t execute instantly, so you pay the (lower) maker fee."],
+ ["Reduce-Only","Reduce only","For futures; this order only reduces or closes an open position and never opens a new one."]
+].map(o=>`<div class="orow"><b>${o[0]}<small>${o[1]}</small></b><span>${o[2]}</span></div>`).join("");
+/* win rate */
+document.getElementById("winrate").innerHTML=[[1,"1:1"],[1.5,"1:1.5"],[2,"1:2"],[3,"1:3"]].map(([r,l])=>{const w=100/(1+r);
+  return `<div><span>R/R ${l}</span><b>${fa(Math.round(w))}%</b><div class="bar2"><i style="width:${w}%"></i></div><span>win rate needed</span></div>`}).join("");
+/* crypto calculator */
+const nf=(n,d=2)=>n.toLocaleString("en-US",{maximumFractionDigits:d});
+const $=id=>document.getElementById(id);
+const CI=["cBal","cRisk","cEn","cSl","cLev","cSide"].map($);
+function calc(){const [b,r,en,sl,lev]=CI.slice(0,5).map(e=>+e.value),side=CI[5].value;
+  const risk=b*r/100,dist=en>0?(side==="long"?en-sl:sl-en)/en:0,note=$("rNote");note.className="note";
+  if(!(risk>0&&dist>0&&lev>=1)){$("rVal").textContent=$("rMg").textContent="–";$("rQty").textContent="";$("rRisk").textContent=risk?nf(risk)+" $":"–";
+    note.textContent=dist<=0&&en>0?(side==="long"?"For a long, the stop must be below the entry price.":"For a short, the stop must be above the entry price."):"";if(dist<=0)note.className="note bad";return;}
+  const val=risk/dist,qty=val/en,mg=val/lev,liq=1/lev;
+  $("rVal").textContent=nf(val)+" $";$("rQty").textContent=(+qty.toPrecision(4))+" coin";$("rMg").textContent=nf(mg)+" $";$("rRisk").textContent=nf(risk)+" $";
+  const msgs=[`Distance to stop: ${nf(dist*100)}% · liquidation at about a ${nf(liq*100,1)}% move.`];
+  if(lev>1&&dist>=liq*0.8){msgs.push("The stop is too close to or beyond liquidation; lower the leverage.");note.className="note bad";}
+  else if(mg>b){msgs.push("Margin needed is more than your balance; raise leverage or lower risk.");note.className="note bad";}
+  else if(r>2){msgs.push("Risk above 2% is too much for a beginner.");note.className="note bad";}
+  note.textContent=msgs.join(" ");
+  st.set("tg-ccalc",CI.map(e=>e.value));}
+(()=>{const v=st.get("tg-ccalc",null);if(v)CI.forEach((e,i)=>{if(v[i]!=null)e.value=v[i]});})();
+CI.forEach(e=>{e.addEventListener("input",calc);e.addEventListener("change",calc)});calc();
+/* sessions: GMT hours from Dukascopy */
+const SESS=[["Sydney",22,7,"--g5"],["Tokyo",23,8,"--g4"],["London",8,17,"--g3"],["New York",13,22,"--g1"]];
+const pad=n=>String(n).padStart(2,"0");
+function sessions(){const now=new Date(),off=-now.getTimezoneOffset()/60,day=now.getUTCDay();
+  const utcH=now.getUTCHours()+now.getUTCMinutes()/60,loc=(utcH+off+24)%24;
+  const weekend=false;
+  document.getElementById("nowLine").innerHTML=`Time now: <b>${fa(pad(now.getHours())+":"+pad(now.getMinutes()))}</b>`+((day===0||day===6)?" · Weekend: lower volume":"");
+  document.getElementById("fundLine").innerHTML="Common funding times on most exchanges (every 8 hours): <b>"+[0,8,16].map(h=>fa(pad((h+off+24)%24))+":00").join(" · ")+"</b> in your time. Check your own exchange.";
+  document.getElementById("sess").innerHTML=SESS.map(([n,a,b,c])=>{
+    const la=(a+off+24)%24,lb=(b+off+24)%24,open=!weekend&&(a<b?utcH>=a&&utcH<b:utcH>=a||utcH<b);
+    const seg=(x,y)=>`<i style="--c:var(${c});left:${x/24*100}%;width:${(y-x)/24*100}%"></i>`;
+    const bars=la<lb?seg(la,lb):seg(la,24)+seg(0,lb);
+    return `<div class="srow${open?" open":""}"><span class="nm"><span class="on-dot"></span><span>${n}<small dir="rtl">${fa(pad(la))}:00 to ${fa(pad(lb))}:00</small></span></span><div class="track">${bars}<span class="now" style="left:${loc/24*100}%"></span></div></div>`;}).join("");}
+sessions();setInterval(sessions,60000);
+/* more patterns */
+pats("more",[
+ {n:"Doji",k:"mid",t:"Indecision",d:"Open and close are almost equal; the body is nearly zero. At a high or low, a warning that the trend is weakening.",
+  cs:[C(20,40,15,35),C(35,55,30,50),C(50,68,46,64),C(64,80,50,65),C(63,66,45,48)],o:{hl:[3,3]}},
+ {n:"Hammer",k:"up",t:"Bullish reversal",d:"At the bottom of a downtrend: a small body at the top and a lower wick at least twice the body. More reliable at support.",
+  cs:[C(90,94,72,75),C(75,78,56,60),C(60,62,44,46),C(42,48,6,46),C(42,62,40,60)],o:{hl:[3,3],arrow:"up"}},
+ {n:"Shooting Star",k:"down",t:"Bearish reversal",d:"At the top of an uptrend: a small body at the bottom and a long upper wick; buyers were pushed back.",
+  cs:[C(10,28,6,25),C(25,44,22,40),C(40,58,37,55),C(56,94,53,52),C(52,55,34,36)],o:{hl:[3,3],arrow:"down"}},
+ {n:"Morning Star",k:"up",t:"Bullish reversal",d:"Three candles at a low: big red, small candle, big green that rises to the middle of the red one.",
+  cs:[C(92,95,80,82),C(82,84,40,45),C(38,42,28,34),C(35,75,32,72)],o:{hl:[1,3],arrow:"up"}},
+ {n:"Evening Star",k:"down",t:"Bearish reversal",d:"The opposite of the morning star, at a high: big green, small candle, big red.",
+  cs:[C(10,20,8,18),C(18,60,16,55),C(62,72,58,66),C(64,68,26,28)],o:{hl:[1,3],arrow:"down"}}
+]);
+
+/* live market: CoinGecko public API */
+(async()=>{
+  const COINS=[["bitcoin","BTC","Bitcoin"],["ethereum","ETH","Ethereum"],["solana","SOL","Solana"]];
+  const live=document.getElementById("live"),note=document.getElementById("liveNote");
+  const API="https://api.coingecko.com/api/v3";
+  const sma=(a,n)=>{const x=a.slice(-n);return x.reduce((p,c)=>p+c,0)/x.length};
+  const rsi=(a,n=14)=>{const x=a.slice(-(n+1));let g=0,l=0;for(let i=1;i<x.length;i++){const d=x[i]-x[i-1];if(d>0)g+=d;else l-=d}return l===0?100:100-100/(1+g/l)};
+  const usd=v=>"$"+(v>=1000?v.toLocaleString("en-US",{maximumFractionDigits:0}):v.toLocaleString("en-US",{maximumFractionDigits:2}));
+  const spark=(a,up)=>{const mn=Math.min(...a),mx=Math.max(...a),w=260,h=46;const pts=a.map((v,i)=>`${(i/(a.length-1)*w).toFixed(1)},${(h-4-(v-mn)/((mx-mn)||1)*(h-8)).toFixed(1)}`).join(" ");
+    return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="var(${up?"--up":"--down"})" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`};
+  /* resample an hourly/5-min series to N evenly spaced points so indicators match the app's definitions */
+  const resample=(arr,n)=>{if(arr.length<=n)return arr;const out=[];for(let k=0;k<n;k++)out.push(arr[Math.round(k*(arr.length-1)/(n-1))]);return out};
+  const charts={};let coins=null;
+  function draw(){if(!coins)return;
+    live.innerHTML=COINS.map(([id,sym,fa_])=>{const c=coins.find(x=>x.id===id);if(!c)return"";
+      const ch=c.price_change_percentage_24h??0,up=ch>=0,s90=charts[id+"90"],s30=charts[id+"30"];let chips="";
+      if(s90&&s90.length>=50){const m50=sma(s90,50),m20=sma(s90,20),above=c.current_price>m50;
+        chips+=`<span class="${above?"up":"down"}">${above?"Above":"Below"} the ~37-day average</span><span class="${m20>m50?"up":"down"}">${m20>m50?"Golden cross":"Death cross"}</span>`}
+      if(s30&&s30.length>15){const r=rsi([...s30,c.current_price]);const z=r>=70?["hl","Overbought"]:r<=30?["hl","Oversold"]:["mid","Normal"];chips+=`<span class="${z[0]}">RSI ${fa(Math.round(r))} · ${z[1]}</span>`}
+      if(Math.abs(ch)>=5)chips+=`<span class="hl">Sharp 24h move</span>`;
+      const sp=c.sparkline_in_7d?.price||[];
+      return `<div class="coin"><div class="top"><span class="sym">${sym}<small>${fa_}</small></span><span class="px">${usd(c.current_price)}</span></div>
+        <div><span class="chg ${up?"up":"down"}">${up?"+":""}${(+ch).toFixed(2)}% (24h)</span></div>
+        ${sp.length>2?spark(sp.filter((_,k)=>k%3===0),sp.at(-1)>=sp[0]):""}
+        <div class="chips2">${chips||'<span class="mid">Calculating indicators…</span>'}</div></div>`}).join("")}
+  async function load(){
+    try{const r=await fetch(`${API}/coins/markets?vs_currency=usd&ids=${COINS.map(c=>c[0]).join(",")}&sparkline=true&price_change_percentage=24h`);
+      if(!r.ok)throw new Error(r.status);coins=await r.json();note.textContent="Source: CoinGecko · updates every 5 minutes · "+fa(new Date().toLocaleTimeString("en-US",{hour:"2-digit",minute:"2-digit"}));draw();
+    }catch(e){if(!coins)live.innerHTML="";note.textContent="Live data isn’t available right now (internet or CoinGecko limit). Refresh the page a bit later.";}
+  }
+  async function loadCharts(){for(const [id] of COINS)for(const d of ["90","30"]){
+    try{const r=await fetch(`${API}/coins/${id}/market_chart?vs_currency=usd&days=${d}`);if(!r.ok)continue;const j=await r.json();
+      charts[id+d]=resample((j.prices||[]).map(p=>p[1]),120);draw();}catch(e){}
+    await new Promise(res=>setTimeout(res,1500));}}
+  await load();loadCharts();setInterval(()=>{if(!document.hidden)load()},300000);
+})();
+
+/* share */
+(()=>{const b=document.getElementById("shareBtn"),p=document.getElementById("sharePanel"),inp=document.getElementById("shareUrl"),msg=document.getElementById("spMsg"),URL="https://bahadorsa.github.io/Bahir-guide/";
+  b.addEventListener("click",()=>{p.hidden=!p.hidden;b.setAttribute("aria-expanded",String(!p.hidden));msg.textContent=""});
+  const sel=()=>{inp.focus();inp.select();inp.setSelectionRange(0,inp.value.length)};
+  document.getElementById("spCopy").addEventListener("click",()=>{
+    const ok=()=>msg.textContent="Link copied ✓";
+    try{navigator.clipboard.writeText(URL).then(ok,()=>{sel();msg.textContent="Link selected; tap “Copy”."})}catch(e){sel();msg.textContent="Link selected; tap “Copy”."}
+  });
+  const nat=document.getElementById("spNative");
+  if(!navigator.share)nat.hidden=true;
+  nat.addEventListener("click",async()=>{try{await navigator.share({title:"Bahir Guide",text:"Crypto trading guide app",url:URL})}catch(e){if(e&&e.name!=="AbortError"){sel();msg.textContent="Sharing isn’t possible here; copy the link instead."}}});
+})();
+</script>
+
+</body>
+</html>

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
+<script>try{if(localStorage.getItem("bg-lang")==="en")location.replace("en.html"+location.hash)}catch(e){}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,6 +27,9 @@
 .sp-wa{background:#25d366;color:#0b2e17}
 .sp-native{background:var(--bg);color:var(--fg);border:1.5px solid var(--line)!important}
 .sp-msg{font-size:.85rem;color:var(--up);font-weight:700;min-height:1.2em}
+
+.langbtn{display:flex;align-items:center;justify-content:center;min-width:44px;font:inherit;font-weight:800;font-size:.9rem;text-decoration:none;color:var(--fg);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:8px 10px}
+.langbtn:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -292,7 +296,7 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
 
 
 <div class="wrap">
-  <div class="brand"><span class="avatar logo" aria-hidden="true"></span><h1 dir="ltr">Bahir Guide</h1><button type="button" class="sharebtn" id="shareBtn" aria-expanded="false" aria-controls="sharePanel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>اشتراک</button></div>
+  <div class="brand"><span class="avatar logo" aria-hidden="true"></span><h1 dir="ltr">Bahir Guide</h1><a class="langbtn" href="en.html" lang="en" onclick="try{localStorage.setItem('bg-lang','en')}catch(e){}">EN</a><button type="button" class="sharebtn" id="shareBtn" aria-expanded="false" aria-controls="sharePanel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>اشتراک</button></div>
   <div class="sharepanel" id="sharePanel" hidden>
     <p>این لینک را برای خانواده یا دوستانت بفرست. بدون حساب Claude باز می‌شود.</p>
     <input id="shareUrl" type="text" readonly value="https://bahadorsa.github.io/Bahir-guide/" aria-label="لینک اپ">
