@@ -32,17 +32,34 @@
 .langbtn:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
 
 .live{display:flex!important;flex-direction:column;gap:6px}
-.crow{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;text-align:start;font:inherit;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;cursor:pointer}
-.crow:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.crow{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .crow.open{border-color:var(--g3)}
-.crow .cname{display:flex;flex-direction:column;min-width:0}
-.crow .cname b{font-family:var(--mono);font-size:1rem}
-.crow .cname small,.crow .cpx small{font-size:.78rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.crow .cspark svg{width:100%;height:30px;display:block}
-.crow .cpx{display:flex;flex-direction:column;align-items:flex-end;direction:ltr;font-variant-numeric:tabular-nums}
-.crow .cpx b{font-weight:800}
-.crow .cpx small.up{color:var(--up);font-weight:800} .crow .cpx small.down{color:var(--down);font-weight:800}
-.crow .chips2{grid-column:1/-1}
+.chead{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;text-align:start;font:inherit;color:var(--fg);background:none;border:0;padding:10px 12px;cursor:pointer}
+.chead:focus-visible,.rt:focus-visible{outline:3px solid var(--g3);outline-offset:-3px}
+.chead .cname{display:flex;flex-direction:column;min-width:0}
+.chead .cname b{font-family:var(--mono);font-size:1rem}
+.chead .cname small,.chead .cpx small{font-size:.78rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chead .cspark svg{width:100%;height:30px;display:block}
+.chead .cpx{display:flex;flex-direction:column;align-items:flex-end;direction:ltr;font-variant-numeric:tabular-nums}
+.chead .cpx b{font-weight:800}
+.chead .cpx small.up{color:var(--up);font-weight:800} .chead .cpx small.down{color:var(--down);font-weight:800}
+.cbody{border-top:1px solid var(--line);padding:10px 12px 12px;display:flex;flex-direction:column;gap:10px}
+.rtabs{display:flex;gap:4px;background:var(--bg);border-radius:10px;padding:3px}
+.rt{flex:1;font:inherit;font-size:.8rem;font-weight:700;color:var(--muted);background:none;border:0;border-radius:8px;padding:6px 2px;cursor:pointer;white-space:nowrap}
+.rt[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.pc-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;font-size:.85rem;min-height:1.4em}
+.pc-chg{color:var(--muted)} .pc-chg.up b{color:var(--up)} .pc-chg.down b{color:var(--down)}
+.pc-tip{color:var(--fg);font-variant-numeric:tabular-nums}
+.pc-box{direction:ltr}
+.pchart{width:100%;height:auto;display:block;touch-action:pan-y;font-family:var(--font);font-variant-numeric:tabular-nums}
+.pc-wait{height:180px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:.88rem;background:var(--bg);border-radius:10px;padding:0 16px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+@media (min-width:640px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.stats div{background:var(--bg);border-radius:10px;padding:7px 9px;display:flex;flex-direction:column;gap:1px;min-width:0}
+.stats span{font-size:.72rem;color:var(--muted)}
+.stats b{font-size:.92rem;direction:ltr;text-align:start;font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis}
+.ind{display:flex;flex-direction:column;gap:6px}
+.ind-t{font-size:.78rem;font-weight:700;color:var(--muted)}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -877,49 +894,102 @@ pats("more",[
 /* data source: CoinGecko public API */
 window.__liveSource={
   async markets(ids){const r=await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids.join(",")}&sparkline=true&price_change_percentage=24h`);if(!r.ok)throw new Error(r.status);
-    const o={};for(const c of await r.json())o[c.id]={id:c.id,price:c.current_price,chg:c.price_change_percentage_24h??0,spark:(c.sparkline_in_7d?.price||[]).filter((_,k)=>k%4===0)};return o},
-  async chart(id,d){const r=await fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${d}`);if(!r.ok)throw new Error(r.status);return ((await r.json()).prices||[]).map(p=>p[1])}
+    const o={};for(const c of await r.json())o[c.id]={id:c.id,price:c.current_price,chg:c.price_change_percentage_24h??0,cap:c.market_cap,vol:c.total_volume,rank:c.market_cap_rank,spark:(c.sparkline_in_7d?.price||[]).filter((_,k)=>k%4===0)};return o},
+  async chart(id,d){const r=await fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${d}`);if(!r.ok)throw new Error(r.status);const pr=(await r.json()).prices||[];
+    const step=Math.max(1,Math.ceil(pr.length/200)),s=pr.filter((_,k)=>k%step===0||k===pr.length-1);return {t:s.map(x=>x[0]),p:s.map(x=>x[1])}}
 };
-/* live market: 15 coins */
+/* live market: 15 coins with full price charts */
 (async()=>{
   const EN=document.documentElement.lang==="en";
-  const T=EN?{above:"Above",below:"Below",avg:"the ~37-day average",golden:"Golden cross",death:"Death cross",ob:"Overbought",os:"Oversold",norm:"Normal",sharp:"Sharp 24h move",calc:"Calculating indicators…",tap:"Tap a coin for trend, RSI and averages",err:"Live data isn't available right now (internet or data limit). Try again a bit later.",src:"Source: CoinGecko · updates every 5 minutes · ",rank:"Rank",cerr:"Indicators unavailable right now; tap again later."}
-   :{above:"بالای",below:"زیر",avg:"میانگین ~۳۷ روزه",golden:"تقاطع طلایی",death:"تقاطع مرگ",ob:"اشباع خرید",os:"اشباع فروش",norm:"معمولی",sharp:"حرکت تند ۲۴ ساعته",calc:"در حال محاسبه شاخص‌ها…",tap:"روی هر ارز بزن تا روند، RSI و میانگین‌ها را ببینی",err:"داده زنده الان در دسترس نیست (اینترنت یا محدودیت داده). کمی بعد دوباره امتحان کن.",src:"منبع: CoinGecko · به‌روزرسانی هر ۵ دقیقه · ",rank:"رتبه",cerr:"شاخص‌ها الان در دسترس نیست؛ کمی بعد دوباره بزن."};
+  const LOC=EN?"en-GB":"fa-IR";
+  const T=EN?{above:"Above",below:"Below",avg:"the ~37-day average",golden:"Golden cross",death:"Death cross",ob:"Overbought",os:"Oversold",norm:"Normal",sharp:"Sharp 24h move",calc:"Calculating indicators…",tap:"Tap a coin to open its chart",err:"Live data isn't available right now (internet or data limit). Try again a bit later.",src:"Source: CoinGecko · updates every 5 minutes · ",rank:"Rank",cap:"Market cap",vol:"24h volume",hi:"Period high",lo:"Period low",chartLoading:"Loading chart…",chartErr:"Chart unavailable right now. Try another range or tap again later.",change:"Change",ranges:{"1":"24h","7":"7d","30":"30d","90":"90d","365":"1Y"},indic:"Indicators",cerr:"Indicators unavailable right now."}
+   :{above:"بالای",below:"زیر",avg:"میانگین ~۳۷ روزه",golden:"تقاطع طلایی",death:"تقاطع مرگ",ob:"اشباع خرید",os:"اشباع فروش",norm:"معمولی",sharp:"حرکت تند ۲۴ ساعته",calc:"در حال محاسبه شاخص‌ها…",tap:"روی هر ارز بزن تا نمودارش باز شود",err:"داده زنده الان در دسترس نیست (اینترنت یا محدودیت داده). کمی بعد دوباره امتحان کن.",src:"منبع: CoinGecko · به‌روزرسانی هر ۵ دقیقه · ",rank:"رتبه",cap:"ارزش بازار",vol:"حجم ۲۴ ساعته",hi:"بالاترین در بازه",lo:"پایین‌ترین در بازه",chartLoading:"در حال گرفتن نمودار…",chartErr:"نمودار الان در دسترس نیست. بازه دیگری را امتحان کن یا کمی بعد دوباره بزن.",change:"تغییر",ranges:{"1":"۲۴ ساعت","7":"۷ روز","30":"۱ ماه","90":"۳ ماه","365":"۱ سال"},indic:"شاخص‌ها",cerr:"شاخص‌ها الان در دسترس نیست."};
   const COINS=[["bitcoin","BTC","بیت‌کوین","Bitcoin"],["ethereum","ETH","اتریوم","Ethereum"],["binancecoin","BNB","بی‌ان‌بی","BNB"],["ripple","XRP","ریپل","XRP"],["solana","SOL","سولانا","Solana"],["tron","TRX","ترون","TRON"],["dogecoin","DOGE","دوج‌کوین","Dogecoin"],["cardano","ADA","کاردانو","Cardano"],["hyperliquid","HYPE","هایپرلیکوئید","Hyperliquid"],["chainlink","LINK","چین‌لینک","Chainlink"],["stellar","XLM","استلار","Stellar"],["bitcoin-cash","BCH","بیت‌کوین کش","Bitcoin Cash"],["litecoin","LTC","لایت‌کوین","Litecoin"],["monero","XMR","مونرو","Monero"],["zcash","ZEC","زی‌کش","Zcash"]];
+  const RANGES=["1","7","30","90","365"];
   const live=document.getElementById("live"),note=document.getElementById("liveNote");
+  const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const sma=(a,n)=>{const x=a.slice(-n);return x.reduce((p,c)=>p+c,0)/x.length};
   const rsi=(a,n=14)=>{const x=a.slice(-(n+1));let g=0,l=0;for(let i=1;i<x.length;i++){const d=x[i]-x[i-1];if(d>0)g+=d;else l-=d}return l===0?100:100-100/(1+g/l)};
-  const usd=v=>v==null?"–":"$"+(v>=1000?v.toLocaleString("en-US",{maximumFractionDigits:0}):v>=1?v.toLocaleString("en-US",{maximumFractionDigits:2}):v.toLocaleString("en-US",{maximumSignificantDigits:4}));
+  const usd=v=>v==null||!isFinite(v)?"–":"$"+(v>=1000?v.toLocaleString("en-US",{maximumFractionDigits:0}):v>=1?v.toLocaleString("en-US",{maximumFractionDigits:2}):v.toLocaleString("en-US",{maximumSignificantDigits:4}));
+  const big=v=>v==null||!isFinite(v)?"–":"$"+(v>=1e12?(v/1e12).toFixed(2)+"T":v>=1e9?(v/1e9).toFixed(2)+"B":v>=1e6?(v/1e6).toFixed(1)+"M":v.toLocaleString("en-US"));
+  const pct=v=>(v>=0?"+":"")+v.toFixed(2)+"%";
+  const resample=(arr,n)=>{if(arr.length<=n)return arr;const out=[];for(let k=0;k<n;k++)out.push(arr[Math.round(k*(arr.length-1)/(n-1))]);return out};
+  const fmtT=(ts,d)=>{const dt=new Date(ts);return d==="1"?fa(dt.toLocaleTimeString(LOC,{hour:"2-digit",minute:"2-digit"})):fa(dt.toLocaleDateString(LOC,d==="365"?{month:"short",year:"2-digit"}:{day:"numeric",month:"short"}))};
+  const fmtTT=(ts,d)=>{const dt=new Date(ts);return fa(dt.toLocaleString(LOC,d==="1"||d==="7"?{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}:{day:"numeric",month:"short",year:"numeric"}))};
   const spark=(a,up)=>{if(!a||a.length<3)return"";const mn=Math.min(...a),mx=Math.max(...a),w=120,h=34;const pts=a.map((v,i)=>`${(i/(a.length-1)*w).toFixed(1)},${(h-3-(v-mn)/((mx-mn)||1)*(h-6)).toFixed(1)}`).join(" ");
     return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="var(${up?"--up":"--down"})" stroke-width="1.8" vector-effect="non-scaling-stroke"/></svg>`};
-  const resample=(arr,n)=>{if(arr.length<=n)return arr;const out=[];for(let k=0;k<n;k++)out.push(arr[Math.round(k*(arr.length-1)/(n-1))]);return out};
-  const charts={},loading={},failed={};let coins=null,open=new Set(["bitcoin"]);
-  try{const s=JSON.parse(localStorage.getItem("bg-open")||"null");if(Array.isArray(s))open=new Set(s)}catch(e){}
-  function chips(c){const id=c.id,s90=charts[id+"90"],s30=charts[id+"30"];let h="";
+  /* chart geometry */
+  const W=340,H=180,PL=6,PR=58,PT=10,PB=24;
+  const niceTicks=(mn,mx,n=4)=>{const span=mx-mn||Math.abs(mx)||1,raw=span/n,mag=Math.pow(10,Math.floor(Math.log10(raw))),st=[1,2,2.5,5,10].map(x=>x*mag).find(x=>x>=raw)||raw;const out=[];for(let v=Math.ceil(mn/st)*st;v<=mx+1e-9;v+=st)out.push(+v.toPrecision(10));return out};
+  function chartSVG(id,d,s){
+    const t=s.t,p=s.p,n=p.length;let mn=Math.min(...p),mx=Math.max(...p);const pad=(mx-mn)*.08||mx*.01;mn-=pad;mx+=pad;
+    const X=i=>PL+i/(n-1)*(W-PL-PR),Y=v=>PT+(1-(v-mn)/(mx-mn))*(H-PT-PB);
+    const up=p[n-1]>=p[0],col=up?"--up":"--down",gid="g"+id.replace(/\W/g,"")+d;
+    const line=p.map((v,i)=>`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(" ");
+    const ticks=niceTicks(mn,mx);
+    let g=ticks.map(v=>`<line x1="${PL}" x2="${W-PR}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="var(--line)" stroke-width="1"/><text x="${W-PR+6}" y="${(Y(v)+4).toFixed(1)}" font-size="10" fill="var(--muted)">${usd(v)}</text>`).join("");
+    const xs=[0,Math.floor((n-1)/2),n-1];
+    g+=xs.map((i,k)=>`<text x="${X(i).toFixed(1)}" y="${H-6}" font-size="10" fill="var(--muted)" text-anchor="${k===0?"start":k===2?"end":"middle"}">${fmtT(t[i],d)}</text>`).join("");
+    const iMax=p.indexOf(Math.max(...p)),iMin=p.indexOf(Math.min(...p));
+    return `<svg class="pchart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(id)} price chart" direction="ltr" data-id="${id}" data-d="${d}">
+      <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(${col})" stop-opacity=".28"/><stop offset="1" stop-color="var(${col})" stop-opacity="0"/></linearGradient></defs>
+      ${g}
+      <polygon points="${X(0).toFixed(1)},${H-PB} ${line} ${X(n-1).toFixed(1)},${H-PB}" fill="url(#${gid})"/>
+      <polyline points="${line}" fill="none" stroke="var(${col})" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="${X(n-1).toFixed(1)}" cy="${Y(p[n-1]).toFixed(1)}" r="4" fill="var(${col})" stroke="var(--surface)" stroke-width="2"/>
+      <g class="xh" visibility="hidden"><line class="xv" y1="${PT}" y2="${H-PB}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/><circle class="xd" r="5" fill="var(${col})" stroke="var(--surface)" stroke-width="2"/></g>
+      <rect class="hit" x="${PL}" y="0" width="${W-PL-PR}" height="${H}" fill="transparent"/>
+    </svg>`;
+  }
+  const charts={},loading={},failed={},rng={};let coins=null,open=new Set(["bitcoin"]);
+  try{const s=JSON.parse(localStorage.getItem("bg-open")||"null");if(Array.isArray(s))open=new Set(s);const r=JSON.parse(localStorage.getItem("bg-rng")||"null");if(r&&typeof r==="object")Object.assign(rng,r)}catch(e){}
+  const save=()=>{try{localStorage.setItem("bg-open",JSON.stringify([...open]));localStorage.setItem("bg-rng",JSON.stringify(rng))}catch(e){}};
+  const ind=id=>{const a=charts[id+"90"],b=charts[id+"30"];return {s90:a&&resample(a.p,120),s30:b&&resample(b.p,120)}};
+  function chips(c){const {s90,s30}=ind(c.id);let h="";
     if(s90&&s90.length>=50){const m50=sma(s90,50),m20=sma(s90,20),ab=c.price>m50;h+=`<span class="${ab?"up":"down"}">${ab?T.above:T.below} ${T.avg}</span><span class="${m20>m50?"up":"down"}">${m20>m50?T.golden:T.death}</span>`}
     if(s30&&s30.length>15){const r=rsi([...s30,c.price]);const z=r>=70?["hl",T.ob]:r<=30?["hl",T.os]:["mid",T.norm];h+=`<span class="${z[0]}">RSI ${fa(Math.round(r))} · ${z[1]}</span>`}
     if(Math.abs(c.chg)>=5)h+=`<span class="hl">${T.sharp}</span>`;
-    if(!h)h=`<span class="mid">${failed[id]?T.cerr:T.calc}</span>`;return h}
+    return h||`<span class="mid">${failed[c.id+"90"]&&failed[c.id+"30"]?T.cerr:T.calc}</span>`}
+  function body(c){const id=c.id,d=rng[id]||"7",s=charts[id+d];
+    let chart;
+    if(s&&s.p.length>2){const ch=(s.p[s.p.length-1]/s.p[0]-1)*100,hi=Math.max(...s.p),lo=Math.min(...s.p);
+      chart=`<div class="pc-head"><span class="pc-chg ${ch>=0?"up":"down"}">${T.change} ${T.ranges[d]}: <b dir="ltr">${pct(ch)}</b></span><span class="pc-tip" aria-live="polite"></span></div>
+        <div class="pc-box">${chartSVG(id,d,s)}</div>
+        <div class="stats"><div><span>${T.hi}</span><b>${usd(hi)}</b></div><div><span>${T.lo}</span><b>${usd(lo)}</b></div><div><span>${T.cap}</span><b>${big(c.cap)}</b></div><div><span>${T.vol}</span><b>${big(c.vol)}</b></div></div>`}
+    else chart=`<div class="pc-wait">${failed[id+d]?T.chartErr:T.chartLoading}</div>`;
+    return `<div class="cbody"><div class="rtabs" role="tablist">${RANGES.map(r=>`<button type="button" role="tab" class="rt" data-id="${id}" data-r="${r}" aria-selected="${r===d}">${T.ranges[r]}</button>`).join("")}</div>
+      ${chart}<div class="ind"><span class="ind-t">${T.indic}</span><span class="chips2">${chips(c)}</span></div></div>`}
   function draw(){if(!coins)return;
     live.innerHTML=`<p class="note">${T.tap}</p>`+COINS.map(([id,sym,fa_,en_])=>{const c=coins[id];if(!c)return"";const up=c.chg>=0,isOpen=open.has(id);
-      return `<button type="button" class="crow${isOpen?" open":""}" data-id="${id}" aria-expanded="${isOpen}">
+      return `<div class="crow${isOpen?" open":""}"><button type="button" class="chead" data-id="${id}" aria-expanded="${isOpen}">
         <span class="cname"><b>${sym}</b><small>${EN?en_:fa_}</small></span>
         <span class="cspark">${spark(c.spark,c.spark&&c.spark.at(-1)>=c.spark[0])}</span>
-        <span class="cpx"><b>${usd(c.price)}</b><small class="${up?"up":"down"}">${up?"+":""}${(+c.chg).toFixed(2)}%</small></span>
-        ${isOpen?`<span class="chips2">${chips(c)}</span>`:""}</button>`}).join("")}
-  live.addEventListener("click",e=>{const b=e.target.closest(".crow");if(!b)return;const id=b.dataset.id;
-    if(open.has(id))open.delete(id);else{open.add(id);loadCharts(id)}
-    try{localStorage.setItem("bg-open",JSON.stringify([...open]))}catch(e){}draw()});
-  /* data source: set by each version */
+        <span class="cpx"><b>${usd(c.price)}</b><small class="${up?"up":"down"}">${pct(+c.chg)}</small></span></button>
+        ${isOpen?body(c):""}</div>`}).join("")}
+  /* interaction */
+  live.addEventListener("click",e=>{
+    const tab=e.target.closest(".rt");if(tab){rng[tab.dataset.id]=tab.dataset.r;save();loadChart(tab.dataset.id,tab.dataset.r);draw();return}
+    const h=e.target.closest(".chead");if(!h)return;const id=h.dataset.id;
+    if(open.has(id))open.delete(id);else{open.add(id);loadAll(id)}save();draw()});
+  function hover(e){const svg=e.target.closest&&e.target.closest(".pchart");if(!svg)return;const id=svg.dataset.id,d=svg.dataset.d,s=charts[id+d];if(!s)return;
+    const r=svg.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*W;const n=s.p.length;let i=Math.round((x-PL)/(W-PL-PR)*(n-1));i=Math.max(0,Math.min(n-1,i));
+    let mn=Math.min(...s.p),mx=Math.max(...s.p);const pad=(mx-mn)*.08||mx*.01;mn-=pad;mx+=pad;
+    const X=PL+i/(n-1)*(W-PL-PR),Y=PT+(1-(s.p[i]-mn)/(mx-mn))*(H-PT-PB);
+    const g=svg.querySelector(".xh");g.setAttribute("visibility","visible");const v=g.querySelector(".xv");v.setAttribute("x1",X);v.setAttribute("x2",X);const dot=g.querySelector(".xd");dot.setAttribute("cx",X);dot.setAttribute("cy",Y);
+    const tip=svg.closest(".cbody").querySelector(".pc-tip");tip.innerHTML=`<b dir="ltr">${usd(s.p[i])}</b> · ${fmtTT(s.t[i],d)}`}
+  function leave(e){const svg=e.target.closest&&e.target.closest(".pchart");if(!svg)return;svg.querySelector(".xh").setAttribute("visibility","hidden");const tip=svg.closest(".cbody").querySelector(".pc-tip");if(tip)tip.textContent=""}
+  live.addEventListener("pointermove",hover);live.addEventListener("pointerdown",hover);live.addEventListener("pointerleave",leave,true);live.addEventListener("pointerout",e=>{if(e.target.classList&&e.target.classList.contains("hit"))leave(e)});
+  /* data */
   const SRC=window.__liveSource;
-  async function load(){try{coins=await SRC.markets(COINS.map(c=>c[0]));note.textContent=T.src+fa(new Date().toLocaleTimeString(EN?"en-GB":"fa-IR",{hour:"2-digit",minute:"2-digit"}));draw()}
+  async function load(){try{coins=await SRC.markets(COINS.map(c=>c[0]));note.textContent=T.src+fa(new Date().toLocaleTimeString(LOC,{hour:"2-digit",minute:"2-digit"}));draw()}
     catch(e){if(!coins)live.innerHTML="";note.textContent=T.err}}
-  async function loadCharts(id){if(loading[id])return;loading[id]=true;failed[id]=false;
-    for(const d of ["90","30"]){if(charts[id+d])continue;try{charts[id+d]=resample(await SRC.chart(id,d),120)}catch(e){failed[id]=true}draw()}
-    loading[id]=false;draw()}
+  async function loadChart(id,d){const k=id+d;if(charts[k]||loading[k])return;loading[k]=true;failed[k]=false;
+    try{const s=await SRC.chart(id,d);if(!s||!s.p||s.p.length<3)throw new Error("empty");charts[k]=s}catch(e){failed[k]=true}
+    loading[k]=false;draw()}
+  async function loadAll(id){await loadChart(id,rng[id]||"7");await loadChart(id,"90");await loadChart(id,"30")}
   if(!SRC){live.innerHTML="";note.textContent=T.err;return}
-  await load();for(const id of open)loadCharts(id);
-  setInterval(()=>{if(!document.hidden)load()},300000);
+  await load();for(const id of open)loadAll(id);
+  setInterval(()=>{if(!document.hidden){load();for(const id of open){const k=id+"1";if(charts[k]){delete charts[k];if((rng[id]||"7")==="1")loadChart(id,"1")}}}},300000);
 })();
 
 /* share */
