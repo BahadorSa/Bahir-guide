@@ -8,6 +8,8 @@
 <meta name="apple-mobile-web-app-title" content="Bahir Guide">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACoklEQVR4Xu3d3W3UQBhA0Q2iB8JbCkgTlEAHlEYHlEAT6QHRBS88LAuz8pWtsRef85yMop1P1z+xvE/PL68X+Jd3PhZGDAeGg045UA465UA56JQD5aBTDobe+2wO5cO3L9d/z8/PX3f885QD5xx0yoFy0Dkh/e3Hpz+ea/n4/a1/mP8bhxUcVuiUA+WgUw6GXK3s4+Y2+cjox+bcVleOHSycjDvWr7CE4Zhtq33dap07DAeuVuiUA+WgUw6Ug045UA66/W+fH+p5a67tPxyT3TzxNTL6sVM9IXauc46Fk3HH+hUeyImGY6t93Wqd4zvRcFAZDlzK0ikHykGnHCgHnXKgHHTKgXLQKQfKQaccKAedcqAcdMqBctDNe/p84fsk9n2XDdcmHVYWTsYd61egmjEcW+3rVuuw0Izh4EEZDlyt0CkHykGnHCgHnXKgHIex1Tvtt1rnDuXYwfp9Xb/CEvP+8ca10e4e6g1pyoFzDjrlQDnolAPloFMOlINOOVAOOuVAOeiUA+WgUw6Ug045UA465UA5Lpt96+d5vj30XOVYv6/rV3ggp3v6fLS7N18IeqohGDlXOUgMB8pBpxwoB51yoBx0yoFy0CkHQ6e7fX5wc17Zs5By4JyDTjlQDjrlQDnolAPloJtRjq1u7Gy1DgvNGI7LZYN9NRnzzbt9/hBv++bapHLwiAwHrlbolAPloFMOlINOOVAOOuVgaN7t84Pztpa/KQfOOeiUA+WgUw6Ug045UA465UA56JQD5aBTDpSDTjlQDjrlQDnolAPloFMOlIPu6fnltf8Wp+CwgsMKnXKgHHTKgXLQKQfKQaccKAedcqAcdMqBctApB8pBpxwoB51yoBx0yoFy0CkHykGnHCgHnXKgHHTKgXLQKQfKQfcLg9hNy/n5CMgAAAAASUVORK5CYII=">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#18202c">
 <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAC70lEQVR4Xu3d3U0bQRhA0RClB+CNAmiCEuggpdEBJdAEPSC6iPISAZI3K9/RsOs959keS96rT7Jnf65u7u5/wLl+nvtG+EtAJAIiERCJgEgERCIgEgGRCIhEQCQCIvmV3s1E18+/P37a++PTxA8/yQQiERCJgEgERCIgEr/CTnp7+HSu5u3La/qmL5QJRCIgEgGRCIhEQCR+hW3Llw2vBadeOXmPzATakPX1LIc1ZJ2VBLQVY4/62NUWCIhEQCQCIhEQiYBIBEQiIBIBkQiIZEN7Yd9y3dOX0w4XnHrlwc9UPPQEWl/PclhD1tmp4wY09qiPXW1HjhsQQwiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyezrwtbfOWsj9wBk2dQJtL6eBdfPU+8ByFYCGlLPP2NX42xTJxCXR0AkAiIREImASAREIiASAW3F2KfsjF1tgYBIBLQhQ8bG++PTkHVWmr2ZyrKFY/8tNyH9LxOIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyXEDun15Td/cZ2NX25HjBsQQhw5oyNi4fXkdss5OHf26sIVj//Zw//GgHrmSBYeeQHQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnR98J2ZOatM9czgUgERCIgEgGRCIhEQCQCIhEQybyAxv4PNnY1zjYvIC7S1ICGjI3Jz8Ni2ey9sN09D4tlUycQl0dAJAIiERCJgEgERCIgEgGRCIhEQCQCIpm9F7Yjboq4hglEIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnVzd19WoBjM4FIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASARE8gdOVlbhc4f0YQAAAABJRU5ErkJggg==">
 <title>Bahir Guide</title>
 
@@ -59,6 +61,24 @@
 .stats b{font-size:.92rem;direction:ltr;text-align:start;font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis}
 .ind{display:flex;flex-direction:column;gap:6px}
 .ind-t{font-size:.78rem;font-weight:700;color:var(--muted)}
+
+.instbar{display:flex;align-items:center;gap:10px;margin-top:12px;background:var(--surface);border:1.5px solid var(--g3);border-radius:14px;padding:10px 12px}
+.ib-ico{width:34px;height:34px;border-radius:9px;flex:none;background:url(icon-192.png) center/cover,var(--fg)}
+.ib-txt{flex:1;min-width:0;font-size:.88rem;font-weight:700;line-height:1.5}
+.ib-go{flex:none;font:inherit;font-weight:800;font-size:.88rem;color:#fff;background:var(--g3);border:0;border-radius:10px;padding:8px 14px;cursor:pointer}
+.ib-x{flex:none;width:30px;height:30px;border-radius:50%;border:0;background:var(--bg);color:var(--fg);font-size:1.1rem;cursor:pointer}
+.ib-go:focus-visible,.ib-x:focus-visible,.is-acts a:focus-visible,.is-acts button:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.isheet{position:fixed;inset:0;z-index:50;background:rgba(10,14,20,.55);display:flex;align-items:flex-end;justify-content:center;padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px));padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
+.is-card{width:100%;max-width:520px;background:var(--surface);color:var(--fg);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px;max-height:85vh;overflow:auto}
+.is-head{display:flex;align-items:center;gap:10px}
+.is-head h3{flex:1;margin:0;font-size:1.1rem;font-weight:900}
+.is-steps{margin:0;padding-inline-start:22px;display:flex;flex-direction:column;gap:10px;font-size:.95rem;line-height:1.6}
+.is-steps .k{display:inline-flex;align-items:center;gap:4px;font-weight:800;background:var(--bg);border-radius:8px;padding:1px 8px;white-space:nowrap}
+.is-steps svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}
+.is-acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.is-acts a,.is-acts button{font:inherit;font-weight:800;font-size:.92rem;text-align:center;text-decoration:none;border:0;border-radius:12px;padding:11px 8px;cursor:pointer;background:var(--g3);color:#fff}
+.is-acts .sec{background:var(--bg);color:var(--fg);border:1.5px solid var(--line)}
+.is-msg{margin:0;font-size:.85rem;color:var(--up);font-weight:700;min-height:1.1em}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -337,6 +357,7 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
     </div>
     <div class="sp-msg" id="spMsg" aria-live="polite"></div>
   </div>
+  <div class="instbar" id="instBar" hidden><span class="ib-ico" aria-hidden="true"></span><span class="ib-txt" id="ibTxt"></span><button type="button" class="ib-go" id="ibGo"></button><button type="button" class="ib-x" id="ibX" aria-label="close">×</button></div>
   <p class="sub">40 key terms and how to read candles, grouped and illustrated</p>
 
   
@@ -598,6 +619,7 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
   </section>
 </div>
 
+<div class="isheet" id="iSheet" hidden role="dialog" aria-modal="true" aria-labelledby="isTitle"><div class="is-card"><div class="is-head"><h3 id="isTitle"></h3><button type="button" class="ib-x" id="isX" aria-label="close">×</button></div><ol class="is-steps" id="isSteps"></ol><div class="is-acts" id="isActs"></div><p class="is-msg" id="isMsg" aria-live="polite"></p></div></div>
 <nav class="bnav" aria-label="Sections">
   <a href="#assistant" data-v="assistant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg>Market</a>
   <a href="#terms" data-v="terms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/></svg>Terms</a>
@@ -1002,6 +1024,55 @@ window.__liveSource={
   const nat=document.getElementById("spNative");
   if(!navigator.share)nat.hidden=true;
   nat.addEventListener("click",async()=>{try{await navigator.share({title:"Bahir Guide",text:"Crypto trading guide app",url:URL})}catch(e){if(e&&e.name!=="AbortError"){sel();msg.textContent="Sharing isn’t possible here; copy the link instead."}}});
+})();
+
+/* install helper */
+(()=>{
+  const EN=document.documentElement.lang==="en",$=id=>document.getElementById(id);
+  const ua=navigator.userAgent||"",iOS=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1),android=/Android/i.test(ua);
+  const inApp=/WhatsApp|FBAN|FBAV|Instagram|Line\/|Telegram|Snapchat|GSA\//i.test(ua)||(iOS&&!/Safari\//.test(ua))||(android&&/; wv\)/.test(ua));
+  const standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+  if("serviceWorker" in navigator&&location.protocol==="https:")navigator.serviceWorker.register("sw.js").catch(()=>{});
+  if(standalone)return;
+  const URL_=location.href.split("#")[0];
+  const shareIco='<svg viewBox="0 0 24 24"><path d="M12 3v12M7 8l5-5 5 5"/><rect x="4" y="11" width="16" height="10" rx="2"/></svg>';
+  const T=EN?{bar:"Install Bahir Guide on your phone",go:"Install",title:"Install on your phone",
+     iosInApp:[`This page is open inside another app (like WhatsApp). Tap <span class="k">⋯</span> or the <span class="k">Safari</span> icon and choose <span class="k">Open in Safari</span>.`,`In Safari, tap the Share button <span class="k">${shareIco}</span>.`,`Scroll down and tap <span class="k">Add to Home Screen</span>, then <span class="k">Add</span>.`],
+     ios:[`Tap the Share button <span class="k">${shareIco}</span> at the bottom of Safari.`,`Scroll down and tap <span class="k">Add to Home Screen</span>.`,`Tap <span class="k">Add</span>. The app appears on your home screen.`],
+     andInApp:[`This page is open inside another app. Tap <span class="k">Open in Chrome</span> below.`,`In Chrome, tap <span class="k">Install</span> again.`],
+     and:[`Tap Chrome's menu <span class="k">⋮</span> (top right).`,`Choose <span class="k">Install app</span> or <span class="k">Add to Home screen</span>.`,`Confirm with <span class="k">Install</span>.`],
+     desk:[`Open this link on your phone, in Safari (iPhone) or Chrome (Android).`,`Then tap <span class="k">Install</span> there.`],
+     chrome:"Open in Chrome",copy:"Copy link",copied:"Link copied ✓ Paste it into Safari.",sel:"Link selected; tap “Copy”.",done:"Installed ✓"}
+   :{bar:"Bahir Guide را روی گوشی نصب کن",go:"نصب",title:"نصب روی گوشی",
+     iosInApp:[`این صفحه داخل یک اپ دیگر (مثل واتس‌اپ) باز شده. روی <span class="k">⋯</span> یا آیکون <span class="k">Safari</span> بزن و <span class="k">In Safari öffnen</span> را انتخاب کن.`,`در Safari دکمهٔ اشتراک‌گذاری <span class="k">${shareIco}</span> را بزن.`,`پایین بیا و <span class="k">Zum Home-Bildschirm</span> و بعد <span class="k">Hinzufügen</span> را بزن.`],
+     ios:[`دکمهٔ اشتراک‌گذاری <span class="k">${shareIco}</span> پایین Safari را بزن.`,`پایین بیا و <span class="k">Zum Home-Bildschirm</span> را بزن.`,`<span class="k">Hinzufügen</span> را بزن. آیکون اپ روی صفحهٔ گوشی می‌آید.`],
+     andInApp:[`این صفحه داخل یک اپ دیگر باز شده. دکمهٔ <span class="k">باز کردن در Chrome</span> پایین را بزن.`,`در Chrome دوباره <span class="k">نصب</span> را بزن.`],
+     and:[`منوی Chrome <span class="k">⋮</span> (بالا) را بزن.`,`<span class="k">App installieren</span> یا <span class="k">Zum Startbildschirm hinzufügen</span> را انتخاب کن.`,`با <span class="k">Installieren</span> تأیید کن.`],
+     desk:[`این لینک را روی گوشی باز کن؛ در Safari (آیفون) یا Chrome (اندروید).`,`بعد آنجا <span class="k">نصب</span> را بزن.`],
+     chrome:"باز کردن در Chrome",copy:"کپی لینک",copied:"لینک کپی شد ✓ در Safari جایگذاری کن.",sel:"لینک انتخاب شد؛ «Kopieren» را بزن.",done:"نصب شد ✓"};
+  let deferred=null;
+  const bar=$("instBar"),sheet=$("iSheet");
+  let dismissed=false;try{dismissed=localStorage.getItem("bg-inst-x")==="1"}catch(e){}
+  $("ibTxt").textContent=T.bar;$("ibGo").textContent=T.go;
+  if(!dismissed)bar.hidden=false;
+  addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;bar.hidden=false});
+  addEventListener("appinstalled",()=>{bar.hidden=true;sheet.hidden=true});
+  $("ibX").addEventListener("click",()=>{bar.hidden=true;try{localStorage.setItem("bg-inst-x","1")}catch(e){}});
+  const close=()=>{sheet.hidden=true};
+  $("isX").addEventListener("click",close);sheet.addEventListener("click",e=>{if(e.target===sheet)close()});
+  addEventListener("keydown",e=>{if(e.key==="Escape"&&!sheet.hidden)close()});
+  function copy(){const m=$("isMsg");try{navigator.clipboard.writeText(URL_).then(()=>m.textContent=T.copied,()=>m.textContent=T.sel+" "+URL_)}catch(e){m.textContent=T.sel+" "+URL_}}
+  async function install(){
+    if(deferred){deferred.prompt();const r=await deferred.userChoice.catch(()=>null);deferred=null;if(r&&r.outcome==="accepted")bar.hidden=true;return}
+    const steps=iOS?(inApp?T.iosInApp:T.ios):android?(inApp?T.andInApp:T.and):T.desk;
+    $("isTitle").textContent=T.title;$("isSteps").innerHTML=steps.map(s=>`<li>${s}</li>`).join("");$("isMsg").textContent="";
+    const acts=$("isActs");acts.innerHTML="";
+    if(android&&inApp){const a=document.createElement("a");a.href=`intent://${location.host}${location.pathname}#Intent;scheme=https;package=com.android.chrome;end`;a.textContent=T.chrome;acts.appendChild(a)}
+    if(inApp||!iOS&&!android){const b=document.createElement("button");b.type="button";b.className="sec";b.textContent=T.copy;b.addEventListener("click",copy);acts.appendChild(b)}
+    sheet.hidden=false;$("isX").focus();
+  }
+  $("ibGo").addEventListener("click",install);
+  window.__bgInstall=install;
 })();
 </script>
 
