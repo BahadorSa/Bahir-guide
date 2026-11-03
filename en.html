@@ -86,6 +86,47 @@
 .wm small{font-size:.74rem;color:var(--muted);letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .brand .avatar{width:46px;height:46px}
 .brand{gap:10px}
+
+.hero{position:relative;overflow:hidden;border-radius:22px;padding:18px 18px 16px;color:#eef3fb;background:radial-gradient(120% 90% at 100% 0%,#1f3d63 0%,rgba(31,61,99,0) 60%),linear-gradient(160deg,#0d1726 0%,#132840 100%);box-shadow:0 10px 30px rgba(13,23,38,.25);isolation:isolate}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
+.hero .h-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.8rem;color:#9fb3cc;font-weight:700;letter-spacing:.02em}
+.hero .h-live{display:inline-flex;align-items:center;gap:6px}
+.hero .h-live i{width:8px;height:8px;border-radius:50%;background:#2fcf8c;box-shadow:0 0 0 0 rgba(47,207,140,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,207,140,.55)}70%{box-shadow:0 0 0 8px rgba(47,207,140,0)}100%{box-shadow:0 0 0 0 rgba(47,207,140,0)}}
+@media (prefers-reduced-motion:reduce){.hero .h-live i{animation:none}}
+.hero .h-main{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:10px}
+.hero .h-coin{display:flex;flex-direction:column;gap:2px;min-width:0}
+.hero .h-sym{font-family:var(--mono);font-size:.85rem;color:#9fb3cc}
+.hero .h-px{font-family:"Sora",var(--font);font-size:2rem;font-weight:700;letter-spacing:-.02em;direction:ltr;text-align:start;font-variant-numeric:tabular-nums;line-height:1.1}
+.hero .h-chg{display:inline-block;margin-top:4px;font-size:.85rem;font-weight:800;direction:ltr;padding:2px 9px;border-radius:999px;width:max-content}
+.hero .h-chg.up{background:rgba(47,207,140,.16);color:#3ee09a} .hero .h-chg.down{background:rgba(255,97,88,.16);color:#ff7a72}
+.hero .h-spark{flex:1;max-width:150px;height:56px}
+.hero .h-spark svg{width:100%;height:100%;display:block}
+.hero .h-mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.hero .h-mini div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;gap:1px;min-width:0}
+.hero .h-mini b{font-family:var(--mono);font-size:.78rem;color:#9fb3cc;font-weight:600}
+.hero .h-mini span{font-weight:800;font-size:.95rem;direction:ltr;text-align:start;font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero .h-mini small{font-size:.75rem;font-weight:800;direction:ltr;text-align:start}
+.hero .h-mini small.up{color:#3ee09a} .hero .h-mini small.down{color:#ff7a72}
+.hero .h-mood{margin-top:14px;display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:#c9d6e6}
+.hero .h-bar{height:6px;border-radius:99px;background:rgba(255,97,88,.55);overflow:hidden;direction:ltr}
+.hero .h-bar i{display:block;height:100%;width:0;background:#2fcf8c;border-radius:99px;transition:width .6s}
+.hero .h-disc{margin-top:10px;font-size:.7rem;color:#7f93ad}
+.qhead{margin:20px 0 8px;font-size:1rem;font-weight:800}
+.qgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.qtile{display:flex;flex-direction:column;gap:6px;padding:12px 10px;border-radius:16px;background:var(--surface);border:1px solid var(--line);text-decoration:none;color:var(--fg);min-width:0;transition:transform .15s,border-color .15s}
+.qtile:hover{border-color:var(--g3)} .qtile:active{transform:scale(.97)}
+.qtile:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.qtile .qi{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c)}
+.qtile .qi svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.qtile b{font-size:.92rem;font-weight:800}
+.qtile small{font-size:.74rem;color:var(--muted);line-height:1.4}
+.tip{margin-top:14px}
+.tipcard{margin-top:14px;display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);border-inline-start:4px solid var(--hl)}
+.tipcard .ti{flex:none;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--hl) 18%,transparent);color:var(--hl)}
+.tipcard .ti svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tipcard b{display:block;font-size:.78rem;color:var(--muted);margin-bottom:2px}
+.tipcard p{margin:0;font-size:.95rem;font-weight:700;line-height:1.6}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -365,12 +406,18 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
     <div class="sp-msg" id="spMsg" aria-live="polite"></div>
   </div>
   <div class="instbar" id="instBar" hidden><span class="ib-ico" aria-hidden="true"></span><span class="ib-txt" id="ibTxt"></span><button type="button" class="ib-go" id="ibGo"></button><button type="button" class="ib-x" id="ibX" aria-label="close">×</button></div>
-  <p class="sub">40 key terms and how to read candles, grouped and illustrated</p>
-
-  
-
   <section class="part" id="assistant">
-    <h2><span class="n">●</span>Live market</h2>
+    <div class="hero" aria-live="polite">
+      <div class="h-top"><span>Market today</span><span class="h-live"><i></i><span id="hTime">—</span></span></div>
+      <div class="h-main"><div class="h-coin"><span class="h-sym">BTC · Bitcoin</span><span class="h-px" id="hPx">—</span><span class="h-chg up" id="hChg">…</span></div><div class="h-spark" id="hSpark"></div></div>
+      <div class="h-mini" id="hMini"></div>
+      <div class="h-mood"><span id="hMood">Reading the market…</span><div class="h-bar"><i id="hBar"></i></div></div>
+      <div class="h-disc">CoinGecko · Educational; not financial advice</div>
+    </div>
+    <div class="tipcard"><span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></span><div><b>Tip of the day</b><p id="tipTxt"></p></div></div>
+    <h3 class="qhead">Quick access</h3>
+    <nav class="qgrid" aria-label="Quick access"><a class="qtile" href="#terms" style="--c:var(--g3)"><span class="qi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><b>Terms</b><small>40 key terms</small></a><a class="qtile" href="#candles" style="--c:var(--g5)"><span class="qi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v18M17 3v18M4.5 7h5v9h-5zM14.5 5h5v7h-5z"/></svg></span><b>Candles</b><small>Strength & patterns</small></a><a class="qtile" href="#analysis" style="--c:var(--g4)"><span class="qi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M4 16l5-6 4 3 7-8"/></svg></span><b>Analysis</b><small>Structure & indicators</small></a><a class="qtile" href="#guide" style="--c:var(--g2)"><span class="qi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM8 7h8M8 12h2M12 12h2M16 12h0M8 16h2M12 16h2"/></svg></span><b>Calculator</b><small>Size & risk</small></a><a class="qtile" href="#guide" style="--c:var(--up)"><span class="qi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><b>Checklist</b><small>Before every trade</small></a><a class="qtile" href="#practice" style="--c:var(--g1)"><span class="qi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h14v13H3zM7 3h12a2 2 0 0 1 2 2v11"/></svg></span><b>Practice</b><small>Flashcards</small></a></nav>
+    <h2 style="margin-top:24px"><span class="n">●</span>Live market</h2>
     <p class="lead">Prices and a few simple indicators from CoinGecko. They show the current state, not buy or sell signals.</p>
     <div id="live" class="live"><div class="ai-card thinking" id="liveWait">Loading data…</div></div>
     <p class="note" id="liveNote"></p>
@@ -628,7 +675,7 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
 
 <div class="isheet" id="iSheet" hidden role="dialog" aria-modal="true" aria-labelledby="isTitle"><div class="is-card"><div class="is-head"><h3 id="isTitle"></h3><button type="button" class="ib-x" id="isX" aria-label="close">×</button></div><ol class="is-steps" id="isSteps"></ol><div class="is-acts" id="isActs"></div><p class="is-msg" id="isMsg" aria-live="polite"></p></div></div>
 <nav class="bnav" aria-label="Sections">
-  <a href="#assistant" data-v="assistant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg>Market</a>
+  <a href="#assistant" data-v="assistant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>Home</a>
   <a href="#terms" data-v="terms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/></svg>Terms</a>
   <a href="#candles" data-v="candles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v18M17 3v18"/><rect x="4.5" y="7" width="5" height="9" rx="1"/><rect x="14.5" y="5" width="5" height="7" rx="1"/></svg>Candles</a>
   <a href="#analysis" data-v="analysis"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M4 16l5-6 4 3 7-8"/></svg>Analysis</a>
@@ -764,7 +811,7 @@ function show(v){if(!VIEWS.includes(v))v="terms";
   document.querySelectorAll(".bnav a").forEach(a=>{const on=a.dataset.v===v;a.classList.toggle("on",on);on?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
   window.scrollTo(0,0);st.set("tg-view",v);}
 addEventListener("hashchange",()=>show(location.hash.slice(1)));
-show(location.hash.slice(1)||st.get("tg-view","terms"));
+show(location.hash.slice(1)||"assistant");
 /* search + filter */
 let gsel=-1;
 const chipHTML=(sel)=>`<button class="chip" type="button" data-g="-1" aria-pressed="${sel===-1}">All</button>`+GROUPS.map((g,i)=>`<button class="chip" type="button" data-g="${i}" style="--c:var(${g.c})" aria-pressed="${sel===i}"><i></i>${g.t}</button>`).join("");
@@ -1009,7 +1056,7 @@ window.__liveSource={
   live.addEventListener("pointermove",hover);live.addEventListener("pointerdown",hover);live.addEventListener("pointerleave",leave,true);live.addEventListener("pointerout",e=>{if(e.target.classList&&e.target.classList.contains("hit"))leave(e)});
   /* data */
   const SRC=window.__liveSource;
-  async function load(){try{coins=await SRC.markets(COINS.map(c=>c[0]));note.textContent=T.src+fa(new Date().toLocaleTimeString(LOC,{hour:"2-digit",minute:"2-digit"}));draw()}
+  async function load(){try{coins=await SRC.markets(COINS.map(c=>c[0]));document.dispatchEvent(new CustomEvent("bg-markets",{detail:coins}));note.textContent=T.src+fa(new Date().toLocaleTimeString(LOC,{hour:"2-digit",minute:"2-digit"}));draw()}
     catch(e){if(!coins)live.innerHTML="";note.textContent=T.err}}
   async function loadChart(id,d){const k=id+d;if(charts[k]||loading[k])return;loading[k]=true;failed[k]=false;
     try{const s=await SRC.chart(id,d);if(!s||!s.p||s.p.length<3)throw new Error("empty");charts[k]=s}catch(e){failed[k]=true}
@@ -1080,6 +1127,24 @@ window.__liveSource={
   }
   $("ibGo").addEventListener("click",install);
   window.__bgInstall=install;
+})();
+
+/* home hero */
+(()=>{const EN=document.documentElement.lang==="en",$=id=>document.getElementById(id);
+  const TIPS=["Risk only 1 to 2 percent of your balance per trade.", "Never enter a trade without a stop loss.", "Read the higher-timeframe trend first, then look for an entry.", "Aim for a risk/reward of at least 1 to 2.", "After two losses in a row, stop for the day.", "Wait during major US news (CPI, Federal Reserve).", "Start with low leverage; spot before futures.", "Never share your seed phrase; no real exchange will ask for it.", "FOMO is the worst entry; wait for a pullback.", "Keep a trading journal; your mistakes are your best teacher."];const day=Math.floor(Date.now()/864e5);$("tipTxt").textContent=TIPS[day%TIPS.length];
+  const usd=v=>v==null?"–":"$"+(v>=1000?v.toLocaleString("en-US",{maximumFractionDigits:0}):v>=1?v.toLocaleString("en-US",{maximumFractionDigits:2}):v.toLocaleString("en-US",{maximumSignificantDigits:4}));
+  const pct=v=>(v>=0?"+":"")+(+v).toFixed(2)+"%";
+  document.addEventListener("bg-markets",e=>{const c=e.detail||{},b=c.bitcoin;if(!b)return;
+    $("hPx").textContent=usd(b.price);const ch=$("hChg");ch.textContent=pct(b.chg)+" · 24h";ch.className="h-chg "+(b.chg>=0?"up":"down");
+    const a=b.spark||[];if(a.length>2){const mn=Math.min(...a),mx=Math.max(...a),w=150,h=56,up=a.at(-1)>=a[0],col=up?"#2fcf8c":"#ff6158";
+      const pts=a.map((v,i)=>`${(i/(a.length-1)*w).toFixed(1)},${(h-4-(v-mn)/((mx-mn)||1)*(h-8)).toFixed(1)}`).join(" ");
+      $("hSpark").innerHTML=`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".35"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs><polygon points="0,${h} ${pts} ${w},${h}" fill="url(#hg)"/><polyline points="${pts}" fill="none" stroke="${col}" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`}
+    $("hMini").innerHTML=[["ethereum","ETH"],["solana","SOL"],["ripple","XRP"]].map(([id,s])=>{const x=c[id];if(!x)return"";return `<div><b>${s}</b><span>${usd(x.price)}</span><small class="${x.chg>=0?"up":"down"}">${pct(x.chg)}</small></div>`}).join("");
+    const all=Object.values(c),upN=all.filter(x=>x.chg>=0).length;
+    $("hMood").textContent=EN?`${upN} of ${all.length} major coins up today`:`${fa(upN)} از ${fa(all.length)} ارز مهم امروز مثبت`;
+    $("hBar").style.width=(all.length?upN/all.length*100:0)+"%";
+    $("hTime").textContent=fa(new Date().toLocaleTimeString(EN?"en-GB":"fa-IR",{hour:"2-digit",minute:"2-digit"}));
+  });
 })();
 </script>
 
