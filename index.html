@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Bahir Guide">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACoklEQVR4Xu3d3W3UQBhA0Q2iB8JbCkgTlEAHlEYHlEAT6QHRBS88LAuz8pWtsRef85yMop1P1z+xvE/PL68X+Jd3PhZGDAeGg045UA465UA56JQD5aBTDobe+2wO5cO3L9d/z8/PX3f885QD5xx0yoFy0Dkh/e3Hpz+ea/n4/a1/mP8bhxUcVuiUA+WgUw6GXK3s4+Y2+cjox+bcVleOHSycjDvWr7CE4Zhtq33dap07DAeuVuiUA+WgUw6Ug045UA66/W+fH+p5a67tPxyT3TzxNTL6sVM9IXauc46Fk3HH+hUeyImGY6t93Wqd4zvRcFAZDlzK0ikHykGnHCgHnXKgHHTKgXLQKQfKQaccKAedcqAcdMqBctDNe/p84fsk9n2XDdcmHVYWTsYd61egmjEcW+3rVuuw0Izh4EEZDlyt0CkHykGnHCgHnXKgHIex1Tvtt1rnDuXYwfp9Xb/CEvP+8ca10e4e6g1pyoFzDjrlQDnolAPloFMOlINOOVAOOuVAOeiUA+WgUw6Ug045UA465UA5Lpt96+d5vj30XOVYv6/rV3ggp3v6fLS7N18IeqohGDlXOUgMB8pBpxwoB51yoBx0yoFy0CkHQ6e7fX5wc17Zs5By4JyDTjlQDjrlQDnolAPloJtRjq1u7Gy1DgvNGI7LZYN9NRnzzbt9/hBv++bapHLwiAwHrlbolAPloFMOlINOOVAOOuVgaN7t84Pztpa/KQfOOeiUA+WgUw6Ug045UA465UA56JQD5aBTDpSDTjlQDjrlQDnolAPloFMOlIPu6fnltf8Wp+CwgsMKnXKgHHTKgXLQKQfKQaccKAedcqAcdMqBctApB8pBpxwoB51yoBx0yoFy0CkHykGnHCgHnXKgHHTKgXLQKQfKQfcLg9hNy/n5CMgAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAC70lEQVR4Xu3d3U0bQRhA0RClB+CNAmiCEuggpdEBJdAEPSC6iPISAZI3K9/RsOs959keS96rT7Jnf65u7u5/wLl+nvtG+EtAJAIiERCJgEgERCIgEgGRCIhEQCQCIvmV3s1E18+/P37a++PTxA8/yQQiERCJgEgERCIgEr/CTnp7+HSu5u3La/qmL5QJRCIgEgGRCIhEQCR+hW3Llw2vBadeOXmPzATakPX1LIc1ZJ2VBLQVY4/62NUWCIhEQCQCIhEQiYBIBEQiIBIBkQiIZEN7Yd9y3dOX0w4XnHrlwc9UPPQEWl/PclhD1tmp4wY09qiPXW1HjhsQQwiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyezrwtbfOWsj9wBk2dQJtL6eBdfPU+8ByFYCGlLPP2NX42xTJxCXR0AkAiIREImASAREIiASAW3F2KfsjF1tgYBIBLQhQ8bG++PTkHVWmr2ZyrKFY/8tNyH9LxOIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyXEDun15Td/cZ2NX25HjBsQQhw5oyNi4fXkdss5OHf26sIVj//Zw//GgHrmSBYeeQHQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnR98J2ZOatM9czgUgERCIgEgGRCIhEQCQCIhEQybyAxv4PNnY1zjYvIC7S1ICGjI3Jz8Ni2ey9sN09D4tlUycQl0dAJAIiERCJgEgERCIgEgGRCIhEQCQCIpm9F7Yjboq4hglEIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnVzd19WoBjM4FIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASARE8gdOVlbhc4f0YQAAAABJRU5ErkJggg==">
+<title>Bahir Guide</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&family=IBM+Plex+Mono:wght@600&display=swap">
+<style>*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --line:#dfe3ea; --fg:#18202c; --muted:#5d6878;
+  --up:#13a36b; --down:#e0413a; --up-soft:#e3f6ee; --down-soft:#fde9e8; --hl:#d39b12;
+  --g1:#e0413a; --g2:#c98a06; --g3:#2f6fe0; --g4:#7b4fd8; --g5:#0e9a95; --g6:#d4560f;
+  --font:"Vazirmatn",Tahoma,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --surface:#18202b; --line:#2a3442; --fg:#e8edf4; --muted:#9aa6b6;
+  --up:#2fcf8c; --down:#ff6158; --up-soft:#133227; --down-soft:#3a1c1c; --hl:#f0be44;
+  --g1:#ff6a62; --g2:#f0b334; --g3:#6b9cff; --g4:#a888ff; --g5:#3cc9c3; --g6:#ff8a4c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --surface:#18202b; --line:#2a3442; --fg:#e8edf4; --muted:#9aa6b6;
+  --up:#2fcf8c; --down:#ff6158; --up-soft:#133227; --down-soft:#3a1c1c; --hl:#f0be44;
+  --g1:#ff6a62; --g2:#f0b334; --g3:#6b9cff; --g4:#a888ff; --g5:#3cc9c3; --g6:#ff8a4c; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.7}
+.wrap{direction:rtl;max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+h1{font-size:1.9rem;font-weight:900;margin:0;line-height:1.3;text-wrap:balance}
+.sub{color:var(--muted);margin:4px 0 0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:8px;padding-block:12px;margin-top:12px}
+.tabs a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:10px 8px;border-radius:12px;border:1.5px solid var(--line);color:var(--fg);background:var(--surface)}
+.tabs a:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.tabs a.t1{border-color:var(--g3)} .tabs a.t2{border-color:var(--up)}
+section.part{scroll-margin-top:80px;margin-top:28px}
+.part>h2{font-size:1.45rem;font-weight:900;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+.part>h2 .n{font-family:var(--mono);font-size:.95rem;color:var(--surface);background:var(--fg);border-radius:8px;padding:2px 9px}
+.part>p.lead{color:var(--muted);margin:0 0 18px}
+/* term groups */
+.group{margin-top:22px}
+.ghead{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.dot{width:14px;height:14px;border-radius:4px;background:var(--c)}
+.ghead h3{margin:0;font-size:1.12rem;font-weight:800}
+.ghead .cnt{color:var(--muted);font-size:.85rem}
+.ghead .why{color:var(--muted);font-size:.88rem;flex-basis:100%;margin-top:-6px;padding-right:24px}
+.ghead{flex-wrap:wrap}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:12px 14px;min-width:0}
+.card .en{font-family:var(--mono);font-weight:600;direction:ltr;text-align:right;color:var(--c);font-size:1rem;letter-spacing:.02em}
+.card .fa{font-weight:800;font-size:1.05rem;margin-top:2px}
+.card .d{color:var(--muted);font-size:.9rem;margin-top:4px;line-height:1.6}
+/* candle part */
+.block{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:16px}
+.block h3{margin:0 0 4px;font-size:1.15rem;font-weight:800}
+.block>p{margin:0 0 12px;color:var(--muted);font-size:.92rem}
+.row-title{font-weight:800;margin:14px 0 8px;display:flex;align-items:center;gap:8px}
+.row-title .sw{width:12px;height:12px;border-radius:3px}
+.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media (max-width:520px){.strip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cell{border-radius:12px;padding:8px 6px 10px;text-align:center;background:var(--soft)}
+.cell svg{width:100%;max-width:70px;height:auto;display:block;margin:0 auto}
+.cell .lab{font-weight:700;font-size:.85rem;line-height:1.4;margin-top:4px}
+.meter{display:flex;gap:3px;justify-content:center;margin-top:6px;direction:ltr}
+.meter i{width:10px;height:6px;border-radius:2px;background:var(--line)}
+.meter i.on{background:var(--k)}
+.cell .lvl{font-size:.78rem;color:var(--muted)}
+.patterns{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.pat{border:1px solid var(--line);border-radius:14px;padding:12px;min-width:0;background:var(--bg)}
+.pat svg{width:100%;height:auto;max-height:150px;display:block}
+.pat .name{font-weight:800;font-size:1.02rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tag{font-size:.75rem;font-weight:700;padding:1px 8px;border-radius:999px}
+.tag.up{background:var(--up-soft);color:var(--up)} .tag.down{background:var(--down-soft);color:var(--down)} .tag.mid{background:var(--line);color:var(--fg)}
+.pat .d{color:var(--muted);font-size:.9rem;margin-top:4px}
+.anat{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.anat svg{width:240px;max-width:100%;height:auto}
+.anat ul{margin:0;padding-right:18px;font-size:.92rem;min-width:0;flex:1}
+.tip{display:flex;gap:12px;align-items:flex-start;border-radius:14px;padding:14px 16px;margin-top:16px;background:var(--surface);border:1.5px dashed var(--hl)}
+.tip b{color:var(--hl)}
+
+/* app shell */
+.wrap{padding-block:16px calc(84px + env(safe-area-inset-bottom,0px))}
+.bnav{position:fixed;inset:auto 0 0 0;z-index:20;display:flex;justify-content:center;gap:4px;direction:rtl;background:var(--surface);border-top:1px solid var(--line);padding-top:6px;padding-bottom:calc(6px + env(safe-area-inset-bottom,0px));padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px));box-shadow:0 -6px 20px rgba(0,0,0,.06)}
+.bnav a{flex:1;max-width:120px;min-width:0;letter-spacing:-.01em;display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:var(--muted);font-size:.8rem;font-weight:700;padding:6px 4px;border-radius:12px}
+.bnav a{font-size:.72rem}
+.bnav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bnav a.on{color:var(--g3);background:color-mix(in srgb,var(--g3) 12%,transparent)}
+.bnav a:focus-visible{outline:3px solid var(--g3)}
+section.part{margin-top:14px}
+.tools{position:sticky;top:env(safe-area-inset-top,0px);z-index:4;background:var(--bg);padding-block:8px;display:flex;flex-direction:column;gap:8px}
+.search{display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:0 12px}
+.search:focus-within{border-color:var(--g3)}
+.search svg{width:20px;height:20px;fill:none;stroke:var(--muted);stroke-width:2;flex:none}
+.search input{flex:1;min-width:0;border:0;background:transparent;color:var(--fg);font:inherit;font-size:16px;padding:11px 0;outline:none}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;font-size:.85rem;font-weight:700;border-radius:999px;padding:5px 12px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.chip i{width:9px;height:9px;border-radius:3px;background:var(--c,var(--fg))}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible,.btn:focus-visible,.flash:focus-visible,.reset:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.empty{text-align:center;color:var(--muted);padding:30px 0}
+mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;border-radius:3px}
+.prog{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-weight:700;font-size:.9rem}
+.bar{flex:1;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--up);border-radius:99px;transition:width .3s}
+.flash{margin-top:12px;width:100%;min-height:230px;border:1px solid var(--line);border-top:6px solid var(--c);border-radius:20px;background:var(--surface);color:var(--fg);font:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px;cursor:pointer;text-align:center}
+.fg-name{font-size:.8rem;font-weight:700;color:var(--c)}
+.fen{font-family:var(--mono);font-size:2rem;font-weight:600;direction:ltr;color:var(--c)}
+.fback{display:flex;flex-direction:column;gap:4px}
+.ffa{font-size:1.4rem;font-weight:900}
+.fd{color:var(--muted)}
+.fhint{color:var(--muted);font-size:.85rem}
+.answer{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.btn{font:inherit;font-weight:800;font-size:1rem;border-radius:14px;padding:13px;border:0;cursor:pointer}
+.btn.no{background:var(--down-soft);color:var(--down)} .btn.yes{background:var(--up-soft);color:var(--up)}
+.btn:disabled{opacity:.45;cursor:default}
+.reset{display:block;margin:16px auto 0;background:none;border:0;color:var(--muted);font:inherit;text-decoration:underline;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+
+.warn{border-radius:16px;padding:16px;background:var(--down-soft);border:1.5px solid var(--down);margin-top:4px}
+.warn h3{margin:0 0 6px;color:var(--down);font-size:1.15rem}
+.warn p{margin:6px 0;font-size:.93rem}
+.lev{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;margin:10px 0}
+.lev div{background:var(--surface);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:2px}
+.lev b{font-family:var(--mono);font-size:1.15rem;direction:ltr;text-align:right}
+.lev span{font-size:.8rem;color:var(--muted);line-height:1.4}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.calc label{display:flex;flex-direction:column;gap:4px;font-size:.85rem;font-weight:700;color:var(--muted);min-width:0}
+.calc input{font:inherit;font-size:16px;font-weight:700;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:9px 10px;direction:ltr;text-align:right;width:100%;box-sizing:border-box;font-variant-numeric:tabular-nums}
+.calc input:focus{outline:none;border-color:var(--g3)}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.res div{background:var(--up-soft);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column}
+.res div+div{background:var(--down-soft)}
+.res.r3{grid-template-columns:1fr 1fr}
+.res.r3 div:first-child{grid-column:1/-1}
+.res .mg{background:var(--bg)!important;border:1px solid var(--line)}
+.res small{font-size:.8rem;color:var(--muted);direction:ltr;text-align:right}
+.note.bad{color:var(--down)!important;font-weight:700}
+.calc select{font:inherit;font-size:16px;font-weight:700;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:9px 10px;width:100%}
+.res span{font-size:.82rem;font-weight:700;color:var(--muted)}
+.res b{font-size:1.5rem;font-weight:900;font-variant-numeric:tabular-nums}
+.note{font-size:.83rem;color:var(--muted);margin:8px 0 0!important}
+.sess{display:flex;flex-direction:column;gap:8px}
+.srow small{display:block;font-size:.72rem;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+.srow{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:center;font-size:.88rem}
+.srow .nm{font-weight:800;display:flex;align-items:center;gap:6px}
+.srow .on-dot{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.srow.open .on-dot{background:var(--up);box-shadow:0 0 0 3px var(--up-soft)}
+.track{position:relative;height:26px;background:var(--bg);border-radius:8px;direction:ltr;overflow:hidden}
+.track i{position:absolute;top:0;bottom:0;border-radius:6px;background:var(--c);opacity:.85}
+.track .now{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--fg)}
+.track .lbl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:var(--fg);font-variant-numeric:tabular-nums}
+.rules{margin:0;padding-right:20px;display:flex;flex-direction:column;gap:8px;font-size:.93rem}
+.src ul{margin:0;padding-right:18px;display:flex;flex-direction:column;gap:6px}
+.src a{color:var(--g3)}
+
+.checks{display:flex;flex-direction:column;gap:6px}
+.checks label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:10px;background:var(--bg);cursor:pointer;font-size:.92rem}
+.checks input{width:20px;height:20px;accent-color:var(--up);flex:none;margin-top:3px}
+.checks label:has(input:checked){background:var(--up-soft)}
+.cstatus{margin-top:10px;border-radius:12px;padding:10px 12px;font-weight:800;text-align:center}
+.cstatus.wait{background:var(--down-soft);color:var(--down)} .cstatus.go{background:var(--up-soft);color:var(--up)}
+.otable{display:flex;flex-direction:column;gap:6px}
+.orow{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:8px 10px;border-radius:10px;background:var(--bg);font-size:.9rem}
+.orow b{font-family:var(--mono);direction:ltr;text-align:right;color:var(--g3);font-size:.85rem}
+.orow b small{display:block;font-family:var(--font);color:var(--fg);font-size:.85rem}
+@media (max-width:420px){.orow{grid-template-columns:1fr;gap:2px}}
+.wr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.wr div{background:var(--bg);border-radius:12px;padding:10px 6px;text-align:center;display:flex;flex-direction:column;gap:4px}
+.wr b{font-size:1.3rem;font-weight:900;font-variant-numeric:tabular-nums}
+.wr span{font-size:.8rem;color:var(--muted)}
+.wr .bar2{height:6px;border-radius:9px;background:var(--line);overflow:hidden;direction:ltr}
+.wr .bar2 i{display:block;height:100%;background:var(--g3)}
+.psy{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.psy div{background:var(--bg);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:3px;border-right:4px solid var(--g4)}
+.psy span{font-size:.88rem;color:var(--muted)}
+.scam{border-color:var(--down)}
+.scam h3{color:var(--down)}
+.pat .pts{font-size:.85rem;margin:4px 0 0;padding-right:16px;color:var(--muted)}
+
+.aibox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.drop{display:flex;align-items:center;justify-content:center;min-height:120px;border:2px dashed var(--line);border-radius:14px;cursor:pointer;text-align:center;padding:10px;background:var(--bg);position:relative;overflow:hidden}
+.drop:focus-within{border-color:var(--g3)}
+.drop input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.drop span{display:flex;flex-direction:column;gap:4px;color:var(--g3)}
+.drop small{color:var(--muted)}
+.drop img{max-height:260px;border-radius:10px}
+.q{display:flex;flex-direction:column;gap:4px;font-size:.85rem;font-weight:700;color:var(--muted)}
+.q textarea{font:inherit;font-size:16px;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:9px 10px;resize:vertical}
+.q textarea:focus,.calc input[type=text]:focus{outline:none;border-color:var(--g3)}
+.calc input[type=text]{text-align:right}
+.aibtns{display:flex;gap:10px}
+.aibtns .btn{flex:1}
+.aiwarn{margin-top:14px;font-size:.85rem;color:var(--muted);border-right:4px solid var(--hl);padding:6px 12px;background:var(--surface);border-radius:8px}
+#aiOut{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.ai-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.ai-card h4{margin:0 0 6px;font-size:1rem;font-weight:800;display:flex;align-items:center;gap:8px}
+.ai-card p{margin:0;font-size:.93rem}
+.ai-card ul{margin:0;padding-right:18px;font-size:.92rem}
+.ai-sum{border-width:2px;border-color:var(--g3)}
+.scn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:480px){.scn{grid-template-columns:1fr}}
+.scn div{border-radius:12px;padding:10px 12px;font-size:.92rem}
+.scn .u{background:var(--up-soft)} .scn .d{background:var(--down-soft)}
+.scn b{display:block;margin-bottom:4px}
+.scn .u b{color:var(--up)} .scn .d b{color:var(--down)}
+.cl{display:flex;flex-direction:column;gap:6px}
+.cl div{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:.9rem}
+.cl i{font-style:normal;font-size:.75rem;font-weight:800;border-radius:999px;padding:1px 8px;white-space:nowrap}
+.cl .met{background:var(--up-soft);color:var(--up)} .cl .not{background:var(--down-soft);color:var(--down)} .cl .unk{background:var(--line);color:var(--fg)}
+.cl small{display:block;color:var(--muted)}
+.thinking{display:flex;align-items:center;gap:10px;color:var(--muted)}
+.thinking::before{content:"";width:16px;height:16px;border-radius:50%;border:2.5px solid var(--line);border-top-color:var(--g3);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.thinking::before{animation:none}}
+
+.live{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.coin{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.coin .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.coin .sym{font-family:var(--mono);font-weight:600;font-size:1.05rem}
+.coin .sym small{font-family:var(--font);color:var(--muted);font-size:.8rem;margin-right:6px}
+.coin .px{font-weight:900;font-size:1.25rem;direction:ltr;font-variant-numeric:tabular-nums}
+.coin .chg{font-size:.85rem;font-weight:800;direction:ltr;display:inline-block}
+.coin .chg.up{color:var(--up)} .coin .chg.down{color:var(--down)}
+.coin svg{width:100%;height:46px;display:block}
+.chips2{display:flex;flex-wrap:wrap;gap:6px}
+.chips2 span{font-size:.78rem;font-weight:700;border-radius:999px;padding:2px 9px}
+.chips2 .up{background:var(--up-soft);color:var(--up)} .chips2 .down{background:var(--down-soft);color:var(--down)} .chips2 .mid{background:var(--line);color:var(--fg)} .chips2 .hl{background:color-mix(in srgb,var(--hl) 22%,transparent);color:var(--fg)}
+.howto{margin-top:10px;font-size:.88rem;color:var(--muted)}
+.howto summary{cursor:pointer;font-weight:700;color:var(--g3)}
+.howto ul{padding-right:18px}
+.alerts{display:flex;flex-direction:column;gap:6px}
+.alert{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;background:var(--bg);border-radius:10px;padding:8px 10px;font-size:.9rem}
+.alert i{width:10px;height:10px;border-radius:50%;margin-top:7px;background:var(--muted)}
+.alert.up i{background:var(--up)} .alert.down i{background:var(--down)} .alert.warn i{background:var(--hl)}
+.alert small{display:block;color:var(--muted);font-size:.78rem}
+
+[hidden]{display:none!important}
+.chat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.msgs{display:flex;flex-direction:column;gap:8px;max-height:60vh;overflow-y:auto;padding:2px}
+.msg{max-width:88%;border-radius:16px;padding:9px 12px;font-size:.93rem;line-height:1.75;min-width:0;overflow-wrap:anywhere}
+.msg.me{align-self:flex-start;background:var(--g3);color:#fff;border-bottom-right-radius:4px}
+.msg.bot{align-self:flex-end;background:var(--bg);border-bottom-left-radius:4px}
+.msg p{margin:0 0 6px} .msg p:last-child{margin:0}
+.msg ul{margin:4px 0;padding-right:18px}
+.msg h5{margin:6px 0 2px;font-size:.95rem}
+.sugg{display:flex;flex-wrap:wrap;gap:6px}
+.sugg .chip{font-weight:600}
+.composer{display:flex;gap:8px;align-items:flex-end}
+.composer textarea{flex:1;min-width:0;font:inherit;font-size:16px;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:9px 12px;resize:none;max-height:140px}
+.composer textarea:focus{outline:none;border-color:var(--g3)}
+.iconbtn,.send{flex:none;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:0;position:relative}
+.iconbtn{background:var(--bg);border:1.5px solid var(--line);color:var(--muted)}
+.iconbtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.iconbtn svg,.send svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.send{background:var(--g3);color:#fff}
+.send svg{transform:scaleX(-1);fill:currentColor;stroke:none}
+.send.stop{background:var(--down)} .send.stop svg{transform:none}
+.send:disabled{opacity:.4}
+.iconbtn:focus-within,.send:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.attach{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--muted)}
+.attach img{width:44px;height:44px;object-fit:cover;border-radius:8px}
+.attach button{margin-right:auto;background:var(--line);border:0;border-radius:50%;width:26px;height:26px;cursor:pointer;color:var(--fg);font-size:1rem}
+.chatfoot{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.chatfoot .reset{margin:0}
+
+.brand{display:flex;align-items:center;gap:12px}
+.avatar{width:52px;height:52px;border-radius:14px;flex:none;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAC70lEQVR4Xu3d3U0bQRhA0RClB+CNAmiCEuggpdEBJdAEPSC6iPISAZI3K9/RsOs959keS96rT7Jnf65u7u5/wLl+nvtG+EtAJAIiERCJgEgERCIgEgGRCIhEQCQCIvmV3s1E18+/P37a++PTxA8/yQQiERCJgEgERCIgEr/CTnp7+HSu5u3La/qmL5QJRCIgEgGRCIhEQCR+hW3Llw2vBadeOXmPzATakPX1LIc1ZJ2VBLQVY4/62NUWCIhEQCQCIhEQiYBIBEQiIBIBkQiIZEN7Yd9y3dOX0w4XnHrlwc9UPPQEWl/PclhD1tmp4wY09qiPXW1HjhsQQwiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyezrwtbfOWsj9wBk2dQJtL6eBdfPU+8ByFYCGlLPP2NX42xTJxCXR0AkAiIREImASAREIiASAW3F2KfsjF1tgYBIBLQhQ8bG++PTkHVWmr2ZyrKFY/8tNyH9LxOIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQyXEDun15Td/cZ2NX25HjBsQQhw5oyNi4fXkdss5OHf26sIVj//Zw//GgHrmSBYeeQHQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnR98J2ZOatM9czgUgERCIgEgGRCIhEQCQCIhEQybyAxv4PNnY1zjYvIC7S1ICGjI3Jz8Ni2ey9sN09D4tlUycQl0dAJAIiERCJgEgERCIgEgGRCIhEQCQCIpm9F7Yjboq4hglEIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMnVzd19WoBjM4FIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASARE8gdOVlbhc4f0YQAAAABJRU5ErkJggg==) center/cover}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <div class="brand"><span class="avatar logo" aria-hidden="true"></span><h1 dir="ltr">Bahir Guide</h1></div>
+  <p class="sub">۴۰ اصطلاح مهم و شناخت کندل‌ها، دسته‌بندی‌شده و تصویری</p>
+
+  
+
+  <section class="part" id="assistant">
+    <h2><span class="n">●</span>بازار زنده</h2>
+    <p class="lead">قیمت و وضعیت چند شاخص ساده از CoinGecko. این‌ها وضعیت را نشان می‌دهند، نه سیگنال خرید یا فروش.</p>
+    <div id="live" class="live"><div class="ai-card thinking" id="liveWait">در حال گرفتن داده…</div></div>
+    <p class="note" id="liveNote"></p>
+    <details class="howto"><summary>این شاخص‌ها چطور حساب می‌شوند؟</summary>
+      <ul>
+        <li><b>روند:</b> قیمت فعلی در مقایسه با میانگین ۵۰ نقطه آخر چارت ۹۰ روزه (هر نقطه حدود ۱۸ ساعت؛ یعنی میانگین حدود ۳۷ روزه).</li>
+        <li><b>میانگین‌ها:</b> اگر میانگین ۲۰ نقطه‌ای (حدود ۱۵ روز) بالای میانگین ۵۰ نقطه‌ای باشد «تقاطع طلایی» و اگر زیر آن باشد «تقاطع مرگ».</li>
+        <li><b>RSI ۱۴:</b> روی چارت ۳۰ روزه با نقطه‌های حدود ۶ ساعته. بالای ۷۰ اشباع خرید، زیر ۳۰ اشباع فروش.</li>
+        <li>این‌ها تقریبی‌اند و با اندیکاتورهای TradingView دقیقاً یکی نیستند.</li>
+      </ul>
+    </details>
+
+    <div class="block">
+      <h3>هشدار قیمت</h3>
+      <p>این نسخه مستقل است و نوتیفیکیشن نمی‌فرستد. برای هشدار روی گوشی، در اپ صرافی یا TradingView روی قیمت یا اندیکاتور «Alert» بگذار.</p>
+    </div>
+  </section>
+
+  <section class="part" id="terms">
+    <h2><span class="n">1</span>اصطلاحات ترید</h2>
+    <p class="lead">هر رنگ یک گروه است. اول گروه قرمز را یاد بگیر؛ بدون آن هیچ معامله‌ای امن نیست.</p>
+    <div class="tools">
+      <label class="search" for="q"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="q" type="search" placeholder="جستجو: مثلاً SL یا حد ضرر" autocomplete="off"></label>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div id="groups"></div>
+    <p class="empty" id="empty" hidden>چیزی پیدا نشد. کلمه دیگری امتحان کن.</p>
+  </section>
+
+  <section class="part" id="candles">
+    <h2><span class="n">2</span>کندل‌ها و الگوهای شمعی</h2>
+    <p class="lead"><span style="color:var(--up);font-weight:700">سبز = خریداران برنده</span> · <span style="color:var(--down);font-weight:700">قرمز = فروشندگان برنده</span></p>
+
+    <div class="block">
+      <h3>آناتومی یک کندل</h3>
+      <div class="anat">
+        <svg viewBox="0 0 240 170" role="img" aria-label="اجزای کندل">
+          <line x1="55" y1="10" x2="55" y2="160" stroke="var(--up)" stroke-width="3"/>
+          <rect x="38" y="50" width="34" height="70" rx="3" fill="var(--up)"/>
+          <g direction="ltr" text-anchor="start" fill="var(--fg)" font-family="Vazirmatn,Tahoma,sans-serif" font-size="12">
+            <line x1="62" y1="25" x2="110" y2="25" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="29">سقف · سایه بالایی</text>
+            <line x1="75" y1="50" x2="110" y2="55" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="59">قیمت بسته شدن</text>
+            <line x1="75" y1="85" x2="110" y2="88" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="92">بدنه</text>
+            <line x1="75" y1="120" x2="110" y2="118" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="122">قیمت باز شدن</text>
+            <line x1="62" y1="145" x2="110" y2="148" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="115" y="152">کف · سایه پایینی</text>
+          </g>
+        </svg>
+        <ul>
+          <li><b>بدنه بزرگ</b> یعنی یک طرف بازار قاطعانه برنده شده.</li>
+          <li><b>سایه بلند</b> یعنی قیمت تا آنجا رفته ولی پس زده شده.</li>
+          <li><b>بدنه کوچک</b> یعنی بلاتکلیفی و تعادل بین خریدار و فروشنده.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>قدرت تک‌کندل‌ها</h3>
+      <p>از ضعیف به قوی؛ هرچه بدنه بزرگ‌تر، حرکت قوی‌تر.</p>
+      <div class="row-title"><span class="sw" style="background:var(--up)"></span>کندل‌های صعودی · قدرت خریداران</div>
+      <div class="strip" id="bulls"></div>
+      <div class="row-title"><span class="sw" style="background:var(--down)"></span>کندل‌های نزولی · قدرت فروشندگان</div>
+      <div class="strip" id="bears"></div>
+    </div>
+
+    <div class="block">
+      <h3>قدرت فروشنده بعد از یک کندل سبز</h3>
+      <p>به اندازه کندل‌های قرمزی که بعد از سبز می‌آیند نگاه کن.</p>
+      <div class="patterns" id="sellers"></div>
+    </div>
+
+    <div class="block">
+      <h3>الگوهای برگشتی (پتانسیل تغییر جهت)</h3>
+      <p>کندل‌های داخل دایره زرد همان نشانه هستند.</p>
+      <div class="patterns" id="reversals"></div>
+    </div>
+
+    <div class="tip"><span style="font-size:1.4rem;line-height:1" aria-hidden="true">★</span>
+      <div><b>نکته طلایی:</b> هیچ الگویی به‌تنهایی قطعی نیست. الگو را کنار سطح حمایت و مقاومت ببین و منتظر کندل تأیید بعدی بمان؛ همیشه حد ضرر بگذار.</div>
+    </div>
+  </section>
+
+
+  <section class="part" id="analysis">
+    <h2><span class="n">3</span>تحلیل تکنیکال</h2>
+    <p class="lead">ساختار بازار، الگوهای نموداری و چهار ابزار پرکاربرد؛ همه با شکل.</p>
+
+    <div class="block">
+      <h3>ساختار بازار: روند را از سقف‌ها و کف‌ها بشناس</h3>
+      <p>HH = سقف بالاتر · HL = کف بالاتر · LH = سقف پایین‌تر · LL = کف پایین‌تر</p>
+      <div class="patterns" id="structure"></div>
+    </div>
+
+    <div class="block">
+      <h3>الگوهای نموداری مهم</h3>
+      <p>الگو فقط وقتی تأیید می‌شود که قیمت خط گردن یا ضلع الگو را بشکند و کندل بیرون آن بسته شود. شکست جعلی زیاد پیش می‌آید.</p>
+      <div class="patterns" id="chartpats"></div>
+    </div>
+
+    <div class="block">
+      <h3>چهار ابزار پرکاربرد</h3>
+      <p>هیچ اندیکاتوری به‌تنهایی سیگنال نیست؛ آن را کنار ساختار بازار و سطوح ببین.</p>
+      <div class="patterns" id="indis"></div>
+    </div>
+  </section>
+
+  <section class="part" id="guide">
+    <h2><span class="n">4</span>راهنمای عملی</h2>
+    <p class="lead">مخصوص کریپتو: ماشین‌حساب پوزیشن با اهرم، ساعت‌های پرحجم و قوانین مهم از منابع معتبر.</p>
+
+    <div class="warn">
+      <h3>قبل از هر چیز بدان</h3>
+      <p>در فیوچرز کریپتو با اهرم، اگر قیمت کمی خلاف تو برود <b>لیکوئید می‌شوی</b> و مارجین آن پوزیشن را از دست می‌دهی. با اهرم ۲۰ برابر، حدود <b>۵٪ حرکت</b> خلاف تو کافی است.</p>
+      <div class="lev">
+        <div><b>۲x</b><span>لیکوئید با حدود ۵۰٪ حرکت</span></div>
+        <div><b>۵x</b><span>لیکوئید با حدود ۲۰٪ حرکت</span></div>
+        <div><b>۱۰x</b><span>لیکوئید با حدود ۱۰٪ حرکت</span></div>
+        <div><b>۲۰x</b><span>لیکوئید با حدود ۵٪ حرکت</span></div>
+        <div><b>۵۰x</b><span>لیکوئید با حدود ۲٪ حرکت</span></div>
+      </div>
+      <p>اعداد تقریبی‌اند و کارمزد و مارجین نگهداری را حساب نکرده‌اند. در اروپا رگولاتور (ESMA) برای CFD رمزارز به مشتری عادی حداکثر <b>۲ برابر</b> اهرم اجازه داده و طبق بررسی‌اش <b>۷۴ تا ۸۹ درصد</b> حساب‌های CFD خُرد ضرر می‌کنند.</p>
+    </div>
+
+    <div class="block" id="checkBlock">
+      <h3>چک‌لیست قبل از هر معامله</h3>
+      <p>تا همه تیک نخورده، وارد نشو.</p>
+      <div class="checks" id="checks"></div>
+      <div class="cstatus" id="cstatus"></div>
+      <button class="reset" id="creset" type="button">پاک کردن تیک‌ها برای معامله بعدی</button>
+    </div>
+
+    <div class="block">
+      <h3>ماشین‌حساب پوزیشن کریپتو</h3>
+      <p>حجم را از حد ضرر حساب کن، نه از اهرم: حجم (دلار) = مبلغ ریسک ÷ درصد فاصله تا حد ضرر</p>
+      <div class="calc">
+        <label for="cBal">موجودی حساب (USDT)<input id="cBal" type="number" inputmode="decimal" value="1000" min="0"></label>
+        <label for="cRisk">ریسک هر معامله (٪)<input id="cRisk" type="number" inputmode="decimal" value="1" min="0" step="0.5"></label>
+        <label for="cEn">قیمت ورود<input id="cEn" type="number" inputmode="decimal" value="100000" min="0"></label>
+        <label for="cSl">قیمت حد ضرر<input id="cSl" type="number" inputmode="decimal" value="98000" min="0"></label>
+        <label for="cLev">اهرم (برای اسپات ۱)<input id="cLev" type="number" inputmode="decimal" value="5" min="1"></label>
+        <label for="cSide">جهت<select id="cSide"><option value="long">لانگ (خرید)</option><option value="short">شورت (فروش)</option></select></label>
+      </div>
+      <div class="res r3">
+        <div><span>اندازه پوزیشن</span><b id="rVal">–</b><small id="rQty"></small></div>
+        <div class="mg"><span>مارجین لازم</span><b id="rMg">–</b></div>
+        <div><span>حداکثر ضرر</span><b id="rRisk">–</b></div>
+      </div>
+      <p class="note" id="rNote"></p>
+    </div>
+
+    <div class="block">
+      <h3>ساعت‌های پرحجم به وقت تو</h3>
+      <p id="nowLine"></p>
+      <div class="sess" id="sess"></div>
+      <p class="note">کریپتو ۲۴ ساعته و ۷ روز هفته باز است، ولی وقتی بازارهای سنتی باز هستند حجم بیشتر است؛ مخصوصاً وقتی لندن و نیویورک هم‌زمان باز هستند. آخر هفته حجم کمتر است و حرکت‌های ناگهانی بیشتر.</p>
+      <p class="note" id="fundLine"></p>
+    </div>
+
+    <div class="block">
+      <h3>۵ الگوی کندلی معروف دیگر</h3>
+      <p>همه به <b>کندل تأیید بعدی</b> و یک سطح حمایت یا مقاومت نیاز دارند.</p>
+      <div class="patterns" id="more"></div>
+    </div>
+
+    <div class="block">
+      <h3>انواع سفارش در صرافی</h3>
+      <div class="otable" id="orders"></div>
+    </div>
+
+    <div class="block">
+      <h3>چند درصد معامله‌ها را باید ببری؟</h3>
+      <p>هرچه نسبت ریسک به بازده بهتر باشد، با درصد برد کمتر هم سربه‌سر می‌شوی. فرمول: درصد برد لازم = ۱ ÷ (۱ + بازده)</p>
+      <div class="wr" id="winrate"></div>
+    </div>
+
+    <div class="block">
+      <h3>روانشناسی: دشمن اصلی خودت هستی</h3>
+      <div class="psy">
+        <div><b>FOMO (ترس از جا ماندن)</b><span>قیمت پریده و می‌خواهی سریع وارد شوی. معمولاً بدترین نقطه ورود است؛ منتظر پولبک بمان.</span></div>
+        <div><b>معامله انتقامی</b><span>بعد از ضرر می‌خواهی سریع جبران کنی و حجم را بزرگ می‌کنی. بعد از ۲ ضرر پشت‌سرهم آن روز را تمام کن.</span></div>
+        <div><b>بیش‌معاملگی</b><span>هر حرکت کوچک را معامله می‌کنی. کیفیت مهم است، نه تعداد.</span></div>
+        <div><b>سقف ضرر روزانه</b><span>یک سقف بگذار، مثلاً ۳ تا ۴ درصد حساب در روز. وقتی به آن رسیدی، دیگر معامله نکن.</span></div>
+        <div><b>جابه‌جا کردن حد ضرر</b><span>امید جای برنامه را می‌گیرد. حد ضرر را فقط به سمت سود جابه‌جا کن، هرگز عقب نکش.</span></div>
+      </div>
+    </div>
+
+    <div class="block scam">
+      <h3>امنیت و کلاهبرداری</h3>
+      <ul class="rules">
+        <li><b>عبارت بازیابی (Seed Phrase) و کلید خصوصی را به هیچ‌کس نده.</b> هیچ صرافی یا پشتیبانی واقعی آن را نمی‌خواهد.</li>
+        <li><b>سود تضمینی یعنی کلاهبرداری.</b> مثل «دو برابر کردن ارز» یا سیگنال‌فروش‌هایی که سود قطعی وعده می‌دهند.</li>
+        <li><b>پامپ اند دامپ:</b> قیمت یک ارز کوچک را بالا می‌برند، خودشان می‌فروشند و قیمت سقوط می‌کند.</li>
+        <li><b>آدرس مشابه:</b> قبل از ارسال، آدرس کیف پول را کامل چک کن؛ از تاریخچه تراکنش‌ها کپی نکن.</li>
+        <li><b>لینک و QR ناشناس را باز نکن</b> و اپ صرافی را فقط از فروشگاه رسمی نصب کن.</li>
+        <li><b>تأیید دو مرحله‌ای (2FA)</b> را روشن کن و برای هر سایت رمز جدا بگذار.</li>
+        <li>اگر کسی پیشنهاد «بازگرداندن پول از دست رفته» داد، احتمالاً کلاهبرداری دوم است.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h3>قوانین طلایی برای شروع</h3>
+      <ol class="rules">
+        <li><b>اول اسپات، بعد فیوچرز.</b> در اسپات لیکوئید نمی‌شوی. چند ماه اسپات یا حساب دمو تمرین کن.</li>
+        <li><b>در هر معامله فقط ۱ تا ۲ درصد</b> موجودی را ریسک کن. با ۱۰ ضرر پشت‌سرهم هنوز بیشتر حسابت باقی می‌ماند.</li>
+        <li><b>حجم را از حد ضرر حساب کن</b> (ماشین‌حساب بالا)، نه از اینکه اهرم چقدر اجازه می‌دهد.</li>
+        <li><b>اهرم کم (حداکثر ۳ تا ۵ برابر)</b> و مطمئن شو حد ضرر خیلی قبل از قیمت لیکوئید است.</li>
+        <li><b>بدون حد ضرر وارد نشو</b> و بعد از ورود عقبش نکش. نسبت ریسک به بازده حداقل ۱ به ۲.</li>
+        <li><b>Funding را چک کن.</b> اگر پوزیشن را چند روز نگه داری، نرخ تأمین مالی می‌تواند هزینه زیادی بشود.</li>
+        <li><b>آلت‌کوین‌ها خطرناک‌ترند.</b> نوسان زیاد و حجم کم دارند؛ با بیت‌کوین و اتریوم شروع کن.</li>
+        <li><b>هنگام اخبار مهم آمریکا صبر کن</b> (مثل تورم CPI و تصمیم نرخ بهره فدرال رزرو).</li>
+        <li><b>صرافی را چک کن.</b> در اتریش در Unternehmensdatenbank سازمان FMA ببین مجوز MiCA دارد یا نه. پولی که معامله نمی‌کنی را در صرافی نگه ندار.</li>
+        <li><b>ژورنال بنویس:</b> دلیل ورود، حد ضرر، حد سود، نتیجه و احساست.</li>
+      </ol>
+    </div>
+
+    <div class="block src">
+      <h3>منابع</h3>
+      <ul>
+        <li><a href="https://www.esma.europa.eu/pl/node/84933" target="_blank" rel="noopener">ESMA — محدودیت‌های CFD و آمار ضرر</a></li>
+        <li><a href="https://www.kucoin.com/knowledge-base/Concepts/what-is-funding-rate-in-crypto" target="_blank" rel="noopener">KuCoin — نرخ Funding</a></li>
+        <li><a href="https://thekingfisher.io/en/blogs/position-size-calculator" target="_blank" rel="noopener">Kingfisher — حجم پوزیشن، اهرم و لیکوئید</a></li>
+        <li><a href="https://www.fma.gv.at/en/where-should-i-store-my-crypto-assets-fma-advises-consumers-to-check-providers-authorisation/" target="_blank" rel="noopener">FMA — بررسی مجوز صرافی کریپتو</a></li>
+        <li><a href="https://www.binance.com/en/academy/articles/what-order-types-can-you-use-on-binance" target="_blank" rel="noopener">Binance Academy — انواع سفارش</a></li>
+        <li><a href="https://www.investing.com/academy/analysis/relative-strength-index-definition" target="_blank" rel="noopener">Investing.com — اندیکاتور RSI</a></li>
+        <li><a href="https://www.investing.com/academy/analysis/how-to-use-fibonacci-retracements" target="_blank" rel="noopener">Investing.com — فیبوناچی</a></li>
+        <li><a href="https://support.kraken.com/articles/chart-patterns" target="_blank" rel="noopener">Kraken — الگوهای نموداری</a></li>
+        <li><a href="https://www.esma.europa.eu/sites/default/files/2026-01/Factsheet_on_crypto_fraud_and_scams_CY_EN.pdf" target="_blank" rel="noopener">ESMA — کلاهبرداری‌های کریپتو</a></li>
+        <li><a href="https://www.dukascopy.com/swiss/spanish/marketwatch/articles/forex-trading-sessions/" target="_blank" rel="noopener">Dukascopy — ساعت سشن‌های فارکس</a></li>
+        <li><a href="https://www.axiory.com/trading-resources/basics/calculate-position-siza-forex/" target="_blank" rel="noopener">Axiory — فرمول حجم معامله (فارکس)</a></li>
+        <li><a href="https://www.trade-ideas.com/learning-center/candlestick-patterns/" target="_blank" rel="noopener">Trade Ideas — الگوهای کندلی</a></li>
+        <li><a href="https://www.fma.gv.at/en/fma-app/" target="_blank" rel="noopener">FMA اتریش — بررسی مجوز بروکر</a></li>
+      </ul>
+      <p class="note">این صفحه آموزشی است و توصیه مالی نیست.</p>
+    </div>
+  </section>
+
+  <section class="part" id="practice">
+    <h2><span class="n">5</span>تمرین با فلش‌کارت</h2>
+    <p class="lead">کارت را بزن تا معنی‌اش را ببینی، بعد بگو بلد بودی یا نه. کارت‌هایی که بلد نیستی بیشتر تکرار می‌شوند.</p>
+    <div class="prog"><div class="bar"><i id="pbar"></i></div><span id="ptext"></span></div>
+    <div class="chips" id="pchips"></div>
+    <button class="flash" id="flash" type="button" aria-live="polite">
+      <span class="fg-name" id="fgroup"></span>
+      <span class="fen" id="fen"></span>
+      <span class="fback" id="fback" hidden><span class="ffa" id="ffa"></span><span class="fd" id="fd"></span></span>
+      <span class="fhint" id="fhint">برای دیدن معنی بزن</span>
+    </button>
+    <div class="answer">
+      <button class="btn no" id="bno" type="button">بلد نبودم</button>
+      <button class="btn yes" id="byes" type="button">بلد بودم</button>
+    </div>
+    <button class="reset" id="reset" type="button">از اول شروع کن</button>
+  </section>
+</div>
+
+<nav class="bnav" aria-label="بخش‌ها">
+  <a href="#assistant" data-v="assistant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg>بازار</a>
+  <a href="#terms" data-v="terms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/></svg>واژه‌ها</a>
+  <a href="#candles" data-v="candles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v18M17 3v18"/><rect x="4.5" y="7" width="5" height="9" rx="1"/><rect x="14.5" y="5" width="5" height="7" rx="1"/></svg>کندل‌ها</a>
+  <a href="#analysis" data-v="analysis"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M4 16l5-6 4 3 7-8"/></svg>تحلیل</a>
+  <a href="#guide" data-v="guide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M9 8h6"/></svg>راهنما</a>
+  <a href="#practice" data-v="practice"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="13" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v11"/></svg>تمرین</a>
+</nav>
+
+<script>
+const GROUPS=[
+ {c:"--g6",t:"مخصوص کریپتو",why:"اصطلاحاتی که در صرافی‌های کریپتو هر روز می‌بینی",items:[
+  ["Spot","اسپات","خرید و فروش خود ارز؛ بدون اهرم و بدون خطر لیکوئید شدن"],
+  ["Futures / Perpetual","فیوچرز دائمی","قرارداد روی قیمت ارز با اهرم و بدون تاریخ انقضا"],
+  ["Long / Short","لانگ / شورت","لانگ = سود از بالا رفتن قیمت · شورت = سود از پایین آمدن"],
+  ["Liquidation","لیکوئید شدن","بسته شدن اجباری پوزیشن وقتی مارجین تمام می‌شود"],
+  ["Funding Rate","نرخ تأمین مالی","پرداخت دوره‌ای بین لانگ‌ها و شورت‌ها، معمولاً هر ۸ ساعت"],
+  ["Market / Limit","سفارش بازار / محدود","مارکت = فوری با قیمت فعلی · لیمیت = فقط در قیمتی که تعیین کنی"],
+  ["Maker / Taker","کارمزد میکر / تیکر","سفارش لیمیت معمولاً کارمزد کمتری از سفارش مارکت دارد"],
+  ["Stablecoin","استیبل‌کوین","ارز ثابت مثل USDT یا USDC که به دلار وابسته است"],
+  ["Altcoin","آلت‌کوین","هر ارزی غیر از بیت‌کوین؛ معمولاً پرنوسان‌تر"],
+  ["Market Cap","ارزش بازار","قیمت × تعداد سکه‌های در گردش"]]},
+ {c:"--g1",t:"مدیریت معامله و ریسک",why:"هر معامله با این‌ها برنامه‌ریزی می‌شود",items:[
+  ["Entry","نقطه ورود","قیمتی که معامله را باز می‌کنی"],
+  ["SL","حد ضرر","جایی که معامله برای محدود کردن ضرر بسته می‌شود"],
+  ["TP","حد سود","جایی که معامله با سود بسته می‌شود"],
+  ["R/R","نسبت ریسک به بازده","ضرر احتمالی در برابر سود احتمالی؛ مثلاً ۱ به ۲"],
+  ["Position Size","اندازه موقعیت","حجم هر معامله بر اساس ریسک مجاز"],
+  ["Risk Management","مدیریت ریسک","قوانینی برای حفظ سرمایه در برابر ضرر"],
+  ["Drawdown","افت سرمایه","کاهش موجودی حساب از بالاترین مقدارش"]]},
+ {c:"--g2",t:"حساب، حجم و هزینه‌ها",why:"ابزار و هزینه‌هایی که بروکر حساب می‌کند",items:[
+  ["Lot","حجم معامله","در فارکس واحد حجم است؛ در کریپتو حجم را به تعداد سکه یا دلار می‌گویند"],
+  ["Pip","واحد اندازه‌گیری قیمت","مخصوص فارکس؛ در کریپتو فاصله را به دلار یا درصد می‌سنجند"],
+  ["Leverage","اهرم","معامله با حجمی بزرگ‌تر از سرمایه واقعی"],
+  ["Margin","وجه تضمین","پولی که برای باز ماندن معامله بلوکه می‌شود"],
+  ["Spread","اختلاف قیمت خرید و فروش","هزینه پنهان هر معامله"],
+  ["Swap","بهره شبانه","در فارکس هزینه شبانه است؛ معادلش در فیوچرز کریپتو Funding Rate است"]]},
+ {c:"--g3",t:"روند و حرکت قیمت",why:"قیمت به کدام سمت می‌رود و کجا می‌ایستد",items:[
+  ["Trend","روند بازار","جهت کلی قیمت: صعودی، نزولی یا خنثی"],
+  ["S/R","حمایت و مقاومت","سطوحی که قیمت معمولاً از آن‌ها برمی‌گردد"],
+  ["Breakout","شکست محدوده","عبور قیمت از یک سطح یا محدوده"],
+  ["Pullback","پولبک","برگشت موقت قیمت بعد از یک حرکت"],
+  ["Retest","بازآزمایی سطح","برگشت به سطح شکسته‌شده برای تأیید"],
+  ["Volatility","نوسان","شدت و سرعت تغییرات قیمت"]]},
+ {c:"--g4",t:"ساختار بازار و نقدینگی",why:"مفاهیم سبک اسمارت مانی (SMC)",items:[
+  ["BOS","شکست ساختار","شکست سقف یا کف در جهت روند فعلی"],
+  ["CHOCH","تغییر رفتار بازار","اولین نشانه برگشت روند"],
+  ["MSS","تغییر ساختار بازار","تأیید قوی‌تر تغییر روند"],
+  ["FVG","شکاف ارزش منصفانه","ناحیه‌ای که قیمت سریع و نامتعادل از آن رد شده"],
+  ["Liquidity","نقدینگی","جایی که سفارش‌ها و حد ضررها جمع شده‌اند"],
+  ["BSL","نقدینگی سمت خریداران","حد ضررهای بالای سقف‌ها"],
+  ["SSL","نقدینگی سمت فروشندگان","حد ضررهای زیر کف‌ها"]]},
+ {c:"--g5",t:"زمان و شرایط بازار",why:"کِی و در کدام تایم‌فریم معامله کنی",items:[
+  ["HTF","تایم‌فریم بالاتر","برای تشخیص جهت کلی بازار"],
+  ["LTF","تایم‌فریم پایین‌تر","برای پیدا کردن نقطه ورود دقیق"],
+  ["Session","سشن معاملاتی","کریپتو ۲۴ ساعته است، ولی در سشن لندن و نیویورک حجم بیشتر است"],
+  ["News Trading","معامله بر اساس خبر","معامله هنگام انتشار اخبار مهم اقتصادی"]]}
+];
+const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+document.getElementById("groups").innerHTML=GROUPS.map((g,gi)=>`
+ <div class="group" data-g="${gi}" style="--c:var(${g.c})">
+  <div class="ghead"><span class="dot"></span><h3>${g.t}</h3><span class="cnt">${fa(g.items.length)} اصطلاح</span><span class="why">${g.why}</span></div>
+  <div class="cards">${g.items.map(i=>`<div class="card" data-q="${(i[0]+" "+i[1]+" "+i[2]).toLowerCase()}"><div class="en">${i[0]}</div><div class="fa">${i[1]}</div><div class="d">${i[2]}</div></div>`).join("")}</div>
+ </div>`).join("");
+
+/* candle drawing: values 0..100, 100 = top */
+function chart(cs,{h=150,hl=null,arrow=null}={}){
+  const step=24,bw=14,pad=14,w=cs.length*step+pad*2+(arrow?26:0),top=10,ih=h-20;
+  const Y=v=>top+ih*(1-v/100);
+  let s=`<svg viewBox="0 0 ${w} ${h}" role="img">`;
+  if(hl){const x1=pad+hl[0]*step-4,x2=pad+(hl[1]+1)*step-6;
+    const lo=Math.min(...cs.slice(hl[0],hl[1]+1).map(c=>c.l)),hi=Math.max(...cs.slice(hl[0],hl[1]+1).map(c=>c.h));
+    s+=`<rect x="${x1}" y="${Y(hi)-7}" width="${x2-x1}" height="${Y(lo)-Y(hi)+14}" rx="12" fill="none" stroke="var(--hl)" stroke-width="2" stroke-dasharray="5 4"/>`;}
+  cs.forEach((c,i)=>{const up=c.c>=c.o,col=up?"var(--up)":"var(--down)",x=pad+i*step+bw/2;
+    s+=`<line x1="${x}" x2="${x}" y1="${Y(c.h)}" y2="${Y(c.l)}" stroke="${col}" stroke-width="2"/>`;
+    const y1=Y(Math.max(c.o,c.c)),y2=Y(Math.min(c.o,c.c));
+    s+=`<rect x="${x-bw/2}" y="${y1}" width="${bw}" height="${Math.max(2,y2-y1)}" rx="2" fill="${col}"/>`;});
+  if(arrow){const x=w-pad-6,up=arrow==="up",col=up?"var(--up)":"var(--down)";
+    s+=up?`<path d="M${x} ${h*0.55} L${x} ${h*0.25} M${x-7} ${h*0.33} L${x} ${h*0.25} L${x+7} ${h*0.33}" stroke="${col}" stroke-width="3" fill="none" stroke-linecap="round"/>`
+         :`<path d="M${x} ${h*0.35} L${x} ${h*0.65} M${x-7} ${h*0.57} L${x} ${h*0.65} L${x+7} ${h*0.57}" stroke="${col}" stroke-width="3" fill="none" stroke-linecap="round"/>`;}
+  return s+"</svg>";
+}
+const C=(o,h,l,c)=>({o,h,l,c});
+
+function strip(id,list,kind){
+  document.getElementById(id).innerHTML=list.map(x=>`<div class="cell" style="--soft:var(--${kind}-soft);--k:var(--${kind})">
+   ${chart([x.c],{h:120})}<div class="lab">${x.n}</div>
+   <div class="meter">${[1,2,3,4,5].map(k=>`<i class="${k<=x.s?"on":""}"></i>`).join("")}</div>
+   <div class="lvl">${x.l}</div></div>`).join("");
+}
+strip("bulls",[
+ {n:"صعودی ضعیف",l:"ضعیف · سایه بالای بلند",s:1,c:C(12,90,8,24)},
+ {n:"صعودی معمولی",l:"متوسط",s:2,c:C(44,85,15,58)},
+ {n:"صعودی",l:"بالا",s:3,c:C(25,90,10,75)},
+ {n:"صعودی خیلی قوی",l:"بسیار بالا · خریداران پس زدند",s:4,c:C(78,92,8,90)},
+ {n:"صعودی قوی",l:"خیلی بالا · بدون سایه",s:5,c:C(8,92,8,92)}],"up");
+strip("bears",[
+ {n:"نزولی ضعیف",l:"ضعیف · سایه پایین بلند",s:1,c:C(88,92,10,76)},
+ {n:"نزولی معمولی",l:"متوسط",s:2,c:C(56,85,15,42)},
+ {n:"نزولی",l:"بالا",s:3,c:C(75,90,10,25)},
+ {n:"نزولی خیلی قوی",l:"بسیار بالا · فروشندگان پس زدند",s:4,c:C(22,92,8,10)},
+ {n:"نزولی قوی",l:"خیلی بالا · بدون سایه",s:5,c:C(92,92,8,8)}],"down");
+
+function pats(id,list){
+  document.getElementById(id).innerHTML=list.map(p=>`<div class="pat">${chart(p.cs,p.o)}
+   <div class="name">${p.n}<span class="tag ${p.k}">${p.t}</span></div><div class="d">${p.d}</div></div>`).join("");
+}
+pats("sellers",[
+ {n:"الگوی ضعیف",k:"up",t:"احتمال برگشت به بالا",d:"دو کندل قرمز کوچک بعد از سبز؛ فروشنده قدرت کمی دارد.",
+  cs:[C(20,85,15,80),C(72,80,52,60),C(58,64,38,46)],o:{arrow:"up"}},
+ {n:"الگوی قوی",k:"down",t:"ادامه نزول محتمل",d:"کندل قرمز کوچک و بعد یک قرمز بزرگ؛ فروشنده قدرت گرفته.",
+  cs:[C(30,85,20,80),C(80,90,62,70),C(80,82,18,30)],o:{arrow:"down"}},
+ {n:"الگوی خیلی قوی",k:"down",t:"نزول با قدرت ادامه دارد",d:"قرمز خیلی بزرگ که کل سبز را می‌بلعد؛ فروشنده کاملاً مسلط است.",
+  cs:[C(45,90,40,85),C(85,94,74,78),C(85,86,2,10)],o:{arrow:"down"}}
+]);
+pats("reversals",[
+ {n:"انگالفینگ صعودی",k:"up",t:"برگشت به بالا",d:"بعد از روند نزولی، سبز بزرگ کل قرمز قبلی را می‌پوشاند.",
+  cs:[C(90,95,70,75),C(76,80,55,60),C(60,64,35,40),C(42,46,24,30),C(26,60,18,56)],o:{hl:[3,4],arrow:"up"}},
+ {n:"انگالفینگ نزولی",k:"down",t:"برگشت به پایین",d:"بعد از روند صعودی، قرمز بزرگ کل سبز قبلی را می‌پوشاند.",
+  cs:[C(10,30,5,25),C(24,45,20,40),C(40,62,36,58),C(58,74,54,70),C(74,80,36,40)],o:{hl:[3,4],arrow:"down"}},
+ {n:"سایه پایینی بلند در کف",k:"up",t:"رد شدن فروشندگان",d:"بعد از نزول، کندل با بدنه کوچک و سایه پایینی بلند؛ شروع احتمالی صعود.",
+  cs:[C(95,98,75,78),C(78,80,58,62),C(62,66,48,50),C(50,52,8,44),C(44,60,40,56),C(56,72,52,70)],o:{hl:[3,3],arrow:"up"}},
+ {n:"سایه بالایی بلند در سقف",k:"down",t:"رد شدن خریداران",d:"بعد از یک صعود قوی، کندل قرمز کوچک با سایه بالایی بلند؛ احتمال برگشت.",
+  cs:[C(8,28,4,25),C(25,45,22,42),C(42,62,38,58),C(58,96,52,52),C(54,58,38,40),C(40,44,24,26)],o:{hl:[3,3],arrow:"down"}},
+ {n:"بلاتکلیفی در انتهای روند",k:"mid",t:"احتمال تغییر روند",d:"چند کندل با سایه‌های بلند و بدنه‌های کوچک؛ بازار مردد است.",
+  cs:[C(95,98,78,80),C(80,82,62,64),C(64,66,46,48),C(48,58,30,42),C(36,64,22,40),C(42,62,30,48),C(48,72,44,68)],o:{hl:[3,5],arrow:"up"}}
+]);
+
+/* storage helpers */
+const st={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+/* router */
+const VIEWS=["terms","candles","analysis","guide","practice","assistant"];
+function show(v){if(!VIEWS.includes(v))v="terms";
+  VIEWS.forEach(x=>document.getElementById(x).hidden=x!==v);
+  document.querySelectorAll(".bnav a").forEach(a=>{const on=a.dataset.v===v;a.classList.toggle("on",on);on?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
+  window.scrollTo(0,0);st.set("tg-view",v);}
+addEventListener("hashchange",()=>show(location.hash.slice(1)));
+show(location.hash.slice(1)||st.get("tg-view","terms"));
+/* search + filter */
+let gsel=-1;
+const chipHTML=(sel)=>`<button class="chip" type="button" data-g="-1" aria-pressed="${sel===-1}">همه</button>`+GROUPS.map((g,i)=>`<button class="chip" type="button" data-g="${i}" style="--c:var(${g.c})" aria-pressed="${sel===i}"><i></i>${g.t}</button>`).join("");
+const chips=document.getElementById("chips"),q=document.getElementById("q");
+function filter(){chips.innerHTML=chipHTML(gsel);
+  const t=q.value.trim().toLowerCase();let any=false;
+  document.querySelectorAll("#groups .group").forEach(g=>{let n=0;const gi=+g.dataset.g;
+    g.querySelectorAll(".card").forEach(c=>{const ok=(gsel===-1||gsel===gi)&&(!t||c.dataset.q.includes(t));c.hidden=!ok;if(ok)n++;});
+    g.hidden=!n;if(n)any=true;});
+  document.getElementById("empty").hidden=any;}
+chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;gsel=+b.dataset.g;filter();});
+q.addEventListener("input",filter);filter();
+/* flashcards */
+const ALL=GROUPS.flatMap((g,gi)=>g.items.map(i=>({en:i[0],fa:i[1],d:i[2],gi})));
+let known=new Set(st.get("tg-known",[])),pg=-1,cur=null,flipped=false,last=null;
+const pchips=document.getElementById("pchips"),flash=document.getElementById("flash"),bno=document.getElementById("bno"),byes=document.getElementById("byes");
+function deck(){return ALL.filter(c=>pg===-1||c.gi===pg)}
+function progress(){const d=deck(),k=d.filter(c=>known.has(c.en)).length;
+  document.getElementById("pbar").style.width=(d.length?k/d.length*100:0)+"%";
+  document.getElementById("ptext").textContent=fa(k)+" از "+fa(d.length)+" بلدی";}
+function next(){const d=deck();let pool=d.filter(c=>!known.has(c.en)&&c!==last);
+  if(!pool.length)pool=d.filter(c=>c!==last);if(!pool.length)pool=d;
+  // unknown cards weighted: 80% from unknown if any
+  const unk=d.filter(c=>!known.has(c.en)&&c!==last);
+  const src=unk.length&&Math.random()<.8?unk:pool;
+  cur=src[Math.floor(Math.random()*src.length)];last=cur;flipped=false;render();}
+function render(){const g=GROUPS[cur.gi];flash.style.setProperty("--c","var("+g.c+")");
+  document.getElementById("fgroup").textContent=g.t;document.getElementById("fen").textContent=cur.en;
+  document.getElementById("ffa").textContent=cur.fa;document.getElementById("fd").textContent=cur.d;
+  document.getElementById("fback").hidden=!flipped;document.getElementById("fhint").hidden=flipped;
+  bno.disabled=byes.disabled=!flipped;progress();}
+flash.addEventListener("click",()=>{flipped=!flipped;render();});
+bno.addEventListener("click",()=>{known.delete(cur.en);st.set("tg-known",[...known]);next();});
+byes.addEventListener("click",()=>{known.add(cur.en);st.set("tg-known",[...known]);next();});
+document.getElementById("reset").addEventListener("click",()=>{known=new Set();st.set("tg-known",[]);next();});
+pchips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;pg=+b.dataset.g;pchips.innerHTML=chipHTML(pg);next();});
+pchips.innerHTML=chipHTML(pg);next();
+/* line drawings: coords 0..100, y down */
+function pl(o){const W=300,H=160,X=x=>10+x*2.8,Y=y=>10+y*1.4;let s=`<svg viewBox="0 0 ${W} ${H}" role="img" direction="ltr" font-family="Vazirmatn,DejaVu Sans,sans-serif">`;
+  (o.zones||[]).forEach(z=>s+=`<rect x="${X(z.x1??0)}" y="${Y(z.y1)}" width="${X(z.x2??100)-X(z.x1??0)}" height="${Y(z.y2)-Y(z.y1)}" fill="var(${z.c})" opacity=".18"/>`);
+  (o.segs||[]).forEach(g=>{s+=`<line x1="${X(g.a[0])}" y1="${Y(g.a[1])}" x2="${X(g.b[0])}" y2="${Y(g.b[1])}" stroke="var(${g.c||"--muted"})" stroke-width="${g.w||1.5}" ${g.dash?'stroke-dasharray="5 4"':""}/>`;
+    if(g.t)s+=`<text x="${X(g.tx??g.b[0])}" y="${Y(g.ty??g.b[1])-4}" font-size="10" font-weight="700" fill="var(${g.c||"--muted"})" text-anchor="${g.ta||"end"}">${g.t}</text>`;});
+  (o.lines||[]).forEach(l=>s+=`<polyline points="${l.p.map(([x,y])=>X(x)+","+Y(y)).join(" ")}" fill="none" stroke="var(${l.c||"--fg"})" stroke-width="${l.w||2.5}" stroke-linejoin="round" stroke-linecap="round"/>`);
+  (o.labels||[]).forEach(t=>s+=`<text x="${X(t.x)}" y="${Y(t.y)}" font-size="${t.s||11}" font-weight="700" fill="var(${t.c||"--fg"})" text-anchor="middle">${t.t}</text>`);
+  return s+"</svg>";}
+function cards(id,list){document.getElementById(id).innerHTML=list.map(p=>`<div class="pat">${pl(p.d)}
+  <div class="name">${p.n}<span class="tag ${p.k}">${p.t}</span></div><div class="d">${p.x}</div>${p.pts?`<ul class="pts">${p.pts.map(x=>`<li>${x}</li>`).join("")}</ul>`:""}</div>`).join("");}
+cards("structure",[
+ {n:"روند صعودی",k:"up",t:"HH + HL",x:"هر سقف از قبلی بالاتر و هر کف از قبلی بالاتر است. در این روند دنبال خرید روی کف‌ها باش.",
+  d:{lines:[{p:[[3,88],[22,50],[34,66],[55,32],[67,48],[90,10]],c:"--up"}],labels:[{x:22,y:44,t:"HH"},{x:34,y:76,t:"HL"},{x:55,y:26,t:"HH"},{x:67,y:58,t:"HL"},{x:90,y:5,t:"HH"}]}},
+ {n:"روند نزولی",k:"down",t:"LH + LL",x:"هر سقف پایین‌تر و هر کف پایین‌تر از قبلی است. در این روند دنبال فروش روی سقف‌ها باش.",
+  d:{lines:[{p:[[3,10],[22,48],[34,32],[55,66],[67,50],[90,88]],c:"--down"}],labels:[{x:22,y:58,t:"LL"},{x:34,y:26,t:"LH"},{x:55,y:76,t:"LL"},{x:67,y:44,t:"LH"},{x:90,y:97,t:"LL"}]}},
+ {n:"BOS (شکست ساختار)",k:"up",t:"ادامه روند",x:"قیمت سقف قبلی را در جهت روند می‌شکند؛ یعنی روند هنوز سالم است.",
+  d:{segs:[{a:[22,40],b:[100,40],c:"--g3",dash:1,t:"BOS",tx:96,ty:40}],lines:[{p:[[3,85],[22,40],[38,70],[60,25],[72,45],[92,12]],c:"--up"}]}},
+ {n:"CHOCH (تغییر رفتار)",k:"down",t:"اولین نشانه برگشت",x:"در روند صعودی، قیمت آخرین کف بالاتر (HL) را رو به پایین می‌شکند. MSS همین تغییر است وقتی با حرکت قوی تأیید شود.",
+  d:{segs:[{a:[44,62],b:[100,62],c:"--g4",dash:1,t:"CHOCH",tx:98,ty:62}],lines:[{p:[[3,88],[22,45],[44,62],[62,20],[90,90]],c:"--fg"}],labels:[{x:62,y:14,t:"HH"},{x:44,y:72,t:"HL"}]}}
+]);
+cards("chartpats",[
+ {n:"سر و شانه",k:"down",t:"برگشت نزولی",x:"سه قله که وسطی بلندتر است. با شکست خط گردن تأیید می‌شود. هدف: فاصله سر تا خط گردن، از نقطه شکست به پایین. نوع معکوسش در کف، صعودی است.",
+  d:{segs:[{a:[0,64],b:[100,64],c:"--down",dash:1,t:"خط گردن",tx:100,ty:64}],lines:[{p:[[2,90],[15,48],[26,64],[42,18],[57,64],[69,46],[80,64],[96,95]]}],labels:[{x:15,y:40,t:"شانه"},{x:42,y:10,t:"سر"},{x:69,y:38,t:"شانه"}]}},
+ {n:"سقف دوقلو",k:"down",t:"برگشت نزولی",x:"دو قله در یک مقاومت بعد از روند صعودی. با شکست کف وسط (خط گردن) تأیید می‌شود.",
+  d:{segs:[{a:[0,22],b:[100,22],c:"--muted",dash:1},{a:[0,58],b:[100,58],c:"--down",dash:1,t:"خط گردن",tx:100,ty:58}],lines:[{p:[[2,88],[25,22],[45,58],[66,22],[82,58],[96,92]]}]}},
+ {n:"کف دوقلو",k:"up",t:"برگشت صعودی",x:"دو کف در یک حمایت بعد از روند نزولی. با شکست سقف وسط به بالا تأیید می‌شود.",
+  d:{segs:[{a:[0,80],b:[100,80],c:"--muted",dash:1},{a:[0,42],b:[100,42],c:"--up",dash:1,t:"خط گردن",tx:100,ty:42}],lines:[{p:[[2,12],[25,80],[45,42],[66,80],[82,42],[96,8]]}]}},
+ {n:"مثلث افزایشی",k:"up",t:"معمولاً صعودی",x:"سقف صاف و کف‌های بالارونده. شکست مقاومت با حجم بالا، ورود است. هدف: ارتفاع مثلث از نقطه شکست.",
+  d:{segs:[{a:[10,28],b:[86,28],c:"--down",dash:1},{a:[22,78],b:[86,32],c:"--up",dash:1}],lines:[{p:[[2,90],[12,28],[24,76],[40,28],[52,60],[66,28],[76,44],[86,28],[98,4]]}]}},
+ {n:"مثلث کاهشی",k:"down",t:"معمولاً نزولی",x:"کف صاف و سقف‌های پایین‌رونده. شکست حمایت به پایین با حجم بالا، تأیید است.",
+  d:{segs:[{a:[10,72],b:[86,72],c:"--up",dash:1},{a:[22,22],b:[86,68],c:"--down",dash:1}],lines:[{p:[[2,10],[12,72],[24,24],[40,72],[52,40],[66,72],[76,56],[86,72],[98,96]]}]}},
+ {n:"پرچم صعودی",k:"up",t:"ادامه روند",x:"یک حرکت تند (میله پرچم) و بعد اصلاح کوتاه در یک کانال. شکست کانال به بالا یعنی ادامه حرکت. هدف: طول میله از نقطه شکست.",
+  d:{segs:[{a:[30,18],b:[78,38],c:"--muted",dash:1},{a:[34,38],b:[80,58],c:"--muted",dash:1}],lines:[{p:[[2,95],[30,18],[38,40],[48,24],[58,46],[68,32],[78,54],[98,4]]}],labels:[{x:14,y:50,t:"میله",c:"--muted"}]}}
+]);
+cards("indis",[
+ {n:"RSI (قدرت نسبی)",k:"mid",t:"تنظیم پیش‌فرض: ۱۴",x:"عددی بین ۰ تا ۱۰۰ که سرعت حرکت قیمت را نشان می‌دهد.",
+  pts:["بالای ۷۰: اشباع خرید؛ احتمال اصلاح","زیر ۳۰: اشباع فروش؛ احتمال برگشت","واگرایی: قیمت سقف بالاتر ولی RSI سقف پایین‌تر بزند، روند ضعیف شده","در روند قوی RSI مدت‌ها بالای ۷۰ می‌ماند؛ به‌تنهایی سیگنال فروش نیست"],
+  d:{zones:[{y1:5,y2:30,c:"--down"},{y1:70,y2:95,c:"--up"}],segs:[{a:[0,30],b:[100,30],c:"--down",dash:1,t:"۷۰",tx:99,ty:30},{a:[0,70],b:[100,70],c:"--up",dash:1,t:"۳۰",tx:99,ty:70}],lines:[{p:[[2,55],[12,35],[20,18],[28,28],[38,50],[48,62],[56,80],[64,76],[74,58],[84,40],[94,45]],c:"--g4"}]}},
+ {n:"میانگین متحرک (MA / EMA)",k:"mid",t:"۵۰ و ۲۰۰",x:"میانگین قیمت چند کندل اخیر؛ روند را نرم نشان می‌دهد.",
+  pts:["قیمت بالای MA 200 روزانه: بازار در کل صعودی","تقاطع طلایی: MA 50 از پایین MA 200 را قطع کند (صعودی)","تقاطع مرگ: MA 50 از بالا MA 200 را قطع کند (نزولی)","MA با تأخیر عمل می‌کند؛ سیگنالش دیر می‌رسد"],
+  d:{lines:[{p:[[2,40],[20,52],[38,60],[52,58],[66,48],[82,36],[98,26]],c:"--g2",w:2.5},{p:[[2,20],[20,50],[34,72],[46,70],[56,56],[70,32],[84,18],[98,12]],c:"--g3",w:2.5}],labels:[{x:52,y:48,t:"تقاطع طلایی",c:"--up"},{x:12,y:33,t:"MA 50",c:"--g3",s:10},{x:12,y:58,t:"MA 200",c:"--g2",s:10}]}},
+ {n:"فیبوناچی اصلاحی",k:"up",t:"ناحیه طلایی ۵۰ تا ۶۱٫۸",x:"در روند صعودی از کف حرکت (۰٪) تا سقف (۱۰۰٪) بکش. سطوح، جاهای احتمالی پایان پولبک هستند.",
+  pts:["سطوح: ۲۳٫۶، ۳۸٫۲، ۵۰، ۶۱٫۸ و ۷۸٫۶ درصد","مهم‌ترین سطح ۶۱٫۸ است","در محدوده رنج کار نمی‌کند","منتظر کندل تأیید بمان؛ حد ضرر را پشت سطح بعدی بگذار"],
+  d:{zones:[{y1:44,y2:54,c:"--hl"}],segs:[{a:[0,10],b:[100,10],c:"--muted",t:"۱۰۰٪",tx:1,ty:11.0,ta:"start"},{a:[0,24.4],b:[100,24.4],c:"--muted",dash:1,t:"۲۳٫۶",tx:1,ty:25.0,ta:"start"},{a:[0,32.9],b:[100,32.9],c:"--muted",dash:1,t:"۳۸٫۲",tx:1,ty:34.0,ta:"start"},{a:[0,44],b:[100,44],c:"--hl",dash:1,t:"۵۰",tx:1,ty:45.0,ta:"start"},{a:[0,54.1],b:[100,54.1],c:"--hl",dash:1,t:"۶۱٫۸",tx:1,ty:55.0,ta:"start"},{a:[0,90],b:[100,90],c:"--muted",t:"۰٪",tx:1,ty:91.0,ta:"start"}],lines:[{p:[[18,90],[44,10],[58,30],[67,53],[78,30],[92,4]],c:"--up"}]}},
+ {n:"حجم معاملات (Volume)",k:"mid",t:"تأییدکننده",x:"تعداد معاملات در هر کندل. حرکت با حجم بالا معتبرتر است.",
+  pts:["شکست سطح با حجم بالا: شکست معتبرتر","شکست با حجم کم: احتمال شکست جعلی","روند بالا ولی حجم کم‌شونده: روند خسته شده"],
+  d:{segs:[{a:[0,40],b:[100,40],c:"--down",dash:1,t:"مقاومت",tx:30,ty:40}],lines:[{p:[[2,70],[14,55],[24,45],[34,58],[46,44],[58,52],[68,42],[78,25],[92,12]],c:"--fg"}],zones:[{x1:4,x2:10,y1:88,y2:96,c:"--muted"},{x1:16,x2:22,y1:86,y2:96,c:"--muted"},{x1:28,x2:34,y1:90,y2:96,c:"--muted"},{x1:40,x2:46,y1:88,y2:96,c:"--muted"},{x1:52,x2:58,y1:90,y2:96,c:"--muted"},{x1:64,x2:70,y1:84,y2:96,c:"--muted"},{x1:76,x2:82,y1:68,y2:96,c:"--g3"},{x1:88,x2:94,y1:72,y2:96,c:"--g3"}]}}
+]);
+/* checklist */
+const CHECKS=["روند تایم‌فریم بالاتر (۴ ساعته یا روزانه) را مشخص کردم و هم‌جهت با آن معامله می‌کنم","قیمت روی یک سطح مهم است (حمایت، مقاومت یا فیبوناچی)","کندل یا الگوی تأیید را دیدم و کندل بسته شده","حد ضرر را مشخص کردم و خیلی قبل از قیمت لیکوئید است","حجم را با ماشین‌حساب حساب کردم و ریسک حداکثر ۲٪ است","حد سود حداقل ۲ برابر فاصله حد ضرر است (R/R ۱ به ۲)","خبر مهم اقتصادی در چند ساعت آینده نیست","از روی FOMO یا برای جبران ضرر وارد نمی‌شوم"];
+let ck=st.get("tg-checks",[]);
+function renderChecks(){document.getElementById("checks").innerHTML=CHECKS.map((c,i)=>`<label for="ck${i}"><input id="ck${i}" type="checkbox" ${ck.includes(i)?"checked":""}><span>${c}</span></label>`).join("");statusChecks();}
+function statusChecks(){const left=CHECKS.length-ck.length,el=document.getElementById("cstatus");
+  el.className="cstatus "+(left?"wait":"go");el.textContent=left?`هنوز وارد نشو · ${fa(left)} مورد مانده`:"همه موارد تیک خورده؛ با برنامه وارد شو";}
+document.getElementById("checks").addEventListener("change",e=>{const i=+e.target.id.slice(2);ck=e.target.checked?[...new Set([...ck,i])]:ck.filter(x=>x!==i);st.set("tg-checks",ck);statusChecks();});
+document.getElementById("creset").addEventListener("click",()=>{ck=[];st.set("tg-checks",ck);renderChecks();});
+renderChecks();
+/* orders */
+document.getElementById("orders").innerHTML=[
+ ["Market","سفارش بازار","فوری با بهترین قیمت موجود اجرا می‌شود؛ قیمت نهایی ممکن است کمی فرق کند."],
+ ["Limit","سفارش محدود","فقط در قیمتی که تعیین کنی یا بهتر اجرا می‌شود؛ اگر قیمت نرسد، اجرا نمی‌شود."],
+ ["Stop-Limit","استاپ لیمیت","وقتی قیمت به حد استاپ رسید، یک سفارش لیمیت ثبت می‌شود. در حرکت تند ممکن است پر نشود."],
+ ["Stop-Market","استاپ مارکت","وقتی قیمت به حد استاپ رسید، با قیمت بازار اجرا می‌شود؛ برای حد ضرر مطمئن‌تر است."],
+ ["OCO","یکی لغو دیگری","حد سود و حد ضرر را با هم می‌گذاری؛ وقتی یکی اجرا شد، دیگری خودکار لغو می‌شود."],
+ ["Trailing Stop","حد ضرر متحرک","با بالا رفتن قیمت دنبالش می‌آید و سود را قفل می‌کند؛ با برگشت به اندازه تعیین‌شده می‌فروشد."],
+ ["Post-Only","فقط میکر","سفارش لیمیتی که فوری اجرا نمی‌شود تا کارمزد میکر (کمتر) بدهی."],
+ ["Reduce-Only","فقط کاهش","در فیوچرز؛ این سفارش فقط پوزیشن باز را کم یا بسته می‌کند و پوزیشن جدید باز نمی‌کند."]
+].map(o=>`<div class="orow"><b>${o[0]}<small>${o[1]}</small></b><span>${o[2]}</span></div>`).join("");
+/* win rate */
+document.getElementById("winrate").innerHTML=[[1,"۱:۱"],[1.5,"۱:۱٫۵"],[2,"۱:۲"],[3,"۱:۳"]].map(([r,l])=>{const w=100/(1+r);
+  return `<div><span>R/R ${l}</span><b>${fa(Math.round(w))}٪</b><div class="bar2"><i style="width:${w}%"></i></div><span>برد لازم</span></div>`}).join("");
+/* crypto calculator */
+const nf=(n,d=2)=>n.toLocaleString("fa-IR",{maximumFractionDigits:d});
+const $=id=>document.getElementById(id);
+const CI=["cBal","cRisk","cEn","cSl","cLev","cSide"].map($);
+function calc(){const [b,r,en,sl,lev]=CI.slice(0,5).map(e=>+e.value),side=CI[5].value;
+  const risk=b*r/100,dist=en>0?(side==="long"?en-sl:sl-en)/en:0,note=$("rNote");note.className="note";
+  if(!(risk>0&&dist>0&&lev>=1)){$("rVal").textContent=$("rMg").textContent="–";$("rQty").textContent="";$("rRisk").textContent=risk?nf(risk)+" $":"–";
+    note.textContent=dist<=0&&en>0?(side==="long"?"در لانگ، حد ضرر باید زیر قیمت ورود باشد.":"در شورت، حد ضرر باید بالای قیمت ورود باشد."):"";if(dist<=0)note.className="note bad";return;}
+  const val=risk/dist,qty=val/en,mg=val/lev,liq=1/lev;
+  $("rVal").textContent=nf(val)+" $";$("rQty").textContent=(+qty.toPrecision(4))+" coin";$("rMg").textContent=nf(mg)+" $";$("rRisk").textContent=nf(risk)+" $";
+  const msgs=[`فاصله تا حد ضرر: ${nf(dist*100)}٪ · لیکوئید تقریباً با ${nf(liq*100,1)}٪ حرکت.`];
+  if(lev>1&&dist>=liq*0.8){msgs.push("حد ضرر خیلی نزدیک یا بعد از لیکوئید است؛ اهرم را کم کن.");note.className="note bad";}
+  else if(mg>b){msgs.push("مارجین لازم از موجودی بیشتر است؛ اهرم را بیشتر کن یا ریسک را کم کن.");note.className="note bad";}
+  else if(r>2){msgs.push("ریسک بیشتر از ۲٪ برای مبتدی زیاد است.");note.className="note bad";}
+  note.textContent=msgs.join(" ");
+  st.set("tg-ccalc",CI.map(e=>e.value));}
+(()=>{const v=st.get("tg-ccalc",null);if(v)CI.forEach((e,i)=>{if(v[i]!=null)e.value=v[i]});})();
+CI.forEach(e=>{e.addEventListener("input",calc);e.addEventListener("change",calc)});calc();
+/* sessions: GMT hours from Dukascopy */
+const SESS=[["سیدنی",22,7,"--g5"],["توکیو",23,8,"--g4"],["لندن",8,17,"--g3"],["نیویورک",13,22,"--g1"]];
+const pad=n=>String(n).padStart(2,"0");
+function sessions(){const now=new Date(),off=-now.getTimezoneOffset()/60,day=now.getUTCDay();
+  const utcH=now.getUTCHours()+now.getUTCMinutes()/60,loc=(utcH+off+24)%24;
+  const weekend=false;
+  document.getElementById("nowLine").innerHTML=`ساعت الان: <b>${fa(pad(now.getHours())+":"+pad(now.getMinutes()))}</b>`+((day===0||day===6)?" · آخر هفته: حجم کمتر":"");
+  document.getElementById("fundLine").innerHTML="زمان‌های رایج Funding در بیشتر صرافی‌ها (هر ۸ ساعت): <b>"+[0,8,16].map(h=>fa(pad((h+off+24)%24))+":۰۰").join(" · ")+"</b> به وقت تو. صرافی خودت را چک کن.";
+  document.getElementById("sess").innerHTML=SESS.map(([n,a,b,c])=>{
+    const la=(a+off+24)%24,lb=(b+off+24)%24,open=!weekend&&(a<b?utcH>=a&&utcH<b:utcH>=a||utcH<b);
+    const seg=(x,y)=>`<i style="--c:var(${c});left:${x/24*100}%;width:${(y-x)/24*100}%"></i>`;
+    const bars=la<lb?seg(la,lb):seg(la,24)+seg(0,lb);
+    return `<div class="srow${open?" open":""}"><span class="nm"><span class="on-dot"></span><span>${n}<small dir="rtl">${fa(pad(la))}:۰۰ تا ${fa(pad(lb))}:۰۰</small></span></span><div class="track">${bars}<span class="now" style="left:${loc/24*100}%"></span></div></div>`;}).join("");}
+sessions();setInterval(sessions,60000);
+/* more patterns */
+pats("more",[
+ {n:"دوجی (Doji)",k:"mid",t:"بلاتکلیفی",d:"قیمت باز و بسته تقریباً یکی است؛ بدنه تقریباً صفر. در سقف یا کف، هشدار ضعیف شدن روند است.",
+  cs:[C(20,40,15,35),C(35,55,30,50),C(50,68,46,64),C(64,80,50,65),C(63,66,45,48)],o:{hl:[3,3]}},
+ {n:"چکش (Hammer)",k:"up",t:"برگشت صعودی",d:"در کف روند نزولی: بدنه کوچک بالا و سایه پایینی حداقل دو برابر بدنه. روی حمایت معتبرتر است.",
+  cs:[C(90,94,72,75),C(75,78,56,60),C(60,62,44,46),C(42,48,6,46),C(42,62,40,60)],o:{hl:[3,3],arrow:"up"}},
+ {n:"ستاره دنباله‌دار (Shooting Star)",k:"down",t:"برگشت نزولی",d:"در سقف روند صعودی: بدنه کوچک پایین و سایه بالایی بلند؛ خریداران پس زده شده‌اند.",
+  cs:[C(10,28,6,25),C(25,44,22,40),C(40,58,37,55),C(56,94,53,52),C(52,55,34,36)],o:{hl:[3,3],arrow:"down"}},
+ {n:"ستاره صبحگاهی (Morning Star)",k:"up",t:"برگشت صعودی",d:"سه کندل در کف: قرمز بزرگ، کندل کوچک، سبز بزرگ که تا نیمه کندل قرمز بالا می‌رود.",
+  cs:[C(92,95,80,82),C(82,84,40,45),C(38,42,28,34),C(35,75,32,72)],o:{hl:[1,3],arrow:"up"}},
+ {n:"ستاره عصرگاهی (Evening Star)",k:"down",t:"برگشت نزولی",d:"برعکس ستاره صبحگاهی در سقف: سبز بزرگ، کندل کوچک، قرمز بزرگ.",
+  cs:[C(10,20,8,18),C(18,60,16,55),C(62,72,58,66),C(64,68,26,28)],o:{hl:[1,3],arrow:"down"}}
+]);
+
+/* live market: CoinGecko public API */
+(async()=>{
+  const COINS=[["bitcoin","BTC","بیت‌کوین"],["ethereum","ETH","اتریوم"],["solana","SOL","سولانا"]];
+  const live=document.getElementById("live"),note=document.getElementById("liveNote");
+  const API="https://api.coingecko.com/api/v3";
+  const sma=(a,n)=>{const x=a.slice(-n);return x.reduce((p,c)=>p+c,0)/x.length};
+  const rsi=(a,n=14)=>{const x=a.slice(-(n+1));let g=0,l=0;for(let i=1;i<x.length;i++){const d=x[i]-x[i-1];if(d>0)g+=d;else l-=d}return l===0?100:100-100/(1+g/l)};
+  const usd=v=>"$"+(v>=1000?v.toLocaleString("en-US",{maximumFractionDigits:0}):v.toLocaleString("en-US",{maximumFractionDigits:2}));
+  const spark=(a,up)=>{const mn=Math.min(...a),mx=Math.max(...a),w=260,h=46;const pts=a.map((v,i)=>`${(i/(a.length-1)*w).toFixed(1)},${(h-4-(v-mn)/((mx-mn)||1)*(h-8)).toFixed(1)}`).join(" ");
+    return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="var(${up?"--up":"--down"})" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`};
+  /* resample an hourly/5-min series to N evenly spaced points so indicators match the app's definitions */
+  const resample=(arr,n)=>{if(arr.length<=n)return arr;const out=[];for(let k=0;k<n;k++)out.push(arr[Math.round(k*(arr.length-1)/(n-1))]);return out};
+  const charts={};let coins=null;
+  function draw(){if(!coins)return;
+    live.innerHTML=COINS.map(([id,sym,fa_])=>{const c=coins.find(x=>x.id===id);if(!c)return"";
+      const ch=c.price_change_percentage_24h??0,up=ch>=0,s90=charts[id+"90"],s30=charts[id+"30"];let chips="";
+      if(s90&&s90.length>=50){const m50=sma(s90,50),m20=sma(s90,20),above=c.current_price>m50;
+        chips+=`<span class="${above?"up":"down"}">${above?"بالای":"زیر"} میانگین ~۳۷ روزه</span><span class="${m20>m50?"up":"down"}">${m20>m50?"تقاطع طلایی":"تقاطع مرگ"}</span>`}
+      if(s30&&s30.length>15){const r=rsi([...s30,c.current_price]);const z=r>=70?["hl","اشباع خرید"]:r<=30?["hl","اشباع فروش"]:["mid","معمولی"];chips+=`<span class="${z[0]}">RSI ${fa(Math.round(r))} · ${z[1]}</span>`}
+      if(Math.abs(ch)>=5)chips+=`<span class="hl">حرکت تند ۲۴ ساعته</span>`;
+      const sp=c.sparkline_in_7d?.price||[];
+      return `<div class="coin"><div class="top"><span class="sym">${sym}<small>${fa_}</small></span><span class="px">${usd(c.current_price)}</span></div>
+        <div><span class="chg ${up?"up":"down"}">${up?"+":""}${(+ch).toFixed(2)}% (24h)</span></div>
+        ${sp.length>2?spark(sp.filter((_,k)=>k%3===0),sp.at(-1)>=sp[0]):""}
+        <div class="chips2">${chips||'<span class="mid">در حال محاسبه شاخص‌ها…</span>'}</div></div>`}).join("")}
+  async function load(){
+    try{const r=await fetch(`${API}/coins/markets?vs_currency=usd&ids=${COINS.map(c=>c[0]).join(",")}&sparkline=true&price_change_percentage=24h`);
+      if(!r.ok)throw new Error(r.status);coins=await r.json();note.textContent="منبع: CoinGecko · به‌روزرسانی هر ۵ دقیقه · "+fa(new Date().toLocaleTimeString("fa-IR",{hour:"2-digit",minute:"2-digit"}));draw();
+    }catch(e){if(!coins)live.innerHTML="";note.textContent="داده زنده الان در دسترس نیست (اینترنت یا محدودیت CoinGecko). کمی بعد صفحه را تازه کن.";}
+  }
+  async function loadCharts(){for(const [id] of COINS)for(const d of ["90","30"]){
+    try{const r=await fetch(`${API}/coins/${id}/market_chart?vs_currency=usd&days=${d}`);if(!r.ok)continue;const j=await r.json();
+      charts[id+d]=resample((j.prices||[]).map(p=>p[1]),120);draw();}catch(e){}
+    await new Promise(res=>setTimeout(res,1500));}}
+  await load();loadCharts();setInterval(()=>{if(!document.hidden)load()},300000);
+})();
+</script>
+
+</body>
+</html>
