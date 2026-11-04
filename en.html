@@ -249,6 +249,54 @@
 .bn-btn:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
 .bn-btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
 .bn-note{margin:0;font-size:.74rem;color:var(--muted);line-height:1.6}
+
+.cc-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:rgba(255,255,255,.07);border-radius:12px;padding:4px}
+.cc-mode{font:inherit;font-size:.86rem;font-weight:800;color:#a9bad0;background:none;border:0;border-radius:9px;padding:9px 4px;cursor:pointer}
+.cc-mode[aria-selected="true"]{background:#fff;color:#0d1726}
+.cc-mode:focus-visible{outline:3px solid #6b9cff;outline-offset:2px}
+.cc-plab{flex:none;align-self:center;font-size:.74rem;font-weight:800;color:#a9bad0;padding-inline-end:4px}
+.cc-dir3{grid-template-columns:repeat(3,1fr)!important}
+.cc-dir3 .cc-dbtn{font-size:.78rem;padding:8px 4px}
+.cc-dbtn[aria-pressed="true"][data-d="none"]{background:#6b9cff;color:#0d1726}
+.cc-narr{margin:0;font-size:.95rem;font-weight:700;line-height:1.75}
+.cc-mtf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.cc-mtf>div{background:var(--bg);border-radius:12px;padding:9px 6px;display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center}
+.cc-mtf span{font-size:.72rem;color:var(--muted);font-weight:700}
+.cc-mtf b{font-size:.85rem;font-weight:900;font-variant-numeric:tabular-nums}
+.cc-mtf small{font-size:.72rem;color:var(--muted)}
+.cc-mtf b.up,.cc-heat .up,.cc-rank .up{color:var(--up)} .cc-mtf b.down,.cc-rank .down{color:var(--down)}
+.ar{font-style:normal;font-size:.9rem;line-height:1}
+.ar.up{color:var(--up)} .ar.down{color:var(--down)} .ar.mid{color:var(--muted)}
+.cc-gauge.bb{background:linear-gradient(90deg,var(--down) 0 8%,var(--line) 8% 92%,var(--up) 92%)}
+.cc-rng.dom,.cc-rng.corr{background:linear-gradient(90deg,var(--line),var(--g3))}
+.cc-obs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.cc-obs li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:.9rem;line-height:1.6}
+.cc-obs li>i{width:10px;height:10px;border-radius:50%;margin-top:7px;background:var(--muted)}
+.cc-obs li>i.up{background:var(--up)} .cc-obs li>i.down{background:var(--down)} .cc-obs li>i.hl{background:var(--hl)}
+.cc-obs small{color:var(--muted)}
+.cc-heat{display:flex;flex-direction:column;gap:3px}
+.cc-heat .hh,.cc-heat .hr{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr .7fr .6fr;gap:3px;align-items:center;font-size:.78rem;text-align:center}
+.cc-heat .hh span{color:var(--muted);font-weight:800;font-size:.72rem;padding:4px 0}
+.cc-heat .hr{font:inherit;font-size:.78rem;color:var(--fg);background:none;border:0;padding:0;cursor:pointer}
+.cc-heat .hr span{border-radius:8px;padding:7px 2px;direction:ltr;font-variant-numeric:tabular-nums;font-weight:700;background:var(--bg)}
+.cc-heat .hr span.sy{font-family:var(--mono);font-weight:600;text-align:start;padding-inline-start:8px}
+.cc-heat .hr span.rx{color:var(--hl);font-weight:900}
+.cc-heat .hr:focus-visible{outline:3px solid var(--g3);outline-offset:1px;border-radius:8px}
+.cc-rank{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.cc-rank li{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;background:var(--bg);border-radius:12px;padding:9px 12px}
+.cc-rank b{font-family:var(--mono);font-weight:600}
+.cc-rank span{font-weight:900;font-variant-numeric:tabular-nums;text-align:start}
+.cc-rank small{font-size:.74rem;color:var(--muted)}
+.cc-bar{height:7px;border-radius:99px;background:var(--down-soft);overflow:hidden;direction:ltr;margin-top:4px}
+.cc-bar i{display:block;height:100%;background:var(--up);border-radius:99px}
+.cc-prog{width:70%;height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:12px;direction:ltr}
+.cc-prog i{display:block;height:100%;background:var(--g3);transition:width .3s}
+.cc-cmp{display:flex;flex-direction:column;gap:4px}
+.cc-cmp>div{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:6px;align-items:center;padding:8px 10px;border-radius:10px;background:var(--bg);font-size:.86rem}
+.cc-cmp>div.ch{background:none;padding-block:2px}
+.cc-cmp span{color:var(--muted);font-weight:700;font-size:.8rem}
+.cc-cmp b{font-weight:800;text-align:center;font-variant-numeric:tabular-nums}
+.cc-cmp b.win{color:var(--up)}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -571,7 +619,7 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
   </section>
 
   <section class="part" id="coach">
-    <div class="cc-hero"><div class="cc-h"><span class="cc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><div><h2>Analysis assistant</h2><p>Pick a coin. I'll work out trend, levels, risk and your checklist from live data.</p></div></div>
+    <div class="cc-hero"><div class="cc-h"><span class="cc-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg></span><div><h2>Analysis assistant</h2><p>Analyse a coin, the whole market, or compare two coins: multi-timeframe trend, indicators, patterns, levels and risk from live data.</p></div></div>
       <div class="cc-pick" id="ccPick" role="group"></div><div class="cc-dir" id="ccDir" role="group"></div></div>
     <div id="ccOut" class="cc-out"></div>
     
@@ -1142,7 +1190,8 @@ window.__liveSource=(()=>{
       if(BN[id]&&KL[d]){try{const [iv,lim]=KL[d],k=await bn(`klines?symbol=${BN[id]}&interval=${iv}&limit=${lim}`);if(Array.isArray(k)&&k.length>2)return {t:k.map(x=>Math.min(+x[6],Date.now())),p:k.map(x=>+x[4])}}catch(e){}}
       const j=await cg(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${d}`);const pr=j.prices||[];
       const step=Math.max(1,Math.ceil(pr.length/200)),s=pr.filter((_,k)=>k%step===0||k===pr.length-1);return {t:s.map(x=>x[0]),p:s.map(x=>x[1])}})}
-  return {markets,chart};
+  async function global(){return cached("g",120000,async()=>{const j=await cg("https://api.coingecko.com/api/v3/global"),d=j.data||{};return {cap:d.total_market_cap?.usd,chg:d.market_cap_change_percentage_24h_usd,btc:d.market_cap_percentage?.btc}})}
+  return {markets,chart,global};
 })();
 window.__TV={bitcoin:"BINANCE:BTCUSDT",ethereum:"BINANCE:ETHUSDT",binancecoin:"BINANCE:BNBUSDT",ripple:"BINANCE:XRPUSDT",solana:"BINANCE:SOLUSDT",tron:"BINANCE:TRXUSDT",dogecoin:"BINANCE:DOGEUSDT",cardano:"BINANCE:ADAUSDT",hyperliquid:"BYBIT:HYPEUSDT",chainlink:"BINANCE:LINKUSDT",stellar:"BINANCE:XLMUSDT","bitcoin-cash":"BINANCE:BCHUSDT",litecoin:"BINANCE:LTCUSDT",monero:"KRAKEN:XMRUSD",zcash:"BINANCE:ZECUSDT"};
 window.__tvURL=id=>"https://www.tradingview.com/chart/?symbol="+encodeURIComponent(window.__TV[id]||"BINANCE:BTCUSDT");
@@ -1325,24 +1374,50 @@ document.addEventListener("bg-markets",e=>{window.__bgLastCoins=e.detail});
 (()=>{
   const EN=document.documentElement.lang==="en",$=id=>document.getElementById(id),LOC=EN?"en-GB":"fa-IR";
   const F=s=>EN?String(s):fa(String(s));
+  const COINS=[["bitcoin","BTC","بیت‌کوین","Bitcoin"],["ethereum","ETH","اتریوم","Ethereum"],["binancecoin","BNB","بی‌ان‌بی","BNB"],["ripple","XRP","ریپل","XRP"],["solana","SOL","سولانا","Solana"],["tron","TRX","ترون","TRON"],["dogecoin","DOGE","دوج‌کوین","Dogecoin"],["cardano","ADA","کاردانو","Cardano"],["hyperliquid","HYPE","هایپرلیکوئید","Hyperliquid"],["chainlink","LINK","چین‌لینک","Chainlink"],["stellar","XLM","استلار","Stellar"],["bitcoin-cash","BCH","بیت‌کوین کش","Bitcoin Cash"],["litecoin","LTC","لایت‌کوین","Litecoin"],["monero","XMR","مونرو","Monero"],["zcash","ZEC","زی‌کش","Zcash"]];
+  const META=Object.fromEntries(COINS.map(c=>[c[0],{sym:c[1],name:EN?c[3]:c[2]}]));
   const T=EN?{
-    pickHint:"Pick a coin",long:"Thinking long",short:"Thinking short",loading:"Analysing live data…",err:"Couldn't load data for this coin right now. Try again in a minute.",
-    state:"Trend condition",states:["Strong downtrend","Downtrend","Neutral","Uptrend","Strong uptrend"],stateNote:"This describes the current state, not a buy or sell signal.",
+    modes:["Coin analysis","Whole market","Compare"],dirs:["Analysis","Long","Short"],
+    loading:"Analysing live data…",loadingN:(a,b)=>`Reading the market… ${a} of ${b}`,err:"Couldn't load data right now.",retry:"Try again",
+    summary:"Summary",state:"Trend condition",states:["Strong downtrend","Downtrend","Neutral","Uptrend","Strong uptrend"],stateNote:"Describes the current state, not a buy or sell signal.",
+    mtf:"Multi-timeframe trend",tf:{"1":"24 hours","7":"7 days","30":"30 days","90":"90 days"},up:"Up",down:"Down",flat:"Sideways",align:(u,d)=>u>=3?"Timeframes mostly agree: up.":d>=3?"Timeframes mostly agree: down.":"Timeframes disagree; the trend is mixed.",
+    ind:"Indicators",rsi:"RSI 14",rsiZ:["Oversold","Normal","Overbought"],macd:"MACD",macdS:(p,x)=>(p?"Positive momentum":"Negative momentum")+(x?` · crossed ${x}`:""),bb:"Bollinger %B",bbS:(b,sq)=>(b>1?"Above upper band":b<0?"Below lower band":b>.8?"Near upper band":b<.2?"Near lower band":"Inside the bands")+(sq?" · squeeze":""),vol:"Daily volatility",volZ:["Low","Medium","High"],volT:(r)=>r>1.3?"rising":r<.75?"falling":"steady",dd:"From 90-day high",
+    obs:"What the data shows",
+    o_gx:d=>`Golden cross ${d} days ago (short average moved above long average).`,o_dx:d=>`Death cross ${d} days ago (short average moved below long average).`,
+    o_bdiv:"Bearish RSI divergence: price made a higher high while RSI made a lower high.",o_udiv:"Bullish RSI divergence: price made a lower low while RSI made a higher low.",
+    o_bo:"Price broke above its 30-day high.",o_bd:"Price broke below its 30-day low.",o_sq:"Bollinger squeeze: volatility is unusually low; a large move often follows.",
+    o_ns:"Price is close to support.",o_nr:"Price is close to resistance.",o_ob:"RSI is overbought; pullbacks are common from here.",o_os:"RSI is oversold; bounces are common from here.",
+    o_vu:"Volatility is rising compared with last month.",o_vd:"Volatility is falling compared with last month.",o_ath:"Price is at or near its 90-day high.",o_btc:c=>`Moves ${c>=.7?"closely with":c>=.4?"partly with":"mostly independently of"} Bitcoin (correlation ${c.toFixed(2)}).`,o_none:"Nothing unusual right now.",
     chart:"90-day chart",price:"Price",sma20:"~15-day avg",sma50:"~37-day avg",sup:"Support",res:"Resistance",
-    metrics:"Key numbers",rsi:"RSI 14",rsiZ:["Oversold","Normal","Overbought"],ch7:"7-day change",ch30:"30-day change",vol:"Daily volatility",volZ:["Low","Medium","High"],range:"Position in 90-day range",distS:"To support",distR:"To resistance",
     levels:"Key levels",hi90:"90-day high",lo90:"90-day low",none:"None above price in 90 days",
     check:"Your checklist on this coin",met:"Met",not:"Not met",unk:"Check yourself",
     c1:"Trade is with the trend",c2L:"Price is near support (within 3%)",c2S:"Price is near resistance (within 3%)",c3L:"RSI is not overbought",c3S:"RSI is not oversold",c4:"Risk/reward of at least 1:2 is possible",c5:"Volatility is manageable",c6:"A confirming candle has closed and no major news is due",
     verdict:n=>n>=5?"Most conditions are met. If you trade, follow your plan and stop.":n>=3?"Only some conditions are met. Patience is usually better here.":"Conditions are not in place. Waiting is the safer choice.",
-    plan:"Example plan",entry:"Entry (now)",stop:"Stop loss",target:"Target",rr:"Risk/reward",toCalc:"Size it in the calculator",planNote:"Stop is placed just beyond the nearest level; the target is the next level. Adjust to your own analysis.",
+    plan:"Example plan",entry:"Entry (now)",stop:"Stop loss",target:"Target",rr:"Risk/reward",toCalc:"Size it in the calculator",planNote:"Stop just beyond the nearest level; target at the next level. Adjust to your own analysis.",
     scen:"Scenarios",bull:"Bullish scenario",bear:"Bearish scenario",
     bullT:(r,t)=>r?`If a daily candle closes above ${r}, the next area to watch is ${t}.`:`Price is at a 90-day high. A pullback that holds above the old high would confirm strength.`,
     bearT:(s,t)=>`If a daily candle closes below ${s}, a move toward ${t} becomes more likely.`,
-    deep:"Deep analysis with Claude",disc:"Educational only, not financial advice. Data: CoinGecko, approximate."}
-  :{pickHint:"یک ارز انتخاب کن",long:"به لانگ فکر می‌کنم",short:"به شورت فکر می‌کنم",loading:"در حال تحلیل داده زنده…",err:"داده این ارز الان در دسترس نیست. یک دقیقه بعد دوباره امتحان کن.",
-    state:"وضعیت روند",states:["نزولی قوی","نزولی","خنثی","صعودی","صعودی قوی"],stateNote:"این وضعیت فعلی را نشان می‌دهد، نه سیگنال خرید یا فروش.",
+    deep:"Deep analysis with Claude",deepM:"Market analysis with Claude",disc:"Educational only, not financial advice. Data: Binance and CoinGecko, approximate.",
+    tvOpen:"Open in the TradingView app",tvSub:"Candles · indicators · drawing tools",
+    gl:"Global market",gcap:"Total market cap",gdom:"BTC dominance",gchg:"24h change",breadth:"Market breadth",bUp:"Coins up today",bAbove:"Above ~37-day avg",bRsi:"Average RSI",
+    regime:"Market regime",regimes:["Risk-off: broad weakness","Weak, leaning down","Mixed and undecided","Healthy, leaning up","Risk-on: broad strength"],
+    heat:"All 15 coins",hSym:"Coin",hTrend:"Trend",tapRow:"Tap a coin to analyse it",
+    lead:"Strongest vs Bitcoin (30 days)",lag:"Weakest vs Bitcoin (30 days)",watch:"Worth a closer look",w_ob:"Overbought",w_os:"Oversold",w_hi:"Near 90-day high",w_dn:"Strong downtrend",w_none:"Nothing stands out right now.",
+    cmpA:"Coin A",cmpB:"Coin B",cmpChart:"90-day performance (start = 100)",cmpRows:["7-day change","30-day change","90-day change","Daily volatility","RSI 14","Max drop in 90 days","Trend"],corr:"Correlation (30 days)",corrT:c=>c>=.7?"They usually move together.":c>=.4?"They partly move together.":"They often move independently.",
+    narr:{coinLead:(n,st)=>`${n} is in ${st.toLowerCase()}.`,mtf:t=>t,rsi:(r,z)=>`RSI is ${r} (${z.toLowerCase()}).`,lv:(s,r)=>`Nearest support is ${s}${r?`, resistance ${r}`:""}.`,
+      mkt:(rg,u,n,dom)=>`The market looks: ${rg.toLowerCase()}. ${u} of ${n} major coins are up today${dom?`, and Bitcoin's dominance is ${dom}`:""}.`}}
+  :{modes:["تحلیل ارز","کل بازار","مقایسه"],dirs:["فقط تحلیل","لانگ","شورت"],
+    loading:"در حال تحلیل داده زنده…",loadingN:(a,b)=>`در حال خواندن بازار… ${F(a)} از ${F(b)}`,err:"داده الان در دسترس نیست.",retry:"دوباره امتحان کن",
+    summary:"خلاصهٔ تحلیل",state:"وضعیت روند",states:["نزولی قوی","نزولی","خنثی","صعودی","صعودی قوی"],stateNote:"وضعیت فعلی را نشان می‌دهد، نه سیگنال خرید یا فروش.",
+    mtf:"روند در چند تایم‌فریم",tf:{"1":"۲۴ ساعت","7":"۷ روز","30":"۳۰ روز","90":"۹۰ روز"},up:"صعودی",down:"نزولی",flat:"خنثی",align:(u,d)=>u>=3?"تایم‌فریم‌ها بیشتر هم‌جهت‌اند: صعودی.":d>=3?"تایم‌فریم‌ها بیشتر هم‌جهت‌اند: نزولی.":"تایم‌فریم‌ها هم‌جهت نیستند؛ روند مختلط است.",
+    ind:"اندیکاتورها",rsi:"RSI ۱۴",rsiZ:["اشباع فروش","معمولی","اشباع خرید"],macd:"MACD",macdS:(p,x)=>(p?"مومنتوم مثبت":"مومنتوم منفی")+(x?` · تقاطع ${x}`:""),bb:"باند بولینگر %B",bbS:(b,sq)=>(b>1?"بالای باند بالا":b<0?"زیر باند پایین":b>.8?"نزدیک باند بالا":b<.2?"نزدیک باند پایین":"داخل باندها")+(sq?" · فشردگی":""),vol:"نوسان روزانه",volZ:["کم","متوسط","زیاد"],volT:r=>r>1.3?"رو به افزایش":r<.75?"رو به کاهش":"ثابت",dd:"فاصله از سقف ۹۰ روزه",
+    obs:"آنچه داده‌ها نشان می‌دهند",
+    o_gx:d=>`تقاطع طلایی ${F(d)} روز پیش (میانگین کوتاه از بالای میانگین بلند گذشت).`,o_dx:d=>`تقاطع مرگ ${F(d)} روز پیش (میانگین کوتاه زیر میانگین بلند رفت).`,
+    o_bdiv:"واگرایی منفی RSI: قیمت سقف بالاتر زد ولی RSI سقف پایین‌تر.",o_udiv:"واگرایی مثبت RSI: قیمت کف پایین‌تر زد ولی RSI کف بالاتر.",
+    o_bo:"قیمت سقف ۳۰ روزه را به بالا شکست.",o_bd:"قیمت کف ۳۰ روزه را به پایین شکست.",o_sq:"فشردگی باند بولینگر: نوسان غیرعادی کم است؛ معمولاً بعدش حرکت بزرگی می‌آید.",
+    o_ns:"قیمت نزدیک حمایت است.",o_nr:"قیمت نزدیک مقاومت است.",o_ob:"RSI در اشباع خرید است؛ از این‌جا اصلاح رایج است.",o_os:"RSI در اشباع فروش است؛ از این‌جا برگشت رایج است.",
+    o_vu:"نوسان نسبت به ماه گذشته رو به افزایش است.",o_vd:"نوسان نسبت به ماه گذشته رو به کاهش است.",o_ath:"قیمت در سقف ۹۰ روزه یا نزدیک آن است.",o_btc:c=>`${c>=.7?"خیلی هم‌جهت با":c>=.4?"تا حدی هم‌جهت با":"بیشتر مستقل از"} بیت‌کوین حرکت می‌کند (همبستگی ${F(c.toFixed(2))}).`,o_none:"الان چیز غیرعادی‌ای دیده نمی‌شود.",
     chart:"نمودار ۹۰ روزه",price:"قیمت",sma20:"میانگین ~۱۵ روزه",sma50:"میانگین ~۳۷ روزه",sup:"حمایت",res:"مقاومت",
-    metrics:"اعداد کلیدی",rsi:"RSI ۱۴",rsiZ:["اشباع فروش","معمولی","اشباع خرید"],ch7:"تغییر ۷ روزه",ch30:"تغییر ۳۰ روزه",vol:"نوسان روزانه",volZ:["کم","متوسط","زیاد"],range:"جایگاه در بازهٔ ۹۰ روزه",distS:"فاصله تا حمایت",distR:"فاصله تا مقاومت",
     levels:"سطوح مهم",hi90:"بالاترین ۹۰ روزه",lo90:"پایین‌ترین ۹۰ روزه",none:"در ۹۰ روز اخیر بالاتر از قیمت نیست",
     check:"چک‌لیست تو روی این ارز",met:"برقرار",not:"برقرار نیست",unk:"خودت بررسی کن",
     c1:"معامله هم‌جهت با روند است",c2L:"قیمت نزدیک حمایت است (کمتر از ۳٪)",c2S:"قیمت نزدیک مقاومت است (کمتر از ۳٪)",c3L:"RSI در اشباع خرید نیست",c3S:"RSI در اشباع فروش نیست",c4:"نسبت ریسک به بازده حداقل ۱ به ۲ ممکن است",c5:"نوسان قابل کنترل است",c6:"کندل تأیید بسته شده و خبر مهمی در راه نیست",
@@ -1351,31 +1426,63 @@ document.addEventListener("bg-markets",e=>{window.__bgLastCoins=e.detail});
     scen:"سناریوها",bull:"سناریوی صعودی",bear:"سناریوی نزولی",
     bullT:(r,t)=>r?`اگر کندل روزانه بالای ${r} بسته شود، ناحیهٔ بعدی برای توجه ${t} است.`:`قیمت در سقف ۹۰ روزه است. اگر پولبک بالای سقف قبلی بماند، قدرت تأیید می‌شود.`,
     bearT:(s,t)=>`اگر کندل روزانه زیر ${s} بسته شود، حرکت به سمت ${t} محتمل‌تر می‌شود.`,
-    deep:"تحلیل عمیق‌تر با Claude",disc:"فقط آموزشی، توصیهٔ مالی نیست. داده: CoinGecko، تقریبی."};
-  const COINS=[["bitcoin","BTC","بیت‌کوین","Bitcoin"],["ethereum","ETH","اتریوم","Ethereum"],["binancecoin","BNB","بی‌ان‌بی","BNB"],["ripple","XRP","ریپل","XRP"],["solana","SOL","سولانا","Solana"],["tron","TRX","ترون","TRON"],["dogecoin","DOGE","دوج‌کوین","Dogecoin"],["cardano","ADA","کاردانو","Cardano"],["hyperliquid","HYPE","هایپرلیکوئید","Hyperliquid"],["chainlink","LINK","چین‌لینک","Chainlink"],["stellar","XLM","استلار","Stellar"],["bitcoin-cash","BCH","بیت‌کوین کش","Bitcoin Cash"],["litecoin","LTC","لایت‌کوین","Litecoin"],["monero","XMR","مونرو","Monero"],["zcash","ZEC","زی‌کش","Zcash"]];
+    deep:"تحلیل عمیق‌تر با Claude",deepM:"تحلیل کل بازار با Claude",disc:"فقط آموزشی، توصیهٔ مالی نیست. داده: بایننس و CoinGecko، تقریبی.",
+    tvOpen:"باز کردن در اپ TradingView",tvSub:"کندل · اندیکاتور · ابزار رسم",
+    gl:"بازار جهانی کریپتو",gcap:"ارزش کل بازار",gdom:"سهم بیت‌کوین",gchg:"تغییر ۲۴ ساعته",breadth:"وسعت بازار",bUp:"ارزهای مثبت امروز",bAbove:"بالای میانگین ~۳۷ روزه",bRsi:"میانگین RSI",
+    regime:"وضعیت کلی بازار",regimes:["ریسک‌گریز: ضعف گسترده","ضعیف، متمایل به نزول","مختلط و بلاتکلیف","سالم، متمایل به صعود","ریسک‌پذیر: قدرت گسترده"],
+    heat:"همهٔ ۱۵ ارز",hSym:"ارز",hTrend:"روند",tapRow:"روی هر ارز بزن تا تحلیلش باز شود",
+    lead:"قوی‌ترها نسبت به بیت‌کوین (۳۰ روز)",lag:"ضعیف‌ترها نسبت به بیت‌کوین (۳۰ روز)",watch:"قابل توجه برای بررسی بیشتر",w_ob:"اشباع خرید",w_os:"اشباع فروش",w_hi:"نزدیک سقف ۹۰ روزه",w_dn:"روند نزولی قوی",w_none:"الان مورد خاصی دیده نمی‌شود.",
+    cmpA:"ارز اول",cmpB:"ارز دوم",cmpChart:"عملکرد ۹۰ روزه (شروع = ۱۰۰)",cmpRows:["تغییر ۷ روزه","تغییر ۳۰ روزه","تغییر ۹۰ روزه","نوسان روزانه","RSI ۱۴","بیشترین افت در ۹۰ روز","روند"],corr:"همبستگی (۳۰ روز)",corrT:c=>c>=.7?"معمولاً با هم حرکت می‌کنند.":c>=.4?"تا حدی با هم حرکت می‌کنند.":"اغلب مستقل از هم حرکت می‌کنند.",
+    narr:{coinLead:(n,st)=>`${n} در وضعیت «${st}» است.`,mtf:t=>t,rsi:(r,z)=>`RSI روی ${F(r)} است (${z}).`,lv:(s,r)=>`نزدیک‌ترین حمایت ${s}${r?` و مقاومت ${r}`:""} است.`,
+      mkt:(rg,u,n,dom)=>`وضعیت بازار: ${rg}. ${F(u)} از ${F(n)} ارز مهم امروز مثبت‌اند${dom?` و سهم بیت‌کوین ${dom} است`:""}.`}};
+  /* math */
   const usd=v=>v==null||!isFinite(v)?"–":"$"+(v>=1000?v.toLocaleString("en-US",{maximumFractionDigits:0}):v>=1?v.toLocaleString("en-US",{maximumFractionDigits:2}):v.toLocaleString("en-US",{maximumSignificantDigits:4}));
-  const pct=(v,d=1)=>(v>=0?"+":"")+v.toFixed(d)+"%";
+  const big=v=>v==null||!isFinite(v)?"–":"$"+(v>=1e12?(v/1e12).toFixed(2)+"T":v>=1e9?(v/1e9).toFixed(1)+"B":(v/1e6).toFixed(0)+"M");
+  const pct=(v,d=1)=>!isFinite(v)?"–":(v>=0?"+":"")+v.toFixed(d)+"%";
   const mean=a=>a.reduce((x,y)=>x+y,0)/a.length;
-  const resample=(arr,n)=>{if(arr.length<=n)return arr;const o=[];for(let k=0;k<n;k++)o.push(arr[Math.round(k*(arr.length-1)/(n-1))]);return o};
+  const sd=a=>{const m=mean(a);return Math.sqrt(mean(a.map(x=>(x-m)**2)))};
+  const resample=(arr,n)=>{if(arr.length<=n)return arr.slice();const o=[];for(let k=0;k<n;k++)o.push(arr[Math.round(k*(arr.length-1)/(n-1))]);return o};
   const roll=(a,n)=>a.map((_,i)=>i<n-1?null:mean(a.slice(i-n+1,i+1)));
-  const rsi=(a,n=14)=>{const x=a.slice(-(n+1));let g=0,l=0;for(let i=1;i<x.length;i++){const d=x[i]-x[i-1];if(d>0)g+=d;else l-=d}return l===0?100:100-100/(1+g/l)};
+  const ema=(a,n)=>{const k=2/(n+1);let e=a[0];return a.map(v=>e=v*k+e*(1-k))};
+  const rsiAt=(a,n=14)=>{const x=a.slice(-(n+1));let g=0,l=0;for(let i=1;i<x.length;i++){const d=x[i]-x[i-1];if(d>0)g+=d;else l-=d}return l===0?100:100-100/(1+g/l)};
+  const rsiSeries=(a,n=14)=>a.map((_,i)=>i<n?null:rsiAt(a.slice(0,i+1),n));
+  const rets=a=>{const r=[];for(let i=1;i<a.length;i++)r.push(Math.log(a[i]/a[i-1]));return r};
+  const corr=(a,b)=>{const n=Math.min(a.length,b.length);a=a.slice(-n);b=b.slice(-n);const ma=mean(a),mb=mean(b);let x=0,y=0,z=0;for(let i=0;i<n;i++){x+=(a[i]-ma)*(b[i]-mb);y+=(a[i]-ma)**2;z+=(b[i]-mb)**2}return y&&z?x/Math.sqrt(y*z):0};
+  const slopePct=a=>{const n=a.length,xm=(n-1)/2,ym=mean(a);let num=0,den=0;for(let i=0;i<n;i++){num+=(i-xm)*(a[i]-ym);den+=(i-xm)**2}return den?num/den*(n-1)/ym*100:0};
+  const maxDD=a=>{let pk=a[0],dd=0;for(const v of a){pk=Math.max(pk,v);dd=Math.min(dd,v/pk-1)}return dd*100};
   const SRC=window.__liveSource;if(!SRC||!$("ccPick"))return;
-  let sel="bitcoin",dir="long",cache={},seq=0;
-  try{sel=localStorage.getItem("bg-cc-coin")||sel;dir=localStorage.getItem("bg-cc-dir")||dir}catch(e){}
-  $("ccPick").innerHTML=COINS.map(([id,s])=>`<button type="button" class="cc-chip" data-id="${id}" aria-pressed="${id===sel}">${s}</button>`).join("");
-  const dirBtns=()=>{$("ccDir").innerHTML=`<button type="button" class="cc-dbtn" data-d="long" aria-pressed="${dir==="long"}">${T.long}</button><button type="button" class="cc-dbtn" data-d="short" aria-pressed="${dir==="short"}">${T.short}</button>`};dirBtns();
-  $("ccPick").addEventListener("click",e=>{const b=e.target.closest(".cc-chip");if(!b)return;sel=b.dataset.id;try{localStorage.setItem("bg-cc-coin",sel)}catch(e){}$("ccPick").querySelectorAll(".cc-chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.id===sel));run()});
-  $("ccDir").addEventListener("click",e=>{const b=e.target.closest(".cc-dbtn");if(!b)return;dir=b.dataset.d;try{localStorage.setItem("bg-cc-dir",dir)}catch(e){}dirBtns();run()});
-  async function getData(id){if(cache[id]&&Date.now()-cache[id].at<180000)return cache[id];
+  if(!SRC.global){SRC.global=async()=>{const m=await SRC.mcp();const r=await m.callTool("CoinGecko","get-global-market",{},{cache:{staleTime:120000}});const g=r.payload||{};return {cap:g.totalMarketCapUsd,chg:g.marketCapChangePercentage24hUsd,btc:g.btcDominancePct}}}
+  /* state */
+  let mode=0,dir=0,sel="bitcoin",selB="ethereum",seq=0;const cache={};
+  try{mode=+(localStorage.getItem("bg-cc-mode")||0);dir=+(localStorage.getItem("bg-cc-dir2")||0);sel=localStorage.getItem("bg-cc-coin")||sel;selB=localStorage.getItem("bg-cc-coinB")||selB}catch(e){}
+  const save=()=>{try{localStorage.setItem("bg-cc-mode",mode);localStorage.setItem("bg-cc-dir2",dir);localStorage.setItem("bg-cc-coin",sel);localStorage.setItem("bg-cc-coinB",selB)}catch(e){}};
+  const hero=$("ccPick").parentElement;
+  const tabs=document.createElement("div");tabs.className="cc-modes";tabs.setAttribute("role","tablist");hero.insertBefore(tabs,$("ccPick"));
+  const pickB=document.createElement("div");pickB.className="cc-pick";pickB.id="ccPickB";hero.insertBefore(pickB,$("ccDir"));
+  const lab=t=>`<span class="cc-plab">${t}</span>`;
+  function chrome(){
+    tabs.innerHTML=T.modes.map((m,i)=>`<button type="button" role="tab" class="cc-mode" data-m="${i}" aria-selected="${i===mode}">${m}</button>`).join("");
+    $("ccPick").hidden=mode===1;pickB.hidden=mode!==2;$("ccDir").hidden=mode!==0;
+    $("ccPick").innerHTML=(mode===2?lab(T.cmpA):"")+COINS.map(([id,s])=>`<button type="button" class="cc-chip" data-id="${id}" aria-pressed="${id===sel}">${s}</button>`).join("");
+    pickB.innerHTML=lab(T.cmpB)+COINS.map(([id,s])=>`<button type="button" class="cc-chip" data-id="${id}" aria-pressed="${id===selB}">${s}</button>`).join("");
+    $("ccDir").className="cc-dir cc-dir3";$("ccDir").innerHTML=T.dirs.map((d,i)=>`<button type="button" class="cc-dbtn" data-d="${["none","long","short"][i]}" data-i="${i}" aria-pressed="${i===dir}">${d}</button>`).join("");
+  }
+  tabs.addEventListener("click",e=>{const b=e.target.closest(".cc-mode");if(!b)return;mode=+b.dataset.m;save();chrome();run()});
+  $("ccPick").addEventListener("click",e=>{const b=e.target.closest(".cc-chip");if(!b)return;sel=b.dataset.id;save();chrome();run()});
+  pickB.addEventListener("click",e=>{const b=e.target.closest(".cc-chip");if(!b)return;selB=b.dataset.id;save();chrome();run()});
+  $("ccDir").addEventListener("click",e=>{const b=e.target.closest(".cc-dbtn");if(!b)return;dir=+b.dataset.i;save();chrome();run()});
+  /* data */
+  async function getCoin(id,full=true){const key=id+(full?"F":"S");if(cache[key]&&Date.now()-cache[key].at<180000)return cache[key];
     const c=(window.__bgLastCoins&&window.__bgLastCoins[id])||(await SRC.markets([id]))[id];if(!c)throw new Error("no coin");
-    const a=await SRC.chart(id,"90"),b=await SRC.chart(id,"30");
-    const d={c,s90:resample(a.p,120),t90:resample(a.t,120),s30:b.p,at:Date.now()};cache[id]=d;return d}
-  function analyse(d){const p=d.c.price,s90=d.s90,s30=d.s30;
+    const a=await SRC.chart(id,"90"),b=await SRC.chart(id,"30");let s7=null,s1=null;
+    if(full){try{s7=(await SRC.chart(id,"7")).p}catch(e){}try{s1=(await SRC.chart(id,"1")).p}catch(e){}}
+    const d={id,c,s90:resample(a.p,120),t90:resample(a.t,120),s30:b.p,s7,s1,at:Date.now()};cache[key]=d;if(full)cache[id+"S"]=d;return d}
+  function analyse(d){const p=d.c.price,s90=d.s90,s30=d.s30,r30=resample(s30,120);
     const m20=roll(s90,20),m50=roll(s90,50),a20=m20.at(-1),a50=m50.at(-1);
-    const r=rsi(resample(s30,120).concat([p]));
-    const i7=Math.max(0,s30.length-Math.round(s30.length*7/30));const ch7=(p/s30[i7]-1)*100,ch30=(p/s30[0]-1)*100;
-    const rets=[];for(let i=1;i<s30.length;i++)rets.push(Math.log(s30[i]/s30[i-1]));const sd=Math.sqrt(mean(rets.map(x=>x*x))-mean(rets)**2);
-    const perDay=s30.length/30,vol=sd*Math.sqrt(perDay)*100;
+    const r=rsiAt(r30.concat([p]));
+    const i7=Math.max(0,s30.length-Math.round(s30.length*7/30));const ch7=(p/s30[i7]-1)*100,ch30=(p/s30[0]-1)*100,ch90=(p/s90[0]-1)*100;
+    const lr=rets(s30),perDay=s30.length/30,vol=sd(lr)*Math.sqrt(perDay)*100;
+    const lr7=lr.slice(-Math.round(lr.length*7/30)),vol7=sd(lr7)*Math.sqrt(perDay)*100;
     const hi=Math.max(...s90),lo=Math.min(...s90),pos=(p-lo)/((hi-lo)||1)*100;
     const k=Math.max(3,Math.round(s30.length/40)),lows=[],highs=[];
     for(let i=k;i<s30.length-k;i++){const w=s30.slice(i-k,i+k+1);if(s30[i]===Math.min(...w))lows.push(s30[i]);if(s30[i]===Math.max(...w))highs.push(s30[i])}
@@ -1383,12 +1490,30 @@ document.addEventListener("bg-markets",e=>{window.__bgLastCoins=e.detail});
     let res=Math.min(...highs.filter(x=>x>p*1.005),Infinity);if(!isFinite(res)){const h2=s90.filter(x=>x>p*1.005);res=h2.length?Math.max(...h2):null}
     let score=0;score+=p>a50?1:-1;score+=a20>a50?1:-1;score+=ch7>0?1:-1;score+=r>55?1:r<45?-1:0;
     const st=score>=3?4:score>=1?3:score<=-3?0:score<=-1?1:2;
-    return {p,a20,a50,m20,m50,r,ch7,ch30,vol,hi,lo,pos,sup,res,score,st}}
+    /* MACD on 90d series */
+    const e12=ema(s90,12),e26=ema(s90,26),mac=e12.map((v,i)=>v-e26[i]),sig=ema(mac,9),hist=mac.map((v,i)=>v-sig[i]);
+    let xAgo=null;for(let i=hist.length-1;i>hist.length-30&&i>0;i--){if(Math.sign(hist[i])!==Math.sign(hist[i-1])){xAgo=Math.round((hist.length-1-i)*90/120);break}}
+    /* Bollinger on 90d series */
+    const bw=[];for(let i=19;i<s90.length;i++){const w=s90.slice(i-19,i+1),m=mean(w),s=sd(w);bw.push(4*s/m)}
+    const w20=s90.slice(-20),bm=mean(w20),bs=sd(w20),pb=(p-(bm-2*bs))/((4*bs)||1),squeeze=bw.at(-1)<0.6*[...bw].sort((a,b)=>a-b)[Math.floor(bw.length/2)];
+    /* crosses */
+    let cross=null;for(let i=m50.length-1;i>50;i--){if(m50[i]==null||m50[i-1]==null)break;const a=Math.sign(m20[i]-m50[i]),b=Math.sign(m20[i-1]-m50[i-1]);if(a!==b){cross={up:a>0,ago:Math.max(1,Math.round((m50.length-1-i)*90/120))};break}}
+    /* divergence on 30d */
+    const rs=rsiSeries(r30),pk=[],tr=[];for(let i=4;i<r30.length-1;i++){const w=r30.slice(i-4,Math.min(r30.length,i+5));if(r30[i]===Math.max(...w))pk.push(i);if(r30[i]===Math.min(...w))tr.push(i)}
+    let div=null;const P2=pk.slice(-2),T2=tr.slice(-2);
+    if(P2.length===2&&rs[P2[0]]!=null&&r30[P2[1]]>r30[P2[0]]&&rs[P2[1]]<rs[P2[0]]-3&&P2[1]>r30.length-40)div="bear";
+    if(!div&&T2.length===2&&rs[T2[0]]!=null&&r30[T2[1]]<r30[T2[0]]&&rs[T2[1]]>rs[T2[0]]+3&&T2[1]>r30.length-40)div="bull";
+    const body30=s30.slice(0,Math.floor(s30.length*.92));const bo=p>Math.max(...body30),bd=p<Math.min(...body30);
+    /* multi timeframe */
+    const tfs=[["1",d.s1],["7",d.s7],["30",s30],["90",s90]].filter(x=>x[1]&&x[1].length>3).map(([k,a])=>{const sl=slopePct(a),chg=(p/a[0]-1)*100,th=k==="1"?0.8:k==="7"?2:4;return {k,chg,dir:sl>th&&chg>0?1:sl<-th&&chg<0?-1:0}});
+    const dd=(p/hi-1)*100;
+    return {p,a20,a50,m20,m50,r,ch7,ch30,ch90,vol,vol7,hi,lo,pos,sup,res,score,st,mac:mac.at(-1),sig:sig.at(-1),hist:hist.at(-1),xAgo,pb,squeeze,cross,div,bo,bd,tfs,dd,lr}}
+  /* chart */
   function chart(d,A){const W=340,H=190,PL=4,PR=62,PT=10,PB=22,s=d.s90,n=s.length;
     const vals=s.concat([A.sup,A.res||A.hi]).filter(v=>v!=null);let mn=Math.min(...vals),mx=Math.max(...vals);const pad=(mx-mn)*.06;mn-=pad;mx+=pad;
     const X=i=>PL+i/(n-1)*(W-PL-PR),Y=v=>PT+(1-(v-mn)/(mx-mn))*(H-PT-PB);
     const line=(arr,c,w,dash)=>{const pts=arr.map((v,i)=>v==null?null:`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).filter(Boolean).join(" ");return `<polyline points="${pts}" fill="none" stroke="var(${c})" stroke-width="${w}" ${dash?'stroke-dasharray="4 3"':""} stroke-linejoin="round" stroke-linecap="round"/>`};
-    const hl=(v,c,lab)=>v==null?"":`<line x1="${PL}" x2="${W-PR}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="var(${c})" stroke-width="1.2" stroke-dasharray="2 3"/><rect x="${W-PR+3}" y="${(Y(v)-9).toFixed(1)}" width="${PR-5}" height="18" rx="5" fill="var(${c})" opacity=".16"/><text x="${W-PR+7}" y="${(Y(v)+4).toFixed(1)}" font-size="9.5" font-weight="700" fill="var(${c})">${usd(v)}</text>`;
+    const hl=(v,c)=>v==null?"":`<line x1="${PL}" x2="${W-PR}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="var(${c})" stroke-width="1.2" stroke-dasharray="2 3"/><rect x="${W-PR+3}" y="${(Y(v)-9).toFixed(1)}" width="${PR-5}" height="18" rx="5" fill="var(${c})" opacity=".16"/><text x="${W-PR+7}" y="${(Y(v)+4).toFixed(1)}" font-size="9.5" font-weight="700" fill="var(${c})">${usd(v)}</text>`;
     const xl=[0,Math.floor((n-1)/2),n-1].map((i,k)=>`<text x="${X(i).toFixed(1)}" y="${H-6}" font-size="9.5" fill="var(--muted)" text-anchor="${k===0?"start":k===2?"end":"middle"}">${F(new Date(d.t90[i]).toLocaleDateString(LOC,{day:"numeric",month:"short"}))}</text>`).join("");
     const up=s[n-1]>=s[0],col=up?"--up":"--down";
     return `<svg class="cc-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${T.chart}" direction="ltr">
@@ -1398,59 +1523,108 @@ document.addEventListener("bg-markets",e=>{window.__bgLastCoins=e.detail});
       ${line(A.m50,"--g4",1.6,1)}${line(A.m20,"--g2",1.6,1)}${line(s,col,2.2)}
       <circle cx="${X(n-1).toFixed(1)}" cy="${Y(s[n-1]).toFixed(1)}" r="4" fill="var(${col})" stroke="var(--surface)" stroke-width="2"/>${xl}</svg>
       <div class="cc-leg"><span><i style="background:var(${col})"></i>${T.price}</span><span><i class="d" style="--c:var(--g2)"></i>${T.sma20}</span><span><i class="d" style="--c:var(--g4)"></i>${T.sma50}</span><span><i class="d" style="--c:var(--up)"></i>${T.sup}</span><span><i class="d" style="--c:var(--down)"></i>${T.res}</span></div>`}
-  function render(id,d,A){const meta=COINS.find(c=>c[0]===id),sym=meta[1],name=EN?meta[3]:meta[2],c=d.c;
-    const stCls=["dn2","dn","mid","up","up2"][A.st];
+  const card=(h,b,cls="")=>`<div class="cc-card ${cls}">${h?`<h4>${h}</h4>`:""}${b}</div>`;
+  const dirIc=v=>v>0?`<i class="ar up">▲</i>`:v<0?`<i class="ar down">▼</i>`:`<i class="ar mid">▬</i>`;
+  const tvCard=id=>`<div class="cc-card"><div class="cc-tvh"><h4>TradingView</h4><small>${T.tvSub}</small></div>${window.__noEmbed?"":`<div class="tvbox" id="tvBox"></div>`}<a class="cc-tv" href="${window.__tvURL?window.__tvURL(id):"https://www.tradingview.com/chart/"}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>${T.tvOpen}</a></div>`;
+  function mountTV(id){const box=$("tvBox");if(!box||!window.__TV)return;const de=document.documentElement,dark=de.getAttribute("data-theme")==="dark"||(de.getAttribute("data-theme")!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches);
+    box.innerHTML='<div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div></div>';const sc=document.createElement("script");sc.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";sc.async=true;
+    sc.textContent=JSON.stringify({autosize:true,symbol:window.__TV[id]||"BINANCE:BTCUSDT",interval:"240",timezone:"Europe/Vienna",theme:dark?"dark":"light",style:"1",locale:EN?"en":"fa_IR",allow_symbol_change:true,withdateranges:true,studies:["STD;RSI","STD;MACD"],support_host:"https://www.tradingview.com"});
+    sc.onerror=()=>box.remove();box.querySelector(".tradingview-widget-container").appendChild(sc)}
+  /* coin mode */
+  async function renderCoin(my){const d=await getCoin(sel,true);let btc=null;if(sel!=="bitcoin"){try{btc=await getCoin("bitcoin",false)}catch(e){}}if(my!==seq)return;
+    const A=analyse(d),m=META[sel],c=d.c;const stCls=["dn2","dn","mid","up","up2"][A.st];
     const rz=A.r>=70?2:A.r<=30?0:1,vz=A.vol<2?0:A.vol<4?1:2;
-    const L=dir==="long";
-    const stop=L?A.sup*0.99:(A.res?A.res*1.01:A.p*1.05),target=L?(A.res||A.p+(A.p-stop)*2):A.sup,risk=Math.abs(A.p-stop),rew=Math.abs(target-A.p),rr=risk?rew/risk:0;
-    const chk=[[T.c1,L?A.score>0:A.score<0],[L?T.c2L:T.c2S,L?(A.p-A.sup)/A.p<0.03:(A.res?(A.res-A.p)/A.p<0.03:false)],[L?T.c3L:T.c3S,L?A.r<70:A.r>30],[T.c4,rr>=2],[T.c5,A.vol<5],[T.c6,null]];
-    const metN=chk.filter(x=>x[1]===true).length;
-    const ring=`<svg viewBox="0 0 36 36" class="cc-ring" aria-hidden="true"><circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--line)" stroke-width="3.5"/><circle cx="18" cy="18" r="15.5" fill="none" stroke="var(${metN>=5?"--up":metN>=3?"--hl":"--down"})" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="${(metN/6*97.4).toFixed(1)} 97.4" transform="rotate(-90 18 18)"/></svg>`;
+    const ups=A.tfs.filter(x=>x.dir>0).length,dns=A.tfs.filter(x=>x.dir<0).length;
+    const bc=btc?corr(A.lr,rets(btc.s30)):null;
+    const obs=[];if(A.cross)obs.push([A.cross.up?"up":"down",A.cross.up?T.o_gx(A.cross.ago):T.o_dx(A.cross.ago)]);if(A.div)obs.push([A.div==="bull"?"up":"down",A.div==="bull"?T.o_udiv:T.o_bdiv]);
+    if(A.bo)obs.push(["up",T.o_bo]);if(A.bd)obs.push(["down",T.o_bd]);if(A.squeeze)obs.push(["hl",T.o_sq]);if(A.r>=70)obs.push(["hl",T.o_ob]);if(A.r<=30)obs.push(["hl",T.o_os]);
+    if((A.p-A.sup)/A.p<0.02)obs.push(["up",T.o_ns]);if(A.res&&(A.res-A.p)/A.p<0.02)obs.push(["down",T.o_nr]);if(A.dd>-2)obs.push(["up",T.o_ath]);
+    if(A.vol7>A.vol*1.3)obs.push(["hl",T.o_vu]);if(A.vol7<A.vol*.75)obs.push(["mid",T.o_vd]);if(bc!=null)obs.push(["mid",T.o_btc(bc)]);
+    const narr=[T.narr.coinLead(m.name,T.states[A.st]),T.align(ups,dns),T.narr.rsi(Math.round(A.r),T.rsiZ[rz]),T.narr.lv(usd(A.sup),A.res?usd(A.res):null)].join(" ");
+    const L=dir===1,S=dir===2;
+    let checkHTML="",planHTML="";
+    if(L||S){const stop=L?A.sup*0.99:(A.res?A.res*1.01:A.p*1.05),target=L?(A.res||A.p+(A.p-stop)*2):A.sup,risk=Math.abs(A.p-stop),rew=Math.abs(target-A.p),rr=risk?rew/risk:0;
+      const chk=[[T.c1,L?A.score>0:A.score<0],[L?T.c2L:T.c2S,L?(A.p-A.sup)/A.p<0.03:(A.res?(A.res-A.p)/A.p<0.03:false)],[L?T.c3L:T.c3S,L?A.r<70:A.r>30],[T.c4,rr>=2],[T.c5,A.vol<5],[T.c6,null]];
+      const metN=chk.filter(x=>x[1]===true).length;
+      const ring=`<svg viewBox="0 0 36 36" class="cc-ring" aria-hidden="true"><circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--line)" stroke-width="3.5"/><circle cx="18" cy="18" r="15.5" fill="none" stroke="var(${metN>=5?"--up":metN>=3?"--hl":"--down"})" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="${(metN/6*97.4).toFixed(1)} 97.4" transform="rotate(-90 18 18)"/></svg>`;
+      checkHTML=`<div class="cc-card"><div class="cc-chkh">${ring}<div><h4>${T.check}</h4><b class="cc-score">${F(metN)} / ${F(6)}</b></div></div><ul class="cc-chk">${chk.map(([t,v])=>`<li><i class="${v===true?"met":v===false?"not":"unk"}">${v===true?T.met:v===false?T.not:T.unk}</i><span>${t}</span></li>`).join("")}</ul><p class="cc-verdict">${T.verdict(metN)}</p></div>`;
+      planHTML=`<div class="cc-card"><h4>${T.plan} · ${L?"Long":"Short"}</h4><div class="cc-plan"><div><span>${T.entry}</span><b>${usd(A.p)}</b></div><div class="st"><span>${T.stop}</span><b>${usd(stop)}</b><small dir="ltr">${pct((stop/A.p-1)*100)}</small></div><div class="tg"><span>${T.target}</span><b>${usd(target)}</b><small dir="ltr">${pct((target/A.p-1)*100)}</small></div><div><span>${T.rr}</span><b dir="ltr" class="${rr>=2?"up":"down"}">1 : ${rr.toFixed(1)}</b></div></div><p class="cc-note">${T.planNote}</p><button type="button" class="cc-calc" id="ccCalc" data-stop="${stop}">${T.toCalc}</button></div>`}
     const deep=typeof window.__bgAsk==="function"?`<button type="button" class="cc-deep" id="ccDeep"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/></svg>${T.deep}</button>`:"";
     $("ccOut").innerHTML=`
     <div class="cc-card cc-sum ${stCls}">
-      <div class="cc-row"><div><span class="cc-sym">${sym}</span><span class="cc-nm">${name}</span></div><div class="cc-px"><b>${usd(c.price)}</b><small class="${c.chg>=0?"up":"down"}">${pct(+c.chg,2)} · 24h</small></div></div>
+      <div class="cc-row"><div><span class="cc-sym">${m.sym}</span><span class="cc-nm">${m.name}</span></div><div class="cc-px"><b>${usd(c.price)}</b><small class="${c.chg>=0?"up":"down"}">${pct(+c.chg,2)} · 24h</small></div></div>
       <div class="cc-state"><span>${T.state}</span><b>${T.states[A.st]}</b></div>
       <div class="cc-meter" aria-hidden="true">${[0,1,2,3,4].map(i=>`<i class="${i===A.st?"on":""}"></i>`).join("")}</div>
-      <p class="cc-note">${T.stateNote}</p>${deep}
-    </div>
-    <div class="cc-card"><h4>${T.chart}</h4>${chart(d,A)}</div><div class="cc-card"><div class="cc-tvh"><h4>TradingView</h4><small>${EN?"Candles · indicators · drawing tools":"کندل · اندیکاتور · ابزار رسم"}</small></div>${window.__noEmbed?"":`<div class="tvbox" id="tvBox"></div>`}<a class="cc-tv" href="${window.__tvURL(id)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>${EN?"Open in the TradingView app":"باز کردن در اپ TradingView"}</a></div>
-    <div class="cc-card"><h4>${T.metrics}</h4><div class="cc-grid">
+      <p class="cc-narr">${narr}</p><p class="cc-note">${T.stateNote}</p>${deep}</div>
+    ${card(T.mtf,`<div class="cc-mtf">${A.tfs.map(x=>`<div><span>${T.tf[x.k]}</span>${dirIc(x.dir)}<b dir="ltr" class="${x.chg>=0?"up":"down"}">${pct(x.chg)}</b><small>${x.dir>0?T.up:x.dir<0?T.down:T.flat}</small></div>`).join("")}</div><p class="cc-verdict">${T.align(ups,dns)}</p>`)}
+    ${card(T.chart,chart(d,A))}
+    ${tvCard(sel)}
+    ${card(T.ind,`<div class="cc-grid">
       <div><span>${T.rsi}</span><b>${F(Math.round(A.r))}</b><div class="cc-gauge"><i style="left:${Math.min(100,Math.max(0,A.r))}%"></i></div><small>${T.rsiZ[rz]}</small></div>
-      <div><span>${T.vol}</span><b dir="ltr">${A.vol.toFixed(1)}%</b><small>${T.volZ[vz]}</small></div>
-      <div><span>${T.ch7}</span><b dir="ltr" class="${A.ch7>=0?"up":"down"}">${pct(A.ch7)}</b></div>
-      <div><span>${T.ch30}</span><b dir="ltr" class="${A.ch30>=0?"up":"down"}">${pct(A.ch30)}</b></div>
-      <div class="w2"><span>${T.range}</span><div class="cc-rng"><i style="left:${Math.min(100,Math.max(0,A.pos)).toFixed(0)}%"></i></div><small dir="ltr" class="cc-rl"><span>${usd(A.lo)}</span><span>${usd(A.hi)}</span></small></div>
-    </div></div>
-    <div class="cc-card"><h4>${T.levels}</h4><div class="cc-lv">
-      <div class="r"><span>${T.res}</span><b>${A.res?usd(A.res):T.none}</b>${A.res?`<small dir="ltr">${pct((A.res/A.p-1)*100)}</small>`:""}</div>
-      <div class="now"><span>${T.price}</span><b>${usd(A.p)}</b></div>
-      <div class="s"><span>${T.sup}</span><b>${usd(A.sup)}</b><small dir="ltr">${pct((A.sup/A.p-1)*100)}</small></div>
-      <div class="x"><span>${T.hi90}</span><b>${usd(A.hi)}</b></div><div class="x"><span>${T.lo90}</span><b>${usd(A.lo)}</b></div>
-    </div></div>
-    <div class="cc-card"><div class="cc-chkh">${ring}<div><h4>${T.check}</h4><b class="cc-score">${F(metN)} / ${F(6)}</b></div></div>
-      <ul class="cc-chk">${chk.map(([t,v])=>`<li><i class="${v===true?"met":v===false?"not":"unk"}">${v===true?T.met:v===false?T.not:T.unk}</i><span>${t}</span></li>`).join("")}</ul>
-      <p class="cc-verdict">${T.verdict(metN)}</p></div>
-    <div class="cc-card"><h4>${T.plan} · ${L?"Long":"Short"}</h4><div class="cc-plan">
-      <div><span>${T.entry}</span><b>${usd(A.p)}</b></div><div class="st"><span>${T.stop}</span><b>${usd(stop)}</b><small dir="ltr">${pct((stop/A.p-1)*100)}</small></div>
-      <div class="tg"><span>${T.target}</span><b>${usd(target)}</b><small dir="ltr">${pct((target/A.p-1)*100)}</small></div><div><span>${T.rr}</span><b dir="ltr" class="${rr>=2?"up":"down"}">1 : ${rr.toFixed(1)}</b></div></div>
-      <p class="cc-note">${T.planNote}</p><button type="button" class="cc-calc" id="ccCalc">${T.toCalc}</button></div>
-    <div class="cc-card"><h4>${T.scen}</h4><div class="scn">
-      <div class="u"><b>${T.bull}</b>${T.bullT(A.res?usd(A.res):null,A.res?usd(Math.max(A.hi,A.res*1.05)):"")}</div>
-      <div class="d"><b>${T.bear}</b>${T.bearT(usd(A.sup),usd(Math.min(A.lo,A.sup*0.95)))}</div></div></div>
+      <div><span>${T.macd}</span><b class="${A.hist>=0?"up":"down"}">${A.hist>=0?"▲":"▼"}</b><small>${T.macdS(A.hist>=0,A.xAgo!=null?(EN?`${A.xAgo}d ago`:`${F(A.xAgo)} روز پیش`):"")}</small></div>
+      <div><span>${T.bb}</span><b dir="ltr">${(A.pb*100).toFixed(0)}%</b><div class="cc-gauge bb"><i style="left:${Math.min(100,Math.max(0,A.pb*100))}%"></i></div><small>${T.bbS(A.pb,A.squeeze)}</small></div>
+      <div><span>${T.vol}</span><b dir="ltr">${A.vol.toFixed(1)}%</b><small>${T.volZ[vz]} · ${T.volT(A.vol7/A.vol)}</small></div>
+      <div><span>${T.dd}</span><b dir="ltr" class="${A.dd>-5?"up":"down"}">${pct(A.dd)}</b></div>
+      <div><span>${T.cmpRows[2]}</span><b dir="ltr" class="${A.ch90>=0?"up":"down"}">${pct(A.ch90)}</b></div>
+      <div class="w2"><span>${EN?"Position in 90-day range":"جایگاه در بازهٔ ۹۰ روزه"}</span><div class="cc-rng"><i style="left:${Math.min(100,Math.max(0,A.pos)).toFixed(0)}%"></i></div><small dir="ltr" class="cc-rl"><span>${usd(A.lo)}</span><span>${usd(A.hi)}</span></small></div></div>`)}
+    ${card(T.obs,`<ul class="cc-obs">${(obs.length?obs:[["mid",T.o_none]]).map(([k,t])=>`<li><i class="${k}"></i><span>${t}</span></li>`).join("")}</ul>`)}
+    ${card(T.levels,`<div class="cc-lv"><div class="r"><span>${T.res}</span><b>${A.res?usd(A.res):T.none}</b>${A.res?`<small dir="ltr">${pct((A.res/A.p-1)*100)}</small>`:""}</div><div class="now"><span>${T.price}</span><b>${usd(A.p)}</b></div><div class="s"><span>${T.sup}</span><b>${usd(A.sup)}</b><small dir="ltr">${pct((A.sup/A.p-1)*100)}</small></div><div class="x"><span>${T.hi90}</span><b>${usd(A.hi)}</b></div><div class="x"><span>${T.lo90}</span><b>${usd(A.lo)}</b></div></div>`)}
+    ${checkHTML}${planHTML}
+    ${card(T.scen,`<div class="scn"><div class="u"><b>${T.bull}</b>${T.bullT(A.res?usd(A.res):null,A.res?usd(Math.max(A.hi,A.res*1.05)):"")}</div><div class="d"><b>${T.bear}</b>${T.bearT(usd(A.sup),usd(Math.min(A.lo,A.sup*0.95)))}</div></div>`)}
     <p class="cc-disc">${T.disc}</p>`;
-    (()=>{const box=$("tvBox");if(!box)return;const dark=matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.getAttribute("data-theme")!=="light"||document.documentElement.getAttribute("data-theme")==="dark";
-      box.innerHTML='<div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div></div>';
-      const sc=document.createElement("script");sc.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";sc.async=true;
-      sc.textContent=JSON.stringify({autosize:true,symbol:window.__TV[id]||"BINANCE:BTCUSDT",interval:"240",timezone:"Europe/Vienna",theme:dark?"dark":"light",style:"1",locale:EN?"en":"fa_IR",allow_symbol_change:true,hide_side_toolbar:false,withdateranges:true,studies:["STD;RSI"],support_host:"https://www.tradingview.com"});
-      sc.onerror=()=>{box.remove()};box.querySelector(".tradingview-widget-container").appendChild(sc)})();
-    $("ccCalc").addEventListener("click",()=>{const set=(i,v)=>{const el=$(i);if(el){el.value=v;el.dispatchEvent(new Event("input",{bubbles:true}));el.dispatchEvent(new Event("change",{bubbles:true}))}};
-      set("cEn",+A.p.toPrecision(6));set("cSl",+stop.toPrecision(6));set("cSide",dir);location.hash="#guide";setTimeout(()=>{const c=$("cEn");if(c)c.scrollIntoView({block:"center"})},120)});
-    const dp=$("ccDeep");if(dp)dp.addEventListener("click",()=>{const msg=`تحلیل عمیق ${sym} (${name}) برای ${L?"لانگ":"شورت"} را بده. اعداد اپ: قیمت ${usd(A.p)}، تغییر ۷ روزه ${pct(A.ch7)}، ۳۰ روزه ${pct(A.ch30)}، RSI ${Math.round(A.r)}، نوسان روزانه ${A.vol.toFixed(1)}٪، حمایت ${usd(A.sup)}، مقاومت ${A.res?usd(A.res):"ندارد"}، وضعیت روند «${T.states[A.st]}». خودت داده زنده را هم بررسی کن، چک‌لیست را برای این جهت مرور کن و سناریوها را با سطوح دقیق بگو.`;window.__bgAsk(msg)});
+    mountTV(sel);
+    const cb=$("ccCalc");if(cb)cb.addEventListener("click",()=>{const set=(i,v)=>{const el=$(i);if(el){el.value=v;el.dispatchEvent(new Event("input",{bubbles:true}));el.dispatchEvent(new Event("change",{bubbles:true}))}};
+      set("cEn",+A.p.toPrecision(6));set("cSl",+(+cb.dataset.stop).toPrecision(6));set("cSide",L?"long":"short");location.hash="#guide";setTimeout(()=>{const x=$("cEn");if(x)x.scrollIntoView({block:"center"})},120)});
+    const dp=$("ccDeep");if(dp)dp.addEventListener("click",()=>{window.__bgAsk(`تحلیل عمیق و پیشرفتهٔ ${m.sym} (${m.name}) را بده${L?" برای لانگ":S?" برای شورت":""}. اعداد اپ: قیمت ${usd(A.p)}، تغییر ۷/۳۰/۹۰ روزه ${pct(A.ch7)} / ${pct(A.ch30)} / ${pct(A.ch90)}، RSI ${Math.round(A.r)}، MACD ${A.hist>=0?"مثبت":"منفی"}، بولینگر %B ${(A.pb*100).toFixed(0)}٪${A.squeeze?" (فشردگی)":""}، نوسان روزانه ${A.vol.toFixed(1)}٪، حمایت ${usd(A.sup)}، مقاومت ${A.res?usd(A.res):"ندارد"}، وضعیت «${T.states[A.st]}»${A.cross?`، ${A.cross.up?"تقاطع طلایی":"تقاطع مرگ"} ${A.cross.ago} روز پیش`:""}${A.div?`، واگرایی ${A.div==="bull"?"مثبت":"منفی"} RSI`:""}. خودت داده زنده را هم بررسی کن، روند چند تایم‌فریم، ساختار بازار، سطوح کلیدی و سناریوها را با جزئیات توضیح بده.`)});
   }
+  /* market mode */
+  async function renderMarket(my){const out=$("ccOut");const ids=COINS.map(c=>c[0]);const rows=[];
+    let g=null;try{g=await SRC.global()}catch(e){}
+    for(let i=0;i<ids.length;i++){if(my!==seq)return;out.innerHTML=`<div class="cc-card cc-wait"><span class="thinking">${T.loadingN(i+1,ids.length)}</span><div class="cc-prog"><i style="width:${((i+1)/ids.length*100).toFixed(0)}%"></i></div></div>`;
+      try{const d=await getCoin(ids[i],false);rows.push({id:ids[i],d,A:analyse(d)})}catch(e){}}
+    if(my!==seq)return;if(!rows.length)throw new Error("none");
+    const btc=rows.find(r=>r.id==="bitcoin");
+    const up=rows.filter(r=>r.d.c.chg>=0).length,above=rows.filter(r=>r.A.p>r.A.a50).length,avgR=mean(rows.map(r=>r.A.r));
+    const bs=btc?btc.A.st:2,brd=above/rows.length,rg=Math.max(0,Math.min(4,Math.round((bs-2)*0.6+(brd-0.5)*4+2)));
+    rows.forEach(r=>{r.rel=btc&&r.id!=="bitcoin"?r.A.ch30-btc.A.ch30:null;r.bc=btc&&r.id!=="bitcoin"?corr(r.A.lr,btc.A.lr):null});
+    const rel=rows.filter(r=>r.rel!=null).sort((a,b)=>b.rel-a.rel);
+    const W=[];rows.forEach(r=>{const s=META[r.id].sym;if(r.A.r>=70)W.push(["hl",s,T.w_ob,`RSI ${F(Math.round(r.A.r))}`]);if(r.A.r<=30)W.push(["hl",s,T.w_os,`RSI ${F(Math.round(r.A.r))}`]);if(r.A.dd>-3)W.push(["up",s,T.w_hi,pct(r.A.dd)]);if(r.A.st===0)W.push(["down",s,T.w_dn,pct(r.A.ch30)])});
+    const heat=v=>{const a=Math.min(1,Math.abs(v)/15);return `background:color-mix(in srgb,var(${v>=0?"--up":"--down"}) ${(a*45+6).toFixed(0)}%,transparent)`};
+    const sorted=rows.slice().sort((a,b)=>b.A.ch7-a.A.ch7);
+    const narr=T.narr.mkt(T.regimes[rg],up,rows.length,g&&g.btc?pct(g.btc).replace("+",""):null);
+    const deep=typeof window.__bgAsk==="function"?`<button type="button" class="cc-deep" id="ccDeepM"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/></svg>${T.deepM}</button>`:"";
+    out.innerHTML=`
+    <div class="cc-card cc-sum ${["dn2","dn","mid","up","up2"][rg]}"><div class="cc-state"><span>${T.regime}</span><b>${T.regimes[rg]}</b></div><div class="cc-meter" aria-hidden="true">${[0,1,2,3,4].map(i=>`<i class="${i===rg?"on":""}"></i>`).join("")}</div><p class="cc-narr">${narr}</p>${deep}</div>
+    ${g?card(T.gl,`<div class="cc-grid"><div><span>${T.gcap}</span><b dir="ltr">${big(g.cap)}</b></div><div><span>${T.gchg}</span><b dir="ltr" class="${g.chg>=0?"up":"down"}">${pct(g.chg,2)}</b></div><div class="w2"><span>${T.gdom}</span><b dir="ltr">${isFinite(g.btc)?g.btc.toFixed(1)+"%":"–"}</b><div class="cc-rng dom"><i style="left:${Math.min(100,g.btc||0)}%"></i></div></div></div>`):""}
+    ${card(T.breadth,`<div class="cc-grid"><div><span>${T.bUp}</span><b>${F(up)} / ${F(rows.length)}</b><div class="cc-bar"><i style="width:${(up/rows.length*100).toFixed(0)}%"></i></div></div><div><span>${T.bAbove}</span><b>${F(above)} / ${F(rows.length)}</b><div class="cc-bar"><i style="width:${(brd*100).toFixed(0)}%"></i></div></div><div class="w2"><span>${T.bRsi}</span><b>${F(Math.round(avgR))}</b><div class="cc-gauge"><i style="left:${avgR.toFixed(0)}%"></i></div></div></div>`)}
+    ${card(T.heat,`<p class="cc-note">${T.tapRow}</p><div class="cc-heat" role="table"><div class="hh" role="row"><span>${T.hSym}</span><span>24h</span><span>7d</span><span>30d</span><span>RSI</span><span>${T.hTrend}</span></div>${sorted.map(r=>`<button type="button" class="hr" role="row" data-id="${r.id}"><span class="sy">${META[r.id].sym}</span><span style="${heat(r.d.c.chg)}">${pct(r.d.c.chg)}</span><span style="${heat(r.A.ch7)}">${pct(r.A.ch7)}</span><span style="${heat(r.A.ch30)}">${pct(r.A.ch30)}</span><span class="${r.A.r>=70||r.A.r<=30?"rx":""}">${F(Math.round(r.A.r))}</span><span>${dirIc(r.A.st-2)}</span></button>`).join("")}</div>`)}
+    ${rel.length?card(T.lead,`<ul class="cc-rank">${rel.slice(0,3).map(r=>`<li><b>${META[r.id].sym}</b><span dir="ltr" class="up">${pct(r.rel)}</span><small>${T.corr}: ${F(r.bc.toFixed(2))}</small></li>`).join("")}</ul>`):""}
+    ${rel.length?card(T.lag,`<ul class="cc-rank">${rel.slice(-3).reverse().map(r=>`<li><b>${META[r.id].sym}</b><span dir="ltr" class="down">${pct(r.rel)}</span><small>${T.corr}: ${F(r.bc.toFixed(2))}</small></li>`).join("")}</ul>`):""}
+    ${card(T.watch,W.length?`<ul class="cc-obs">${W.filter((x,i,arr)=>arr.findIndex(y=>y[1]===x[1])===i).slice(0,6).map(([k,s,t,v])=>`<li><i class="${k}"></i><span><b>${s}</b> · ${t} <small dir="ltr">${v}</small></span></li>`).join("")}</ul>`:`<p class="cc-note">${T.w_none}</p>`)}
+    <p class="cc-disc">${T.disc}</p>`;
+    out.querySelectorAll(".hr").forEach(b=>b.addEventListener("click",()=>{sel=b.dataset.id;mode=0;save();chrome();run();$("coach").scrollIntoView({block:"start"})}));
+    const dm=$("ccDeepM");if(dm)dm.addEventListener("click",()=>window.__bgAsk(`تحلیل کامل کل بازار کریپتو را بده. اعداد اپ: وضعیت «${T.regimes[rg]}»، ${up} از ${rows.length} ارز مثبت امروز، ${above} ارز بالای میانگین ~۳۷ روزه، میانگین RSI ${Math.round(avgR)}${g?`، ارزش کل ${big(g.cap)} (${pct(g.chg,2)})، سهم بیت‌کوین ${g.btc?g.btc.toFixed(1)+"٪":"؟"}`:""}. قوی‌ترها: ${rel.slice(0,3).map(r=>META[r.id].sym).join("، ")}؛ ضعیف‌ترها: ${rel.slice(-3).map(r=>META[r.id].sym).join("، ")}. خودت داده زنده را هم بررسی کن و بگو بازار در چه فازی است، چه چیزی را باید زیر نظر داشت و ریسک‌های اصلی چیست.`));
+  }
+  /* compare mode */
+  async function renderCompare(my){if(sel===selB){selB=sel==="bitcoin"?"ethereum":"bitcoin";save();chrome()}
+    const a=await getCoin(sel,false),b=await getCoin(selB,false);if(my!==seq)return;const A=analyse(a),B=analyse(b);
+    const W=340,H=180,PL=4,PR=44,PT=10,PB=22,n=Math.min(a.s90.length,b.s90.length),na=a.s90.slice(-n).map(v=>v/a.s90[a.s90.length-n]*100),nb=b.s90.slice(-n).map(v=>v/b.s90[b.s90.length-n]*100);
+    let mn=Math.min(...na,...nb),mx=Math.max(...na,...nb);const pad=(mx-mn)*.08;mn-=pad;mx+=pad;const X=i=>PL+i/(n-1)*(W-PL-PR),Y=v=>PT+(1-(v-mn)/(mx-mn))*(H-PT-PB);
+    const pl=(arr,c)=>`<polyline points="${arr.map((v,i)=>`${X(i).toFixed(1)},${Y(v).toFixed(1)}`).join(" ")}" fill="none" stroke="var(${c})" stroke-width="2.2" stroke-linejoin="round"/><circle cx="${X(n-1).toFixed(1)}" cy="${Y(arr[n-1]).toFixed(1)}" r="3.5" fill="var(${c})"/><text x="${W-PR+5}" y="${(Y(arr[n-1])+4).toFixed(1)}" font-size="10" font-weight="700" fill="var(${c})">${arr[n-1].toFixed(0)}</text>`;
+    const base=`<line x1="${PL}" x2="${W-PR}" y1="${Y(100).toFixed(1)}" y2="${Y(100).toFixed(1)}" stroke="var(--line)" stroke-dasharray="3 3"/>`;
+    const xl=[0,n-1].map((i,k)=>`<text x="${X(i).toFixed(1)}" y="${H-6}" font-size="9.5" fill="var(--muted)" text-anchor="${k?"end":"start"}">${F(new Date(a.t90[a.t90.length-n+i]).toLocaleDateString(LOC,{day:"numeric",month:"short"}))}</text>`).join("");
+    const c=corr(A.lr,B.lr),ma=META[sel],mb=META[selB];
+    const rowsV=[[A.ch7,B.ch7,1],[A.ch30,B.ch30,1],[A.ch90,B.ch90,1],[A.vol,B.vol,-1],[A.r,B.r,0],[maxDD(a.s90),maxDD(b.s90),1],[A.st,B.st,1]];
+    const fmt=(v,i)=>i===4?F(Math.round(v)):i===6?T.states[v]:i===3?v.toFixed(1)+"%":pct(v);
+    $("ccOut").innerHTML=`
+    ${card(T.cmpChart,`<svg class="cc-svg" viewBox="0 0 ${W} ${H}" direction="ltr" role="img" aria-label="${T.cmpChart}">${base}${pl(na,"--g3")}${pl(nb,"--g2")}${xl}</svg><div class="cc-leg"><span><i style="background:var(--g3)"></i>${ma.sym}</span><span><i style="background:var(--g2)"></i>${mb.sym}</span></div>`)}
+    ${card("",`<div class="cc-cmp"><div class="ch"><span></span><b style="color:var(--g3)">${ma.sym}</b><b style="color:var(--g2)">${mb.sym}</b></div>${rowsV.map(([x,y,better],i)=>{const w=better===0?0:better*(x-y);return `<div><span>${T.cmpRows[i]}</span><b dir="ltr" class="${w>0?"win":""}">${fmt(x,i)}</b><b dir="ltr" class="${w<0?"win":""}">${fmt(y,i)}</b></div>`}).join("")}</div>`)}
+    ${card(T.corr,`<div class="cc-grid"><div class="w2"><b dir="ltr">${c.toFixed(2)}</b><div class="cc-rng corr"><i style="left:${((c+1)/2*100).toFixed(0)}%"></i></div><small dir="ltr" class="cc-rl"><span>-1</span><span>0</span><span>+1</span></small><small>${T.corrT(c)}</small></div></div>`)}
+    <p class="cc-disc">${T.disc}</p>`}
   async function run(){const my=++seq;$("ccOut").innerHTML=`<div class="cc-card cc-wait"><span class="thinking">${T.loading}</span></div>`;
-    for(let a=0;a<2;a++){try{const d=await getData(sel);if(my!==seq)return;render(sel,d,analyse(d));return}catch(e){if(my!==seq)return;if(a===0)await new Promise(r=>setTimeout(r,6000))}}
-    if(my!==seq)return;$("ccOut").innerHTML=`<div class="cc-card cc-wait">${T.err}<button type="button" class="cc-calc" id="ccRetry" style="margin-top:12px">${EN?"Try again":"دوباره امتحان کن"}</button></div>`;$("ccRetry").addEventListener("click",run)}
+    for(let a=0;a<2;a++){try{await [renderCoin,renderMarket,renderCompare][mode](my);return}catch(e){if(my!==seq)return;if(a===0)await new Promise(r=>setTimeout(r,5000))}}
+    if(my!==seq)return;$("ccOut").innerHTML=`<div class="cc-card cc-wait">${T.err}<button type="button" class="cc-calc" id="ccRetry" style="margin-top:12px">${T.retry}</button></div>`;$("ccRetry").addEventListener("click",run)}
+  chrome();
   let started=false;const start=()=>{if(!started&&!$("coach").hidden){started=true;run()}};
   addEventListener("hashchange",start);start();
   new MutationObserver(start).observe($("coach"),{attributes:true,attributeFilter:["hidden"]});
