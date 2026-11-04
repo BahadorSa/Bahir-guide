@@ -205,6 +205,14 @@
 .cc-deep{background:linear-gradient(120deg,#6b9cff,#a888ff);color:#fff;box-shadow:0 6px 16px rgba(107,156,255,.3)}
 .cc-deep svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
 .cc-disc{margin:2px 4px 0;font-size:.75rem;color:var(--muted);text-align:center}
+
+.tvlink,.cc-tv{display:flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:800;font-size:.9rem;text-decoration:none;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:10px}
+.tvlink svg,.cc-tv svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tvlink:focus-visible,.cc-tv:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.tvbox{height:430px;border-radius:12px;overflow:hidden;background:var(--bg);direction:ltr}
+.tvbox .tradingview-widget-container,.tvbox .tradingview-widget-container__widget{height:100%;width:100%}
+.cc-tvh{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cc-tvh small{font-size:.75rem;color:var(--muted)}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -1058,6 +1066,8 @@ window.__liveSource={
   async chart(id,d){const r=await fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${d}`);if(!r.ok)throw new Error(r.status);const pr=(await r.json()).prices||[];
     const step=Math.max(1,Math.ceil(pr.length/200)),s=pr.filter((_,k)=>k%step===0||k===pr.length-1);return {t:s.map(x=>x[0]),p:s.map(x=>x[1])}}
 };
+window.__TV={bitcoin:"BINANCE:BTCUSDT",ethereum:"BINANCE:ETHUSDT",binancecoin:"BINANCE:BNBUSDT",ripple:"BINANCE:XRPUSDT",solana:"BINANCE:SOLUSDT",tron:"BINANCE:TRXUSDT",dogecoin:"BINANCE:DOGEUSDT",cardano:"BINANCE:ADAUSDT",hyperliquid:"BYBIT:HYPEUSDT",chainlink:"BINANCE:LINKUSDT",stellar:"BINANCE:XLMUSDT","bitcoin-cash":"BINANCE:BCHUSDT",litecoin:"BINANCE:LTCUSDT",monero:"KRAKEN:XMRUSD",zcash:"BINANCE:ZECUSDT"};
+window.__tvURL=id=>"https://www.tradingview.com/chart/?symbol="+encodeURIComponent(window.__TV[id]||"BINANCE:BTCUSDT");
 /* live market: 15 coins with full price charts */
 (async()=>{
   const EN=document.documentElement.lang==="en";
@@ -1118,7 +1128,7 @@ window.__liveSource={
         <div class="stats"><div><span>${T.hi}</span><b>${usd(hi)}</b></div><div><span>${T.lo}</span><b>${usd(lo)}</b></div><div><span>${T.cap}</span><b>${big(c.cap)}</b></div><div><span>${T.vol}</span><b>${big(c.vol)}</b></div></div>`}
     else chart=`<div class="pc-wait">${failed[id+d]?T.chartErr:T.chartLoading}</div>`;
     return `<div class="cbody"><div class="rtabs" role="tablist">${RANGES.map(r=>`<button type="button" role="tab" class="rt" data-id="${id}" data-r="${r}" aria-selected="${r===d}">${T.ranges[r]}</button>`).join("")}</div>
-      ${chart}<div class="ind"><span class="ind-t">${T.indic}</span><span class="chips2">${chips(c)}</span></div></div>`}
+      ${chart}<a class="tvlink" href="${window.__tvURL(id)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>${EN?"Full chart in TradingView":"نمودار کامل در TradingView"}</a><div class="ind"><span class="ind-t">${T.indic}</span><span class="chips2">${chips(c)}</span></div></div>`}
   function draw(){if(!coins)return;
     live.innerHTML=`<p class="note">${T.tap}</p>`+COINS.map(([id,sym,fa_,en_])=>{const c=coins[id];if(!c)return"";const up=c.chg>=0,isOpen=open.has(id);
       return `<div class="crow${isOpen?" open":""}"><button type="button" class="chead" data-id="${id}" aria-expanded="${isOpen}">
@@ -1324,7 +1334,7 @@ window.__liveSource={
       <div class="cc-meter" aria-hidden="true">${[0,1,2,3,4].map(i=>`<i class="${i===A.st?"on":""}"></i>`).join("")}</div>
       <p class="cc-note">${T.stateNote}</p>${deep}
     </div>
-    <div class="cc-card"><h4>${T.chart}</h4>${chart(d,A)}</div>
+    <div class="cc-card"><h4>${T.chart}</h4>${chart(d,A)}</div><div class="cc-card"><div class="cc-tvh"><h4>TradingView</h4><small>${EN?"Candles · indicators · drawing tools":"کندل · اندیکاتور · ابزار رسم"}</small></div>${window.__noEmbed?"":`<div class="tvbox" id="tvBox"></div>`}<a class="cc-tv" href="${window.__tvURL(id)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>${EN?"Open in the TradingView app":"باز کردن در اپ TradingView"}</a></div>
     <div class="cc-card"><h4>${T.metrics}</h4><div class="cc-grid">
       <div><span>${T.rsi}</span><b>${F(Math.round(A.r))}</b><div class="cc-gauge"><i style="left:${Math.min(100,Math.max(0,A.r))}%"></i></div><small>${T.rsiZ[rz]}</small></div>
       <div><span>${T.vol}</span><b dir="ltr">${A.vol.toFixed(1)}%</b><small>${T.volZ[vz]}</small></div>
@@ -1349,6 +1359,11 @@ window.__liveSource={
       <div class="u"><b>${T.bull}</b>${T.bullT(A.res?usd(A.res):null,A.res?usd(Math.max(A.hi,A.res*1.05)):"")}</div>
       <div class="d"><b>${T.bear}</b>${T.bearT(usd(A.sup),usd(Math.min(A.lo,A.sup*0.95)))}</div></div></div>
     <p class="cc-disc">${T.disc}</p>`;
+    (()=>{const box=$("tvBox");if(!box)return;const dark=matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.getAttribute("data-theme")!=="light"||document.documentElement.getAttribute("data-theme")==="dark";
+      box.innerHTML='<div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div></div>';
+      const sc=document.createElement("script");sc.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";sc.async=true;
+      sc.textContent=JSON.stringify({autosize:true,symbol:window.__TV[id]||"BINANCE:BTCUSDT",interval:"240",timezone:"Europe/Vienna",theme:dark?"dark":"light",style:"1",locale:EN?"en":"fa_IR",allow_symbol_change:true,hide_side_toolbar:false,withdateranges:true,studies:["STD;RSI"],support_host:"https://www.tradingview.com"});
+      sc.onerror=()=>{box.remove()};box.querySelector(".tradingview-widget-container").appendChild(sc)})();
     $("ccCalc").addEventListener("click",()=>{const set=(i,v)=>{const el=$(i);if(el){el.value=v;el.dispatchEvent(new Event("input",{bubbles:true}));el.dispatchEvent(new Event("change",{bubbles:true}))}};
       set("cEn",+A.p.toPrecision(6));set("cSl",+stop.toPrecision(6));set("cSide",dir);location.hash="#guide";setTimeout(()=>{const c=$("cEn");if(c)c.scrollIntoView({block:"center"})},120)});
     const dp=$("ccDeep");if(dp)dp.addEventListener("click",()=>{const msg=`تحلیل عمیق ${sym} (${name}) برای ${L?"لانگ":"شورت"} را بده. اعداد اپ: قیمت ${usd(A.p)}، تغییر ۷ روزه ${pct(A.ch7)}، ۳۰ روزه ${pct(A.ch30)}، RSI ${Math.round(A.r)}، نوسان روزانه ${A.vol.toFixed(1)}٪، حمایت ${usd(A.sup)}، مقاومت ${A.res?usd(A.res):"ندارد"}، وضعیت روند «${T.states[A.st]}». خودت داده زنده را هم بررسی کن، چک‌لیست را برای این جهت مرور کن و سناریوها را با سطوح دقیق بگو.`;window.__bgAsk(msg)});
