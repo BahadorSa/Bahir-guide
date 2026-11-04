@@ -230,6 +230,26 @@
 .tvh-chip{flex:none;font-family:var(--mono);font-weight:600;font-size:.82rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer}
 .tvh-chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .tvh-box{height:400px}
+
+.bnhome{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:12px;display:flex;flex-direction:column;gap:10px;margin-bottom:14px;border-top:3px solid #f0b90b}
+.bn-logo{flex:none;width:38px;height:38px;border-radius:11px;background:#181a20;color:#f0b90b;display:flex;align-items:center;justify-content:center}
+.bn-logo svg{width:22px;height:22px}
+.bn-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.bn-stats:empty{display:none}
+.bn-stats>div{background:var(--bg);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;gap:1px;min-width:0}
+.bn-stats>div.w2{grid-column:1/-1;flex-direction:row;align-items:baseline;justify-content:space-between;gap:8px}
+.bn-stats span{font-size:.74rem;color:var(--muted);font-weight:700}
+.bn-stats b{direction:ltr;text-align:start;font-weight:800;font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bn-stats .w2 b{font-family:"Sora",var(--font);font-size:1.35rem;font-weight:700}
+.bn-stats .up{color:var(--up)} .bn-stats .down{color:var(--down)}
+.bn-stats .na{grid-column:1/-1;color:var(--muted);font-size:.86rem;text-align:center;padding:12px}
+.bn-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bn-btn{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:800;font-size:.9rem;text-decoration:none;border-radius:12px;padding:11px 8px;background:#f0b90b;color:#181a20}
+.bn-btn.sec{background:#181a20;color:#f0b90b}
+.bn-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bn-btn:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.bn-btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
+.bn-note{margin:0;font-size:.74rem;color:var(--muted);line-height:1.6}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -514,6 +534,13 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
       <div class="tvh-head"><span class="tvh-logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 9-10"/><path d="M15 5h6v6"/></svg></span><div class="tvh-t"><b>TradingView</b><small>نمودار حرفه‌ای کندلی</small></div><a class="tvh-open" id="tvhOpen" href="https://www.tradingview.com/chart/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>باز کردن در اپ</a></div>
       <div class="tvh-pick" id="tvhPick" role="group"></div>
       <div class="tvbox tvh-box" id="tvhBox"></div>
+    </div>
+    <div class="bnhome">
+      <div class="tvh-head"><span class="bn-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l3 3-3 3-3-3zM6 9l3 3-3 3-3-3zM18 9l3 3-3 3-3-3zM12 15l3 3-3 3-3-3zM12 9.5l2.5 2.5-2.5 2.5L9.5 12z" fill="currentColor" stroke="none"/></svg></span><div class="tvh-t"><b>Binance</b><small>قیمت زنده، اسپرد و ورود سریع</small></div></div>
+      <div class="tvh-pick" id="bnPick" role="group"></div>
+      <div class="bn-stats" id="bnStats"></div>
+      <div class="bn-acts"><a class="bn-btn" id="bnSpot" href="https://www.binance.com/en/trade/BTC_USDT?type=spot" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>معامله اسپات</a><a class="bn-btn sec" id="bnFut" href="https://www.binance.com/en/futures/BTCUSDT" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>فیوچرز</a></div>
+      <p class="bn-note">اگر اپ بایننس نصب باشد، همان باز می‌شود. این اپ هیچ‌وقت رمز یا کلید API تو را نمی‌خواهد. مجوز صرافی را در کشورت بررسی کن (در اتریش: FMA).</p>
     </div>
     <div class="hero" aria-live="polite">
       <div class="h-top"><span>بازار امروز</span><span class="h-live"><i></i><span id="hTime">—</span></span></div>
@@ -1412,6 +1439,33 @@ window.__tvURL=id=>"https://www.tradingview.com/chart/?symbol="+encodeURICompone
   $("tvhPick").addEventListener("click",e=>{const c=e.target.closest(".tvh-chip");if(!c)return;sel=c.dataset.id;try{localStorage.setItem("bg-tvh",sel)}catch(e){}
     $("tvhPick").querySelectorAll(".tvh-chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.id===sel));mount()});
   mount();
+})();
+
+/* Binance panel */
+(()=>{const $=id=>document.getElementById(id),EN=document.documentElement.lang==="en";if(!$("bnPick"))return;
+  const P={bitcoin:"BTC",ethereum:"ETH",binancecoin:"BNB",ripple:"XRP",solana:"SOL",tron:"TRX",dogecoin:"DOGE",cardano:"ADA",hyperliquid:"HYPE",chainlink:"LINK",stellar:"XLM","bitcoin-cash":"BCH",litecoin:"LTC",monero:"XMR",zcash:"ZEC"};
+  const T=EN?{last:"Last price (Binance)",hi:"24h high",lo:"24h low",vol:"24h volume",bid:"Best bid",ask:"Best ask",spr:"Spread",na:"This coin isn't available on Binance spot right now.",err:"Binance data isn't available right now."}
+   :{last:"آخرین قیمت (بایننس)",hi:"بالاترین ۲۴ ساعت",lo:"پایین‌ترین ۲۴ ساعت",vol:"حجم ۲۴ ساعت",bid:"بهترین خرید",ask:"بهترین فروش",spr:"اسپرد",na:"این ارز الان در اسپات بایننس موجود نیست.",err:"داده بایننس الان در دسترس نیست."};
+  let sel="bitcoin",seq=0;try{sel=localStorage.getItem("bg-bn")||sel}catch(e){}
+  const usd=v=>!isFinite(v)?"–":"$"+(v>=1000?v.toLocaleString("en-US",{maximumFractionDigits:2}):v>=1?v.toLocaleString("en-US",{maximumFractionDigits:4}):v.toLocaleString("en-US",{maximumSignificantDigits:5}));
+  const big=v=>!isFinite(v)?"–":"$"+(v>=1e9?(v/1e9).toFixed(2)+"B":v>=1e6?(v/1e6).toFixed(1)+"M":v.toLocaleString("en-US",{maximumFractionDigits:0}));
+  async function load(){const my=++seq,b=P[sel],sym=b+"USDT";
+    $("bnSpot").href=`https://www.binance.com/en/trade/${b}_USDT?type=spot`;$("bnFut").href=`https://www.binance.com/en/futures/${sym}`;
+    if(window.__noEmbed){$("bnStats").innerHTML="";return}
+    try{const [t,k]=await Promise.all([fetch(`https://data-api.binance.vision/api/v3/ticker/24hr?symbol=${sym}`),fetch(`https://data-api.binance.vision/api/v3/ticker/bookTicker?symbol=${sym}`)]);
+      if(my!==seq)return;
+      if(t.status===400){$("bnStats").innerHTML=`<div class="na">${T.na}</div>`;$("bnSpot").setAttribute("aria-disabled","true");return}
+      if(!t.ok||!k.ok)throw 0;$("bnSpot").removeAttribute("aria-disabled");
+      const a=await t.json(),o=await k.json(),ch=+a.priceChangePercent,bid=+o.bidPrice,ask=+o.askPrice,spr=ask&&bid?(ask-bid)/((ask+bid)/2)*100:NaN;
+      $("bnStats").innerHTML=`<div class="w2"><span>${T.last}</span><b>${usd(+a.lastPrice)} <small class="${ch>=0?"up":"down"}">${ch>=0?"+":""}${ch.toFixed(2)}%</small></b></div>
+        <div><span>${T.hi}</span><b>${usd(+a.highPrice)}</b></div><div><span>${T.lo}</span><b>${usd(+a.lowPrice)}</b></div>
+        <div><span>${T.bid}</span><b class="up">${usd(bid)}</b></div><div><span>${T.ask}</span><b class="down">${usd(ask)}</b></div>
+        <div><span>${T.spr}</span><b>${isFinite(spr)?(spr<0.001?"<0.001":spr.toFixed(3))+"%":"–"}</b></div><div><span>${T.vol}</span><b>${big(+a.quoteVolume)}</b></div>`;
+    }catch(e){if(my===seq)$("bnStats").innerHTML=`<div class="na">${T.err}</div>`}}
+  $("bnPick").innerHTML=Object.keys(P).map(id=>`<button type="button" class="tvh-chip" data-id="${id}" aria-pressed="${id===sel}">${P[id]}</button>`).join("");
+  $("bnPick").addEventListener("click",e=>{const c=e.target.closest(".tvh-chip");if(!c)return;sel=c.dataset.id;try{localStorage.setItem("bg-bn",sel)}catch(e){}
+    $("bnPick").querySelectorAll(".tvh-chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.id===sel));load()});
+  load();setInterval(()=>{if(!document.hidden&&!$("assistant").hidden)load()},30000);
 })();
 </script>
 
