@@ -1107,13 +1107,43 @@ pats("more",[
   cs:[C(10,20,8,18),C(18,60,16,55),C(62,72,58,66),C(64,68,26,28)],o:{hl:[1,3],arrow:"down"}}
 ]);
 
-/* data source: CoinGecko public API */
-window.__liveSource={
-  async markets(ids){const r=await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids.join(",")}&sparkline=true&price_change_percentage=24h`);if(!r.ok)throw new Error(r.status);
-    const o={};for(const c of await r.json())o[c.id]={id:c.id,price:c.current_price,chg:c.price_change_percentage_24h??0,cap:c.market_cap,vol:c.total_volume,rank:c.market_cap_rank,spark:(c.sparkline_in_7d?.price||[]).filter((_,k)=>k%4===0)};return o},
-  async chart(id,d){const r=await fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${d}`);if(!r.ok)throw new Error(r.status);const pr=(await r.json()).prices||[];
-    const step=Math.max(1,Math.ceil(pr.length/200)),s=pr.filter((_,k)=>k%step===0||k===pr.length-1);return {t:s.map(x=>x[0]),p:s.map(x=>x[1])}}
-};
+/* data source: Binance (charts, fallback prices) + CoinGecko (market data), with throttling, retry and cache */
+window.__liveSource=(()=>{
+  const BN={bitcoin:"BTCUSDT",ethereum:"ETHUSDT",binancecoin:"BNBUSDT",ripple:"XRPUSDT",solana:"SOLUSDT",tron:"TRXUSDT",dogecoin:"DOGEUSDT",cardano:"ADAUSDT",hyperliquid:"HYPEUSDT",chainlink:"LINKUSDT",stellar:"XLMUSDT","bitcoin-cash":"BCHUSDT",litecoin:"LTCUSDT",zcash:"ZECUSDT"};
+  const KL={"1":["5m",288],"7":["1h",168],"30":["4h",180],"90":["12h",180],"365":["1d",365]};
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  const mem={},inflight={};
+  const lsGet=k=>{try{const v=JSON.parse(localStorage.getItem("bgc:"+k)||"null");return v}catch(e){return null}};
+  const lsSet=(k,v)=>{try{localStorage.setItem("bgc:"+k,JSON.stringify(v))}catch(e){}};
+  /* CoinGecko: one request at a time, >=2.5s apart, retry on 429 */
+  let q=Promise.resolve(),lastAt=0,coolUntil=0;
+  function cg(url){const job=q.then(async()=>{for(let a=0;a<3;a++){
+      const wait=Math.max(lastAt+2500,coolUntil)-Date.now();if(wait>0)await sleep(wait);lastAt=Date.now();
+      let r;try{r=await fetch(url)}catch(e){if(a===2)throw e;await sleep(4000);continue}
+      if(r.status===429){const ra=+r.headers.get("retry-after")||20;coolUntil=Date.now()+Math.min(60,ra)*1000;continue}
+      if(!r.ok)throw new Error(r.status);return r.json()}throw new Error("rate")});
+    q=job.catch(()=>{});return job}
+  const bn=async path=>{const r=await fetch("https://data-api.binance.vision/api/v3/"+path);if(!r.ok)throw new Error(r.status);return r.json()};
+  async function cached(key,ttl,fn){const now=Date.now();const m=mem[key]||lsGet(key);if(m&&now-m.at<ttl){mem[key]=m;return m.v}
+    if(inflight[key])return inflight[key];
+    inflight[key]=(async()=>{try{const v=await fn();const e={at:Date.now(),v};mem[key]=e;lsSet(key,e);return v}catch(err){if(m)return m.v;throw err}finally{delete inflight[key]}})();
+    return inflight[key]}
+  async function markets(ids){const key="m:"+ids.slice().sort().join(",");
+    return cached(key,45000,async()=>{
+      try{const j=await cg(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids.join(",")}&sparkline=true&price_change_percentage=24h`);
+        const o={};for(const c of j)o[c.id]={id:c.id,price:c.current_price,chg:c.price_change_percentage_24h??0,cap:c.market_cap,vol:c.total_volume,rank:c.market_cap_rank,spark:(c.sparkline_in_7d?.price||[]).filter((_,k)=>k%4===0)};
+        try{const sy=ids.map(i=>BN[i]).filter(Boolean),t=await bn("ticker/price?symbols="+encodeURIComponent(JSON.stringify(sy)));const px={};for(const x of t)px[x.symbol]=+x.price;for(const id of ids){if(o[id]&&px[BN[id]])o[id].price=px[BN[id]]}}catch(e){}
+        return o}
+      catch(e){const sy=ids.map(i=>BN[i]).filter(Boolean),t=await bn("ticker/24hr?symbols="+encodeURIComponent(JSON.stringify(sy)));const by={};for(const x of t)by[x.symbol]=x;const o={};
+        for(const id of ids){const x=by[BN[id]];if(x)o[id]={id,price:+x.lastPrice,chg:+x.priceChangePercent,cap:null,vol:+x.quoteVolume,rank:null,spark:[]}}
+        if(!Object.keys(o).length)throw e;return o}})}
+  async function chart(id,d){const key="c:"+id+":"+d,ttl=d==="1"?60000:d==="7"?300000:1800000;
+    return cached(key,ttl,async()=>{
+      if(BN[id]&&KL[d]){try{const [iv,lim]=KL[d],k=await bn(`klines?symbol=${BN[id]}&interval=${iv}&limit=${lim}`);if(Array.isArray(k)&&k.length>2)return {t:k.map(x=>Math.min(+x[6],Date.now())),p:k.map(x=>+x[4])}}catch(e){}}
+      const j=await cg(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${d}`);const pr=j.prices||[];
+      const step=Math.max(1,Math.ceil(pr.length/200)),s=pr.filter((_,k)=>k%step===0||k===pr.length-1);return {t:s.map(x=>x[0]),p:s.map(x=>x[1])}})}
+  return {markets,chart};
+})();
 window.__TV={bitcoin:"BINANCE:BTCUSDT",ethereum:"BINANCE:ETHUSDT",binancecoin:"BINANCE:BNBUSDT",ripple:"BINANCE:XRPUSDT",solana:"BINANCE:SOLUSDT",tron:"BINANCE:TRXUSDT",dogecoin:"BINANCE:DOGEUSDT",cardano:"BINANCE:ADAUSDT",hyperliquid:"BYBIT:HYPEUSDT",chainlink:"BINANCE:LINKUSDT",stellar:"BINANCE:XLMUSDT","bitcoin-cash":"BINANCE:BCHUSDT",litecoin:"BINANCE:LTCUSDT",monero:"KRAKEN:XMRUSD",zcash:"BINANCE:ZECUSDT"};
 window.__tvURL=id=>"https://www.tradingview.com/chart/?symbol="+encodeURIComponent(window.__TV[id]||"BINANCE:BTCUSDT");
 /* live market: 15 coins with full price charts */
@@ -1291,6 +1321,7 @@ window.__tvURL=id=>"https://www.tradingview.com/chart/?symbol="+encodeURICompone
   });
 })();
 /* analysis assistant (coach) */
+document.addEventListener("bg-markets",e=>{window.__bgLastCoins=e.detail});
 (()=>{
   const EN=document.documentElement.lang==="en",$=id=>document.getElementById(id),LOC=EN?"en-GB":"fa-IR";
   const F=s=>EN?String(s):fa(String(s));
@@ -1336,7 +1367,7 @@ window.__tvURL=id=>"https://www.tradingview.com/chart/?symbol="+encodeURICompone
   $("ccPick").addEventListener("click",e=>{const b=e.target.closest(".cc-chip");if(!b)return;sel=b.dataset.id;try{localStorage.setItem("bg-cc-coin",sel)}catch(e){}$("ccPick").querySelectorAll(".cc-chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.id===sel));run()});
   $("ccDir").addEventListener("click",e=>{const b=e.target.closest(".cc-dbtn");if(!b)return;dir=b.dataset.d;try{localStorage.setItem("bg-cc-dir",dir)}catch(e){}dirBtns();run()});
   async function getData(id){if(cache[id]&&Date.now()-cache[id].at<180000)return cache[id];
-    const m=await SRC.markets([id]);const c=m[id];if(!c)throw new Error("no coin");
+    const c=(window.__bgLastCoins&&window.__bgLastCoins[id])||(await SRC.markets([id]))[id];if(!c)throw new Error("no coin");
     const a=await SRC.chart(id,"90"),b=await SRC.chart(id,"30");
     const d={c,s90:resample(a.p,120),t90:resample(a.t,120),s30:b.p,at:Date.now()};cache[id]=d;return d}
   function analyse(d){const p=d.c.price,s90=d.s90,s30=d.s30;
@@ -1418,7 +1449,8 @@ window.__tvURL=id=>"https://www.tradingview.com/chart/?symbol="+encodeURICompone
     const dp=$("ccDeep");if(dp)dp.addEventListener("click",()=>{const msg=`تحلیل عمیق ${sym} (${name}) برای ${L?"لانگ":"شورت"} را بده. اعداد اپ: قیمت ${usd(A.p)}، تغییر ۷ روزه ${pct(A.ch7)}، ۳۰ روزه ${pct(A.ch30)}، RSI ${Math.round(A.r)}، نوسان روزانه ${A.vol.toFixed(1)}٪، حمایت ${usd(A.sup)}، مقاومت ${A.res?usd(A.res):"ندارد"}، وضعیت روند «${T.states[A.st]}». خودت داده زنده را هم بررسی کن، چک‌لیست را برای این جهت مرور کن و سناریوها را با سطوح دقیق بگو.`;window.__bgAsk(msg)});
   }
   async function run(){const my=++seq;$("ccOut").innerHTML=`<div class="cc-card cc-wait"><span class="thinking">${T.loading}</span></div>`;
-    try{const d=await getData(sel);if(my!==seq)return;render(sel,d,analyse(d))}catch(e){if(my!==seq)return;$("ccOut").innerHTML=`<div class="cc-card cc-wait">${T.err}</div>`}}
+    for(let a=0;a<2;a++){try{const d=await getData(sel);if(my!==seq)return;render(sel,d,analyse(d));return}catch(e){if(my!==seq)return;if(a===0)await new Promise(r=>setTimeout(r,6000))}}
+    if(my!==seq)return;$("ccOut").innerHTML=`<div class="cc-card cc-wait">${T.err}<button type="button" class="cc-calc" id="ccRetry" style="margin-top:12px">${EN?"Try again":"دوباره امتحان کن"}</button></div>`;$("ccRetry").addEventListener("click",run)}
   let started=false;const start=()=>{if(!started&&!$("coach").hidden){started=true;run()}};
   addEventListener("hashchange",start);start();
   new MutationObserver(start).observe($("coach"),{attributes:true,attributeFilter:["hidden"]});
