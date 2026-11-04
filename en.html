@@ -297,6 +297,61 @@
 .cc-cmp span{color:var(--muted);font-weight:700;font-size:.8rem}
 .cc-cmp b{font-weight:800;text-align:center;font-variant-numeric:tabular-nums}
 .cc-cmp b.win{color:var(--up)}
+
+.gp-hero{display:flex;gap:12px;align-items:flex-start;border-radius:22px;padding:18px;color:#eef3fb;background:radial-gradient(120% 90% at 100% 0%,#1b4d4a 0%,rgba(27,77,74,0) 60%),linear-gradient(160deg,#0d1726 0%,#13283a 100%);box-shadow:0 10px 30px rgba(13,23,38,.25)}
+.gp-hi{flex:none;width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#3cc9c3,#2f6fe0);color:#fff;box-shadow:0 6px 16px rgba(60,201,195,.3)}
+.gp-hi svg,.gp-ic svg,.gp-chev svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.gp-hero h2{margin:0;font-size:1.25rem;font-weight:900;color:#fff}
+.gp-hero p{margin:3px 0 0;font-size:.86rem;color:#a9bad0;line-height:1.6}
+.gp-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-block:10px;margin-bottom:4px;background:var(--bg)}
+.gp-nav::-webkit-scrollbar{display:none}
+.gp-nav button{flex:none;font:inherit;font-size:.82rem;font-weight:800;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+.gp-nav button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.gp-nav button:focus-visible,.gp-tog:focus-visible,.gp-del:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+#guide .gp-card{border-radius:20px;scroll-margin-top:64px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+#guide .gp-card>h3{display:flex;align-items:center;gap:10px}
+.gp-ic{flex:none;width:32px;height:32px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--g3) 13%,transparent);color:var(--g3)}
+.gp-ic svg{width:17px;height:17px}
+#guide .warn .gp-ic{background:color-mix(in srgb,var(--down) 15%,transparent);color:var(--down)}
+#guide .scam .gp-ic{background:color-mix(in srgb,var(--down) 15%,transparent);color:var(--down)}
+#guide .gp-tool{border-top:3px solid var(--g5)}
+#guide .gp-tool .gp-ic{background:color-mix(in srgb,var(--g5) 15%,transparent);color:var(--g5)}
+.gp-tog{flex:1;display:flex;align-items:center;gap:10px;font:inherit;font-size:inherit;font-weight:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:start}
+.gp-chev{margin-inline-start:auto;color:var(--muted);transition:transform .2s}
+.gp-card.open .gp-chev{transform:rotate(180deg)}
+@media (prefers-reduced-motion:reduce){.gp-chev{transition:none}}
+.gp-out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.gp-out>div{background:var(--bg);border-radius:12px;padding:9px 11px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.gp-out .w2,.calc .w2{grid-column:1/-1}
+.gp-out span{font-size:.75rem;color:var(--muted);font-weight:700}
+.gp-out b{font-size:1.1rem;font-weight:900;font-variant-numeric:tabular-nums;text-align:start}
+.gp-out b.up,.gp-rec b.up,.gp-jr .up{color:var(--up)} .gp-out b.down,.gp-rec b.down,.gp-jr .down{color:var(--down)}
+.gp-warn{margin:0;font-size:.85rem;font-weight:800;color:var(--down);background:var(--down-soft);border-radius:10px;padding:8px 12px}
+.gp-verdict{margin:0;font-size:.88rem;font-weight:800;border-radius:10px;padding:9px 12px}
+.gp-verdict.up{background:var(--up-soft);color:var(--up)} .gp-verdict.down{background:var(--down-soft);color:var(--down)}
+.gp-rec{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.gp-rec>div{display:grid;grid-template-columns:7.5em 1fr 4.5em;gap:10px;align-items:center;font-size:.86rem}
+.gp-rec i{height:10px;border-radius:99px;background:linear-gradient(90deg,var(--hl),var(--down));min-width:6px;direction:ltr}
+.gp-rec>div>b{text-align:end}
+.gp-fg{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:8px}
+.gp-gauge{width:100%;max-width:260px;height:auto}
+.gp-fgl{font-size:1.15rem;font-weight:900}
+.gp-fgs{width:100%;display:flex;flex-direction:column;gap:4px;background:var(--bg);border-radius:12px;padding:8px 10px}
+.gp-fgs span{font-size:.75rem;color:var(--muted);font-weight:700}
+.gp-fgs svg,.gp-eq{width:100%;height:40px;display:block}
+.gp-jf{margin-top:10px}
+.calc input.bad{border-color:var(--down)}
+.gp-jl{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.gp-jr{display:grid;grid-template-columns:1fr auto;gap:2px 10px;background:var(--bg);border-radius:12px;padding:10px 12px;font-size:.86rem}
+.gp-jr>div:first-child{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.gp-jr>div:first-child b{font-family:var(--mono)}
+.gp-jr small{font-size:.75rem;color:var(--muted)} .gp-jr small.up{color:var(--up)} .gp-jr small.down{color:var(--down)}
+.gp-jr .px{color:var(--muted);font-variant-numeric:tabular-nums;text-align:end}
+.gp-jr .pl{font-weight:900;font-variant-numeric:tabular-nums}
+.gp-jr .em{grid-column:1/-1;font-size:.78rem;color:var(--muted)}
+.gp-del{grid-column:1/-1;justify-self:end;font:inherit;font-size:.75rem;font-weight:800;color:var(--down);background:none;border:0;cursor:pointer;padding:2px 0}
+.gp-jbtn{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.tvlink.danger{color:var(--down)}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -1672,6 +1727,127 @@ document.addEventListener("bg-markets",e=>{window.__bgLastCoins=e.detail});
   $("bnPick").addEventListener("click",e=>{const c=e.target.closest(".tvh-chip");if(!c)return;sel=c.dataset.id;try{localStorage.setItem("bg-bn",sel)}catch(e){}
     $("bnPick").querySelectorAll(".tvh-chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.id===sel));load()});
   load();setInterval(()=>{if(!document.hidden&&!$("assistant").hidden)load()},30000);
+})();
+/* guide pro */
+(()=>{const G=document.getElementById("guide");if(!G)return;const EN=document.documentElement.lang==="en",$=id=>document.getElementById(id),F=s=>EN?String(s):fa(String(s));
+  const T=EN?{title:"Pro trading guide",sub:"Tools, rules and knowledge for crypto traders. Your numbers stay on this phone.",
+    nav:["Risk","Checklist","Calculator","Expectancy","Recovery","Sentiment","Journal","Hours","Patterns","Orders","Win rate","Psychology","Security","Rules","Sources"],
+    tp:"Take-profit price",fee:"Fee per side (%)",rr:"Risk/reward",prof:"Profit at target",loss:"Loss at stop (incl. fees)",fees:"Total fees",liq:"Approx. liquidation",be:"Break-even win rate",liqWarn:"Your stop is beyond the liquidation price. Lower the leverage.",
+    expT:"Expectancy & loss streaks",expS:"Is your strategy profitable over many trades?",wr:"Win rate (%)",ar:"Average win ÷ average loss (R)",rk:"Risk per trade (%)",
+    eR:"Expectancy per trade",e100:"Expected result after 100 trades",s5:"Chance of 5 losses in a row",dd5:"Drawdown after 5 losses",dd10:"Drawdown after 10 losses",expGood:"Positive expectancy: profitable over time if you follow the rules.",expBad:"Negative expectancy: this setup loses money over time.",
+    recT:"Loss recovery",recS:"After a loss you need a bigger gain to get back to even.",lossC:"Loss",gainC:"Gain needed",
+    fgT:"Fear & Greed index",fgS:"Crowd mood in crypto. Extreme fear often appears near lows, extreme greed near highs.",fgL:["Extreme fear","Fear","Neutral","Greed","Extreme greed"],fg30:"Last 30 days",fgErr:"Index unavailable right now.",fgSrc:"Source: alternative.me",
+    jT:"Trading journal",jS:"Write down every trade. The journal shows your real win rate and where you lose.",coin:"Coin",side:"Side",long:"Long",short:"Short",entry:"Entry",exit:"Exit",stop:"Stop (optional)",size:"Position size ($)",feeAmt:"Fees ($)",emo:"State of mind",emos:["Calm, followed plan","FOMO","Fear","Revenge","Overconfident"],note:"Note",add:"Add trade",
+    nT:"Trades",wrS:"Win rate",net:"Net P/L",pf:"Profit factor",avgW:"Avg win",avgL:"Avg loss",avgR:"Avg R",best:"Best",worst:"Worst",curve:"Equity curve",empty:"No trades yet. Add your first trade above, even a demo trade.",
+    del:"Delete",sure:"Tap again to delete",csv:"Export CSV",copy:"Copy CSV",copied:"Copied ✓",lossEmo:"Most losses happen when:",clear:"Clear all",sureAll:"Tap again to clear all"}
+  :{title:"راهنمای حرفه‌ای ترید",sub:"ابزار، قانون و دانش برای معامله‌گر کریپتو. عددهایت فقط روی همین گوشی می‌ماند.",
+    nav:["ریسک","چک‌لیست","ماشین‌حساب","امید ریاضی","جبران ضرر","احساسات بازار","ژورنال","ساعت‌ها","الگوها","سفارش‌ها","درصد برد","روانشناسی","امنیت","قوانین","منابع"],
+    tp:"قیمت حد سود",fee:"کارمزد هر طرف (٪)",rr:"ریسک به بازده",prof:"سود در هدف",loss:"ضرر در حد ضرر (با کارمزد)",fees:"کل کارمزد",liq:"قیمت تقریبی لیکوئید",be:"درصد برد برای سربه‌سر",liqWarn:"حد ضرر بعد از قیمت لیکوئید است. اهرم را کم کن.",
+    expT:"امید ریاضی و ضررهای پشت‌سرهم",expS:"آیا روش تو در تعداد زیادی معامله سودده است؟",wr:"درصد برد (٪)",ar:"میانگین سود ÷ میانگین ضرر (R)",rk:"ریسک هر معامله (٪)",
+    eR:"امید ریاضی هر معامله",e100:"نتیجهٔ مورد انتظار بعد از ۱۰۰ معامله",s5:"احتمال ۵ ضرر پشت‌سرهم",dd5:"افت حساب بعد از ۵ ضرر",dd10:"افت حساب بعد از ۱۰ ضرر",expGood:"امید ریاضی مثبت: اگر به قوانین پایبند بمانی، در بلندمدت سودده است.",expBad:"امید ریاضی منفی: این روش در بلندمدت ضرر می‌دهد.",
+    recT:"جبران ضرر",recS:"بعد از ضرر، برای برگشت به نقطهٔ اول سود بیشتری لازم است.",lossC:"ضرر",gainC:"سود لازم",
+    fgT:"شاخص ترس و طمع",fgS:"حال‌وهوای جمعی بازار کریپتو. ترس شدید اغلب نزدیک کف‌ها و طمع شدید نزدیک سقف‌ها دیده می‌شود.",fgL:["ترس شدید","ترس","خنثی","طمع","طمع شدید"],fg30:"۳۰ روز اخیر",fgErr:"شاخص الان در دسترس نیست.",fgSrc:"منبع: alternative.me",
+    jT:"ژورنال معاملات",jS:"هر معامله را ثبت کن. ژورنال درصد برد واقعی و جاهایی را که ضرر می‌کنی نشان می‌دهد.",coin:"ارز",side:"جهت",long:"لانگ",short:"شورت",entry:"ورود",exit:"خروج",stop:"حد ضرر (اختیاری)",size:"اندازه پوزیشن ($)",feeAmt:"کارمزد ($)",emo:"حال تو",emos:["آرام، طبق برنامه","FOMO","ترس","انتقام","اعتمادبه‌نفس زیاد"],note:"یادداشت",add:"ثبت معامله",
+    nT:"معامله‌ها",wrS:"درصد برد",net:"سود/ضرر خالص",pf:"ضریب سود",avgW:"میانگین سود",avgL:"میانگین ضرر",avgR:"میانگین R",best:"بهترین",worst:"بدترین",curve:"منحنی حساب",empty:"هنوز معامله‌ای ثبت نشده. اولین معامله‌ات را، حتی دمو، بالا ثبت کن.",
+    del:"حذف",sure:"برای حذف دوباره بزن",csv:"خروجی CSV",copy:"کپی CSV",copied:"کپی شد ✓",lossEmo:"بیشتر ضررها وقتی است که:",clear:"پاک کردن همه",sureAll:"برای پاک کردن همه دوباره بزن"};
+  const ic=d=>`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg>`;
+  const I={shield:"M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z",check:"M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11",calc:"M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM8 7h8M8 12h2M12 12h2M8 16h2M12 16h2",sigma:"M18 5H6l6 7-6 7h12",undo:"M9 14L4 9l5-5M4 9h11a5 5 0 0 1 0 10h-3",gauge:"M12 14l4-4M3.5 17a9 9 0 1 1 17 0",book:"M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M9 8h6M9 12h6",clock:"M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z",candle:"M7 3v18M17 3v18M4.5 7h5v9h-5zM14.5 5h5v7h-5z",list:"M8 6h12M8 12h12M8 18h12M4 6h0M4 12h0M4 18h0",pct:"M19 5L5 19M7 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",brain:"M9 4a3 3 0 0 0-3 3v1a3 3 0 0 0-2 5 3 3 0 0 0 3 5h2V4zM15 4a3 3 0 0 1 3 3v1a3 3 0 0 1 2 5 3 3 0 0 1-3 5h-2V4z",lock:"M6 11h12v9H6zM8 11V7a4 4 0 0 1 8 0v4",star:"M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z",link:"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"};
+  /* hero */
+  const h2=G.querySelector(":scope>h2"),lead=G.querySelector(":scope>.lead");
+  const hero=document.createElement("div");hero.className="gp-hero";hero.innerHTML=`<div class="gp-hi">${ic(I.book)}</div><div><h2>${T.title}</h2><p>${T.sub}</p></div>`;
+  if(h2)h2.replaceWith(hero);if(lead)lead.remove();
+  /* new tool blocks */
+  const calcBlock=$("cBal").closest(".block");
+  const mk=(id,icon,title,sub,body)=>{const d=document.createElement("div");d.className="block gp-tool";d.id=id;d.innerHTML=`<h3>${title}</h3>${sub?`<p>${sub}</p>`:""}${body}`;d.dataset.ic=icon;return d};
+  const expB=mk("gpExp","sigma",T.expT,T.expS,`<div class="calc"><label for="eWr">${T.wr}<input id="eWr" type="number" inputmode="decimal" value="45" min="0" max="100"></label><label for="eAr">${T.ar}<input id="eAr" type="number" inputmode="decimal" value="2" min="0" step="0.1"></label><label for="eRk">${T.rk}<input id="eRk" type="number" inputmode="decimal" value="1" min="0" step="0.5"></label></div><div class="gp-out" id="eOut"></div>`);
+  const recB=mk("gpRec","undo",T.recT,T.recS,`<div class="gp-rec">${[5,10,20,30,40,50,75,90].map(l=>{const g=1/(1-l/100)*100-100;return `<div><span>${T.lossC} <b dir="ltr" class="down">-${F(l)}%</b></span><i style="width:${Math.min(100,g/9).toFixed(0)}%"></i><b dir="ltr" class="up">+${F(g<1000?g.toFixed(g<100?1:0):Math.round(g))}%</b></div>`}).join("")}</div>`);
+  const fgB=window.__noEmbed?null:mk("gpFg","gauge",T.fgT,T.fgS,`<div id="fgOut" class="gp-fg"><div class="lt-wait" style="height:150px">…</div></div>`);
+  const coins=["BTC","ETH","BNB","XRP","SOL","TRX","DOGE","ADA","HYPE","LINK","XLM","BCH","LTC","XMR","ZEC","—"];
+  const jB=mk("gpJ","book",T.jT,T.jS,`<form class="calc gp-jf" id="jForm" novalidate>
+      <label for="jCoin">${T.coin}<select id="jCoin">${coins.map(c=>`<option>${c}</option>`).join("")}</select></label>
+      <label for="jSide">${T.side}<select id="jSide"><option value="long">${T.long}</option><option value="short">${T.short}</option></select></label>
+      <label for="jEn">${T.entry}<input id="jEn" type="number" inputmode="decimal" step="any" required></label>
+      <label for="jEx">${T.exit}<input id="jEx" type="number" inputmode="decimal" step="any" required></label>
+      <label for="jSl">${T.stop}<input id="jSl" type="number" inputmode="decimal" step="any"></label>
+      <label for="jSz">${T.size}<input id="jSz" type="number" inputmode="decimal" step="any" value="100" required></label>
+      <label for="jFee">${T.feeAmt}<input id="jFee" type="number" inputmode="decimal" step="any" value="0"></label>
+      <label for="jEmo">${T.emo}<select id="jEmo">${T.emos.map((e,i)=>`<option value="${i}">${e}</option>`).join("")}</select></label>
+      <label for="jNote" class="w2">${T.note}<input id="jNote" type="text" maxlength="140" dir="auto"></label>
+      <button type="submit" class="cc-calc w2">${T.add}</button></form>
+    <div id="jStats"></div><div id="jList" class="gp-jl"></div>
+    <div class="gp-jbtn"><button type="button" class="tvlink" id="jCsv"></button><button type="button" class="tvlink danger" id="jClr">${T.clear}</button></div>`);
+  let after=calcBlock;for(const b of [expB,recB,fgB,jB].filter(Boolean)){after.after(b);after=b}
+  /* extended calculator */
+  const cg=calcBlock.querySelector(".calc");
+  cg.insertAdjacentHTML("beforeend",`<label for="cTp">${T.tp}<input id="cTp" type="number" inputmode="decimal" value="106000" min="0"></label><label for="cFee">${T.fee}<input id="cFee" type="number" inputmode="decimal" value="0.1" min="0" step="0.01"></label>`);
+  try{const v=JSON.parse(localStorage.getItem("bg-calc2")||"null");if(v){$("cTp").value=v[0];$("cFee").value=v[1]}}catch(e){}
+  const ext=document.createElement("div");ext.className="gp-out";ext.id="cExt";calcBlock.querySelector(".res").after(ext);
+  const usd=v=>!isFinite(v)?"–":"$"+Math.abs(v).toLocaleString("en-US",{maximumFractionDigits:v>=100||v<=-100?0:2});
+  const sgn=v=>(v<0?"−":"+")+usd(v).slice(0);
+  function calc2(){const b=+$("cBal").value,r=+$("cRisk").value,en=+$("cEn").value,sl=+$("cSl").value,lev=Math.max(1,+$("cLev").value),L=$("cSide").value==="long",tp=+$("cTp").value,fee=+$("cFee").value/100;
+    try{localStorage.setItem("bg-calc2",JSON.stringify([$("cTp").value,$("cFee").value]))}catch(e){}
+    const dist=en>0?(L?en-sl:sl-en)/en:0;if(!(dist>0&&b>0&&r>0)){ext.innerHTML="";return}
+    const val=b*r/100/dist,fees=val*fee*2,gain=en>0?(L?tp-en:en-tp)/en:0,profit=val*gain-fees,loss=b*r/100+fees,rr=gain>0?gain/dist:0,liq=L?en*(1-1/lev+0.005):en*(1+1/lev-0.005),be=rr>0?100/(1+rr):NaN;
+    const bad=lev>1&&(L?sl<=liq:sl>=liq);
+    ext.innerHTML=`<div><span>${T.rr}</span><b dir="ltr" class="${rr>=2?"up":rr>=1?"":"down"}">1 : ${rr.toFixed(2)}</b></div><div><span>${T.prof}</span><b dir="ltr" class="${profit>=0?"up":"down"}">${profit>=0?"+":"−"}${usd(profit)}</b></div><div><span>${T.loss}</span><b dir="ltr" class="down">−${usd(loss)}</b></div><div><span>${T.fees}</span><b dir="ltr">${usd(fees)}</b></div><div><span>${T.liq}</span><b dir="ltr" class="${bad?"down":""}">${lev>1?usd(liq):"—"}</b></div><div><span>${T.be}</span><b dir="ltr">${isFinite(be)?be.toFixed(0)+"%":"–"}</b></div>${bad?`<p class="gp-warn w2">${T.liqWarn}</p>`:""}`}
+  ["cBal","cRisk","cEn","cSl","cLev","cSide","cTp","cFee"].forEach(i=>{$(i).addEventListener("input",calc2);$(i).addEventListener("change",calc2)});calc2();
+  /* expectancy */
+  function exp(){const w=Math.min(100,Math.max(0,+$("eWr").value))/100,a=Math.max(0,+$("eAr").value),k=Math.max(0,+$("eRk").value)/100;
+    const E=w*a-(1-w),g100=(Math.pow(1+k*a,w*100)*Math.pow(1-k,(1-w)*100)-1)*100,s5=Math.pow(1-w,5)*100,d5=(1-Math.pow(1-k,5))*100,d10=(1-Math.pow(1-k,10))*100;
+    $("eOut").innerHTML=`<div><span>${T.eR}</span><b dir="ltr" class="${E>=0?"up":"down"}">${E>=0?"+":""}${E.toFixed(2)} R</b></div><div><span>${T.e100}</span><b dir="ltr" class="${g100>=0?"up":"down"}">${g100>=0?"+":""}${g100.toFixed(0)}%</b></div><div><span>${T.s5}</span><b dir="ltr">${s5.toFixed(1)}%</b></div><div><span>${T.dd5}</span><b dir="ltr" class="down">-${d5.toFixed(1)}%</b></div><div><span>${T.dd10}</span><b dir="ltr" class="down">-${d10.toFixed(1)}%</b></div><p class="gp-verdict w2 ${E>=0?"up":"down"}">${E>=0?T.expGood:T.expBad}</p>`}
+  ["eWr","eAr","eRk"].forEach(i=>$(i).addEventListener("input",exp));exp();
+  /* fear & greed */
+  if(fgB){(async()=>{try{const r=await fetch("https://api.alternative.me/fng/?limit=30");if(!r.ok)throw 0;const j=await r.json(),d=(j.data||[]).map(x=>({v:+x.value,t:+x.timestamp*1000})).reverse();if(!d.length)throw 0;
+      const v=d.at(-1).v,z=v<25?0:v<45?1:v<56?2:v<76?3:4,cols=["--down","--g6","--muted","--g5","--up"];
+      const ang=Math.PI*(1-v/100),cx=110,cy=100,R=80,nx=cx+Math.cos(ang)*(R-14),ny=cy-Math.sin(ang)*(R-14);
+      const arc=(a0,a1,c)=>{const p=(a)=>[cx+Math.cos(Math.PI*(1-a/100))*R,cy-Math.sin(Math.PI*(1-a/100))*R];const [x0,y0]=p(a0),[x1,y1]=p(a1);return `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} A${R} ${R} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="var(${c})" stroke-width="14" fill="none"/>`};
+      const sp=d.map((x,i)=>`${(i/(d.length-1)*200).toFixed(1)},${(40-x.v/100*36-2).toFixed(1)}`).join(" ");
+      $("fgOut").innerHTML=`<svg viewBox="0 0 220 118" class="gp-gauge" role="img" aria-label="${T.fgT} ${v}" direction="ltr">${arc(0,24.5,"--down")}${arc(25.5,44.5,"--g6")}${arc(45.5,55.5,"--muted")}${arc(56.5,75.5,"--g5")}${arc(76.5,100,"--up")}<line x1="${cx}" y1="${cy}" x2="${nx.toFixed(1)}" y2="${ny.toFixed(1)}" stroke="var(--fg)" stroke-width="3.5" stroke-linecap="round"/><circle cx="${cx}" cy="${cy}" r="7" fill="var(--fg)"/><text x="${cx}" y="${cy-22}" text-anchor="middle" font-size="26" font-weight="800" fill="var(--fg)">${v}</text></svg>
+        <b class="gp-fgl" style="color:var(${cols[z]})">${T.fgL[z]}</b><div class="gp-fgs"><span>${T.fg30}</span><svg viewBox="0 0 200 40" preserveAspectRatio="none" direction="ltr"><line x1="0" x2="200" y1="20" y2="20" stroke="var(--line)" stroke-dasharray="3 3"/><polyline points="${sp}" fill="none" stroke="var(${cols[z]})" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div><p class="cc-note">${T.fgSrc}</p>`}
+    catch(e){$("fgOut").innerHTML=`<p class="cc-note">${T.fgErr}</p>`}})()}
+  /* journal */
+  let J=[];try{J=JSON.parse(localStorage.getItem("bg-journal")||"[]")}catch(e){}
+  const saveJ=()=>{try{localStorage.setItem("bg-journal",JSON.stringify(J))}catch(e){}};
+  const pnl=t=>t.size*(t.side==="long"?t.ex/t.en-1:1-t.ex/t.en)-(t.fee||0);
+  const rmul=t=>t.sl?pnl(t)/(t.size*Math.abs(t.en-t.sl)/t.en):null;
+  const canDL=!window.__noEmbed;$("jCsv").innerHTML=ic(I.link)+(canDL?T.csv:T.copy);
+  function renderJ(){const L=$("jList"),S=$("jStats");if(!J.length){S.innerHTML=`<p class="cc-note">${T.empty}</p>`;L.innerHTML="";return}
+    const p=J.map(pnl),w=p.filter(x=>x>0),l=p.filter(x=>x<=0),net=p.reduce((a,b)=>a+b,0),pf=l.length?w.reduce((a,b)=>a+b,0)/Math.abs(l.reduce((a,b)=>a+b,0)||1):Infinity;
+    const rs=J.map(rmul).filter(x=>x!=null),eq=[];let acc=0;for(const x of p)eq.push(acc+=x);
+    const em={};J.forEach((t,i)=>{if(p[i]<=0)em[t.emo]=(em[t.emo]||0)+1});const top=Object.entries(em).sort((a,b)=>b[1]-a[1])[0];
+    const mn=Math.min(0,...eq),mx=Math.max(0,...eq),Y=v=>(36-(v-mn)/((mx-mn)||1)*32).toFixed(1),pts=[0,...eq].map((v,i)=>`${(i/(eq.length)*200).toFixed(1)},${Y(v)}`).join(" ");
+    S.innerHTML=`<div class="gp-out"><div><span>${T.nT}</span><b>${F(J.length)}</b></div><div><span>${T.wrS}</span><b dir="ltr">${(w.length/J.length*100).toFixed(0)}%</b></div><div><span>${T.net}</span><b dir="ltr" class="${net>=0?"up":"down"}">${net>=0?"+":"−"}${usd(net)}</b></div><div><span>${T.pf}</span><b dir="ltr">${isFinite(pf)?pf.toFixed(2):"∞"}</b></div><div><span>${T.avgW}</span><b dir="ltr" class="up">${w.length?"+"+usd(w.reduce((a,b)=>a+b,0)/w.length):"–"}</b></div><div><span>${T.avgL}</span><b dir="ltr" class="down">${l.length?"−"+usd(l.reduce((a,b)=>a+b,0)/l.length):"–"}</b></div>${rs.length?`<div><span>${T.avgR}</span><b dir="ltr">${(rs.reduce((a,b)=>a+b,0)/rs.length).toFixed(2)} R</b></div>`:""}
+      <div class="w2"><span>${T.curve}</span><svg viewBox="0 0 200 40" preserveAspectRatio="none" class="gp-eq" direction="ltr"><line x1="0" x2="200" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)" stroke-dasharray="3 3"/><polyline points="${pts}" fill="none" stroke="var(${net>=0?"--up":"--down"})" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
+      ${top&&l.length>=2?`<p class="gp-warn w2">${T.lossEmo} <b>${T.emos[top[0]]}</b></p>`:""}</div>`;
+    L.innerHTML=J.map((t,i)=>({t,i,p:p[i]})).reverse().map(({t,i,p})=>`<div class="gp-jr"><div><b>${t.coin}</b><small class="${t.side==="long"?"up":"down"}">${t.side==="long"?T.long:T.short}</small><small>${F(new Date(t.at).toLocaleDateString(EN?"en-GB":"fa-IR",{day:"numeric",month:"short"}))}</small></div><div dir="ltr" class="px">${usd(t.en)} → ${usd(t.ex)}</div><div class="pl ${p>=0?"up":"down"}" dir="ltr">${p>=0?"+":"−"}${usd(p)}${rmul(t)!=null?` · ${rmul(t).toFixed(1)}R`:""}</div><div class="em">${T.emos[t.emo]}${t.note?` · ${t.note.replace(/[<>&]/g,"")}`:""}</div><button type="button" class="gp-del" data-i="${i}">${T.del}</button></div>`).join("")}
+  $("jForm").addEventListener("submit",e=>{e.preventDefault();const en=+$("jEn").value,ex=+$("jEx").value,sz=+$("jSz").value;let ok=true;[["jEn",en],["jEx",ex],["jSz",sz]].forEach(([id,v])=>{const bad=!(v>0);$(id).classList.toggle("bad",bad);if(bad)ok=false});if(!ok)return;
+    J.push({at:Date.now(),coin:$("jCoin").value,side:$("jSide").value,en,ex,sl:+$("jSl").value||null,size:sz,fee:+$("jFee").value||0,emo:+$("jEmo").value,note:$("jNote").value.trim().slice(0,140)});saveJ();["jEn","jEx","jSl","jNote"].forEach(i=>$(i).value="");renderJ()});
+  $("jList").addEventListener("click",e=>{const b=e.target.closest(".gp-del");if(!b)return;if(b.dataset.arm){J.splice(+b.dataset.i,1);saveJ();renderJ()}else{b.dataset.arm="1";b.textContent=T.sure;setTimeout(()=>{if(b.isConnected){delete b.dataset.arm;b.textContent=T.del}},3000)}});
+  $("jClr").addEventListener("click",e=>{const b=e.currentTarget;if(!J.length)return;if(b.dataset.arm){J=[];saveJ();renderJ();delete b.dataset.arm;b.textContent=T.clear}else{b.dataset.arm="1";b.textContent=T.sureAll;setTimeout(()=>{delete b.dataset.arm;b.textContent=T.clear},3000)}});
+  $("jCsv").addEventListener("click",()=>{const rows=[["date","coin","side","entry","exit","stop","size","fees","pnl","R","state","note"]].concat(J.map(t=>[new Date(t.at).toISOString(),t.coin,t.side,t.en,t.ex,t.sl||"",t.size,t.fee||0,pnl(t).toFixed(2),rmul(t)!=null?rmul(t).toFixed(2):"",T.emos[t.emo],(t.note||"").replace(/"/g,"'")]));
+    const csv=rows.map(r=>r.map(x=>`"${x}"`).join(",")).join("\n");
+    if(canDL){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["﻿"+csv],{type:"text/csv"}));a.download="trade-journal.csv";document.body.appendChild(a);a.click();a.remove()}
+    else{try{navigator.clipboard.writeText(csv).then(()=>{$("jCsv").textContent=T.copied;setTimeout(()=>{$("jCsv").innerHTML=ic(I.link)+T.copy},2000)},()=>{})}catch(e){}}});
+  renderJ();
+  /* headers, icons, collapsible, nav */
+  const blocks=[...G.querySelectorAll(":scope>.warn,:scope>.block")];
+  const icons=["shield","check","calc","sigma","undo","gauge","book","clock","candle","list","pct","brain","lock","star","link"];
+  const order=["warn","check","calc","gpExp","gpRec","gpFg","gpJ","hours","pat","orders","wr","psy","scam","rules","src"];
+  const keyOf=b=>b.classList.contains("warn")?"warn":b.id==="checkBlock"?"check":b===calcBlock?"calc":b.id&&b.id.startsWith("gp")?b.id:b.querySelector("#sess")?"hours":b.querySelector("#more")?"pat":b.querySelector("#orders")?"orders":b.querySelector("#winrate")?"wr":b.querySelector(".psy")?"psy":b.classList.contains("scam")?"scam":b.classList.contains("src")?"src":b.querySelector(".rules")?"rules":null;
+  const fold=new Set(["hours","pat","orders","wr","psy","scam","rules","src"]);let st={};try{st=JSON.parse(localStorage.getItem("bg-gfold")||"{}")}catch(e){}
+  const navItems=[];
+  blocks.forEach(b=>{const k=keyOf(b);if(!k)return;const idx=order.indexOf(k);b.classList.add("gp-card");if(!b.id)b.id="gp-"+k;
+    const h=b.querySelector(":scope>h3");if(!h)return;h.insertAdjacentHTML("afterbegin",`<span class="gp-ic">${ic(I[icons[idx]]||I.star)}</span>`);
+    if(fold.has(k)){const body=document.createElement("div");body.className="gp-body";while(h.nextSibling)body.appendChild(h.nextSibling);b.appendChild(body);
+      const btn=document.createElement("button");btn.type="button";btn.className="gp-tog";btn.setAttribute("aria-expanded","false");while(h.firstChild)btn.appendChild(h.firstChild);btn.insertAdjacentHTML("beforeend",`<span class="gp-chev" aria-hidden="true">${ic("M6 9l6 6 6-6")}</span>`);h.appendChild(btn);
+      const set=o=>{btn.setAttribute("aria-expanded",String(o));body.hidden=!o;b.classList.toggle("open",o)};set(!!st[k]);
+      btn.addEventListener("click",()=>{const o=btn.getAttribute("aria-expanded")!=="true";set(o);st[k]=o;try{localStorage.setItem("bg-gfold",JSON.stringify(st))}catch(e){}});b._open=()=>set(true)}
+    navItems.push([b,T.nav[idx]])});
+  const nav=document.createElement("nav");nav.className="gp-nav";nav.setAttribute("aria-label",T.title);
+  nav.innerHTML=navItems.map(([b,l])=>`<button type="button" data-t="${b.id}">${l}</button>`).join("");hero.after(nav);
+  nav.addEventListener("click",e=>{const x=e.target.closest("button");if(!x)return;const b=$(x.dataset.t);if(b._open)b._open();b.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){nav.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.t===en.target.id));const on=nav.querySelector(".on");if(on){const r1=on.getBoundingClientRect(),r2=nav.getBoundingClientRect();nav.scrollBy({left:(r1.left+r1.width/2)-(r2.left+r2.width/2)})}}})},{rootMargin:"-30% 0px -60% 0px"});
+  navItems.forEach(([b])=>io.observe(b));
 })();
 </script>
 
