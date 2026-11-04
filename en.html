@@ -352,6 +352,123 @@
 .gp-del{grid-column:1/-1;justify-self:end;font:inherit;font-size:.75rem;font-weight:800;color:var(--down);background:none;border:0;cursor:pointer;padding:2px 0}
 .gp-jbtn{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
 .tvlink.danger{color:var(--down)}
+/* ap-css */
+.ap-hero{display:flex;gap:12px;align-items:flex-start;border-radius:22px;padding:18px;color:#eef3fb;background:radial-gradient(110% 90% at 0% 0%,#5b2fb8 0%,rgba(91,47,184,0) 55%),radial-gradient(90% 80% at 100% 100%,#0e9a95 0%,rgba(14,154,149,0) 60%),linear-gradient(160deg,#0d1726 0%,#141d38 100%);box-shadow:0 10px 30px rgba(13,23,38,.25)}
+.ap-hero h2{margin:0;font-size:1.3rem;font-weight:900;color:#fff}
+.ap-hero p{margin:4px 0 0;font-size:.86rem;color:#b7c4d8;line-height:1.65}
+.ap-hi{flex:none;width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#a888ff,#3cc9c3);color:#fff;box-shadow:0 6px 16px rgba(168,136,255,.35)}
+.ap-hi svg,.ap-ic svg,.ap-tg svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ap-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 0;margin-top:4px;background:var(--bg)}
+.ap-nav::-webkit-scrollbar{display:none}
+.ap-nav button{flex:none;font:inherit;font-size:.84rem;font-weight:700;color:var(--fg);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:6px 13px;cursor:pointer}
+.ap-nav button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+#analysis .ap-card{border-radius:20px;scroll-margin-top:64px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+#analysis .ap-card>h3{display:flex;align-items:center;gap:10px}
+.ap-ic{flex:none;width:34px;height:34px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--g4) 14%,transparent);color:var(--g4)}
+.ap-ic svg{width:18px;height:18px}
+#ap-scan{border-top:3px solid var(--g5)} #ap-lab{border-top:3px solid var(--g4)}
+#ap-scan .ap-ic{background:color-mix(in srgb,var(--g5) 14%,transparent);color:var(--g5)}
+#ap-fib .ap-ic,#ap-piv .ap-ic{background:color-mix(in srgb,var(--hl) 16%,transparent);color:var(--hl)}
+.ap-fold>h3{cursor:pointer}
+.ap-tg{margin-inline-start:auto;flex:none;width:32px;height:32px;border-radius:10px;border:0;background:var(--bg);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
+.ap-tg svg{width:18px;height:18px}
+.ap-fold.closed .ap-tg{transform:rotate(90deg)} html[dir=ltr] .ap-fold.closed .ap-tg{transform:rotate(-90deg)}
+.ap-fold.closed>.ap-body{display:none}
+.ap-fold:not(.closed)>.ap-body{margin-top:8px}
+.mono{font-family:var(--mono)}
+.ap-br{display:flex;flex-direction:column;gap:8px}
+.ap-brh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;font-size:.85rem}
+.ap-brh span{color:var(--muted);font-weight:700}
+.ap-brbar{height:8px;border-radius:99px;background:var(--down);opacity:.85;overflow:hidden;direction:ltr}
+.ap-brbar i{display:block;height:100%;background:var(--up);border-radius:99px;transition:width .5s}
+.ap-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.ap-kpi>div{background:var(--bg);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.ap-kpi span{font-size:.72rem;color:var(--muted);font-weight:700}
+.ap-kpi b{font-size:.9rem;font-weight:900;font-family:var(--mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ap-kpi small{font-size:.75rem}
+#analysis .up{color:var(--up)} #analysis .down{color:var(--down)}
+.ap-heat{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin-top:12px;direction:ltr}
+.ap-heat button{font:inherit;color:var(--fg);border:0;border-radius:11px;padding:9px 2px;display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer;min-width:0}
+.ap-heat b{font-family:var(--mono);font-size:.82rem}
+.ap-heat small{font-size:.72rem;font-weight:800;font-variant-numeric:tabular-nums}
+.ap-heat button:active{transform:scale(.96)}
+.ap-flt,.ap-pick{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-top:12px;padding-bottom:2px}
+.ap-flt::-webkit-scrollbar,.ap-pick::-webkit-scrollbar{display:none}
+.ap-chip{flex:none;font:inherit;font-size:.82rem;font-weight:700;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
+.ap-chip.mono{font-weight:600}
+.ap-chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.ap-tw{margin-top:10px;overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+.ap-tb{width:100%;border-collapse:collapse;font-size:.84rem;font-variant-numeric:tabular-nums}
+.ap-tb th{background:var(--bg);position:sticky;top:0}
+.ap-tb th button{font:inherit;font-size:.74rem;font-weight:800;color:var(--muted);background:none;border:0;padding:8px 6px;cursor:pointer;white-space:nowrap;width:100%;text-align:start}
+.ap-tb th button.on{color:var(--g3)}
+.ap-tb td{padding:8px 6px;border-top:1px solid var(--line);white-space:nowrap;text-align:start}
+.ap-tb tbody tr{cursor:pointer}
+.ap-tb tbody tr:hover{background:color-mix(in srgb,var(--g3) 6%,transparent)}
+.ap-rsi{display:inline-block;min-width:28px;text-align:center;font-weight:800;border-radius:7px;padding:1px 6px;background:var(--bg)}
+.ap-rsi.ob{background:var(--down-soft);color:var(--down)} .ap-rsi.os{background:var(--up-soft);color:var(--up)}
+.ap-tr{font-size:.78rem;font-weight:800;color:var(--muted)}
+.ap-wait{text-align:center;color:var(--muted);padding:18px 8px!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;white-space:normal!important}
+td.ap-wait{display:table-cell}
+.ap-seg{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:var(--bg);border-radius:12px;padding:3px;margin-top:10px}
+.ap-seg button{font:inherit;font-size:.82rem;font-weight:700;color:var(--muted);background:none;border:0;border-radius:9px;padding:7px 2px;cursor:pointer}
+.ap-seg button[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.ap-ovs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ap-tog{font:inherit;font-size:.78rem;font-weight:700;color:var(--muted);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:5px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.ap-tog i{width:12px;height:3px;border-radius:2px}
+.ap-tog .o-sma20{background:var(--g6)} .ap-tog .o-sma50{background:repeating-linear-gradient(90deg,var(--g4) 0 4px,transparent 4px 6px)} .ap-tog .o-bb{background:var(--g3);height:8px;opacity:.5} .ap-tog .o-fib{background:repeating-linear-gradient(90deg,var(--hl) 0 3px,transparent 3px 5px)} .ap-tog .o-sr{background:linear-gradient(90deg,var(--up) 50%,var(--down) 50%)}
+.ap-tog[aria-pressed="true"]{color:var(--fg);border-color:var(--fg)}
+.ap-tog:not([aria-pressed="true"]) i{opacity:.35}
+.ap-head{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-top:12px;min-height:1.6em}
+.ap-head>div:first-child{display:flex;flex-direction:column}
+.ap-head small{font-size:.75rem;color:var(--muted)}
+.ap-hp{display:flex;flex-direction:column;align-items:flex-end}
+.ap-hp b{font-family:"Sora",var(--font);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.ap-hp small{font-weight:800;font-size:.82rem}
+.ap-box{position:relative;direction:ltr;margin-top:6px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ap-svg{width:100%;height:auto;display:block;font-family:var(--font);font-variant-numeric:tabular-nums}
+.ap-sub{border-top:1px solid var(--line);margin-top:2px}
+.ap-tip{position:absolute;top:2px;left:4px;z-index:1;font-size:.76rem;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:2px 8px;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.ap-tip:empty{display:none}
+.ap-h4{margin:14px 0 8px;font-size:.95rem;font-weight:800}
+.ap-read{display:flex;flex-direction:column;gap:6px}
+.ap-sum{background:linear-gradient(135deg,color-mix(in srgb,var(--g4) 10%,var(--surface)),color-mix(in srgb,var(--g5) 8%,var(--surface)));border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.ap-sumh{display:flex;flex-direction:column;gap:2px}
+.ap-sumh span{font-size:.75rem;color:var(--muted);font-weight:800}
+.ap-sumh b{font-size:.95rem}
+.ap-sumbar{display:flex;gap:4px;direction:ltr}
+.ap-sumbar i{flex:1;height:8px;border-radius:99px}
+.ap-sumbar i.up{background:var(--up)} .ap-sumbar i.down{background:var(--down)}
+.ap-sum p{margin:0;font-size:.76rem;color:var(--muted)}
+.ap-ri{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;background:var(--bg);border-radius:12px;padding:10px 12px}
+.ap-ri>i{width:10px;height:10px;border-radius:50%;margin-top:7px;background:var(--muted)}
+.ap-ri>i.up{background:var(--up)} .ap-ri>i.down{background:var(--down)} .ap-ri>i.hl{background:var(--hl)} .ap-ri>i.g3{background:var(--g3)}
+.ap-ri b{display:block;font-size:.85rem}
+.ap-ri span{font-size:.88rem;line-height:1.65;color:var(--fg)}
+.ap-fill{margin-top:10px;width:100%;cursor:pointer}
+.ap-lv{display:flex;flex-direction:column;gap:5px}
+.ap-lv>div{display:grid;grid-template-columns:70px 1fr auto;gap:10px;align-items:center;padding:8px 12px;border-radius:11px;background:var(--bg);border-inline-start:4px solid var(--line)}
+.ap-lv span{font-size:.82rem;font-weight:800;color:var(--muted)}
+.ap-lv b{direction:ltr;text-align:start;font-weight:800;font-variant-numeric:tabular-nums}
+.ap-lv small{font-size:.76rem;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.ap-lv .key{border-inline-start-color:var(--hl)} .ap-lv .key span{color:var(--hl)}
+.ap-lv .ext{border-inline-start-color:var(--g3)} .ap-lv .r{border-inline-start-color:var(--down)} .ap-lv .s{border-inline-start-color:var(--up)}
+.ap-flow{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;counter-reset:f}
+.ap-flow label{display:grid;grid-template-columns:auto auto 1fr;gap:10px;align-items:start;padding:10px;border-radius:12px;background:var(--bg);cursor:pointer;font-size:.9rem;line-height:1.6}
+.ap-flow input{width:20px;height:20px;accent-color:var(--up);margin-top:2px}
+.ap-flow .ap-tf{font-size:.74rem;font-weight:800;color:var(--g4);background:color-mix(in srgb,var(--g4) 12%,transparent);border-radius:999px;padding:2px 9px;white-space:nowrap;margin-top:2px}
+.ap-flow label:has(input:checked){background:var(--up-soft)}
+.ap-flow label:has(input:checked) span:last-child{text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--fg) 35%,transparent)}
+.ap-adv{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px}
+.ap-adv>div{background:var(--bg);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:4px;border-top:3px solid var(--g4)}
+.ap-adv b{display:flex;align-items:center;gap:8px;font-size:.93rem}
+.ap-adv b i{font-style:normal;width:22px;height:22px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem;background:var(--g4);color:#fff;flex:none}
+.ap-adv span{font-size:.87rem;color:var(--muted);line-height:1.65}
+.ap-src{margin:0;padding-inline-start:18px;display:flex;flex-direction:column;gap:6px}
+.ap-src a{color:var(--g3)}
+.ap-nav button:focus-visible,.ap-chip:focus-visible,.ap-seg button:focus-visible,.ap-tog:focus-visible,.ap-tg:focus-visible,.ap-heat button:focus-visible,.ap-tb th button:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.ap-brbar i,.ap-tg{transition:none}}
+/* ap-css end */
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -1849,6 +1966,264 @@ document.addEventListener("bg-markets",e=>{window.__bgLastCoins=e.detail});
   const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){nav.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.t===en.target.id));const on=nav.querySelector(".on");if(on){const r1=on.getBoundingClientRect(),r2=nav.getBoundingClientRect();nav.scrollBy({left:(r1.left+r1.width/2)-(r2.left+r2.width/2)})}}})},{rootMargin:"-30% 0px -60% 0px"});
   navItems.forEach(([b])=>io.observe(b));
 })();
+/* analysis pro */
+(()=>{const A=document.getElementById("analysis");if(!A||A.dataset.ap)return;A.dataset.ap="1";
+  const EN=document.documentElement.lang==="en",$=id=>document.getElementById(id),F=s=>EN?String(s):fa(String(s)),LOC=EN?"en-GB":"fa-IR";
+  const SRC=window.__liveSource;
+  const ls={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+  const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const COINS=[["bitcoin","BTC"],["ethereum","ETH"],["binancecoin","BNB"],["ripple","XRP"],["solana","SOL"],["tron","TRX"],["dogecoin","DOGE"],["cardano","ADA"],["hyperliquid","HYPE"],["chainlink","LINK"],["stellar","XLM"],["bitcoin-cash","BCH"],["litecoin","LTC"],["monero","XMR"],["zcash","ZEC"]];
+  const SYM=Object.fromEntries(COINS);
+  const T=EN?{
+    title:"Pro technical analysis",sub:"Live scanner, indicator lab and pro calculators for 15 major coins. Readings describe the market; they are not buy or sell signals.",
+    nav:["Scanner","Lab","Fibonacci","Pivots","Workflow","Structure","Patterns","Indicators","Advanced","Sources"],
+    scanT:"Market scanner",scanS:"Live numbers for 15 major coins. Tile colour = 24h change. Tap a coin to open it in the lab.",
+    flt:["All","Uptrend","Downtrend","Overbought","Oversold","Most volatile"],cols:["Coin","Price","24h","7d","RSI","Trend"],
+    up:"Up",dn:"Down",side:"Sideways",breadth:"Market breadth",bTxt:(u,n)=>`${u} of ${n} coins are up in 24h`,avg:"Avg 24h",best:"Strongest 7d",worst:"Weakest 7d",
+    none:"No coin matches this filter right now.",loading:"Loading live data…",err:"Live data could not be loaded.",retry:"Try again",
+    labT:"Indicator lab",labS:"Live chart with moving averages, Bollinger Bands, Fibonacci, support/resistance, RSI and MACD.",
+    rng:[["1","1D"],["7","7D"],["30","30D"],["90","90D"]],ov:[["sma20","SMA 20"],["sma50","SMA 50"],["bb","Bollinger"],["fib","Fibonacci"],["sr","S/R"]],
+    rd:"Indicator readings",sum:"Overall picture (not a signal)",sumTxt:(u,d,n)=>`Of ${n} main readings, ${u} are positive and ${d} negative.`,sumNote:"This summary is not a buy or sell signal. Always check it against market structure and your plan.",
+    tr:"Trend",trTxt:(a,b)=>`Price is ${a} the 50-period average, and the 20 average is ${b} the 50.`,above:"above",below:"below",
+    rsiT:"RSI 14",ob:"overbought (above 70)",os:"oversold (below 30)",nz:"in the normal zone",rsiTxt:(v,z)=>`RSI is ${v}, ${z}.`,
+    bearDiv:" Bearish divergence: price made a higher high but RSI a lower high.",bullDiv:" Bullish divergence: price made a lower low but RSI a higher low.",
+    macdT:"MACD",mPos:"Momentum is positive (histogram above zero).",mNeg:"Momentum is negative (histogram below zero).",mX:(n,up)=>` MACD crossed its signal line ${up?"upward":"downward"} ${n} bars ago.`,
+    bbT:"Bollinger Bands",bbTxt:p=>`Price sits at ${p}% of the band range (0 = lower band, 100 = upper band).`,bbLo:"Price is below the lower band: a stretched move down.",bbHi:"Price is above the upper band: a stretched move up.",sq:" The bands are squeezed: a bigger move often follows, but the direction is unknown.",
+    srT:"Support & resistance",srTxt:(s,sd,r,rd)=>`Nearest support ${s} (${sd}), nearest resistance ${r} (${rd}).`,noS:"no clear support below",noR:"no clear resistance above",
+    fibT2:"Fibonacci position",fibTxt:(a,b)=>`Price is between the ${a} and ${b} levels of this range's move.`,
+    volT:"Range",volTxt:(r,c)=>`High-to-low range of this period: ${r}. Change over the period: ${c}.`,
+    tip:"Tap or drag on the chart to inspect a point.",price:"Price",
+    fibT:"Fibonacci calculator",fibS:"Enter the high and low of a move to get retracement and extension levels.",hi:"Swing high",lo:"Swing low",dir:"Move direction",dUp:"Up move (pullback down)",dDn:"Down move (bounce up)",fromLab:"Fill from lab chart",ret:"Retracement levels",ext:"Extension targets",lvl:"Level",dist:"From price",
+    pivT:"Pivot points",pivS:"Daily levels many traders watch. Enter the previous day's high, low and close.",H:"High",L:"Low",C:"Close",type:"Type",types:[["classic","Classic"],["fib","Fibonacci"],["cam","Camarilla"]],from24:"Fill from last 24h",
+    flowT:"Top-down workflow",flowS:"Analyse from the big picture to the entry. Tick each step as you go.",
+    flow:[["1W / 1D","Main trend and key levels: is the structure HH/HL or LH/LL?"],["4H","Current structure and supply/demand zones. Is price near an important level?"],["1H","Wait for confirmation: structure break, reversal candle, divergence."],["15m","Precise entry, stop behind structure, target at the next level (R/R ≥ 2)."],["After","Log the trade in your journal and review the result."]],flowReset:"Reset steps",
+    advT:"Advanced concepts",
+    adv:[["Liquidity & stop hunts","Price often spikes into areas where stops cluster (just below obvious lows, above obvious highs) and then reverses. Don't place your stop exactly at the obvious level; leave some room."],
+      ["Divergence","Price makes a higher high but RSI a lower high: momentum is fading. It is a warning, not a signal; wait for a structure break."],
+      ["Volume confirmation","Breakouts on high volume are more reliable. Breakouts on low volume are often fake."],
+      ["Timeframe confluence","When the daily, 4H and 1H trends point the same way, odds are better. Avoid trading against the higher timeframe."],
+      ["Supply & demand / order blocks","Zones price left with strong momentum often react again on the next visit. Treat them as zones, not single lines."],
+      ["Funding & open interest","Very positive funding means longs are crowded. Rising OI together with price confirms the trend. Check Binance futures data or Coinglass."],
+      ["Bitcoin dominance","When BTC dominance rises, altcoins are usually weaker; a falling dominance sometimes marks the start of an “altseason”."],
+      ["Market regime","In trending markets, moving averages and pullbacks work better; in ranges, support/resistance and RSI. Identify the regime first."]],
+    srcT:"Analysis sources",disc:"Educational only, not financial advice."}
+  :{
+    title:"تحلیل تکنیکال حرفه‌ای",sub:"اسکنر زنده، آزمایشگاه اندیکاتور و ماشین‌حساب‌های حرفه‌ای برای ۱۵ ارز مهم. خوانش‌ها وضعیت بازار را توضیح می‌دهند، سیگنال خرید یا فروش نیستند.",
+    nav:["اسکنر","آزمایشگاه","فیبوناچی","پیوت","روش تحلیل","ساختار","الگوها","اندیکاتورها","پیشرفته","منابع"],
+    scanT:"اسکنر بازار",scanS:"اعداد زنده ۱۵ ارز مهم. رنگ هر خانه = تغییر ۲۴ ساعته. روی هر ارز بزن تا در آزمایشگاه باز شود.",
+    flt:["همه","صعودی","نزولی","اشباع خرید","اشباع فروش","پرنوسان"],cols:["ارز","قیمت","۲۴ساعت","۷روز","RSI","روند"],
+    up:"صعودی",dn:"نزولی",side:"خنثی",breadth:"گستردگی بازار",bTxt:(u,n)=>`${fa(u)} از ${fa(n)} ارز در ۲۴ ساعت مثبت‌اند`,avg:"میانگین ۲۴ساعت",best:"قوی‌ترین ۷روز",worst:"ضعیف‌ترین ۷روز",
+    none:"الان هیچ ارزی با این فیلتر نیست.",loading:"در حال دریافت داده زنده…",err:"داده زنده دریافت نشد.",retry:"دوباره امتحان کن",
+    labT:"آزمایشگاه اندیکاتور",labS:"چارت زنده با میانگین متحرک، باندهای بولینگر، فیبوناچی، حمایت/مقاومت، RSI و MACD.",
+    rng:[["1","۱ روز"],["7","۷ روز"],["30","۳۰ روز"],["90","۹۰ روز"]],ov:[["sma20","SMA 20"],["sma50","SMA 50"],["bb","بولینگر"],["fib","فیبوناچی"],["sr","حمایت/مقاومت"]],
+    rd:"خوانش اندیکاتورها",sum:"تصویر کلی (سیگنال نیست)",sumTxt:(u,d,n)=>`از ${fa(n)} خوانش اصلی، ${fa(u)} مثبت و ${fa(d)} منفی‌اند.`,sumNote:"این جمع‌بندی سیگنال خرید یا فروش نیست. همیشه آن را با ساختار بازار و برنامه خودت بسنج.",
+    tr:"روند",trTxt:(a,b)=>`قیمت ${a} میانگین ۵۰ دوره‌ای است و میانگین ۲۰ ${b} میانگین ۵۰ قرار دارد.`,above:"بالای",below:"زیر",
+    rsiT:"RSI ۱۴",ob:"در ناحیه اشباع خرید (بالای ۷۰)",os:"در ناحیه اشباع فروش (زیر ۳۰)",nz:"در ناحیه معمولی",rsiTxt:(v,z)=>`RSI برابر ${v} و ${z} است.`,
+    bearDiv:" واگرایی نزولی: قیمت سقف بالاتر ساخته ولی RSI سقف پایین‌تر.",bullDiv:" واگرایی صعودی: قیمت کف پایین‌تر ساخته ولی RSI کف بالاتر.",
+    macdT:"MACD",mPos:"مومنتوم مثبت است (هیستوگرام بالای صفر).",mNeg:"مومنتوم منفی است (هیستوگرام زیر صفر).",mX:(n,up)=>` MACD ${fa(n)} کندل پیش خط سیگنال را رو به ${up?"بالا":"پایین"} قطع کرده.`,
+    bbT:"باندهای بولینگر",bbTxt:p=>`قیمت در ${p}٪ فاصله بین دو باند است (۰ = باند پایین، ۱۰۰ = باند بالا).`,bbLo:"قیمت زیر باند پایین است: حرکت نزولی کشیده شده.",bbHi:"قیمت بالای باند بالا است: حرکت صعودی کشیده شده.",sq:" باندها جمع شده‌اند: معمولاً بعد از فشردگی حرکت بزرگ‌تری می‌آید، ولی جهتش معلوم نیست.",
+    srT:"حمایت و مقاومت",srTxt:(s,sd,r,rd)=>`نزدیک‌ترین حمایت ${s} (${sd}) و نزدیک‌ترین مقاومت ${r} (${rd}).`,noS:"حمایت واضحی پایین‌تر نیست",noR:"مقاومت واضحی بالاتر نیست",
+    fibT2:"جایگاه فیبوناچی",fibTxt:(a,b)=>`قیمت بین سطح ${a} و ${b} حرکت این بازه است.`,
+    volT:"دامنه نوسان",volTxt:(r,c)=>`فاصله سقف تا کف این بازه: ${r}. تغییر در کل بازه: ${c}.`,
+    tip:"روی چارت بزن یا انگشت را بکش تا هر نقطه را ببینی.",price:"قیمت",
+    fibT:"ماشین‌حساب فیبوناچی",fibS:"سقف و کف یک حرکت را بده تا سطوح اصلاحی و اهداف اکستنشن را ببینی.",hi:"سقف حرکت",lo:"کف حرکت",dir:"جهت حرکت",dUp:"حرکت صعودی (اصلاح رو به پایین)",dDn:"حرکت نزولی (برگشت رو به بالا)",fromLab:"پر کردن از چارت آزمایشگاه",ret:"سطوح اصلاحی",ext:"اهداف اکستنشن",lvl:"سطح",dist:"فاصله از قیمت",
+    pivT:"پیوت پوینت",pivS:"سطوح روزانه‌ای که خیلی از تریدرها نگاه می‌کنند. سقف، کف و قیمت بسته شدن روز قبل را وارد کن.",H:"سقف",L:"کف",C:"بسته شدن",type:"نوع",types:[["classic","کلاسیک"],["fib","فیبوناچی"],["cam","کاماریلا"]],from24:"پر کردن از ۲۴ ساعت اخیر",
+    flowT:"روش تحلیل از بالا به پایین",flowS:"از تصویر بزرگ شروع کن و به نقطه ورود برس. هر مرحله را تیک بزن.",
+    flow:[["۱ هفته / ۱ روز","روند اصلی و سطوح کلیدی: ساختار HH/HL است یا LH/LL؟"],["۴ ساعته","ساختار فعلی و ناحیه‌های عرضه و تقاضا. قیمت نزدیک سطح مهمی است؟"],["۱ ساعته","منتظر تأیید باش: شکست ساختار، کندل برگشتی، واگرایی."],["۱۵ دقیقه","ورود دقیق، حد ضرر پشت ساختار، حد سود در سطح بعدی (ریسک به بازده حداقل ۱ به ۲)."],["بعد از معامله","معامله را در ژورنال (بخش راهنما) ثبت کن و نتیجه را بررسی کن."]],flowReset:"پاک کردن مراحل",
+    advT:"مفاهیم پیشرفته",
+    adv:[["نقدینگی و شکار استاپ","قیمت اغلب به جایی که حد ضررها جمع شده (کمی زیر کف‌های واضح یا بالای سقف‌های واضح) سر می‌زند و برمی‌گردد. حد ضرر را دقیقاً روی سطح واضح نگذار؛ کمی فاصله بده."],
+      ["واگرایی (Divergence)","قیمت سقف بالاتر می‌سازد ولی RSI سقف پایین‌تر: مومنتوم ضعیف شده. این هشدار است، نه سیگنال؛ منتظر شکست ساختار بمان."],
+      ["تأیید با حجم","شکستی که با حجم بالا اتفاق بیفتد معتبرتر است. شکست با حجم کم اغلب جعلی است."],
+      ["هم‌جهتی تایم‌فریم‌ها","وقتی روند روزانه، ۴ ساعته و ۱ ساعته هم‌جهت باشند، احتمال موفقیت بیشتر است. خلاف روند تایم‌فریم بزرگ‌تر معامله نکن."],
+      ["عرضه و تقاضا / اوردر بلاک","ناحیه‌ای که قیمت با شتاب از آن دور شده، دفعه بعد معمولاً دوباره واکنش می‌دهد. آن را ناحیه ببین، نه یک خط."],
+      ["Funding و Open Interest","فاندینگ خیلی مثبت یعنی لانگ‌ها شلوغ شده‌اند. بالا رفتن OI همراه با قیمت، روند را تأیید می‌کند. در بخش فیوچرز بایننس یا Coinglass ببین."],
+      ["دامیننس بیت‌کوین","وقتی دامیننس بیت‌کوین بالا می‌رود، آلت‌کوین‌ها معمولاً ضعیف‌ترند؛ پایین آمدن آن گاهی شروع «فصل آلت‌کوین» است."],
+      ["رژیم بازار","در بازار رونددار، میانگین‌ها و پولبک‌ها بهتر جواب می‌دهند؛ در بازار رنج، حمایت/مقاومت و RSI. اول تشخیص بده بازار در کدام حالت است."]],
+    srcT:"منابع تحلیل",disc:"این بخش آموزشی است و توصیه مالی نیست."};
+  const I={scan:'<path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/>',lab:'<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>',fib:'<path d="M3 5h18M3 9.5h18M3 14h18M3 19h18"/>',piv:'<path d="M12 3v18M5 7h14M5 17h14"/>',flow:'<path d="M4 6h16M8 12h12M12 18h8"/>',adv:'<path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/>',struct:'<path d="M3 17l5-6 4 3 5-8 4 5"/>',pat:'<path d="M3 18l6-12 6 12M6 12h6"/>',ind:'<path d="M4 20V10M10 20V4M16 20v-8M2 20h20"/>',src:'<path d="M4 4h12a4 4 0 014 4v12H8a4 4 0 01-4-4z"/>',chev:'<path d="M6 9l6 6 6-6"/>'};
+  const ic=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${I[k]}</svg>`;
+  /* math */
+  const px=v=>{if(v==null||!isFinite(v))return"–";const a=Math.abs(v);const s=a>=1000?v.toLocaleString("en-US",{maximumFractionDigits:0}):a>=1?v.toFixed(2):v.toPrecision(4);return F("$"+s)};
+  const pc=(v,d=1)=>v==null||!isFinite(v)?"–":F((v>=0?"+":"")+v.toFixed(d)+"%");
+  const smaS=(a,n)=>a.map((_,i)=>{if(i<n-1)return null;let s=0;for(let k=i-n+1;k<=i;k++)s+=a[k];return s/n});
+  const emaS=(a,n)=>{const k=2/(n+1),o=[];a.forEach((v,i)=>o.push(i?v*k+o[i-1]*(1-k):v));return o};
+  const rsiS=(a,n=14)=>{const o=a.map(()=>null);if(a.length<=n)return o;let g=0,l=0;for(let i=1;i<=n;i++){const d=a[i]-a[i-1];d>0?g+=d:l-=d}g/=n;l/=n;o[n]=l===0?100:100-100/(1+g/l);
+    for(let i=n+1;i<a.length;i++){const d=a[i]-a[i-1];g=(g*(n-1)+Math.max(d,0))/n;l=(l*(n-1)+Math.max(-d,0))/n;o[i]=l===0?100:100-100/(1+g/l)}return o};
+  const rsiLast=a=>{const r=rsiS(a);return r[r.length-1]};
+  const bbS=(a,n=20)=>{const m=smaS(a,n);return a.map((_,i)=>{if(m[i]==null)return null;let s=0;for(let k=i-n+1;k<=i;k++)s+=(a[k]-m[i])**2;const sd=Math.sqrt(s/n);return [m[i]+2*sd,m[i]-2*sd]})};
+  const pivots=(a,w)=>{const hi=[],lo=[];for(let i=w;i<a.length-w;i++){let H=true,L=true;for(let k=i-w;k<=i+w;k++){if(a[k]>a[i])H=false;if(a[k]<a[i])L=false}if(H)hi.push(i);if(L)lo.push(i)}return {hi,lo}};
+  const bd=x=>`<bdi dir="ltr">${x}</bdi>`,fr=r=>F((r*100).toFixed(1).replace(/\.0$/,""))+"%";
+  const FIBR=[0,.236,.382,.5,.618,.786,1],FIBX=[1.272,1.618,2.618];
+  /* layout */
+  const h2=A.querySelector(":scope>h2"),lead=A.querySelector(":scope>p.lead");if(h2)h2.hidden=true;if(lead)lead.hidden=true;
+  const hero=document.createElement("div");hero.className="ap-hero";
+  hero.innerHTML=`<div class="ap-hi">${ic("lab")}</div><div><h2>${T.title}</h2><p>${T.sub}</p></div>`;
+  const nav=document.createElement("nav");nav.className="ap-nav";nav.setAttribute("aria-label",T.title);
+  const mk=(id,icon,title,sub,body)=>{const d=document.createElement("div");d.className="block ap-card";d.id=id;d.innerHTML=`<h3><span class="ap-ic">${ic(icon)}</span>${title}</h3>${sub?`<p>${sub}</p>`:""}${body}`;return d};
+  const scan=mk("ap-scan","scan",T.scanT,T.scanS,`<div id="apBr" class="ap-br"></div><div id="apHeat" class="ap-heat"></div>
+    <div class="ap-flt" role="group">${T.flt.map((f,i)=>`<button type="button" class="ap-chip" data-f="${i}" aria-pressed="${i===0}">${f}</button>`).join("")}</div>
+    <div class="ap-tw"><table class="ap-tb"><thead><tr>${T.cols.map((c,i)=>`<th><button type="button" data-s="${i}">${c}</button></th>`).join("")}</tr></thead><tbody id="apRows"><tr><td colspan="6" class="ap-wait">${T.loading}</td></tr></tbody></table></div>`);
+  const lab=mk("ap-lab","lab",T.labT,T.labS,`<div class="ap-pick" id="apPick">${COINS.map(([id,s])=>`<button type="button" class="ap-chip mono" data-id="${id}">${s}</button>`).join("")}</div>
+    <div class="ap-seg" role="tablist" id="apRng">${T.rng.map(([d,l])=>`<button type="button" role="tab" data-d="${d}">${l}</button>`).join("")}</div>
+    <div class="ap-ovs" id="apOv">${T.ov.map(([k,l])=>`<button type="button" class="ap-tog" data-o="${k}"><i class="o-${k}"></i>${l}</button>`).join("")}</div>
+    <div class="ap-head" id="apHead"></div>
+    <div class="ap-box" id="apBox"><div class="ap-wait" style="height:200px">${T.loading}</div></div>
+    <p class="cc-note">${T.tip}</p>
+    <h4 class="ap-h4">${T.rd}</h4><div id="apRead" class="ap-read"></div>`);
+  const fibB=mk("ap-fib","fib",T.fibT,T.fibS,`<div class="calc"><label for="fH">${T.hi}<input id="fH" type="number" inputmode="decimal" min="0"></label><label for="fL">${T.lo}<input id="fL" type="number" inputmode="decimal" min="0"></label>
+    <label for="fD" style="grid-column:1/-1">${T.dir}<select id="fD"><option value="up">${T.dUp}</option><option value="dn">${T.dDn}</option></select></label></div>
+    <button type="button" class="tvlink ap-fill" id="fFill">${T.fromLab}</button><div id="fOut"></div>`);
+  const pivB=mk("ap-piv","piv",T.pivT,T.pivS,`<div class="calc"><label for="pH">${T.H}<input id="pH" type="number" inputmode="decimal" min="0"></label><label for="pL">${T.L}<input id="pL" type="number" inputmode="decimal" min="0"></label>
+    <label for="pC">${T.C}<input id="pC" type="number" inputmode="decimal" min="0"></label><label for="pT">${T.type}<select id="pT">${T.types.map(([k,l])=>`<option value="${k}">${l}</option>`).join("")}</select></label></div>
+    <button type="button" class="tvlink ap-fill" id="pFill">${T.from24}</button><div id="pOut"></div>`);
+  const flowB=mk("ap-flow","flow",T.flowT,T.flowS,`<ol class="ap-flow" id="apFlow">${T.flow.map(([tf,tx],i)=>`<li><label><input type="checkbox" data-i="${i}"><span class="ap-tf">${tf}</span><span>${tx}</span></label></li>`).join("")}</ol><button type="button" class="reset" id="apFlowR">${T.flowReset}</button>`);
+  const advB=mk("ap-adv","adv",T.advT,"",`<div class="ap-adv">${T.adv.map(([t,x],i)=>`<div><b><i>${F(i+1)}</i>${t}</b><span>${x}</span></div>`).join("")}</div>`);
+  const SRCS=[["https://www.tradingview.com/education/","TradingView — Education"],["https://chartschool.stockcharts.com/","StockCharts — ChartSchool"],["https://www.investopedia.com/terms/m/macd.asp","Investopedia — MACD"],["https://www.investopedia.com/terms/b/bollingerbands.asp","Investopedia — Bollinger Bands"],["https://www.investopedia.com/terms/f/fibonacciretracement.asp","Investopedia — Fibonacci retracement"],["https://www.investopedia.com/terms/p/pivotpoint.asp","Investopedia — Pivot points"],["https://www.investopedia.com/terms/d/divergence.asp","Investopedia — Divergence"]];
+  const srcB=mk("ap-src","src",T.srcT,"",`<ul class="ap-src">${SRCS.map(([u,l])=>`<li><a href="${u}" target="_blank" rel="noopener">${l}</a></li>`).join("")}</ul><p class="note">${T.disc}</p>`);
+  const old=[...A.querySelectorAll(":scope>.block")];const oldIds=["ap-struct","ap-pats","ap-ind"],oldIc=["struct","pat","ind"];
+  old.forEach((b,i)=>{b.classList.add("ap-card","ap-fold");b.id=b.id||oldIds[i];const h=b.querySelector(":scope>h3");if(!h)return;h.insertAdjacentHTML("afterbegin",`<span class="ap-ic">${ic(oldIc[i]||"ind")}</span>`);
+    const body=document.createElement("div");body.className="ap-body";while(h.nextSibling)body.appendChild(h.nextSibling);b.appendChild(body);
+    const btn=document.createElement("button");btn.type="button";btn.className="ap-tg";btn.innerHTML=`<span></span>${ic("chev")}`;h.appendChild(btn);
+    const fold=ls.get("bg-afold",{});const set=o=>{b.classList.toggle("closed",!o);btn.setAttribute("aria-expanded",o);fold[b.id]=o;ls.set("bg-afold",fold)};
+    set(fold[b.id]!==false);h.addEventListener("click",()=>set(b.classList.contains("closed")));b._open=()=>set(true)});
+  const first=old[0]||null;
+  A.insertBefore(hero,h2?h2.nextSibling:A.firstChild);hero.after(nav);
+  [scan,lab,fibB,pivB,flowB].reduce((p,c)=>(p.after(c),c),nav);
+  const lastOld=old[old.length-1]||flowB;lastOld.after(advB);advB.after(srcB);
+  const navItems=[scan,lab,fibB,pivB,flowB,...old,advB,srcB];
+  nav.innerHTML=navItems.map((b,i)=>`<button type="button" data-t="${b.id}">${T.nav[i]||""}</button>`).join("");
+  nav.addEventListener("click",e=>{const x=e.target.closest("button");if(!x)return;const b=$(x.dataset.t);if(b._open)b._open();b.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})});
+  const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){nav.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.t===en.target.id));const on=nav.querySelector(".on");if(on){const r1=on.getBoundingClientRect(),r2=nav.getBoundingClientRect();nav.scrollBy({left:(r1.left+r1.width/2)-(r2.left+r2.width/2)})}}})},{rootMargin:"-30% 0px -60% 0px"});
+  navItems.forEach(b=>io.observe(b));
+
+  /* ---------- scanner ---------- */
+  let M=null,flt=0,sortK=-1,sortDir=-1;
+  function metrics(c){const s=(c.spark||[]).filter(v=>isFinite(v));const o={id:c.id,sym:SYM[c.id],price:c.price,chg:c.chg,c7:null,rsi:null,trend:null,vol:null};
+    if(s.length>=16){o.c7=(c.price/s[0]-1)*100;o.rsi=rsiLast(s);const mean=s.reduce((a,b)=>a+b,0)/s.length,h=Math.floor(s.length/2),m1=s.slice(0,h).reduce((a,b)=>a+b,0)/h,m2=s.slice(h).reduce((a,b)=>a+b,0)/(s.length-h);
+      o.trend=c.price>mean&&m2>m1?1:c.price<mean&&m2<m1?-1:0;const r=[];for(let i=1;i<s.length;i++)r.push(Math.log(s[i]/s[i-1]));const mu=r.reduce((a,b)=>a+b,0)/r.length;o.vol=Math.sqrt(r.reduce((a,b)=>a+(b-mu)**2,0)/r.length)*Math.sqrt(r.length)*100}
+    return o}
+  function drawScan(){if(!M)return;const L=COINS.map(([id])=>M[id]).filter(Boolean).map(metrics);if(!L.length)return;
+    const up=L.filter(x=>x.chg>0).length,avg=L.reduce((a,b)=>a+(b.chg||0),0)/L.length,w7=L.filter(x=>x.c7!=null).sort((a,b)=>b.c7-a.c7);
+    $("apBr").innerHTML=`<div class="ap-brh"><span>${T.breadth}</span><b>${T.bTxt(up,L.length)}</b></div><div class="ap-brbar"><i style="width:${up/L.length*100}%"></i></div>
+      <div class="ap-kpi"><div><span>${T.avg}</span><b class="${avg>=0?"up":"down"}" dir="ltr">${pc(avg,2)}</b></div>${w7.length?`<div><span>${T.best}</span><b class="up">${w7[0].sym} <small dir="ltr">${pc(w7[0].c7)}</small></b></div><div><span>${T.worst}</span><b class="down">${w7[w7.length-1].sym} <small dir="ltr">${pc(w7[w7.length-1].c7)}</small></b></div>`:""}</div>`;
+    $("apHeat").innerHTML=L.map(x=>{const k=Math.min(1,Math.abs(x.chg||0)/8),col=x.chg>=0?"var(--up)":"var(--down)";return `<button type="button" data-id="${x.id}" style="background:color-mix(in srgb,${col} ${Math.round(12+k*60)}%,var(--surface));${k>.55?"color:#fff":""}"><b>${x.sym}</b><small dir="ltr">${pc(x.chg)}</small></button>`}).join("");
+    const vT=L.filter(x=>x.vol!=null).map(x=>x.vol).sort((a,b)=>b-a)[3];
+    let R=L.filter(x=>[()=>true,()=>x.trend===1,()=>x.trend===-1,()=>x.rsi>=70,()=>x.rsi!=null&&x.rsi<=30,()=>vT!=null&&x.vol>=vT][flt]());
+    if(sortK>=0){const key=["sym","price","chg","c7","rsi","trend"][sortK];R.sort((a,b)=>{const p=a[key],q=b[key];if(p==null)return 1;if(q==null)return -1;return (typeof p==="string"?p.localeCompare(q):p-q)*sortDir})}
+    $("apRows").innerHTML=R.length?R.map(x=>`<tr data-id="${x.id}"><td><b class="mono">${x.sym}</b></td><td dir="ltr">${px(x.price)}</td><td dir="ltr" class="${x.chg>=0?"up":"down"}">${pc(x.chg)}</td><td dir="ltr" class="${x.c7==null?"":x.c7>=0?"up":"down"}">${pc(x.c7)}</td>
+      <td><span class="ap-rsi ${x.rsi>=70?"ob":x.rsi!=null&&x.rsi<=30?"os":""}">${x.rsi==null?"–":F(Math.round(x.rsi))}</span></td><td><span class="ap-tr ${x.trend===1?"up":x.trend===-1?"down":""}">${x.trend==null?"–":x.trend===1?"▲ "+T.up:x.trend===-1?"▼ "+T.dn:"◆ "+T.side}</span></td></tr>`).join(""):`<tr><td colspan="6" class="ap-wait">${T.none}</td></tr>`;
+    scan.querySelectorAll("th button").forEach(b=>b.classList.toggle("on",+b.dataset.s===sortK))}
+  async function loadScan(){if(window.__bgLastCoins&&Object.keys(window.__bgLastCoins).length){M=window.__bgLastCoins;drawScan()}
+    if(!SRC)return;try{M=await SRC.markets(COINS.map(c=>c[0]));drawScan()}catch(e){if(!M)$("apRows").innerHTML=`<tr><td colspan="6" class="ap-wait">${T.err} <button type="button" class="tvlink" id="apRetry">${T.retry}</button></td></tr>`}}
+  document.addEventListener("bg-markets",e=>{if(e.detail&&started){M=e.detail;drawScan()}});
+  scan.addEventListener("click",e=>{const f=e.target.closest(".ap-chip[data-f]");if(f){flt=+f.dataset.f;scan.querySelectorAll(".ap-chip[data-f]").forEach(b=>b.setAttribute("aria-pressed",b===f));drawScan();return}
+    const s=e.target.closest("th button");if(s){const k=+s.dataset.s;sortDir=sortK===k?-sortDir:(k===0?1:-1);sortK=k;drawScan();return}
+    if(e.target.closest("#apRetry")){loadScan();return}
+    const r=e.target.closest("[data-id]");if(r){st.id=r.dataset.id;saveSt();loadLab();lab.scrollIntoView({behavior:"smooth",block:"start"})}});
+
+  /* ---------- lab ---------- */
+  const st=Object.assign({id:"bitcoin",d:"7",ov:["sma20","sma50","sr"]},ls.get("bg-lab",{}));const saveSt=()=>ls.set("bg-lab",st);
+  let D=null,X=null,seq=0;
+  function syncCtl(){$("apPick").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===st.id));
+    $("apRng").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",b.dataset.d===st.d));
+    $("apOv").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",st.ov.includes(b.dataset.o)))}
+  async function loadLab(){syncCtl();const my=++seq;$("apBox").innerHTML=`<div class="ap-wait" style="height:200px">${T.loading}</div>`;$("apRead").innerHTML="";$("apHead").innerHTML="";
+    try{const d=await SRC.chart(st.id,st.d);if(my!==seq)return;const p=d.p.slice(),t=d.t.slice();
+      const live=M&&M[st.id]&&M[st.id].price;if(live&&Date.now()-t[t.length-1]>60000){t.push(Date.now());p.push(live)}
+      if(p.length<30)throw new Error("short");D={t,p};calc();drawLab()}
+    catch(e){if(my!==seq)return;$("apBox").innerHTML=`<div class="ap-wait" style="height:200px">${T.err}<button type="button" class="tvlink" id="apLRetry">${T.retry}</button></div>`;$("apLRetry").onclick=loadLab}}
+  function calc(){const p=D.p,n=p.length;X={s20:smaS(p,20),s50:smaS(p,Math.min(50,Math.floor(n/2))),bb:bbS(p),rsi:rsiS(p)};
+    const e12=emaS(p,12),e26=emaS(p,26),m=e12.map((v,i)=>v-e26[i]),sg=emaS(m,9);X.macd=m;X.sig=sg;X.hist=m.map((v,i)=>v-sg[i]);
+    let hi=-Infinity,lo=Infinity,hiI=0,loI=0;p.forEach((v,i)=>{if(v>hi){hi=v;hiI=i}if(v<lo){lo=v;loI=i}});X.hi=hi;X.lo=lo;X.fibUp=hiI>loI;
+    X.fib=FIBR.map(r=>[r,X.fibUp?hi-(hi-lo)*r:lo+(hi-lo)*r]);
+    const w=Math.max(3,Math.round(n/30)),pv=pivots(p,w),last=p[n-1],lv=[...pv.hi.map(i=>p[i]),...pv.lo.map(i=>p[i])].sort((a,b)=>a-b),cl=[];
+    lv.forEach(v=>{const c=cl[cl.length-1];if(c&&Math.abs(v-c.v)/c.v<.006){c.v=(c.v*c.k+v)/(c.k+1);c.k++}else cl.push({v,k:1})});
+    X.res=cl.filter(c=>c.v>last*1.001).sort((a,b)=>a.v-b.v).slice(0,2).map(c=>c.v);X.sup=cl.filter(c=>c.v<last*.999).sort((a,b)=>b.v-a.v).slice(0,2).map(c=>c.v);
+    /* divergence on last 60 bars */
+    X.div=0;const r=X.rsi,s0=Math.max(0,n-60),pw=pivots(p.slice(s0),3);const H=pw.hi.map(i=>i+s0).filter(i=>r[i]!=null),Lo=pw.lo.map(i=>i+s0).filter(i=>r[i]!=null);
+    if(H.length>=2){const [a,b]=H.slice(-2);if(p[b]>p[a]&&r[b]<r[a]-3&&n-1-b<15)X.div=-1}
+    if(Lo.length>=2){const [a,b]=Lo.slice(-2);if(p[b]<p[a]&&r[b]>r[a]+3&&n-1-b<15)X.div=1}}
+  const tf=ts=>new Date(ts).toLocaleString(LOC,st.d==="1"?{hour:"2-digit",minute:"2-digit"}:st.d==="7"?{weekday:"short",hour:"2-digit"}:{day:"numeric",month:"short"});
+  function drawLab(){const p=D.p,t=D.t,n=p.length,ov=new Set(st.ov),W=360,R=54,w=W-R,H1=210,top=8,bot=18;
+    let lo=X.lo,hi=X.hi;if(ov.has("bb"))X.bb.forEach(b=>{if(b){hi=Math.max(hi,b[0]);lo=Math.min(lo,b[1])}});
+    const pad=(hi-lo)*.06||hi*.01;lo-=pad;hi+=pad;
+    const xx=i=>i/(n-1)*w,yy=v=>top+(hi-v)/(hi-lo)*(H1-top-bot);
+    const path=(a,Y)=>{let d="",pen=false;a.forEach((v,i)=>{if(v==null||!isFinite(v)){pen=false;return}d+=(pen?"L":"M")+xx(i).toFixed(1)+" "+Y(v).toFixed(1);pen=true});return d};
+    const upC=p[n-1]>=p[0],col=upC?"var(--up)":"var(--down)";let g="";
+    for(let k=0;k<=4;k++){const v=lo+(hi-lo)*k/4,y=yy(v);g+=`<line x1="0" x2="${w}" y1="${y}" y2="${y}" style="stroke:var(--line)" stroke-width=".6"/><text x="${W-3}" y="${y+3}" text-anchor="end" font-size="9" style="fill:var(--muted)">${px(v).replace("$","")}</text>`}
+    [0,.5,1].forEach(f=>{const i=Math.round(f*(n-1));g+=`<text x="${Math.min(w-2,Math.max(2,xx(i)))}" y="${H1-4}" text-anchor="${f===0?"start":f===1?"end":"middle"}" font-size="9" style="fill:var(--muted)">${esc(tf(t[i]))}</text>`});
+    let o="";
+    if(ov.has("bb")){const U=X.bb.map(b=>b&&b[0]),Lw=X.bb.map(b=>b&&b[1]);let s=-1;for(let i=0;i<n;i++)if(U[i]!=null){s=i;break}
+      if(s>=0){let d="M"+xx(s)+" "+yy(U[s]);for(let i=s+1;i<n;i++)d+="L"+xx(i).toFixed(1)+" "+yy(U[i]).toFixed(1);for(let i=n-1;i>=s;i--)d+="L"+xx(i).toFixed(1)+" "+yy(Lw[i]).toFixed(1);o+=`<path d="${d}Z" style="fill:var(--g3);opacity:.09"/><path d="${path(U,yy)}" fill="none" style="stroke:var(--g3)" stroke-width="1" opacity=".55"/><path d="${path(Lw,yy)}" fill="none" style="stroke:var(--g3)" stroke-width="1" opacity=".55"/>`}}
+    if(ov.has("fib"))X.fib.forEach(([r,v])=>{const y=yy(v);o+=`<line x1="0" x2="${w}" y1="${y}" y2="${y}" style="stroke:var(--hl)" stroke-width=".8" stroke-dasharray="3 3"/><text x="3" y="${y-2}" font-size="8.5" font-weight="700" style="fill:var(--hl)">${fr(r)}</text>`});
+    if(ov.has("sr")){X.res.forEach(v=>{const y=yy(v);o+=`<line x1="0" x2="${w}" y1="${y}" y2="${y}" style="stroke:var(--down)" stroke-width="1.1" stroke-dasharray="1 3" stroke-linecap="round"/>`});X.sup.forEach(v=>{const y=yy(v);o+=`<line x1="0" x2="${w}" y1="${y}" y2="${y}" style="stroke:var(--up)" stroke-width="1.1" stroke-dasharray="1 3" stroke-linecap="round"/>`})}
+    const pp=path(p,yy);o+=`<path d="${pp}L${w} ${H1-bot}L0 ${H1-bot}Z" fill="url(#apGr)"/><path d="${pp}" fill="none" style="stroke:${col}" stroke-width="1.7" stroke-linejoin="round"/>`;
+    if(ov.has("sma20"))o+=`<path d="${path(X.s20,yy)}" fill="none" style="stroke:var(--g6)" stroke-width="1.3"/>`;
+    if(ov.has("sma50"))o+=`<path d="${path(X.s50,yy)}" fill="none" style="stroke:var(--g4)" stroke-width="1.3" stroke-dasharray="5 3"/>`;
+    const ly=yy(p[n-1]);o+=`<line x1="0" x2="${w}" y1="${ly}" y2="${ly}" style="stroke:${col}" stroke-width=".7" stroke-dasharray="2 2" opacity=".7"/><circle cx="${w}" cy="${ly}" r="3" style="fill:${col}"/><rect x="${w+2}" y="${ly-8}" width="${R-3}" height="16" rx="4" style="fill:${col}"/><text x="${W-3}" y="${ly+3.5}" text-anchor="end" font-size="9.5" font-weight="800" fill="#fff">${px(p[n-1]).replace("$","")}</text>`;
+    const main=`<svg viewBox="0 0 ${W} ${H1}" class="ap-svg" role="img" aria-label="${T.price}"><defs><linearGradient id="apGr" x1="0" x2="0" y1="0" y2="1"><stop offset="0" style="stop-color:${col};stop-opacity:.22"/><stop offset="1" style="stop-color:${col};stop-opacity:0"/></linearGradient></defs>${g}${o}<line id="apCx" x1="0" x2="0" y1="${top}" y2="${H1-bot}" style="stroke:var(--fg)" stroke-width=".8" opacity="0"/></svg>`;
+    /* RSI */
+    const H2=64,yr=v=>4+(100-v)/100*(H2-8);
+    const rs=`<svg viewBox="0 0 ${W} ${H2}" class="ap-svg"><rect x="0" y="${yr(70)}" width="${w}" height="${yr(30)-yr(70)}" style="fill:var(--g4);opacity:.08"/>${[70,50,30].map(v=>`<line x1="0" x2="${w}" y1="${yr(v)}" y2="${yr(v)}" style="stroke:var(--line)" stroke-width=".7" ${v===50?'stroke-dasharray="2 3"':""}/><text x="${W-3}" y="${yr(v)+3}" text-anchor="end" font-size="8.5" style="fill:var(--muted)">${F(v)}</text>`).join("")}<path d="${path(X.rsi,yr)}" fill="none" style="stroke:var(--g4)" stroke-width="1.3"/><text x="3" y="11" font-size="9" font-weight="800" style="fill:var(--muted)">RSI 14 · ${F(Math.round(X.rsi[n-1]))}</text></svg>`;
+    /* MACD */
+    const H3=70,hs=X.hist.slice(26),mm=X.macd.slice(26),sg=X.sig.slice(26);const mx=Math.max(...hs.map(Math.abs),...mm.map(Math.abs),...sg.map(Math.abs))||1,ym=v=>H3/2-v/mx*(H3/2-6);
+    let bars="";const bw=Math.max(.8,w/n*.7);for(let i=26;i<n;i++){const v=X.hist[i],y=ym(v);bars+=`<rect x="${(xx(i)-bw/2).toFixed(1)}" y="${Math.min(y,H3/2).toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.abs(y-H3/2).toFixed(1)||.5}" style="fill:${v>=0?"var(--up)":"var(--down)"}" opacity=".55"/>`}
+    const pm=a=>{let d="";for(let i=26;i<n;i++)d+=(i===26?"M":"L")+xx(i).toFixed(1)+" "+ym(a[i]).toFixed(1);return d};
+    const md=`<svg viewBox="0 0 ${W} ${H3}" class="ap-svg"><line x1="0" x2="${w}" y1="${H3/2}" y2="${H3/2}" style="stroke:var(--line)" stroke-width=".7"/>${bars}<path d="${pm(X.macd)}" fill="none" style="stroke:var(--g3)" stroke-width="1.2"/><path d="${pm(X.sig)}" fill="none" style="stroke:var(--g6)" stroke-width="1.2"/><text x="3" y="11" font-size="9" font-weight="800" style="fill:var(--muted)">MACD 12·26·9</text></svg>`;
+    $("apBox").innerHTML=`<div class="ap-tip" id="apTip"></div>${main}<div class="ap-sub">${rs}</div><div class="ap-sub">${md}</div>`;
+    const c=(p[n-1]/p[0]-1)*100;
+    $("apHead").innerHTML=`<div><b class="mono">${SYM[st.id]}/USD</b><small>${T.rng.find(r=>r[0]===st.d)[1]}</small></div><div class="ap-hp"><b dir="ltr">${px(p[n-1])}</b><small dir="ltr" class="${c>=0?"up":"down"}">${pc(c,2)}</small></div>`;
+    const box=$("apBox"),tip=$("apTip"),cx=$("apCx");
+    const mv=e=>{const svg=box.querySelector(".ap-svg"),r=svg.getBoundingClientRect(),xv=(e.clientX-r.left)/r.width*W;const i=Math.max(0,Math.min(n-1,Math.round(xv/w*(n-1))));
+      cx.setAttribute("x1",xx(i));cx.setAttribute("x2",xx(i));cx.setAttribute("opacity",".5");tip.innerHTML=`<b dir="ltr">${px(p[i])}</b> · ${esc(tf(t[i]))}${X.rsi[i]!=null?` · RSI ${F(Math.round(X.rsi[i]))}`:""}`};
+    box.addEventListener("pointermove",mv);box.addEventListener("pointerdown",mv);box.addEventListener("pointerleave",()=>{cx.setAttribute("opacity","0");tip.innerHTML=""});
+    readings()}
+  function readings(){const p=D.p,n=p.length,last=p[n-1],s20=X.s20[n-1],s50=X.s50[n-1],r=X.rsi[n-1],h=X.hist[n-1],b=X.bb[n-1];const out=[];let U=0,Dn=0;
+    const tr=last>s50&&s20>s50?1:last<s50&&s20<s50?-1:0;tr>0?U++:tr<0&&Dn++;
+    out.push([T.tr,T.trTxt(last>s50?T.above:T.below,s20>s50?T.above:T.below),tr>0?"up":tr<0?"down":"hl"]);
+    r>50?U++:Dn++;out.push([T.rsiT,T.rsiTxt(F(r.toFixed(1)),r>=70?T.ob:r<=30?T.os:T.nz)+(X.div<0?T.bearDiv:X.div>0?T.bullDiv:""),r>=70||r<=30||X.div?"hl":r>50?"up":"down"]);
+    let xi=0;for(let i=n-1;i>n-8&&i>27;i--){if(Math.sign(X.hist[i])!==Math.sign(X.hist[i-1])){xi=n-1-i+1;break}}
+    h>0?U++:Dn++;out.push([T.macdT,(h>0?T.mPos:T.mNeg)+(xi?T.mX(xi,X.hist[n-1]>0):""),h>0?"up":"down"]);
+    if(b){const pb=(last-b[1])/(b[0]-b[1])*100,bws=X.bb.filter(Boolean).map(x=>(x[0]-x[1])),bw=bws[bws.length-1],avg=bws.reduce((a,c)=>a+c,0)/bws.length;pb>50?U++:Dn++;
+      out.push([T.bbT,(pb<0?T.bbLo:pb>100?T.bbHi:T.bbTxt(F(Math.round(pb))))+(bw<avg*.7?T.sq:""),pb>100||pb<0?"hl":pb>50?"up":"down"])}
+    const s=X.sup[0],rs=X.res[0];out.push([T.srT,T.srTxt(s?bd(px(s)):T.noS,s?bd(pc((s/last-1)*100)):"–",rs?bd(px(rs)):T.noR,rs?bd(pc((rs/last-1)*100)):"–"),"g3"]);
+    const lv=X.fib.slice().sort((a,c)=>a[1]-c[1]);for(let i=0;i<lv.length-1;i++){if(last>=lv[i][1]&&last<=lv[i+1][1]){out.push([T.fibT2,T.fibTxt(bd(fr(lv[i][0])),bd(fr(lv[i+1][0]))),"hl"]);break}}
+    out.push([T.volT,T.volTxt(bd(F(((X.hi/X.lo-1)*100).toFixed(1))+"%"),bd(pc((last/p[0]-1)*100,2))),"g3"]);
+    const nn=U+Dn;
+    $("apRead").innerHTML=`<div class="ap-sum"><div class="ap-sumh"><span>${T.sum}</span><b>${T.sumTxt(U,Dn,nn)}</b></div><div class="ap-sumbar">${Array.from({length:nn},(_,i)=>`<i class="${i<U?"up":"down"}"></i>`).join("")}</div><p>${T.sumNote}</p></div>`+
+      out.map(([a,b,c])=>`<div class="ap-ri"><i class="${c}"></i><div><b>${a}</b><span>${b}</span></div></div>`).join("")}
+  $("apPick").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||b.dataset.id===st.id)return;st.id=b.dataset.id;saveSt();loadLab()});
+  $("apRng").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||b.dataset.d===st.d)return;st.d=b.dataset.d;saveSt();loadLab()});
+  $("apOv").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.o;st.ov=st.ov.includes(k)?st.ov.filter(x=>x!==k):[...st.ov,k];saveSt();syncCtl();if(D)drawLab()});
+
+  /* ---------- fibonacci calc ---------- */
+  const num=id=>parseFloat(String($(id).value).replace(/[۰-۹]/g,d=>"۰۱۲۳۴۵۶۷۸۹".indexOf(d)).replace(",","."));
+  const curPx=()=>D?D.p[D.p.length-1]:null;
+  function drawFib(){const H=num("fH"),L=num("fL"),up=$("fD").value==="up",o=$("fOut");if(!(H>0&&L>0&&H>L)){o.innerHTML="";return}
+    const cp=curPx(),row=(lab,v,cls="")=>`<div class="${cls}"><span>${lab}</span><b dir="ltr">${px(v)}</b>${cp?`<small dir="ltr">${pc((v/cp-1)*100)}</small>`:""}</div>`;
+    const ret=FIBR.map(r=>row(fr(r),up?H-(H-L)*r:L+(H-L)*r,r===.618||r===.5?"key":""));
+    const ext=FIBX.map(r=>row(fr(r),up?L+(H-L)*r:H-(H-L)*r,"ext"));
+    o.innerHTML=`<h4 class="ap-h4">${T.ret}</h4><div class="ap-lv">${ret.join("")}</div><h4 class="ap-h4">${T.ext}</h4><div class="ap-lv">${ext.join("")}</div>`}
+  ["fH","fL","fD"].forEach(id=>$(id).addEventListener("input",drawFib));
+  $("fFill").addEventListener("click",()=>{if(!X)return;const d=v=>+v.toPrecision(6);$("fH").value=d(X.hi);$("fL").value=d(X.lo);$("fD").value=X.fibUp?"up":"dn";drawFib()});
+  /* ---------- pivots ---------- */
+  function drawPiv(){const H=num("pH"),L=num("pL"),C=num("pC"),ty=$("pT").value,o=$("pOut");if(!(H>0&&L>0&&C>0&&H>=L)){o.innerHTML="";return}
+    const P=(H+L+C)/3,Rg=H-L;let lv;
+    if(ty==="classic")lv=[["R3",H+2*(P-L)],["R2",P+Rg],["R1",2*P-L],["P",P],["S1",2*P-H],["S2",P-Rg],["S3",L-2*(H-P)]];
+    else if(ty==="fib")lv=[["R3",P+Rg],["R2",P+.618*Rg],["R1",P+.382*Rg],["P",P],["S1",P-.382*Rg],["S2",P-.618*Rg],["S3",P-Rg]];
+    else lv=[["R4",C+Rg*1.1/2],["R3",C+Rg*1.1/4],["R2",C+Rg*1.1/6],["R1",C+Rg*1.1/12],["S1",C-Rg*1.1/12],["S2",C-Rg*1.1/6],["S3",C-Rg*1.1/4],["S4",C-Rg*1.1/2]];
+    const cp=curPx();o.innerHTML=`<div class="ap-lv">${lv.map(([k,v])=>`<div class="${k[0]==="R"?"r":k[0]==="S"?"s":"key"}"><span class="mono">${k}</span><b dir="ltr">${px(v)}</b>${cp&&st.id?`<small dir="ltr">${pc((v/cp-1)*100)}</small>`:""}</div>`).join("")}</div>`}
+  ["pH","pL","pC","pT"].forEach(id=>$(id).addEventListener("input",drawPiv));
+  $("pFill").addEventListener("click",async()=>{try{const d=await SRC.chart(st.id,"1"),p=d.p;const k=v=>+v.toPrecision(6);$("pH").value=k(Math.max(...p));$("pL").value=k(Math.min(...p));$("pC").value=k(p[p.length-1]);drawPiv()}catch(e){}});
+  /* ---------- workflow ---------- */
+  const fl=ls.get("bg-flow",[]);const fb=$("apFlow");fb.querySelectorAll("input").forEach(c=>{c.checked=!!fl[+c.dataset.i]});
+  fb.addEventListener("change",()=>ls.set("bg-flow",[...fb.querySelectorAll("input")].map(c=>c.checked)));
+  $("apFlowR").addEventListener("click",()=>{fb.querySelectorAll("input").forEach(c=>c.checked=false);ls.set("bg-flow",[])});
+  /* lazy start */
+  let started=false;const go=()=>{if(!started&&location.hash==="#analysis"){started=true;loadScan();loadLab()}};
+  addEventListener("hashchange",go);go();
+})();
+/* analysis pro end */
 </script>
 
 </body>
