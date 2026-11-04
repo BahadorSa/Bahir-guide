@@ -214,6 +214,22 @@
 .tvbox .tradingview-widget-container,.tvbox .tradingview-widget-container__widget{height:100%;width:100%}
 .cc-tvh{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .cc-tvh small{font-size:.75rem;color:var(--muted)}
+
+.tvhome{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:12px;display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.tvh-head{display:flex;align-items:center;gap:10px}
+.tvh-logo{flex:none;width:38px;height:38px;border-radius:11px;background:#131722;color:#fff;display:flex;align-items:center;justify-content:center}
+.tvh-logo svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tvh-t{flex:1;min-width:0;display:flex;flex-direction:column}
+.tvh-t b{font-size:1rem;font-weight:900}
+.tvh-t small{font-size:.76rem;color:var(--muted)}
+.tvh-open{flex:none;display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:.85rem;text-decoration:none;color:#fff;background:#131722;border-radius:11px;padding:8px 12px}
+.tvh-open svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tvh-open:focus-visible,.tvh-chip:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+.tvh-pick{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.tvh-pick::-webkit-scrollbar{display:none}
+.tvh-chip{flex:none;font-family:var(--mono);font-weight:600;font-size:.82rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer}
+.tvh-chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tvh-box{height:400px}
 </style>
 <style>
 /* Layout: sticky two-tab switch, then colour-coded groups of term cards and drawn candle charts */
@@ -494,6 +510,11 @@ mark{background:color-mix(in srgb,var(--hl) 35%,transparent);color:inherit;borde
   </div>
   <div class="instbar" id="instBar" hidden><span class="ib-ico" aria-hidden="true"></span><span class="ib-txt" id="ibTxt"></span><button type="button" class="ib-go" id="ibGo"></button><button type="button" class="ib-x" id="ibX" aria-label="close">×</button></div>
   <section class="part" id="assistant">
+    <div class="tvhome">
+      <div class="tvh-head"><span class="tvh-logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 9-10"/><path d="M15 5h6v6"/></svg></span><div class="tvh-t"><b>TradingView</b><small>نمودار حرفه‌ای کندلی</small></div><a class="tvh-open" id="tvhOpen" href="https://www.tradingview.com/chart/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>باز کردن در اپ</a></div>
+      <div class="tvh-pick" id="tvhPick" role="group"></div>
+      <div class="tvbox tvh-box" id="tvhBox"></div>
+    </div>
     <div class="hero" aria-live="polite">
       <div class="h-top"><span>بازار امروز</span><span class="h-live"><i></i><span id="hTime">—</span></span></div>
       <div class="h-main"><div class="h-coin"><span class="h-sym">BTC · Bitcoin</span><span class="h-px" id="hPx">—</span><span class="h-chg up" id="hChg">…</span></div><div class="h-spark" id="hSpark"></div></div>
@@ -1374,6 +1395,23 @@ window.__tvURL=id=>"https://www.tradingview.com/chart/?symbol="+encodeURICompone
   let started=false;const start=()=>{if(!started&&!$("coach").hidden){started=true;run()}};
   addEventListener("hashchange",start);start();
   new MutationObserver(start).observe($("coach"),{attributes:true,attributeFilter:["hidden"]});
+})();
+
+/* TradingView home panel */
+(()=>{const $=id=>document.getElementById(id),EN=document.documentElement.lang==="en";if(!$("tvhPick")||!window.__TV)return;
+  const SY={bitcoin:"BTC",ethereum:"ETH",binancecoin:"BNB",ripple:"XRP",solana:"SOL",tron:"TRX",dogecoin:"DOGE",cardano:"ADA",hyperliquid:"HYPE",chainlink:"LINK",stellar:"XLM","bitcoin-cash":"BCH",litecoin:"LTC",monero:"XMR",zcash:"ZEC"};
+  let sel="bitcoin";try{sel=localStorage.getItem("bg-tvh")||sel}catch(e){}
+  const box=$("tvhBox");if(window.__noEmbed&&box)box.remove();
+  function mount(){const b=$("tvhBox");$("tvhOpen").href=window.__tvURL(sel);if(!b)return;
+    const de=document.documentElement,dark=de.getAttribute("data-theme")==="dark"||(de.getAttribute("data-theme")!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches);
+    b.innerHTML='<div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div></div>';
+    const sc=document.createElement("script");sc.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";sc.async=true;
+    sc.textContent=JSON.stringify({autosize:true,symbol:window.__TV[sel],interval:"240",timezone:"Europe/Vienna",theme:dark?"dark":"light",style:"1",locale:EN?"en":"fa_IR",allow_symbol_change:true,withdateranges:true,hide_side_toolbar:true,studies:["STD;RSI"],support_host:"https://www.tradingview.com"});
+    sc.onerror=()=>b.remove();b.querySelector(".tradingview-widget-container").appendChild(sc)}
+  $("tvhPick").innerHTML=Object.keys(SY).map(id=>`<button type="button" class="tvh-chip" data-id="${id}" aria-pressed="${id===sel}">${SY[id]}</button>`).join("");
+  $("tvhPick").addEventListener("click",e=>{const c=e.target.closest(".tvh-chip");if(!c)return;sel=c.dataset.id;try{localStorage.setItem("bg-tvh",sel)}catch(e){}
+    $("tvhPick").querySelectorAll(".tvh-chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.id===sel));mount()});
+  mount();
 })();
 </script>
 
